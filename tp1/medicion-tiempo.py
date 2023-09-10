@@ -50,14 +50,16 @@ def main():
     logaritmic_regression_line = a * x * np.log(x)
 
     # Graficar
-    plt.scatter(x, y, label='Tiempo de ejecución', marker='o', color='blue')
-    plt.plot(x, linear_regression_line, label='Regresión Linear', linestyle='-', color='red')
-    plt.plot(x, logaritmic_regression_line, label='Regresión n log n', linestyle='-', color='green')
+    plt.figure(dpi=600)
+    plt.scatter(x, y, label='Tiempo de ejecución', marker='o', color='darkcyan', alpha=0.35, s=4)
+    plt.plot(x, linear_regression_line, label='Regresión Linear', linestyle='-', color='lightcoral', linewidth=2.0)
+    plt.plot(x, logaritmic_regression_line, label='Regresión n log n', linestyle='-', color='navy', linewidth=2.0)
 
     # Add labels and a legend
     plt.xlabel('Cantidad de elementos')
     plt.ylabel('Tiempo de ejecución (ms)')
     plt.legend()
+    plt.title('Tiempo de ejecución del algoritmo de ordenamiento')
     plt.savefig('tiempos_ejecucion.png')
     plt.show()
 
