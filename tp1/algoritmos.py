@@ -10,15 +10,16 @@ class Video:
 def videos_ordenados_de_forma_optima(videos):
     return sorted(videos, key=lambda video: video.tiempo_scaloni, reverse=True)
 
+
 def videos_en_archivo(nombre_archivo):
     videos = []
 
     with open(nombre_archivo, newline='') as archivo_tiempos:
         lector_csv = csv.reader(archivo_tiempos)
-        videos.append(Video(lector_csv[0],lector_csv[1]))
-
+        next(lector_csv, None)
+        for fila in lector_csv:
+            videos.append(Video(int(fila[0]),int(fila[1])))
     return videos
-
 
 ## 
 def tiempo_total(videos_ordenados):
