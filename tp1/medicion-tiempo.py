@@ -1,0 +1,2 @@
+import timeit
+from algoritmos import videos_ordenados_de_forma_optima, videos_en_archivo, tiempo_total

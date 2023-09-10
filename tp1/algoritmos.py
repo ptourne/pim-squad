@@ -7,8 +7,15 @@ class Video:
         self.tiempo_scaloni = scaloni
         self.tiempo_ayudante = ayudante
 
+    def __format__(self):
+        return (self.tiempo_scaloni, self.tiempo_ayudante)
+    
+    def __str__(self):
+        return(self.tiempo_scaloni+ self.tiempo_ayudante)
+    
+
 def videos_ordenados_de_forma_optima(videos):
-    return sorted(videos, key=lambda video: video.tiempo_scaloni, reverse=True)
+    return sorted(videos, key=lambda video: video.tiempo_ayudante, reverse=True)
 
 
 def videos_en_archivo(nombre_archivo):
@@ -21,9 +28,7 @@ def videos_en_archivo(nombre_archivo):
             videos.append(Video(int(fila[0]),int(fila[1])))
     return videos
 
-## 
 def tiempo_total(videos_ordenados):
-    """Devuelve el tiempo total de ejecución de los videos en la lista videos_ordenados."""
     tiempo_terminacion = []
     acumulador_tiempo_scaloni = 0
     for video in videos_ordenados:
