@@ -14,7 +14,7 @@ class Video:
         return(self.tiempo_scaloni+ self.tiempo_ayudante)
     
 
-def videos_ordenados_de_forma_optima(videos):
+def videos_ordenados_de_forma_optima(videos): # O(N * log(N)) por timsort
     return sorted(videos, key=lambda video: video.tiempo_ayudante, reverse=True)
 
 
@@ -28,7 +28,7 @@ def videos_en_archivo(nombre_archivo):
             videos.append(Video(int(fila[0]),int(fila[1])))
     return videos
 
-def tiempo_total(videos_ordenados):
+def tiempo_total(videos_ordenados): # O(N)
     tiempo_terminacion = []
     acumulador_tiempo_scaloni = 0
     for video in videos_ordenados:
