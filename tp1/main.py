@@ -7,10 +7,10 @@ def main():
     parser = argparse.ArgumentParser(description='Ordena los compilados de manera que se minimice el tiempo total de análisis.')
     parser.add_argument(
         'archivo_entrada',
-        metavar='compilados.csv',
+        metavar='compilados_a_ordenar.csv',
         type=open,
         nargs=1,
-        help='archivo de entrada'
+        help='Archivo .csv de entrada con el encabezado "S_i,A_i"'
     )
 
     parser.add_argument(
