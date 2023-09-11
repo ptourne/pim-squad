@@ -104,18 +104,19 @@
 \\[1cm]
 	\textsc{\Large Teoría de Algoritmos}\\           % Materia
 	\textsc{\small (75.29) Curso Buchwald - Genender}\\[0.4cm]    % Subtítulo materia
-	{ \huge \bfseries Trabajo Práctico 0 \\ Lineamientos sobre informes}\\[0.3cm]      % Título
+	{ \huge \bfseries Trabajo Práctico 1}\\[0.3cm]      % Título
 	\andreasline \\[0.2cm]
-	{\large \today  \\[0.4cm]}                          % Fecha
-	\begin{minipage}{0.4\textwidth}
-		\begin{flushleft}
-            \large{Alan Turing \\ 101010}                   % Integrante 1
-		\end{flushleft}
-	\end{minipage}
-	\begin{minipage}{0.4\textwidth}
-		\begin{flushright}
-            \large{Barbara Liskov \\ 111111}                % Integrante 2
-		\end{flushright}
-	\end{minipage}
+	{\large Fecha de entrega: 18/09/2023  \\[0.4cm]}                          % Fecha
+
+    \large
+    \begin{itemize}
+	
+        \item {Gauler, Ian Benjamin, Padrón: 109437}
+
+        \item {Jauregui, Melina Belén, Padrón: 109524}
+
+        \item {Tourne Passarino, Patricio, Padrón: 108725}
+	
+    \end{itemize}
  \end{center}
 }

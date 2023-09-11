@@ -1,0 +1,42 @@
+
+\section{Solución óptima}
+
+Para realizar de forma óptima el trabajo propuesto, consideramos dos cuestiones:
+
+\begin{itemize}
+
+    \item El orden en que Scaloni visualiza los compilados no incide en el tiempo total que le toma 
+finalizar la revisión de los mismos. Tomando esto en cuenta, en el ordenamiento que empleamos no 
+tuvimos en consideración el tiempo en el cual a este le tomaba ver cada compilado. 
+
+    \item Los asistentes realizan el análisis de cada uno de los compilados asignados en paralelo. Por lo 
+tanto, el tiempo que se invierte en la revisión de un compilado específico de máxima duración, 
+puede ser aprovechado de manera tal que este sea visto mientras Scaloni se dedica a la revisión
+de otros compilados. De esta forma, nos aseguramos que se minimice el tiempo que suman los ayudantes 
+en la resvisión total. 
+
+
+\end{itemize}
+
+\textbf{Para ello propusimos el siguiente algoritmo:}
+
+En primer lugar, hemos definido una clase llamada "Compilado" para modelar el compilado de cada 
+oponente, con los atributos \texttt{tiempo\_scaloni} y \texttt{tiempo\_ayudante}, que almacenan 
+el tiempo que le lleva analizarlo a Scaloni y a algún ayudante, respectivamente.
+
+\begin{lstlisting}[language=Python]
+class Compilado:
+    def __init__(self, scaloni, ayudante):
+        self.tiempo_scaloni = scaloni
+        self.tiempo_ayudante = ayudante
+\end{lstlisting}
+
+De esta forma y teniendo en cuenta los criterios previamente detallados, definimos la función
+\texttt{compilados\_ordenados\_de\_forma\_optima} que recibe como parámetro un arreglo con
+elementos de la clase \texttt{Compilado}. Esta ordena el arreglo en función del tiempo requerido
+por los asistentes para visualizar cada compilado, en orden descendente. 
+
+\begin{lstlisting}[language=Python]
+def compilados_ordenados_de_forma_optima(compilados):
+    return sorted(compilados, key=lambda compilado: compilado.tiempo_ayudante, reverse=True)
+\end{lstlisting}
