@@ -5,9 +5,9 @@ Para realizar de forma óptima el trabajo propuesto, consideramos dos cuestiones
 
 \begin{itemize}
 
-    \item El orden en que Scaloni visualiza los compilados no incide en el tiempo total que le toma 
-finalizar la revisión de los mismos. Tomando esto en cuenta, en el ordenamiento que empleamos no 
-tuvimos en consideración el tiempo en el cual a este le tomaba ver cada compilado. 
+    \item El orden en que Scaloni visualiza los compilados no incide en el tiempo que le toma a él en
+    finalizar la revisión de los mismos. Tomando esto en cuenta, el ordenamiento que empleamos ignora el
+    tiempo que le tarda al DT ver cada compilado. 
 
     \item Los asistentes realizan el análisis de cada uno de los compilados asignados en paralelo. Por lo 
 tanto, el tiempo que se invierte en la revisión de un compilado específico de máxima duración, 
@@ -20,7 +20,7 @@ en la resvisión total.
 
 \textbf{Para ello propusimos el siguiente algoritmo:}
 
-En primer lugar, hemos definido una clase llamada "Compilado" para modelar el compilado de cada 
+En primer lugar, hemos definido una clase llamada \texttt{Compilado} para modelar el compilado de cada 
 oponente, con los atributos \texttt{tiempo\_scaloni} y \texttt{tiempo\_ayudante}, que almacenan 
 el tiempo que le lleva analizarlo a Scaloni y a algún ayudante, respectivamente.
 
@@ -31,7 +31,7 @@ class Compilado:
         self.tiempo_ayudante = ayudante
 \end{lstlisting}
 
-De esta forma y teniendo en cuenta los criterios previamente detallados, definimos la función
+De esta forma, y teniendo en cuenta los criterios previamente detallados, definimos la función
 \texttt{compilados\_ordenados\_de\_forma\_optima} que recibe como parámetro un arreglo con
 elementos de la clase \texttt{Compilado}. Esta ordena el arreglo en función del tiempo requerido
 por los asistentes para visualizar cada compilado, en orden descendente. 

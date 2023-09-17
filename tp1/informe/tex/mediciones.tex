@@ -1,12 +1,15 @@
 \section{Mediciones}
 
-Se realizaron mediciones en base a crear compilados aleatorios que llevan analizarlos entre 1 a 
-99999 a Scaloni y a sus ayudantes, yendo de 10 en 10 hasta 1000 elementos.
+Para las mediciones, creamos listas de compilados de ejemplo de forma aleatoria. Decidimos que el tiempo
+de análisis de un compilado fuera un valor aleatorio entre 1 y 99'999, basándonos en los datos de ejemplo
+provistos por la cátedra
+Medimos el tiempo de ejecución de nuestro algoritmo para listas de 10 hasta 10'000 elementos
+y luego los graficamos.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{img/tiempos\_ejecucion.png}
 \end{figure}
 
-Los comparamos con los gráficos de una función lineal y una lineal logarítmica, sabiendo que 
-se acercaría más a una lineal\_logarítmica por la complejidad de nuestra función.
+Calculamos una regresión lineal y una regresión lineal logaritmica y graficamos sus curvas sobre los datos.
+De esta forma pudimos comprobar empíricamente que la complejidad tiende a $\operatorname{O}(n\log{n})$.
