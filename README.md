@@ -31,3 +31,7 @@ Podemos generar el gráfico de tiempos que tarda el algoritmo con distintos tama
 ```bash
 python test.py
 ```
+
+# Informe
+
+El informe se encuentra en `./tp1/informe-V2023-09-17.pdf`
