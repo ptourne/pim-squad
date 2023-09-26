@@ -2,14 +2,32 @@
 
 Para las mediciones, creamos listas de compilados de ejemplo de forma aleatoria. Decidimos que el tiempo
 de análisis de un compilado fuera un valor aleatorio entre 1 y 99'999, basándonos en los datos de ejemplo
-provistos por la cátedra
-Medimos el tiempo de ejecución de nuestro algoritmo para listas de 10 hasta 10'000 elementos
-y luego los graficamos.
+provistos por la cátedra.
+Medimos el tiempo de ejecución de nuestro algoritmo para ciertas cantidades de compilados.
+
+Calculamos una regresión lineal y una regresión lineal logaritmica que se ajuste a nuestros datos y graficamos sus curvas.
+Ahora, debemos comprobar cuál de las dos curvas se ajusta mejor a nuestros datos. Para ello, usamos la raíz del
+error cuadrático medio, que nos da una idea de cuán cerca están los valores predichos de los valores reales.
+
+Cuando calculamos el error cuadrático medio para ambas curvas, observamos que el error era prácticamente similar.
+Por lo que decidimos hacer zoom a los gráficos para observar cómo se estaban comportando los datos, y pudimos observar
+que en valores pequeños de muestras, la curva lineal logaritmica se ajustaba mejor a los datos.
+Sin embargo, para valores mayores, las diferencias de tiempos fueron tendiendo a una forma lineal, y no solamente eso, sino que
+la curva lineal se ajustaba mejor a los datos que la logaritmica. Por lo que decidimos incrementar el número de
+muestras para cantidades de compilados menores, y disminuir el número de muestras para cantidades de compilados
+mayores. De esta forma, pudimos observar, y mediante el error cuadrático medio, comprobar que la curva lineal logaritmica
+se ajustaba mejor a nuestros datos.
+
+
+o usamos un 
+rango continuo porque el tiempo de ejecución para pequeñas cantidades de compilados reflejaba mejor
+la complejidad lineal logaritmica. Por lo que al usar un rango continuo, observamos que 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{img/tiempos\_ejecucion.png}
 \end{figure}
 
-Calculamos una regresión lineal y una regresión lineal logaritmica y graficamos sus curvas sobre los datos.
+
+
 De esta forma pudimos comprobar empíricamente que la complejidad tiende a $\operatorname{O}(n\log{n})$.

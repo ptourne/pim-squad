@@ -1,7 +1,9 @@
-\babel@toc {spanish}{}\relax 
+\babel@toc {nil}{}\relax 
 \contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Información de la problemática}{3}{subsection.1.1}%
-\contentsline {section}{\numberline {2}Soluciones propuestas}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Cota de complejidad temporal}{4}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Mediciones}{4}{section.3}%
-\contentsline {section}{\numberline {4}Conclusiones}{4}{section.4}%
+\contentsline {section}{\numberline {2}Análisis de diferentes soluciones propuestas}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Solución 1}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Solución 2 - La Solución Óptima}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Cota de complejidad temporal}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Mediciones}{5}{section.3}%
+\contentsline {section}{\numberline {4}Conclusiones}{6}{section.4}%
