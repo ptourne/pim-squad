@@ -1,9 +1,13 @@
-\babel@toc {nil}{}\relax 
+\babel@toc {spanish}{}\relax 
 \contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Información de la problemática}{3}{subsection.1.1}%
 \contentsline {section}{\numberline {2}Análisis de diferentes soluciones propuestas}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Solución 1}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Solución 2 - La Solución Óptima}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Cota de complejidad temporal}{4}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Mediciones}{5}{section.3}%
-\contentsline {section}{\numberline {4}Conclusiones}{6}{section.4}%
+\contentsline {section}{\numberline {3}Posibles algoritmos}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Ordenando por $a_i$ de forma creciente}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Ordenando por $a_i$ de forma decreciente}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Resultados obtenidos del Caso 1}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Resultados obtenidos del Caso 2}{5}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Demostración}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Cota de complejidad temporal}{8}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Mediciones}{8}{section.5}%
+\contentsline {section}{\numberline {6}Conclusiones}{9}{section.6}%

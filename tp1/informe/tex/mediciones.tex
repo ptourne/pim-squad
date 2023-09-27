@@ -9,25 +9,24 @@ Calculamos una regresión lineal y una regresión lineal logaritmica que se ajus
 Ahora, debemos comprobar cuál de las dos curvas se ajusta mejor a nuestros datos. Para ello, usamos la raíz del
 error cuadrático medio, que nos da una idea de cuán cerca están los valores predichos de los valores reales.
 
-Cuando calculamos el error cuadrático medio para ambas curvas, observamos que el error era prácticamente similar.
-Por lo que decidimos hacer zoom a los gráficos para observar cómo se estaban comportando los datos, y pudimos observar
-que en valores pequeños de muestras, la curva lineal logaritmica se ajustaba mejor a los datos.
-Sin embargo, para valores mayores, las diferencias de tiempos fueron tendiendo a una forma lineal, y no solamente eso, sino que
-la curva lineal se ajustaba mejor a los datos que la logaritmica. Por lo que decidimos incrementar el número de
-muestras para cantidades de compilados menores, y disminuir el número de muestras para cantidades de compilados
-mayores. De esta forma, pudimos observar, y mediante el error cuadrático medio, comprobar que la curva lineal logaritmica
-se ajustaba mejor a nuestros datos.
+Al calcular el error cuadrático medio para ambas curvas, observamos que el error era prácticamente similar.
+En consecuencia, decidimos llevar a cabo un análisis más detallado,
+enfocándonos en diversos intervalos del gráfico con el objetivo de examinar el comportamiento de los datos en mayor
+profundidad. Esta investigación nos permitió concluir que, especialmente en el caso de muestras caracterizadas
+por valores reducidos, la curva lineal logarítmica se ajusta mejor a los datos observados.
 
+Sin embargo, al considerar valores más elevados, se observó que las diferencias en los tiempos tendieron a adquirir una naturaleza lineal. 
+De la misma manera, la función logarítmica se asemeja a una lineal para valores grandes, por lo que el error cuadrático medio tendía a ser el mismo
+para ambas funciones. Dado este análisis, decidimos incrementar el número de muestras para cantidades de compilados menores, 
+y disminuir el número de muestras para cantidades de compilados mayores. 
 
-o usamos un 
-rango continuo porque el tiempo de ejecución para pequeñas cantidades de compilados reflejaba mejor
-la complejidad lineal logaritmica. Por lo que al usar un rango continuo, observamos que 
+De esta manera, mediante el gráfico y la validación a través del error cuadrático medio, hemos comprobado que la curva lineal logarítmica 
+se adapta de manera más precisa a nuestros datos.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{img/tiempos\_ejecucion.png}
 \end{figure}
-
 
 
 De esta forma pudimos comprobar empíricamente que la complejidad tiende a $\operatorname{O}(n\log{n})$.
