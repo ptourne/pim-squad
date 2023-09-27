@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.26)  27 SEP 2023 02:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.26)  27 SEP 2023 03:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1647,14 +1647,14 @@ Overfull \hbox (11.26959pt too wide) in paragraph at lines 3--1
 imos 
  []
 
-<img/tiempos_ejecucion.png, id=215, 462.528pt x 346.896pt>
-File: img/tiempos_ejecucion.png Graphic file (type png)
-<use img/tiempos_ejecucion.png>
-Package pdftex.def Info: img/tiempos_ejecucion.png  used on input line 28.
+<img/tiempos_valores_bajos.png, id=215, 462.528pt x 346.896pt>
+File: img/tiempos_valores_bajos.png Graphic file (type png)
+<use img/tiempos_valores_bajos.png>
+Package pdftex.def Info: img/tiempos_valores_bajos.png  used on input line 29.
 (pdftex.def)             Requested size: 426.79135pt x 320.11154pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 30.
+Package pdftex.def Info: logo.pdf  used on input line 31.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
@@ -1664,7 +1664,27 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[8]) (./tex/conclusiones.tex)
+[8]
+<img/tiempos_valores_altos.png, id=220, 462.528pt x 346.896pt>
+File: img/tiempos_valores_altos.png Graphic file (type png)
+<use img/tiempos_valores_altos.png>
+Package pdftex.def Info: img/tiempos_valores_altos.png  used on input line 34.
+(pdftex.def)             Requested size: 426.79135pt x 320.11154pt.
+) (./tex/conclusiones.tex
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 1.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
+
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+[9 <./img/tiempos_valores_bajos.png> <./img/tiempos_valores_altos.png>])
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 89.
@@ -1678,7 +1698,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[9 <./img/tiempos_ejecucion.png>] 
+[10] 
 AED: lastpage setting LastPage
 (./main.aux
 LaTeX Info: Redefining \sptext on input line 23.
@@ -1695,10 +1715,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37054 strings out of 478126
- 695846 string characters out of 5842787
+ 37062 strings out of 478126
+ 696111 string characters out of 5842787
  1899793 words of memory out of 6000000
- 56441 multiletter control sequences out of 15000+600000
+ 56447 multiletter control sequences out of 15000+600000
  522296 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  103i,15n,105p,677b,1939s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1717,10 +1737,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (9 pages, 1064407 bytes).
+Output written on main.pdf (10 pages, 1467521 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
- 37 named destinations out of 1000 (max. 500000)
- 333 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 

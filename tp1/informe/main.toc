@@ -10,4 +10,4 @@
 \contentsline {section}{\numberline {4}Demostración}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Cota de complejidad temporal}{8}{subsection.4.1}%
 \contentsline {section}{\numberline {5}Mediciones}{8}{section.5}%
-\contentsline {section}{\numberline {6}Conclusiones}{9}{section.6}%
+\contentsline {section}{\numberline {6}Conclusiones}{10}{section.6}%

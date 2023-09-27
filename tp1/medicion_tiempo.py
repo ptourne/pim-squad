@@ -27,7 +27,7 @@ def generar_compilados_aleatorios(cant_compilados):
 
 def main():
     graficar_simulaciones(1501, 1, "./informe/img/tiempos_valores_bajos.png")
-    graficar_simulaciones(10000, 25, "./informe/img/tiempos_valores_altos.png")
+    graficar_simulaciones(10000, 2, "./informe/img/tiempos_valores_altos.png")
 
 
 def graficar_simulaciones(maximo, intervalos, path_salida):
@@ -63,8 +63,37 @@ def graficar_simulaciones(maximo, intervalos, path_salida):
     rmse_funcion_lineal_log = np.sqrt(mean_squared_error(y, logaritmic_regression_line))
     print(f"RMSE para la función lineal logarítmica: {rmse_funcion_lineal_log}")
 
+    X = np.array(x)
+    Y = np.array(y)
+
+    # Define the size of the overlapping groups
+    group_size = 15
+
+    # Determine the number of overlapping groups
+    num_groups = len(x) - group_size + 1
+
+    # Initialize arrays to store quantiles
+    quantiles_25 = np.zeros(num_groups)
+    quantiles_50 = np.zeros(num_groups)
+    quantiles_75 = np.zeros(num_groups)
+
+    # Calculate quantiles for each group
+    for i in range(num_groups):
+        group_y = Y[i:i+group_size]
+        quantiles_25[i] = np.percentile(group_y, 25)
+        quantiles_50[i] = np.percentile(group_y, 50)
+        quantiles_75[i] = np.percentile(group_y, 75)
+
+
+        
+
     # Graficar
     plt.figure(dpi=600)
+    # Plot the lines
+    plt.plot(X[group_size-1:], quantiles_25, label='Q0.25')
+    plt.plot(X[group_size-1:], quantiles_50, label='Q0.50')
+    plt.plot(X[group_size-1:], quantiles_75, label='Q0.75')
+
     plt.scatter(
         x, y, label="Tiempo de ejecución", marker="o", color="darkcyan", alpha=0.35, s=4
     )
