@@ -7,14 +7,10 @@ from algoritmos import Compilado, compilados_ordenados_de_forma_optima
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
-CANTIDAD_PARA_PROMEDIO = 3
-CANTIDAD_COMPILADOS = 1500
-
-
 def tiempo_ejecucion(compilados):
-    tiempo_inicial = time.time()
+    tiempo_inicial = time.process_time()
     compilados_ordenados_de_forma_optima(compilados)
-    tiempo_final = time.time()
+    tiempo_final = time.process_time()
     return tiempo_final - tiempo_inicial
 
 
@@ -26,20 +22,50 @@ def generar_compilados_aleatorios(cant_compilados):
 
 
 def main():
-    graficar_simulaciones(1501, 1, "./informe/img/tiempos_valores_bajos.png")
-    graficar_simulaciones(10000, 2, "./informe/img/tiempos_valores_altos.png")
+    graficar_simulaciones(400, 1, "./informe/img/tiempos_valores_bajos.png", 50)
+    #graficar_simulaciones(10000, 10, "./informe/img/tiempos_valores_altos.png", 10)
 
 
-def graficar_simulaciones(maximo, intervalos, path_salida):
-    cantidad_compilados = range(1, maximo, intervalos)
-    tiempos_ejecucion = []
+def graficar_simulaciones(maximo, intervalos, path_salida, numero_vueltas):
+    cantidad_compilados = list(range(1, maximo, intervalos))
+    muestras_compialados = []
 
-    for i in cantidad_compilados:
-        compilados_ejemplo = generar_compilados_aleatorios(i)
-        tiempos_ejecucion.append(tiempo_ejecucion(compilados_ejemplo) * 1000)
+    mediciones = []
+    for i in range(numero_vueltas):
+        muestra_muestras_compialados = []
+        mediciones_aux = []
+        for cantidad in cantidad_compilados:
+            muestra_muestras_compialados.append(generar_compilados_aleatorios(cantidad))
+            mediciones_aux.append(0)
+        muestras_compialados.append(muestra_muestras_compialados)
+        mediciones.append(mediciones_aux)
 
-    x = np.array(cantidad_compilados)
-    y = np.array(tiempos_ejecucion)
+    for vuelta in range(numero_vueltas):
+        for index_muestras, muestras in enumerate(muestras_compialados):
+            for index_muestra, muestra in enumerate(muestras):
+                mediciones[index_muestras][index_muestra] += tiempo_ejecucion(muestra) * 1000
+    
+    
+    for vuelta in range(numero_vueltas):
+        for index_muestras, muestras in enumerate(muestras_compialados):
+            for index_muestra, muestra in enumerate(muestras):
+                mediciones[index_muestras][index_muestra] /= numero_vueltas
+    
+    tiempos_ejecucion = [item for sublist in mediciones for item in sublist]
+    cantidad_compilados = cantidad_compilados * numero_vueltas
+
+    
+    x = cantidad_compilados  # Example unsorted x values
+    y = tiempos_ejecucion  # Corresponding y values
+
+    # Pair x and y values and sort based on x
+    sorted_pairs = sorted(zip(x, y), key=lambda pair: pair[0])
+
+    # Unzip the sorted pairs back into separate x and y arrays
+    sorted_x, sorted_y = zip(*sorted_pairs)
+
+    x = np.array(sorted_x)
+    y = np.array(sorted_y)
 
     # Regresión Lineal
     coefficients = np.polyfit(x, y, 1)
@@ -67,35 +93,37 @@ def graficar_simulaciones(maximo, intervalos, path_salida):
     Y = np.array(y)
 
     # Define the size of the overlapping groups
-    group_size = 15
+    group_size = numero_vueltas * 20
 
     # Determine the number of overlapping groups
     num_groups = len(x) - group_size + 1
 
     # Initialize arrays to store quantiles
-    quantiles_25 = np.zeros(num_groups)
-    quantiles_50 = np.zeros(num_groups)
-    quantiles_75 = np.zeros(num_groups)
+    quantiles_10 = np.zeros(num_groups)
+    quantiles_90 = np.zeros(num_groups)
 
     # Calculate quantiles for each group
     for i in range(num_groups):
         group_y = Y[i:i+group_size]
-        quantiles_25[i] = np.percentile(group_y, 25)
-        quantiles_50[i] = np.percentile(group_y, 50)
-        quantiles_75[i] = np.percentile(group_y, 75)
+        quantiles_10[i] = np.percentile(group_y, 10)
+        quantiles_90[i] = np.percentile(group_y, 90)
+       
+    # Determine the center positions for each group
+    group_centers = []
+    for i in range(num_groups):
+        group_center = np.mean(X[i:i+group_size])
+        group_centers.append(group_center)
 
-
-        
+    group_centers = np.array(group_centers)
 
     # Graficar
     plt.figure(dpi=600)
     # Plot the lines
-    plt.plot(X[group_size-1:], quantiles_25, label='Q0.25')
-    plt.plot(X[group_size-1:], quantiles_50, label='Q0.50')
-    plt.plot(X[group_size-1:], quantiles_75, label='Q0.75')
+    plt.plot(group_centers, quantiles_10, label='Q0.10', color="greenyellow")
+    plt.plot(group_centers, quantiles_90, label='Q0.90', color="violet")
 
     plt.scatter(
-        x, y, label="Tiempo de ejecución", marker="o", color="darkcyan", alpha=0.35, s=4
+        x, y, label="Tiempo de ejecución", marker="o", color="darkcyan", alpha=0.1, s=2
     )
     plt.plot(
         x,
