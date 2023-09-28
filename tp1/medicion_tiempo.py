@@ -1,18 +1,20 @@
-import random
 import time
-
+import random
 import numpy as np
-from sklearn.metrics import mean_squared_error
-from algoritmos import Compilado, compilados_ordenados_de_forma_optima
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
-import seaborn as sns
-from scipy.stats import gaussian_kde
+from sklearn.metrics import mean_squared_error
+from algoritmos import Compilado, compilados_ordenados_de_forma_optima
+
+PROMEDIO_CANT_COMPI_IGUALES = 5
+PROMEDIO_CANT_COMPI_DISTINTOS = 5
+CANTIDAD_COMPILADOS_MAX = 10000
+
 
 def tiempo_ejecucion(compilados):
-    tiempo_inicial = time.process_time()
+    tiempo_inicial = time.time()
     compilados_ordenados_de_forma_optima(compilados)
-    tiempo_final = time.process_time()
+    tiempo_final = time.time()
     return tiempo_final - tiempo_inicial
 
 
@@ -24,50 +26,26 @@ def generar_compilados_aleatorios(cant_compilados):
 
 
 def main():
-    graficar_simulaciones(400, 1, "./informe/img/tiempos_valores_bajos.png", 20, 10, 40)
-    #graficar_simulaciones(10000, 50, "./informe/img/tiempos_valores_altos.png", 10, 12, 20)
+    cantidad_compilados = range(1, CANTIDAD_COMPILADOS_MAX + 1)
+    tiempos_ejecucion = []
 
+    for i in range(1, CANTIDAD_COMPILADOS_MAX + 1):
+        tiempos_ejecucion_aux = []
 
-def graficar_simulaciones(maximo, intervalos, path_salida, numero_vueltas, numero_muestras_por_cantidad, group_size):
-    cantidad_compilados = list(range(1, maximo, intervalos))
-    muestras_compialados = []
+        for _ in range(1, PROMEDIO_CANT_COMPI_DISTINTOS):
+            tiempos_ejecucion_vuelta = [None] * PROMEDIO_CANT_COMPI_IGUALES
+            compilados_ejemplo = generar_compilados_aleatorios(i)
 
-    mediciones = []
-    for i in range(numero_muestras_por_cantidad):
-        muestra_muestras_compialados = []
-        mediciones_aux = []
-        for cantidad in cantidad_compilados:
-            muestra_muestras_compialados.append(generar_compilados_aleatorios(cantidad))
-            mediciones_aux.append(0)
-        muestras_compialados.append(muestra_muestras_compialados)
-        mediciones.append(mediciones_aux)
+            for j in range(PROMEDIO_CANT_COMPI_IGUALES):
+                tiempos_ejecucion_vuelta[j] = (
+                    tiempo_ejecucion(compilados_ejemplo) * 1000
+                )
 
-    for vuelta in range(numero_vueltas):
-        for index_muestras, muestras in enumerate(muestras_compialados):
-            for index_muestra, muestra in enumerate(muestras):
-                mediciones[index_muestras][index_muestra] += tiempo_ejecucion(muestra) * 1000
-    
-    
-    for vuelta in range(numero_vueltas):
-        for index_muestras, muestras in enumerate(muestras_compialados):
-            for index_muestra, muestra in enumerate(muestras):
-                mediciones[index_muestras][index_muestra] /= numero_vueltas
-    
-    tiempos_ejecucion = [item for sublist in mediciones for item in sublist]
-    cantidad_compilados = cantidad_compilados * numero_vueltas
+            tiempos_ejecucion_aux.append(np.mean(tiempos_ejecucion_vuelta))
+        tiempos_ejecucion.append(np.mean(tiempos_ejecucion_aux))
 
-    
-    x = cantidad_compilados  # Example unsorted x values
-    y = tiempos_ejecucion  # Corresponding y values
-
-    # Pair x and y values and sort based on x
-    sorted_pairs = sorted(zip(x, y), key=lambda pair: pair[0])
-
-    # Unzip the sorted pairs back into separate x and y arrays
-    sorted_x, sorted_y = zip(*sorted_pairs)
-
-    x = np.array(sorted_x)
-    y = np.array(sorted_y)
+    x = np.array(cantidad_compilados)
+    y = np.array(tiempos_ejecucion)
 
     # Regresión Lineal
     coefficients = np.polyfit(x, y, 1)
@@ -75,7 +53,7 @@ def graficar_simulaciones(maximo, intervalos, path_salida, numero_vueltas, numer
     linear_regression_line = slope * x + intercept
 
     # Calcular el RMSE (Root mean square error) para la regresión lineal
-    rmse_recta_lineal = np.sqrt(mean_squared_error(y, linear_regression_line)) * pow(10, 30)
+    rmse_recta_lineal = np.sqrt(mean_squared_error(y, linear_regression_line))
     print(f"RMSE para la recta lineal: {rmse_recta_lineal}")
 
     # Regresión lineal Logarítmica
@@ -85,71 +63,34 @@ def graficar_simulaciones(maximo, intervalos, path_salida, numero_vueltas, numer
     params, _ = curve_fit(n_logn_function, x, y)
     a = params[0]
     b = params[1]
+
     logaritmic_regression_line = a * x * np.log(x) + b
 
     # Calcular el RMSE (Root mean square error) para la regresión lineal logarítmica
-    rmse_funcion_lineal_log = np.sqrt(mean_squared_error(y, logaritmic_regression_line)) * pow(10, 30)
+    rmse_funcion_lineal_log = np.sqrt(mean_squared_error(y, logaritmic_regression_line))
     print(f"RMSE para la función lineal logarítmica: {rmse_funcion_lineal_log}")
 
-    X = np.array(x)
-    Y = np.array(y)
-
-    # Determine the number of overlapping groups
-    num_groups = len(x) - group_size + 1
-
-    # Initialize arrays to store quantiles
-    quantiles_10 = np.zeros(num_groups)
-    quantiles_90 = np.zeros(num_groups)
-
-    # Calculate quantiles for each group
-    for i in range(num_groups):
-        group_y = Y[i:i+group_size]
-        quantiles_10[i] = np.percentile(group_y, 10)
-        quantiles_90[i] = np.percentile(group_y, 90)
-       
-    # Determine the center positions for each group
-    group_centers = []
-    for i in range(num_groups):
-        group_center = np.mean(X[i:i+group_size])
-        group_centers.append(group_center)
-
-    group_centers = np.array(group_centers)
-
-    # Evaluate a gaussian kde on a regular grid of nbins x nbins over data extents
-    nbins=1200
-    k = gaussian_kde([x,y])
-    xi, yi = np.mgrid[x.min():x.max():nbins*1j, y.min():y.max():nbins*1j]
-    zi = k(np.vstack([xi.flatten(), yi.flatten()]))
-
     # Graficar
-    plt.figure(dpi=1000)
-    
-    # Make the plot
-    plt.pcolormesh(xi, yi, zi.reshape(xi.shape), shading='auto')
-
-    # # Plot the lines
-    # plt.plot(group_centers, quantiles_10, label='Q0.10', color="greenyellow", linewidth=0.75)
-    # plt.plot(group_centers, quantiles_90, label='Q0.90', color="violet", linewidth=0.75)
-
-    # # plt.scatter(
-    # #     x, y, label="Tiempo de ejecución", marker="o", color="darkcyan", alpha=0.5, s=0.5
-    # # )
-    # plt.plot(
-    #     x,
-    #     linear_regression_line,
-    #     label="Regresión Linear",
-    #     linestyle="-",
-    #     color="lightcoral",
-    #     linewidth=1,
-    # )
-    # plt.plot(
-    #     x,
-    #     logaritmic_regression_line,
-    #     label="Regresión n log n",
-    #     linestyle="-",
-    #     color="navy",
-    #     linewidth=1,
-    # )
+    plt.figure(dpi=600)
+    plt.scatter(
+        x, y, label="Tiempo de ejecución", marker="o", color="darkcyan", alpha=0.35, s=4
+    )
+    plt.plot(
+        x,
+        linear_regression_line,
+        label="Regresión Linear",
+        linestyle="-",
+        color="lightcoral",
+        linewidth=2.0,
+    )
+    plt.plot(
+        x,
+        logaritmic_regression_line,
+        label="Regresión n log n",
+        linestyle="-",
+        color="navy",
+        linewidth=2.0,
+    )
 
     # Anotamos el rmse de cada regresión
     plt.annotate(
@@ -173,7 +114,17 @@ def graficar_simulaciones(maximo, intervalos, path_salida, numero_vueltas, numer
     plt.ylabel("Tiempo de ejecución (ms)")
     plt.legend()
     plt.title("Tiempo de ejecución del algoritmo de ordenamiento")
-    plt.savefig(path_salida)
+    plt.savefig("tiempos_ejecucion.png")
+
+    # Ahora guardamos el gráfico con un zoom en los primeros valores para notar una "panza" en la función n log n
+    plt.xlim(-200, 2000)
+    plt.ylim(-0.1, 0.4)
+    plt.savefig("tiempos_ejecucion_zoom_bajos.png")
+
+    # Ahora guardamos el gráfico con un zoom en los valores altos de cantidades de compilados para notar la tendencia lineal
+    plt.xlim(8000, CANTIDAD_COMPILADOS_MAX)
+    plt.ylim(0.7, 2)
+    plt.savefig("tiempos_ejecucion_zoom_altos.png")
 
 
 main()

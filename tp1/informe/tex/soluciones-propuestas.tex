@@ -1,5 +1,6 @@
 \section{Análisis de diferentes soluciones propuestas}
-Vamos a proponer dos escenarios posibles para poder analizar sus soluciones. Estos dos escenarios los vamos a representar mediante un gráfico cada uno:
+Vamos a proponer dos escenarios posibles para poder analizar sus soluciones. Estos dos escenarios los vamos a presentar mediante un gráfico cada uno,
+donde el tiempo de visualizacion de Scaloni es representado con el color turquesa, y el de los ayudantes es representado con el color azul.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{img/caso-1.png}
@@ -39,12 +40,13 @@ Este algorítmo sigue las siguientes indicaciones:
 \end{itemize}
 
 \subsection{Ordenando por $a_i$ de forma decreciente}
+Este algor´ıtmo sigue las siguientes indicaciones:
 \begin{itemize}
     \item Ordenar los compilados de mayor a menor tiempo de análisis por parte de los ayudantes.
     \item Cada vez que termina Scaloni de ver un compilado, inmediatamente un ayudante es asignado a visualizarlo.
 \end{itemize}
 
-Comparemos cómo se desempeñan con nuestros dos algorítmos en cada escenario propuesto:
+Comparemos cómo se desempeñan nuestros dos algorítmos en cada escenario propuesto:
 
 \subsection{Resultados obtenidos del Caso 1}
 
@@ -85,8 +87,8 @@ Como se puede observar, para ambos casos el ordenamiento decreciente resulta en 
 
 Procederemos a demostrar que ordenar los compilados por $a_i$ de forma decreciente minimiza el tiempo total.
 
-Llamando $C$ al conjunto ordenado de $n$ compilados, $s_i$ el tiempo que le tardar visualizar a Scaloni el $i$-ésimo compilado, y
-$a_i$ lo que le tarda a un ayudante. Llamaremos al tiempo que tarda Scaloni analizar los compilados hasta el $k$-ésimo $S_k$.
+Llamamos $C$ al conjunto ordenado de $n$ compilados, $s_i$ el tiempo que le tardar visualizar a Scaloni el $i$-ésimo compilado, y
+$a_i$ lo que le tarda a un ayudante. Además, al tiempo que tarda Scaloni analizar los compilados hasta el $k$-ésimo lo representaremos como $S_k$.
 
 $$
 S_{k}=\sum_{i=1}^{k}s_{i} 
