@@ -1,20 +1,18 @@
-import time
 import random
+import time
+
 import numpy as np
-import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
 from sklearn.metrics import mean_squared_error
 from algoritmos import Compilado, compilados_ordenados_de_forma_optima
-
-PROMEDIO_CANT_COMPI_IGUALES = 5
-PROMEDIO_CANT_COMPI_DISTINTOS = 5
-CANTIDAD_COMPILADOS_MAX = 10000
-
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+import seaborn as sns
+from scipy.stats import gaussian_kde
 
 def tiempo_ejecucion(compilados):
-    tiempo_inicial = time.time()
+    tiempo_inicial = time.process_time()
     compilados_ordenados_de_forma_optima(compilados)
-    tiempo_final = time.time()
+    tiempo_final = time.process_time()
     return tiempo_final - tiempo_inicial
 
 
@@ -26,26 +24,64 @@ def generar_compilados_aleatorios(cant_compilados):
 
 
 def main():
-    cantidad_compilados = range(1, CANTIDAD_COMPILADOS_MAX + 1)
-    tiempos_ejecucion = []
+    graficar_simulaciones(1000, 1, "./informe/img/tiempos_valores_bajos_puntos.png", "./informe/img/tiempos_valores_bajos_densidad.png", 6, 10, 60)
+    #graficar_simulaciones(10000, 50, "./informe/img/tiempos_valores_altos_puntos.png", "./informe/img/tiempos_valores_altos_densidad.png", 10, 12, 20)
 
-    for i in range(1, CANTIDAD_COMPILADOS_MAX + 1):
-        tiempos_ejecucion_aux = []
 
-        for _ in range(1, PROMEDIO_CANT_COMPI_DISTINTOS):
-            tiempos_ejecucion_vuelta = [None] * PROMEDIO_CANT_COMPI_IGUALES
-            compilados_ejemplo = generar_compilados_aleatorios(i)
+def graficar_simulaciones(maximo, intervalos, path_salida_puntos, path_salida_densidad, numero_vueltas, numero_muestras_por_cantidad, group_size):
+    cantidad_compilados = list(range(1, maximo, intervalos))
+    muestras_compilados = []
+    mediciones = []
 
-            for j in range(PROMEDIO_CANT_COMPI_IGUALES):
-                tiempos_ejecucion_vuelta[j] = (
-                    tiempo_ejecucion(compilados_ejemplo) * 1000
-                )
+    # Se genera la matriz <muestras_compilados> de tamaño [numero_muestras_por_cantidad][len(cantidad_compilados)]
+    # la cual contiene por cada cantidad de comilados, numero_muestras_por_cantidad diferentes escenarios. 
+    # Además, se inicializa una matriz de mediciones de igual tamaño con ceros.
+    for i in range(numero_muestras_por_cantidad):
+        escenarios_muestras_compilados = []
+        mediciones_aux = []
+        for cantidad in cantidad_compilados:
+            escenarios_muestras_compilados.append(generar_compilados_aleatorios(cantidad))
+            mediciones_aux.append(0)
+        muestras_compilados.append(escenarios_muestras_compilados)
+        mediciones.append(mediciones_aux)
 
-            tiempos_ejecucion_aux.append(np.mean(tiempos_ejecucion_vuelta))
-        tiempos_ejecucion.append(np.mean(tiempos_ejecucion_aux))
+    # Se recorre la matriz de muestras y se mide el tiempo de ordenamiento para cada una, vuelta veces
+    # sumando cada medición al casillero correspondiente en la matriz mediciones.
+    for vuelta in range(numero_vueltas):
+        for index_muestras_por_cantidad, muestras_por_cantidad in enumerate(muestras_compilados):
+            for index_muestra, muestra in enumerate(muestras_por_cantidad):
+                mediciones[index_muestras_por_cantidad][index_muestra] += tiempo_ejecucion(muestra) * 1000
+    
+    # Se recorre la matriz de mediciones dividiendo cada casillero por numero_vueltas para obtener
+    # el promedio de las mediciones
+    for index_muestras_por_cantidad, muestras_por_cantidad in enumerate(muestras_compilados):
+        for index_muestra, muestra in enumerate(muestras_por_cantidad):
+            mediciones[index_muestras_por_cantidad][index_muestra] /= numero_vueltas
+    
 
-    x = np.array(cantidad_compilados)
-    y = np.array(tiempos_ejecucion)
+    # Se aplana la matriz mediciones y se concatena cantidad_compilados numero_vueltas veces
+    tiempos_ejecucion = [item for sublist in mediciones for item in sublist]
+    cantidad_compilados = cantidad_compilados * numero_vueltas
+
+    # Agrupamos al vector de mediciones y al vector de cantidad de compilados para esa medición
+    # para poder odernarlos de tal manera que la cantidad quede en forma creciente.
+    # Luego los desagrupamos
+    sorted_pairs = sorted(zip(cantidad_compilados, tiempos_ejecucion), key=lambda pair: pair[0])
+    cantidad_compilados_ordenados, tiempos_ejecucion_ordenados = zip(*sorted_pairs)
+
+    x = np.array(cantidad_compilados_ordenados)
+    y = np.array(tiempos_ejecucion_ordenados)
+
+
+    exportar_grafico_puntos(x, y, group_size, path_salida_puntos)
+    exportar_grafico_densidad(x, y, path_salida_densidad)
+
+def exportar_grafico_puntos(x, y, group_size, path_salida):
+    # Graficar
+    plt.figure(dpi=800)
+
+    X = np.array(x)
+    Y = np.array(y)
 
     # Regresión Lineal
     coefficients = np.polyfit(x, y, 1)
@@ -63,17 +99,38 @@ def main():
     params, _ = curve_fit(n_logn_function, x, y)
     a = params[0]
     b = params[1]
-
     logaritmic_regression_line = a * x * np.log(x) + b
 
     # Calcular el RMSE (Root mean square error) para la regresión lineal logarítmica
     rmse_funcion_lineal_log = np.sqrt(mean_squared_error(y, logaritmic_regression_line))
     print(f"RMSE para la función lineal logarítmica: {rmse_funcion_lineal_log}")
 
-    # Graficar
-    plt.figure(dpi=600)
+    # Determine the number of overlapping groups
+    num_groups = len(x) - group_size + 1
+
+    # Initialize arrays to store quantiles
+    quantiles_10 = np.zeros(num_groups)
+    quantiles_90 = np.zeros(num_groups)
+
+    # Calculate quantiles for each group
+    for i in range(num_groups):
+        group_y = Y[i:i+group_size]
+        quantiles_10[i] = np.percentile(group_y, 10)
+        quantiles_90[i] = np.percentile(group_y, 90)
+       
+    # Determine the center positions for each group
+    group_centers = []
+    for i in range(num_groups):
+        group_center = np.mean(X[i:i+group_size])
+        group_centers.append(group_center)
+
+    group_centers = np.array(group_centers)
+    # Plot the lines
+    plt.plot(group_centers, quantiles_10, label='Q0.10', color="greenyellow", linewidth=0.75)
+    plt.plot(group_centers, quantiles_90, label='Q0.90', color="violet", linewidth=0.75)
+
     plt.scatter(
-        x, y, label="Tiempo de ejecución", marker="o", color="darkcyan", alpha=0.35, s=4
+        x, y, label="Tiempo de ejecución", marker="o", color="darkcyan", alpha=0.5, s=0.5
     )
     plt.plot(
         x,
@@ -81,7 +138,7 @@ def main():
         label="Regresión Linear",
         linestyle="-",
         color="lightcoral",
-        linewidth=2.0,
+        linewidth=1,
     )
     plt.plot(
         x,
@@ -89,7 +146,7 @@ def main():
         label="Regresión n log n",
         linestyle="-",
         color="navy",
-        linewidth=2.0,
+        linewidth=1,
     )
 
     # Anotamos el rmse de cada regresión
@@ -114,17 +171,31 @@ def main():
     plt.ylabel("Tiempo de ejecución (ms)")
     plt.legend()
     plt.title("Tiempo de ejecución del algoritmo de ordenamiento")
-    plt.savefig("tiempos_ejecucion.png")
+    plt.savefig(path_salida)
 
-    # Ahora guardamos el gráfico con un zoom en los primeros valores para notar una "panza" en la función n log n
-    plt.xlim(-200, 2000)
-    plt.ylim(-0.1, 0.4)
-    plt.savefig("tiempos_ejecucion_zoom_bajos.png")
 
-    # Ahora guardamos el gráfico con un zoom en los valores altos de cantidades de compilados para notar la tendencia lineal
-    plt.xlim(8000, CANTIDAD_COMPILADOS_MAX)
-    plt.ylim(0.7, 2)
-    plt.savefig("tiempos_ejecucion_zoom_altos.png")
+def exportar_grafico_densidad(x, y, path_salida):
+    # Graficar
+    plt.figure(dpi=800)
+
+    X = np.array(x)
+    Y = np.array(y)
+
+    # Evaluate a gaussian kde on a regular grid of nbins x nbins over data extents
+    nbins=1200
+    k = gaussian_kde([x,y])
+    xi, yi = np.mgrid[x.min():x.max():nbins*1j, y.min():y.max():nbins*1j]
+    zi = k(np.vstack([xi.flatten(), yi.flatten()]))
+    
+    # Make the plot
+    plt.pcolormesh(xi, yi, zi.reshape(xi.shape), shading='auto')
+
+    # Etiquetas y leyenda
+    plt.xlabel("Cantidad de compilados")
+    plt.ylabel("Tiempo de ejecución (ms)")
+    plt.legend()
+    plt.title("Tiempo de ejecución del algoritmo de ordenamiento")
+    plt.savefig(path_salida)
 
 
 main()
