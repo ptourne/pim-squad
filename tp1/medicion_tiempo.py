@@ -24,8 +24,8 @@ def generar_compilados_aleatorios(cant_compilados):
 
 
 def main():
-    graficar_simulaciones(1000, 1, "./informe/img/tiempos_valores_bajos_puntos.png", "./informe/img/tiempos_valores_bajos_densidad.png", 6, 10, 60)
-    #graficar_simulaciones(10000, 50, "./informe/img/tiempos_valores_altos_puntos.png", "./informe/img/tiempos_valores_altos_densidad.png", 10, 12, 20)
+    #graficar_simulaciones(1000, 1, "./informe/img/tiempos_valores_bajos_puntos.png", "./informe/img/tiempos_valores_bajos_densidad.png", 20, 20, 100)
+    graficar_simulaciones(10000, 10, "./informe/img/tiempos_valores_altos_puntos.png", "./informe/img/tiempos_valores_altos_densidad.png", 20, 8, 150)
 
 
 def graficar_simulaciones(maximo, intervalos, path_salida_puntos, path_salida_densidad, numero_vueltas, numero_muestras_por_cantidad, group_size):
@@ -76,7 +76,7 @@ def graficar_simulaciones(maximo, intervalos, path_salida_puntos, path_salida_de
     exportar_grafico_puntos(x, y, group_size, path_salida_puntos)
     exportar_grafico_densidad(x, y, path_salida_densidad)
 
-def exportar_grafico_puntos(x, y, group_size, path_salida):
+def exportar_grafico_puntos(x, y, tamanio_grupos_cuantiles, path_salida):
     # Graficar
     plt.figure(dpi=800)
 
@@ -105,39 +105,37 @@ def exportar_grafico_puntos(x, y, group_size, path_salida):
     rmse_funcion_lineal_log = np.sqrt(mean_squared_error(y, logaritmic_regression_line))
     print(f"RMSE para la función lineal logarítmica: {rmse_funcion_lineal_log}")
 
-    # Determine the number of overlapping groups
-    num_groups = len(x) - group_size + 1
+    # Determinar número de grupos
+    num_groupos = len(x) - tamanio_grupos_cuantiles + 1
 
-    # Initialize arrays to store quantiles
-    quantiles_10 = np.zeros(num_groups)
-    quantiles_90 = np.zeros(num_groups)
+    # Inicializar arreglos para almacenar cuantiles
+    cuantiles_10 = np.zeros(num_groupos)
+    cuantiles_90 = np.zeros(num_groupos)
 
-    # Calculate quantiles for each group
-    for i in range(num_groups):
-        group_y = Y[i:i+group_size]
-        quantiles_10[i] = np.percentile(group_y, 10)
-        quantiles_90[i] = np.percentile(group_y, 90)
-       
-    # Determine the center positions for each group
-    group_centers = []
-    for i in range(num_groups):
-        group_center = np.mean(X[i:i+group_size])
-        group_centers.append(group_center)
+    centros_grupos = []
 
-    group_centers = np.array(group_centers)
+    # Calcular cuantiles para cada grupo y el centro de cada uno
+    for i in range(num_groupos):
+        group_y = Y[i:i+tamanio_grupos_cuantiles]
+        cuantiles_10[i] = np.percentile(group_y, 10)
+        cuantiles_90[i] = np.percentile(group_y, 90)
+        centro_grupo = np.mean(X[i:i+tamanio_grupos_cuantiles])
+        centros_grupos.append(centro_grupo)
+
+    centros_grupos = np.array(centros_grupos)
     # Plot the lines
-    plt.plot(group_centers, quantiles_10, label='Q0.10', color="greenyellow", linewidth=0.75)
-    plt.plot(group_centers, quantiles_90, label='Q0.90', color="violet", linewidth=0.75)
+    plt.plot(centros_grupos, cuantiles_90, label='Q0.90', color="darkgreen", linewidth=0.75)
+    plt.plot(centros_grupos, cuantiles_10, label='Q0.10', color="firebrick", linewidth=0.75)
 
     plt.scatter(
-        x, y, label="Tiempo de ejecución", marker="o", color="darkcyan", alpha=0.5, s=0.5
+        x, y, label="Tiempo de ejecución", marker="o", color="lightsteelblue", alpha=0.7, s=0.8
     )
     plt.plot(
         x,
         linear_regression_line,
         label="Regresión Linear",
         linestyle="-",
-        color="lightcoral",
+        color="darkmagenta",
         linewidth=1,
     )
     plt.plot(
@@ -152,15 +150,15 @@ def exportar_grafico_puntos(x, y, group_size, path_salida):
     # Anotamos el rmse de cada regresión
     plt.annotate(
         f"RMSE recta lineal: {rmse_recta_lineal:.5f}",
-        (0.02, 0.75),
+        (0.02, 0.62),
         xycoords="axes fraction",
         fontsize=8,
-        color="lightcoral",
+        color="darkmagenta",
     )
 
     plt.annotate(
         f"RMSE n log n: {rmse_funcion_lineal_log:.5f}",
-        (0.02, 0.70),
+        (0.02, 0.57),
         xycoords="axes fraction",
         fontsize=8,
         color="navy",
@@ -188,13 +186,14 @@ def exportar_grafico_densidad(x, y, path_salida):
     zi = k(np.vstack([xi.flatten(), yi.flatten()]))
     
     # Make the plot
-    plt.pcolormesh(xi, yi, zi.reshape(xi.shape), shading='auto')
+    c = plt.pcolormesh(xi, yi, zi.reshape(xi.shape), shading='auto', cmap='Blues')
+    plt.colorbar(c, format='')
 
     # Etiquetas y leyenda
     plt.xlabel("Cantidad de compilados")
     plt.ylabel("Tiempo de ejecución (ms)")
     plt.legend()
-    plt.title("Tiempo de ejecución del algoritmo de ordenamiento")
+    plt.title("Densidad de mediciones de tiempo de ejecución del algoritmo de ordenamiento")
     plt.savefig(path_salida)
 
 
