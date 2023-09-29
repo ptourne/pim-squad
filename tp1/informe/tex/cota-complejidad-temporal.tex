@@ -1,8 +1,8 @@
 \subsection{Cota de complejidad temporal}
 
-El algoritmo presentado tiene una complejidad temporal de $\operatorname{O}(n \log{n})$. Esto se debe a 
-que seguimos los siguientes pasos:
-Ordenamos los compilados según el tiempo de análisis de los ayudantes. Para ello utilizamos
+El algoritmo presentado tiene una complejidad temporal de $\operatorname{O}(n \log{n})$.
+Esto se debe porque para obtener la solución óptima, sólo requerimos ordenar los compilados
+de mayor a menor tiempo de análisis respecto a los ayudantes. Para ello utilizamos
 \href{https://docs.python.org/3/howto/sorting.html}{\color{cyan}\underline{sorted}} de la librería de python, que usa 
 por detrás el algoritmo de
 \href{https://en.wikipedia.org/wiki/Timsort}{\color{cyan}\underline{Timsort}}, teniendo este una complejidad de $\operatorname{O}(n \log{n})$.
