@@ -24,7 +24,7 @@ def generar_compilados_aleatorios(cant_compilados):
 
 
 def main():
-    #graficar_simulaciones(1000, 1, "./informe/img/tiempos_valores_bajos_puntos.png", "./informe/img/tiempos_valores_bajos_densidad.png", 20, 20, 100)
+    graficar_simulaciones(1000, 1, "./informe/img/tiempos_valores_bajos_puntos.png", "./informe/img/tiempos_valores_bajos_densidad.png", 20, 20, 100)
     graficar_simulaciones(10000, 10, "./informe/img/tiempos_valores_altos_puntos.png", "./informe/img/tiempos_valores_altos_densidad.png", 20, 8, 150)
 
 
