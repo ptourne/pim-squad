@@ -1,7 +1,7 @@
 import argparse
 
 from manejo_archivos import esfuerzos_y_energias_archivo
-from algoritmo import ganancias_parciales, ganancia_optima, reconstruir_resultados
+from algoritmo import ganancias_parciales, ganancia_optima, reconstruir_resultados, reconstruir_resultados_2
 
 def main():
     parser = argparse.ArgumentParser(
@@ -33,8 +33,10 @@ def main():
     print(matriz_resultados)
     print(ganancia_optima(matriz_resultados))
     resultados = reconstruir_resultados(matriz_resultados)
-    for resultado in reversed(resultados):
-        print(resultado, ", ")
+    # resultados = reconstruir_resultados_2(matriz_resultados)
+    print(resultados)
+    # for resultado in reversed(resultados):
+    #     print(resultado, ", ")
     # compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
 
     # exportar_compilados(archivo_salida, compilados_ordenados)
