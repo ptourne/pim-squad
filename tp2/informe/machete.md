@@ -17,14 +17,14 @@ g(i,j)=\min{(e_{i},s_{j})}
 $$
 
 $$
-\forall j\leq i,\  p(i,j)=\begin{cases}
+\forall j\leq i,\  g_{par}(i,j)=\begin{cases}
 0 & i=0 \\
 g(i,j) & i=1 \\
-g(i,j)+g_{opt}(i-2) & i>1 \land j=1 \\
-g(i,j)+p(i-1,j-1) & i>1 \land j>1
+g(i,j)+g_{max}(i-2) & i>1 \land j=1 \\
+g(i,j)+g_{par}(i-1,j-1) & i>1 \land j>1
 \end{cases}
 $$
 
 $$
-g_{opt}(i)=\max{\left\{ p(i,j) \right\}_{j\leq i}}
+g_{max}(i)=\max{\left\{ g_{par}(i,j) \right\}_{j\leq i}}
 $$
