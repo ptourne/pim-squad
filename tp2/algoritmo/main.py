@@ -1,7 +1,8 @@
 import argparse
+import os
 
-from manejo_archivos import esfuerzos_y_energias_archivo
-from algoritmo import ganancias_parciales, ganancia_optima, reconstruir_resultados, reconstruir_resultados_2
+from manejo_archivos import esfuerzos_y_energias_archivo, exportar_resultado
+from algoritmo import optimizar_entrenamiento
 
 def main():
     parser = argparse.ArgumentParser(
@@ -19,8 +20,8 @@ def main():
         "-o",
         dest="archivo_salida",
         type=argparse.FileType("w", encoding="latin-1"),
-        default="Entrenamientos a elegir",
-        help="Archivos de destino de la ganancia óptima y los entreamientos que optimizan la ganancia",
+        default="plan_entrenamiento_optimo.txt",
+        help="Archivo de destino de la ganancia óptima y el plan de entreamiento que optimizan la ganancia",
     )
 
     args = parser.parse_args()
@@ -29,17 +30,10 @@ def main():
     archivo_salida = args.archivo_salida.name
 
     n, esfuerzos, energias = esfuerzos_y_energias_archivo(archivo_entrada)
-    matriz_resultados = ganancias_parciales(n, esfuerzos, energias)
-    print(matriz_resultados)
-    print(ganancia_optima(matriz_resultados))
-    resultados = reconstruir_resultados(matriz_resultados)
-    # resultados = reconstruir_resultados_2(matriz_resultados)
-    print(resultados)
-    # for resultado in reversed(resultados):
-    #     print(resultado, ", ")
-    # compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
-
-    # exportar_compilados(archivo_salida, compilados_ordenados)
+    
+    nombre_archivo_entrada = os.path.basename(archivo_entrada)
+    ganancia_maxima, plan_entrenamiento_optimo = optimizar_entrenamiento(n, esfuerzos, energias)
+    exportar_resultado(archivo_salida, nombre_archivo_entrada, ganancia_maxima, plan_entrenamiento_optimo)
 
 
 if __name__ == "__main__":

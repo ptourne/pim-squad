@@ -12,12 +12,13 @@ def esfuerzos_y_energias_archivo(nombre_archivo):
     energias = filas[n+1:]
     return n, esfuerzos, energias
 
-
-# def exportar_compilados(archivo_salida, compilados_ordenados):
-#     with open(archivo_salida, "w", newline="") as file:
-#         writer = csv.writer(file)
-
-#         writer.writerow(["S_i", "A_i"])
-
-#         for compilado in compilados_ordenados:
-#             writer.writerow([compilado.tiempo_scaloni, compilado.tiempo_ayudante])
+def exportar_resultado(archivo_salida, archivo_entrada, ganancia_maxima, plan_entrenamiento_optimo):
+    with open(archivo_salida, "w", newline="") as file:
+        file.write(f"{archivo_entrada}\n")
+        file.write(f"Ganancia maxima: {ganancia_maxima}\n")
+        file.write("Plan de entrenamiento: ")
+        n = len(plan_entrenamiento_optimo)
+        for index, entrenamiento in enumerate(plan_entrenamiento_optimo):
+            file.write(entrenamiento)
+            if index != n - 1:
+                file.write(", ")
