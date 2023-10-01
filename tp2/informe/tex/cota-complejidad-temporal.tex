@@ -1,8 +1,8 @@
 \subsection{Cota de complejidad temporal}
 
-El algoritmo presentado tiene una complejidad temporal de $\operatorname{O}(n \log{n})$.
-Esto se debe porque para obtener la solución óptima, sólo requerimos ordenar los compilados
-de mayor a menor tiempo de análisis respecto a los ayudantes. Para ello utilizamos
-\href{https://docs.python.org/3/howto/sorting.html}{\color{cyan}\underline{sorted}} de la librería de python, que usa 
-por detrás el algoritmo de
-\href{https://en.wikipedia.org/wiki/Timsort}{\color{cyan}\underline{Timsort}}, teniendo este una complejidad de $\operatorname{O}(n \log{n})$.
+El algoritmo presentado tiene una complejidad temporal de $\operatorname{O}(n^2)$.
+Esto se debe a que, para obtener la solución óptima, requerimos analizar cada día de entrenamiento, dependiendo de la energía disponible
+para ese día y sus variantes.\
+Técnicamente lo que hacemos es recorrer la mitad de una matriz de $n*n$, siendo $n$ la cantidad de días a entrenar (igual cantidad que
+los valores que toman las energías).\
+Ahora, para cada día, calculamos el resultado parcial respecto a los días anteriores, es decir, observamos el máximo 

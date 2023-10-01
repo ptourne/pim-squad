@@ -1,32 +1,92 @@
 \section{Análisis de diferentes soluciones propuestas}
-Vamos a proponer dos escenarios posibles para poder analizar sus soluciones. Estos dos escenarios los vamos a presentar mediante un gráfico cada uno,
-donde el tiempo de visualizacion de Scaloni es representado con el color turquesa, y el de los ayudantes es representado con el color azul.
+Vamos a proponer dos escenarios posibles para poder analizar sus soluciones. Estos dos escenarios son de la forma: 
+ %insertar imagen!!!
+
+
+Primero analizamos el primer caso de 3 días ya que es el proporcionado por la cátedra.
+
+$$
+n = 3,\ \ S=(1, 5, 4),\ \ E=(10,2,2)
+$$
+
+En este
+notamos que la ganancia de un día $i$ puede tomar 2 valores posibles: 
+\begin{itemize}
+    \item Suma entre la ganancia del día anterior y $min(e_i, s_d)$, con $d$ cantidad de días seguidos entrenando
+    \item Suma entre la ganancia de dos días antes y $min(e_i, s_1)$
+\end{itemize}
+
+Esto debido a que observamos una relación con el problema planteado de Juan el Vago, en el que buscábamos la mayor ganancia,
+pero sin trabajar dos días seguidos.
+
+Para esta instancia, supusimos erroneamente, que la ganancia máxima para un día $i$ iba a estar dada si en cada día de entrenamiento 
+se maximizaba su ganancia. De esta forma, cada vez que se necesite la ganancia máxima de un día o más anteriores, esta ya iba a estar calculada
+anteriormente. Para poder calcular esta propuesta propusimos el siguiente algoritmo:
+$g(i, d)= max{g(n-1) + min(e_i,s_d), g(n-2) + min(e_i,s_1)}$ , 
+
+De esta manera, este algoritmo daba la respuesta esperada que es 7 en el primer caso de 3 días.
+
+El inconveniente en este algortimo es que al querer maximizar cada día solo comparando si el día anterior hubiera convenido
+descansar o no, no se tiene en consideración el hecho de que hay escenarios donde el descanso es conveniente en un día
+$j < i-1$ y solo se hace evidente en el día $i$. 
+Esto se debe a que la ganancia máxima en un $i$-ésimo día es esencialmente la suma del mínimo entre el esfuerzo requerido y la 
+energía disponible.
+
+Dado que esta ganancia está condicionada por los niveles de energía de cada día, en ocasiones es más 
+conveniente que la ganancia relativa de un día no sea óptima individualmente, sino que en conjunto 
+ofrezca la mayor ganancia total. El algoritmo propuesto no aborda adecuadamente esta complejidad, 
+ya que solo considera esta condición con respecto a los dos días anteriores, lo que limita la 
+capacidad de adaptación a situaciones donde la estrategia de descanso óptima se extiende en un 
+período más largo.
+
+Al darnos cuenta de este problema, procedimos a utilizar una planilla de cálculo para ayudarnos a resolverlo.
+Arreglamos $E$ verticalmente y $S$ horizontalmente en un cuadro de doble entrada. Luego, cada
+casilla $(i, j)$ era la ganancia parcial que podríamos obtener si ese fuera el $i$-ésimo día
+de entrenamiento consecutivo para el día $j$ del plan de entrenamiento. Notamos que la ganancia
+máxima hasta el entrenamiento $j$ era el máximo de las ganancias parciales de la misma fila.
+Decidimos entonces colocar a la izquierda una columna auxiliar que contenía la ganancia maxima
+de la fila inferior. Ver resultado en la figura \ref{fig:planilla_caso_2}.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{img/caso-1.png}
-    \caption{El tiempo que le tarda a los ayudantes ver cada compilado es inversamente proporcional a lo que le tarda a Scaloni.}
-    \label{fig:Caso 1}
+    \includegraphics[width=0.5\textwidth]{img/planilla_caso_2.png}
+    \caption{Caso 2 planilla}
+    \label{fig:planilla_caso_2}
+\end{figure}
+
+Luego, logramos abstraer las funciones, mostradas en la figuras \ref{fig:planilla_completa},
+\ref{fig:formulas_planilla_1} y  \ref{fig:formulas_planilla_2}.
+
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}[b]{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/formulas_planilla_1.png}
+        \label{fig:formulas_planilla_1}
+    \end{minipage}
+    \begin{minipage}[b]{0.495\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/formulas_planilla_2.png}
+        \label{fig:formulas_planilla_2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/planilla_completa.png}
+    \caption{Formulas en planilla}
+    \label{fig:planilla_completa}
 \end{figure}
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{img/caso-2.png}
-    \caption{El tiempo que le tarda a los ayudantes ver cada compilado es proporcional a lo que le tarda a Scaloni.}
-    \label{fig:Caso 2}
-\end{figure}
+El algoritmo presentado tiene una complejidad temporal de $\operatorname{O}(n^2)$.
+Esto se debe a que, para obtener la solución óptima, requerimos analizar cada día de entrenamiento, con todas sus
+variantes de energía disponible por día.\
+Técnicamente lo que hacemos es recorrer una matriz de $n*n$, siendo n la cantidad de días a entrenar (igual cantidad que
+los valores que toman las energías).\
+Ahora, para cada día, calculamos el ganancia parcial respecto a los días anteriores, es decir,
 
-Lo primero que notamos fue que el orden en que Scaloni visualiza los compilados no incide 
-en el tiempo que le toma a él en finalizar la revisión de los mismos.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{img/tiempos-scaloni.png}
-    \label{fig:Caso 2}
-\end{figure}
-
-Tomando este análisis en consideración, concluimos que el mecanismo de ordenamiento debería únicamente depender
-de $a_i$ y no de $s_i$.
 
 \section{Posibles algoritmos}
 
@@ -40,7 +100,7 @@ Este algorítmo sigue las siguientes indicaciones:
 \end{itemize}
 
 \subsection{Ordenando por $a_i$ de forma decreciente}
-Este algor´ıtmo sigue las siguientes indicaciones:
+Este algoritmo sigue las siguientes indicaciones:
 \begin{itemize}
     \item Ordenar los compilados de mayor a menor tiempo de análisis por parte de los ayudantes.
     \item Cada vez que termina Scaloni de ver un compilado, inmediatamente un ayudante es asignado a visualizarlo.
@@ -50,36 +110,36 @@ Comparemos cómo se desempeñan nuestros dos algorítmos en cada escenario propu
 
 \subsection{Resultados obtenidos del Caso 1}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{img/caso-1-creciente.png}
-    \caption{Caso 1 ordenado de forma creciente por $a_i$}
-    \label{fig:Caso 1 ordenado de forma creciente por $a_i$}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1\textwidth]{img/caso-1-creciente.png}
+%     \caption{Caso 1 ordenado de forma creciente por $a_i$}
+%     \label{fig:Caso 1 ordenado de forma creciente por $a_i$}
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{img/caso-1-decreciente.png}
-    \caption{Caso 1 ordenado de forma decreciente por $a_i$}
-    \label{fig:Caso 1 ordenado de forma decreciente por $a_i$}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1\textwidth]{img/caso-1-decreciente.png}
+%     \caption{Caso 1 ordenado de forma decreciente por $a_i$}
+%     \label{fig:Caso 1 ordenado de forma decreciente por $a_i$}
+% \end{figure}
 
 
 \subsection{Resultados obtenidos del Caso 2}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{img/caso-2-creciente.png}
-    \caption{Caso 2 ordenado de forma creciente por $a_i$}
-    \label{fig:Caso 2 ordenado de forma creciente por $a_i$}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1\textwidth]{img/caso-2-creciente.png}
+%     \caption{Caso 2 ordenado de forma creciente por $a_i$}
+%     \label{fig:Caso 2 ordenado de forma creciente por $a_i$}
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{img/caso-2-decreciente.png}
-    \caption{Caso 2 ordenado de forma decreciente por $a_i$}
-    \label{fig:Caso 2 ordenado de forma decreciente por $a_i$}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1\textwidth]{img/caso-2-decreciente.png}
+%     \caption{Caso 2 ordenado de forma decreciente por $a_i$}
+%     \label{fig:Caso 2 ordenado de forma decreciente por $a_i$}
+% \end{figure}
 
 Como se puede observar, para ambos casos el ordenamiento decreciente resulta en un tiempo total menor.
 
@@ -135,12 +195,12 @@ $$
 Esto demuestra que el orden de $C$ que minimiza $T_n$ es con los tiempos $a_i$ decrecientes.
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{img/demostracion.png}
-    \caption{Ilustración de la demostración}
-    \label{fig:Ilustración de la demostración}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1\textwidth]{img/demostracion.png}
+%     \caption{Ilustración de la demostración}
+%     \label{fig:Ilustración de la demostración}
+% \end{figure}
 
 
 \textbf{Para ello propusimos el siguiente algoritmo:}
