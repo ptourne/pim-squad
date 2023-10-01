@@ -8,11 +8,8 @@ def esfuerzos_y_energias_archivo(nombre_archivo):
             filas.append(int(linea.strip()))
 
     n = filas[0]
-    esfuerzos = filas[1:n]
+    esfuerzos = filas[1:n+1]
     energias = filas[n+1:]
-    print(n)
-    print(esfuerzos)
-    print(energias)
     return n, esfuerzos, energias
 
 
@@ -24,5 +21,3 @@ def esfuerzos_y_energias_archivo(nombre_archivo):
 
 #         for compilado in compilados_ordenados:
 #             writer.writerow([compilado.tiempo_scaloni, compilado.tiempo_ayudante])
-
-esfuerzos_y_energias_archivo('../ejemplos/10.txt')
