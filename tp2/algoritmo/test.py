@@ -1,13 +1,9 @@
-
 import unittest
 import subprocess
 
 def correr(comando):
     try:
-        # Run the terminal program with the input command
         result = subprocess.run(comando, shell=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-        # Return the stdout and stderr
         return result.stdout, result.stderr
     except Exception as e:
         return None, str(e)

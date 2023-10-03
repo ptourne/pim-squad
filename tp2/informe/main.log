@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.26)  1 OCT 2023 20:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.26)  3 OCT 2023 03:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1418,7 +1418,7 @@ Package biblatex Info: Reference segment=0 on input line 73.
 
 pdfTeX warning: pdflatex (file ./logo.pdf): PDF inclusion: found PDF version <1
 .7>, but at most version <1.5> allowed
-<logo.pdf, id=55, 239.89626pt x 87.32625pt>
+<logo.pdf, id=43, 239.89626pt x 87.32625pt>
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 75.
@@ -1442,19 +1442,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout7 = `main.toc'.
 
  [2]
-(./tex/introduccion.tex
-Overfull \hbox (4.91719pt too wide) in paragraph at lines 30--32
-\OT1/cmr/m/n/10 zo/-ganan-cia de ca-da d^^S^^Pa $\OML/cmm/m/it/10 e[]$\OT1/cmr/
-m/n/10 , de-ter-mi-nar la m^^Saxi-ma can-ti-dad de ganan-cia que se puede obten
-- 
+(./tex/introduccion.tex) (./tex/soluciones-propuestas.tex
+Overfull \hbox (0.40376pt too wide) in paragraph at lines 55--63
+[]\OT1/cmr/m/n/10 Esto se debe a que hemos ob-ser-va-do una relaci^^Son con el 
+prob-le-ma de Juan el Va-go. En este prob- 
  []
 
-) (./tex/soluciones-propuestas.tex
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 26.
+Package pdftex.def Info: logo.pdf  used on input line 63.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1464,29 +1461,14 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [3]
-<img/planilla_caso_2.png, id=157, 458.71375pt x 301.125pt>
+<img/planilla_caso_2.png, id=142, 762.85pt x 501.875pt>
 File: img/planilla_caso_2.png Graphic file (type png)
 <use img/planilla_caso_2.png>
-Package pdftex.def Info: img/planilla_caso_2.png  used on input line 52.
-(pdftex.def)             Requested size: 213.39568pt x 140.086pt.
-<img/formulas_planilla_1.png, id=162, 821.5958pt x 419.166pt>
-File: img/formulas_planilla_1.png Graphic file (type png)
-<use img/formulas_planilla_1.png>
-Package pdftex.def Info: img/formulas_planilla_1.png  used on input line 64.
-(pdftex.def)             Requested size: 211.25963pt x 107.77815pt.
-<img/formulas_planilla_2.png, id=163, 821.5958pt x 419.166pt>
-File: img/formulas_planilla_2.png Graphic file (type png)
-<use img/formulas_planilla_2.png>
-Package pdftex.def Info: img/formulas_planilla_2.png  used on input line 69.
-(pdftex.def)             Requested size: 211.25963pt x 107.77815pt.
-<img/planilla_completa.png, id=164, 821.5958pt x 419.166pt>
-File: img/planilla_completa.png Graphic file (type png)
-<use img/planilla_completa.png>
-Package pdftex.def Info: img/planilla_completa.png  used on input line 76.
-(pdftex.def)             Requested size: 426.79135pt x 217.73732pt.
+Package pdftex.def Info: img/planilla_caso_2.png  used on input line 123.
+(pdftex.def)             Requested size: 213.39568pt x 140.38618pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 80.
+Package pdftex.def Info: logo.pdf  used on input line 127.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 
@@ -1497,42 +1479,27 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[4
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.80 
-      <./img/planilla_caso_2.png> <./img/formulas_planilla_1.png> <./img/formul
-as_planilla_2.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 95.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 95.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 95.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 102.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 102.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 102.
-
+[4]
+<img/formulas_planilla_1.png, id=153, 821.5958pt x 419.166pt>
+File: img/formulas_planilla_1.png Graphic file (type png)
+<use img/formulas_planilla_1.png>
+Package pdftex.def Info: img/formulas_planilla_1.png  used on input line 135.
+(pdftex.def)             Requested size: 211.25963pt x 107.77815pt.
+<img/formulas_planilla_2.png, id=154, 821.5958pt x 419.166pt>
+File: img/formulas_planilla_2.png Graphic file (type png)
+<use img/formulas_planilla_2.png>
+Package pdftex.def Info: img/formulas_planilla_2.png  used on input line 141.
+(pdftex.def)             Requested size: 211.25963pt x 107.77815pt.
+<img/planilla_completa.png, id=155, 821.5958pt x 419.166pt>
+File: img/planilla_completa.png Graphic file (type png)
+<use img/planilla_completa.png>
+Package pdftex.def Info: img/planilla_completa.png  used on input line 149.
+(pdftex.def)             Requested size: 426.79135pt x 217.73732pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 146.
+Package pdftex.def Info: logo.pdf  used on input line 160.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1542,24 +1509,38 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.160 \subsection
+                 {Funci처n de recurrencia}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.146 \section
-              {Demostraci처n} <./img/planilla_completa.png>]
-Overfull \hbox (4.6744pt too wide) in paragraph at lines 150--152
-[]\OT1/cmr/m/n/10 Llamamos $\OML/cmm/m/it/10 C$ \OT1/cmr/m/n/10 al con-jun-to o
-r-de-na-do de $\OML/cmm/m/it/10 n$ \OT1/cmr/m/n/10 com-pi-la-dos, $\OML/cmm/m/i
-t/10 s[]$ \OT1/cmr/m/n/10 el tiem-po que le tar-dar vi-su-alizar a Scaloni 
- []
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+l.160 \subsection
+                 {Funci처n de recurrencia}
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.160 \subsection
+                 {Funci처n de recurrencia}
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.160 \subsection
+                 {Funci처n de recurrencia} <./img/planilla_caso_2.png> <./img/f
+ormulas_planilla_1.png> <./img/formulas_planilla_2.png> <./img/planilla_complet
+a.png>] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
+))
+(./tex/cota-complejidad-temporal.tex
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 219.
+Package pdftex.def Info: logo.pdf  used on input line 1.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 
@@ -1570,8 +1551,8 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[6]) (./tex/cota-complejidad-temporal.tex) (./tex/mediciones.tex
-<img/tiempos_puntos.png, id=190, 462.528pt x 346.896pt>
+[6]) (./tex/mediciones.tex
+<img/tiempos_puntos.png, id=183, 462.528pt x 346.896pt>
 File: img/tiempos_puntos.png Graphic file (type png)
 <use img/tiempos_puntos.png>
 Package pdftex.def Info: img/tiempos_puntos.png  used on input line 22.
@@ -1590,7 +1571,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [7]
-<img/tiempos_densidad.png, id=208, 462.528pt x 346.896pt>
+<img/tiempos_densidad.png, id=191, 462.528pt x 346.896pt>
 File: img/tiempos_densidad.png Graphic file (type png)
 <use img/tiempos_densidad.png>
 Package pdftex.def Info: img/tiempos_densidad.png  used on input line 41.
@@ -1610,12 +1591,20 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [8
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1 \section
-            {Conclusiones} <./img/tiempos_puntos.png>])
+            {Conclusiones} <./img/tiempos_puntos.png>]
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 5.
+
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 5.
+
+Missing character: There is no � in font cmr10!
+)
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 89.
@@ -1630,7 +1619,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [9
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1642,42 +1631,37 @@ LaTeX Info: Redefining \sptext on input line 23.
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AA266109B4B88BDF04BB2CF8C9BB6289;2210.
+(rerunfilecheck)             Checksum: 6230909706724BEF5FE99DBCFB4142A9;1456.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37039 strings out of 478126
- 695410 string characters out of 5842787
- 1906793 words of memory out of 6000000
- 56432 multiletter control sequences out of 15000+600000
- 522296 words of font info for 71 fonts, out of 8000000 for 9000
+ 37007 strings out of 478126
+ 695085 string characters out of 5842787
+ 1898793 words of memory out of 6000000
+ 56409 multiletter control sequences out of 15000+600000
+ 518583 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 103i,16n,105p,677b,1939s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,15n,105p,677b,1939s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (9 pages, 1512848 bytes).
+ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on main.pdf (9 pages, 1506059 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
- 34 named destinations out of 1000 (max. 500000)
- 318 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 271 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 294 words of extra memory for PDF output out of 10000 (max. 10000000)
 

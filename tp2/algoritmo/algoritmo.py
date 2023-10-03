@@ -1,5 +1,3 @@
-import numpy as np
-
 def _ganancias_parciales(n, esfuerzos, energias):
     matriz_ganancias = []
     for i in range(n):
@@ -76,4 +74,3 @@ def _plan_entrenamiento_optimo_rec(matriz_ganancias, resultados, i):
 
 def _argmax(lista):
     return lista.index(max(lista))
-        

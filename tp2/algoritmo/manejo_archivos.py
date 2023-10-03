@@ -1,5 +1,3 @@
-import csv
-
 def esfuerzos_y_energias_archivo(nombre_archivo):
     filas = []
 

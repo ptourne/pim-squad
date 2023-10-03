@@ -1,49 +1,120 @@
 \section{Análisis de diferentes soluciones propuestas}
-Vamos a proponer dos escenarios posibles para poder analizar sus soluciones. Estos dos escenarios son de la forma: 
- %insertar imagen!!!
 
+Vamos a proponer dos escenarios posibles para poder analizar sus soluciones:
 
-Primero analizamos el primer caso de 3 días ya que es el proporcionado por la cátedra.
-
-$$
-n = 3,\ \ S=(1, 5, 4),\ \ E=(10,2,2)
-$$
-
-En este
-notamos que la ganancia de un día $i$ puede tomar 2 valores posibles: 
 \begin{itemize}
-    \item Suma entre la ganancia del día anterior y $min(e_i, s_d)$, con $d$ cantidad de días seguidos entrenando
-    \item Suma entre la ganancia de dos días antes y $min(e_i, s_1)$
+    \item Primer escenario:
+    $$
+    n = 3,\quad
+    E=
+    \begin{array}{|c|c|c|}
+        \hline 
+        10 & 2 & 2\\
+        \hline 
+    \end{array}
+    \qquad
+    S=
+    \begin{array}{|c|c|c|}
+        \hline 
+        1 & 5 & 4\\
+        \hline 
+    \end{array}
+    $$
+
+    \item Segundo escenario:
+    $$
+    n = 4,\quad
+    E=
+    \begin{array}{|c|c|c|c|}
+        \hline 
+        5 & 3 & 8 & 10\\
+        \hline 
+    \end{array}
+    \qquad
+    S=
+    \begin{array}{|c|c|c|c|}
+        \hline 
+        10 & 1 & 1 & 1\\
+        \hline 
+    \end{array}
+    $$
 \end{itemize}
 
-Esto debido a que observamos una relación con el problema planteado de Juan el Vago, en el que buscábamos la mayor ganancia,
-pero sin trabajar dos días seguidos.
+Notación: $j$ es la cantidad de días consecutivos de entrenamiento.
+De esta manera $s_j$ representa la energía disponible para cierto día.
 
-Para esta instancia, supusimos erroneamente, que la ganancia máxima para un día $i$ iba a estar dada si en cada día de entrenamiento 
-se maximizaba su ganancia. De esta forma, cada vez que se necesite la ganancia máxima de un día o más anteriores, esta ya iba a estar calculada
-anteriormente. Para poder calcular esta propuesta propusimos el siguiente algoritmo:
-$g(i, d)= max{g(n-1) + min(e_i,s_d), g(n-2) + min(e_i,s_1)}$ , 
+Primero procederemos a analizar el primer caso ya que es el proporcionado por la cátedra. En este,
+notamos que la ganancia de un día $i$ puede tomar 2 valores posibles:
 
-De esta manera, este algoritmo daba la respuesta esperada que es 7 en el primer caso de 3 días.
+\begin{itemize}
+    \item Suma entre la ganancia del día anterior y el $\min{(e_i, s_j)}$
+    \item Suma entre la ganancia de dos días anteriores y el $\min{(e_i, s_1)}$. Esta opción se basa 
+    en la suposición de que se realizó un descanso en el día $i-1$.
+\end{itemize}
 
-El inconveniente en este algortimo es que al querer maximizar cada día solo comparando si el día anterior hubiera convenido
+Esto se debe a que hemos observado una relación con el problema de Juan el Vago. En este problema, se cuenta
+con un arreglo de ganancias diarias, y Juan busca maximizar su ganancia sin trabajar dos días seguidos. Para
+lograr esto, se itera sobre el arreglo observando los días actuales y los dos días anteriores para calcular
+la ganancia máxima acumulada.
+Si Juan elige trabajar el día $i$, su ganancia sería la suma entre la ganancia del día actual ($g_i$) y
+la ganancia de dos días atrás ($g_{i-2}$). En caso contrario, si decide no trabajar, su ganancia sería igual
+a la ganancia del día anterior ($g_{i-1}$). De estas dos opciones, se elige la que maximiza la ganancia para
+el día $i$.
+
+Esta estrategia nos recuerda al enfoque que estamos explorando en este algoritmo, donde se busca maximizar
+la ganancia acumulada eligiendo si conviene o no descansar en el día actual, considerando la energía disponible
+y el esfuerzo requerido en cada día.
+
+Relacionando el problema de Scaloni con el problema de Juan el Vago, supusimos erroneamente que para obtener la
+ganancia máxima hasta el día $k, \forall k \in [2,n]$ bastaría con calcular la ganancia máxima de los dos días anteriores.
+La función de recursión propuesta fue la siguiente:  
+
+$$g(i, j) = \max{\left\{g(n-1) + \min{(e_i,s_j)}, g(n-2) + \min{(e_i,s_1)}\right\}}$$
+
+En relación al caso de tres días que estábamos analizando para ese entonces, cabe destacar que este algoritmo proporcionaba la respuesta esperada, 
+que en este contexto era igual a siete.
+
+El inconveniente de este algortimo es que al querer maximizar cada día solo comparando si el día anterior hubiera convenido
 descansar o no, no se tiene en consideración el hecho de que hay escenarios donde el descanso es conveniente en un día
-$j < i-1$ y solo se hace evidente en el día $i$. 
-Esto se debe a que la ganancia máxima en un $i$-ésimo día es esencialmente la suma del mínimo entre el esfuerzo requerido y la 
-energía disponible.
+$k < i-1$ y solo se hace evidente recién en el día $i$. 
 
-Dado que esta ganancia está condicionada por los niveles de energía de cada día, en ocasiones es más 
+Dado que la ganancia está condicionada por los niveles de energía de cada día consecutivo, en ocasiones es más 
 conveniente que la ganancia relativa de un día no sea óptima individualmente, sino que en conjunto 
-ofrezca la mayor ganancia total. El algoritmo propuesto no aborda adecuadamente esta complejidad, 
+ofrezca la mayor ganancia posible. El algoritmo propuesto inicialmente no aborda adecuadamente esta complejidad, 
 ya que solo considera esta condición con respecto a los dos días anteriores, lo que limita la 
 capacidad de adaptación a situaciones donde la estrategia de descanso óptima se extiende en un 
 período más largo.
 
+Esto se puede observar en el segundo escenario propuesto. El algoritmo incial 
+procede a solucionarlo de la siguiente manera:
+
+$$
+\begin{array}{|c|c|c|}
+    \hline
+    i & \text{días trabajo consec.} & \text{ganancia máxima} \\
+    \hline
+    1 & 1 & 4\\
+    \hline
+    2 & 2 & 7\\
+    \hline
+    3 & 3 & 15\\
+    \hline
+    4 & 1 & 17\\
+    \hline
+\end{array}
+$$
+
+
+Por lo tanto, el resultado obtenido es $17$ descansando en el día $3$, mientras que el resultado
+óptimo es $22$, descansando en el día $2$. Este es un claro contraejemplo que ilustra que la decisión
+óptima de descansar en el día $2$ no es tomada en consideración ya que no puede deducirse manteniendo
+registro de únicamente las ganancias de los dos días anteriores. 
+
 Al darnos cuenta de este problema, procedimos a utilizar una planilla de cálculo para ayudarnos a resolverlo.
 Arreglamos $E$ verticalmente y $S$ horizontalmente en un cuadro de doble entrada. Luego, cada
-casilla $(i, j)$ era la ganancia parcial que podríamos obtener si ese fuera el $i$-ésimo día
-de entrenamiento consecutivo para el día $j$ del plan de entrenamiento. Notamos que la ganancia
-máxima hasta el entrenamiento $j$ era el máximo de las ganancias parciales de la misma fila.
+casilla de fila $i$ y columna $j$ es la ganancia parcial que podríamos obtener si ese fuera el $j$-ésimo día
+de entrenamiento consecutivo para el día $i$ del plan de entrenamiento. Notamos que la ganancia
+máxima hasta el entrenamiento $i$ era el máximo de las ganancias parciales de la misma fila.
 Decidimos entonces colocar a la izquierda una columna auxiliar que contenía la ganancia maxima
 de la fila inferior. Ver resultado en la figura \ref{fig:planilla_caso_2}.
 
@@ -54,19 +125,21 @@ de la fila inferior. Ver resultado en la figura \ref{fig:planilla_caso_2}.
     \label{fig:planilla_caso_2}
 \end{figure}
 
-Luego, logramos abstraer las funciones, mostradas en la figuras \ref{fig:planilla_completa},
-\ref{fig:formulas_planilla_1} y  \ref{fig:formulas_planilla_2}.
+Luego, logramos abstraer las funciones, mostradas en la figuras \ref{fig:formulas_planilla_1},
+\ref{fig:formulas_planilla_2} y \ref{fig:planilla_completa}.
 
 \begin{figure}[ht]
     \centering
     \begin{minipage}[b]{0.495\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/formulas_planilla_1.png}
+        \caption{Formulas en planilla a}
         \label{fig:formulas_planilla_1}
     \end{minipage}
     \begin{minipage}[b]{0.495\textwidth}
         \centering
         \includegraphics[width=\textwidth]{img/formulas_planilla_2.png}
+        \caption{Formulas en planilla b}
         \label{fig:formulas_planilla_2}
     \end{minipage}
 \end{figure}
@@ -78,163 +151,78 @@ Luego, logramos abstraer las funciones, mostradas en la figuras \ref{fig:planill
     \label{fig:planilla_completa}
 \end{figure}
 
+Basándonos en esta planilla, pudimos abstraer la solución.
 
-El algoritmo presentado tiene una complejidad temporal de $\operatorname{O}(n^2)$.
-Esto se debe a que, para obtener la solución óptima, requerimos analizar cada día de entrenamiento, con todas sus
-variantes de energía disponible por día.\
-Técnicamente lo que hacemos es recorrer una matriz de $n*n$, siendo n la cantidad de días a entrenar (igual cantidad que
-los valores que toman las energías).\
-Ahora, para cada día, calculamos el ganancia parcial respecto a los días anteriores, es decir,
+\section{Solución final}
 
+A continuación procederemos a describir el algoritmo solución desarrollado con Programación Dinámica.
 
+\subsection{Función de recurrencia}
 
-\section{Posibles algoritmos}
+Sea $s_{j}$ la energía restante para $j$ días consecutivos de entrenamiento y
+$e_{i}$ la cantidad de esfuerzo del entrenamiento $i$.
 
-Posterior a nuestro análisis, propusimos dos algoritmos:
-
-\subsection{Ordenando por $a_i$ de forma creciente}
-Este algorítmo sigue las siguientes indicaciones:
-\begin{itemize}
-    \item Ordenar los compilados de menor a mayor tiempo de análisis por parte de los ayudantes.
-    \item Cada vez que termina Scaloni de ver un compilado, inmediatamente un ayudante es asignado a visualizarlo.
-\end{itemize}
-
-\subsection{Ordenando por $a_i$ de forma decreciente}
-Este algoritmo sigue las siguientes indicaciones:
-\begin{itemize}
-    \item Ordenar los compilados de mayor a menor tiempo de análisis por parte de los ayudantes.
-    \item Cada vez que termina Scaloni de ver un compilado, inmediatamente un ayudante es asignado a visualizarlo.
-\end{itemize}
-
-Comparemos cómo se desempeñan nuestros dos algorítmos en cada escenario propuesto:
-
-\subsection{Resultados obtenidos del Caso 1}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=1\textwidth]{img/caso-1-creciente.png}
-%     \caption{Caso 1 ordenado de forma creciente por $a_i$}
-%     \label{fig:Caso 1 ordenado de forma creciente por $a_i$}
-% \end{figure}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=1\textwidth]{img/caso-1-decreciente.png}
-%     \caption{Caso 1 ordenado de forma decreciente por $a_i$}
-%     \label{fig:Caso 1 ordenado de forma decreciente por $a_i$}
-% \end{figure}
-
-
-\subsection{Resultados obtenidos del Caso 2}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=1\textwidth]{img/caso-2-creciente.png}
-%     \caption{Caso 2 ordenado de forma creciente por $a_i$}
-%     \label{fig:Caso 2 ordenado de forma creciente por $a_i$}
-% \end{figure}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=1\textwidth]{img/caso-2-decreciente.png}
-%     \caption{Caso 2 ordenado de forma decreciente por $a_i$}
-%     \label{fig:Caso 2 ordenado de forma decreciente por $a_i$}
-% \end{figure}
-
-Como se puede observar, para ambos casos el ordenamiento decreciente resulta en un tiempo total menor.
-
-\section{Demostración}
-
-Procederemos a demostrar que ordenar los compilados por $a_i$ de forma decreciente minimiza el tiempo total.
-
-Llamamos $C$ al conjunto ordenado de $n$ compilados, $s_i$ el tiempo que le tardar visualizar a Scaloni el $i$-ésimo compilado, y
-$a_i$ lo que le tarda a un ayudante. Además, al tiempo que tarda Scaloni analizar los compilados hasta el $k$-ésimo lo representaremos como $S_k$.
+El problema nos da dos arreglos de tamaño $n$:
 
 $$
-S_{k}=\sum_{i=1}^{k}s_{i} 
+S = (s_{1},s_{2},\dots ,s_{n}) \quad E=(e_{1},e_{2},\dots ,e_{n})
 $$
 
-Luego, el tiempo total que se tarda en analizar los compilados hasta el $k$-ésimo, en el orden
-en el que se los presenta, sigue la siguiente formula:
-
+Definimos la función $g(i,j)$ como la ganancia obtenida del $i$-ésimo entrenamiento,
+dado que estamos en el día $j$ de entrenamiento consecutivo.
 
 $$
-T_{k} = \begin{cases}
-s_{1}+a_{1} & k=1 \\
-\displaystyle\max{(T_{k-1},S_{k}+a_{k})} & k>1
+g(i,j)=\min{(e_{i},s_{j})}
+$$
+
+Definimos la función $g_{par}(i,j)$ como la ganancia parcial acumulada hasta el $i$-ésimo entrenamiento
+dado que estamos en el día $j$ de entrenamiento consecutivo.
+$$
+\forall j\leq i,\  g_{par}(i,j)=\begin{cases}
+0 & i=0 \\
+g(i,j) & i=1 \\
+g(i,j)+g_{max}(i-2) & i>1 \land j=1 \\
+g(i,j)+g_{par}(i-1,j-1) & i>1 \land j>1
 \end{cases}
 $$
 
-Ordenar $C$ para minimizar $T_{n}$ requiere minimizar $\max{(T_{n-1},S_{n}+a_{n})}$. Como $S_{n}$ es independiente del orden de $C$, $S_{n}+a_{n}$ se minimiza colocando último al compilado con el tiempo del ayudante más pequeño. Luego, $T_{n-1}$ se minimiza de la misma manera, resultando en un algoritmo recursivo. Solo nos falta justificar por qué el orden que minimiza $S_{n}+a_{n}$ también minimiza $\max{(T_{n-1},S_{n}+a_{n})}$. Haremos esto partiendo de la asumpción de que se respeta el orden propuesto y de que modificarlo resulta en un $T_n$ más grande.
-
-\begin{itemize}
-
-    \item Si $\max{(T_{n-1},S_{n}+a_{n})} = S_{n}+a_{n}$ ($\implies S_{n}+a_{n} \geq T_{n-1}$)
-
-    Es el caso más trivial, ya que minimizar $S_{n}+a_{n}$ también minimiza $\max{(T_{n-1},S_{n}+a_{n})}$.
-
-    \item Si $\max{(T_{n-1},S_{n}+a_{n})} = T_{n-1}$ ($\implies T_{n-1} \geq S_{n}+a_{n}$)
-
-    Este caso implica que existe un compilado $j$ tal que $a_{j} \geq \sum^{n}_{i=j+1}s_{i}+a_{n} \implies a_{j} > a_{n}$.
-    Colocar a este compilado último causaría que $T_{n}'= S_{n}+a_{j}$, y
-
-\end{itemize}
+Finalmente, definimos la función $g_{max}(i)$ como la ganancia máxima obtenida hasta el $i$-ésimo
+entrenamiento, que es la solución al problema de la consigna.
 
 $$
-T_{n}' = S_{n}+a_{j}, \ \ \ \  T_{n} = S_{j}+a_{j} 
+g_{max}(i)=\max{\left\{ g_{par}(i,j) \right\}_{j\leq i}}
 $$
 
-$$
-\begin{aligned}
-S_{n} & > S_{j} \\
-S_{n} + a_{j}  & > S_{n} + a_{j}  \\
-T_{n}' & > T_{n}
-\end{aligned}
-$$
+\subsection{Solución iterativa}
 
-Esto demuestra que el orden de $C$ que minimiza $T_n$ es con los tiempos $a_i$ decrecientes.
+Como podemos observar en la sección anterior, la solución es recursiva. Implementarla de esta forma sin
+optimizaciones requeriría mucho recálculo. Esto puede ser solucionado con memoization y la implemantación más
+simple es de forma iterativa y bottom-up.
 
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=1\textwidth]{img/demostracion.png}
-%     \caption{Ilustración de la demostración}
-%     \label{fig:Ilustración de la demostración}
-% \end{figure}
-
-
-\textbf{Para ello propusimos el siguiente algoritmo:}
-
-En primer lugar, hemos definido una clase llamada \texttt{Compilado} para modelar el compilado de cada 
-oponente, con los atributos \texttt{tiempo\_scaloni} y \texttt{tiempo\_ayudante}, que almacenan 
-el tiempo que le lleva analizarlo a Scaloni y a algún ayudante, respectivamente.
+Definimos la función \texttt{optimizar\_entrenamiento} que recibe como parámetro \texttt{n}, un arreglo con los esfuerzos requeridos
+en los entrenamientos y otro con las energías disponibles por días de entrenamiento consecutivo. Devuelve la ganancia máxima y un array
+con el plan de entrenamiento óptimo.
 
 \begin{lstlisting}[language=Python]
-class Compilado:
-    def __init__(self, scaloni, ayudante):
-        self.tiempo_scaloni = scaloni
-        self.tiempo_ayudante = ayudante
+def optimizar_entrenamiento(n, esfuerzos, energias):
+    ganancias_parciales = _ganancias_parciales(n, esfuerzos, energias)
+    ganancia_maxima = _ganancia_maxima(ganancias_parciales)
+    plan_entrenamiento_optimo = _plan_entrenamiento_optimo_2(ganancias_parciales)
+    return ganancia_maxima, plan_entrenamiento_optimo
 \end{lstlisting}
 
-De esta forma, y teniendo en cuenta los criterios previamente detallados, definimos la función
-\texttt{compilados\_ordenados\_de\_forma\_optima} que recibe como parámetro un arreglo con
-elementos de la clase \texttt{Compilado}. Esta ordena el arreglo en función del tiempo requerido
-por los asistentes para visualizar cada compilado, en orden descendente. 
+La función \texttt{\_ganancias\_parciales(n, esfuerzos, energias)} genera una lista de longitud $n$ donde
+la casilla $i$ es una lista de longitud $i$ con las ganancias parciales de cada día de entrenamiento
+consecutivo para el entrenamiento $i$. Se construye bottom-up, es decir, primero se calculan las ganancias
+parciales para el entrenamiento $1$, luego para el $2$ y así sucesivamente hasta el $n$.
 
-\begin{lstlisting}[language=Python]
-def compilados_ordenados_de_forma_optima(compilados):
-    return sorted(compilados, key=lambda compilado: compilado.tiempo_ayudante, reverse=True)
-\end{lstlisting}
+Luego, \texttt{\_ganancia\_maxima(ganancias\_parciales)} devuelve el máximo de las ganancias parciales de la
+última fila.
 
-
-
-\begin{itemize}
-    \item Los asistentes realizan el análisis de cada uno de los compilados asignados en paralelo. Por lo 
-tanto, el tiempo que se invierte en la revisión de un compilado específico de máxima duración, 
-puede ser aprovechado de manera tal que este sea visto mientras Scaloni se dedica a la revisión
-de otros compilados. De esta forma, nos aseguramos que se minimice el tiempo que suman los ayudantes 
-en la resvisión total. 
-    \item También en esta solución tiene en consideración el análisis 2 descripto previamente, ya que en el mejor de los casos,
-    la $\sum_{k=1}^{n} s_k + a_n$ termina siendo la mínima ya que, por la forma del ordenamiento del algorítmo, $a_n$ es la duración del compilado más corto.
-
-\end{itemize}
+Finalmente, \texttt{\_plan\_entrenamiento\_optimo(ganancias\_parciales)} reconstruye el plan de entrenamiento
+óptimo a partir de la lista de ganancias parciales. Para esto, recorre la lista de ganancias parciales desde
+el final al principio. Parte de la ganancia parcial máxima de la última fila y baja en diagonal hasta la
+primera columna. Esta se refiere a entrenar ese día siendo el primer día de entrenamiento consecutivo, lo que
+implica que el día anterior se descanzó. Por esto, se salta la linea anterior y sigue con la anterior de la
+anterior, partiendo de nuevo desde la ganancia parcial máxima y bajando en diagonal. Repite estos pasos hasta
+llegar a la primera fila.

@@ -1,6 +1,5 @@
 import argparse
 import os
-
 from manejo_archivos import esfuerzos_y_energias_archivo, exportar_resultado
 from algoritmo import optimizar_entrenamiento
 
@@ -34,7 +33,6 @@ def main():
     nombre_archivo_entrada = os.path.basename(archivo_entrada)
     ganancia_maxima, plan_entrenamiento_optimo = optimizar_entrenamiento(n, esfuerzos, energias)
     exportar_resultado(archivo_salida, nombre_archivo_entrada, ganancia_maxima, plan_entrenamiento_optimo)
-
 
 if __name__ == "__main__":
     main()

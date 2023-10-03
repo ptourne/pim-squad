@@ -2,12 +2,9 @@
 \contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Información de la problemática}{3}{subsection.1.1}%
 \contentsline {section}{\numberline {2}Análisis de diferentes soluciones propuestas}{3}{section.2}%
-\contentsline {section}{\numberline {3}Posibles algoritmos}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Ordenando por $a_i$ de forma creciente}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Ordenando por $a_i$ de forma decreciente}{5}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Resultados obtenidos del Caso 1}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Resultados obtenidos del Caso 2}{6}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Demostración}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Cota de complejidad temporal}{7}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Mediciones}{7}{section.5}%
-\contentsline {section}{\numberline {6}Conclusiones}{9}{section.6}%
+\contentsline {section}{\numberline {3}Solución final}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Función de recurrencia}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Solución iterativa}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Cota de complejidad temporal}{7}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Mediciones}{7}{section.4}%
+\contentsline {section}{\numberline {5}Conclusiones}{9}{section.5}%

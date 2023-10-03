@@ -1,9 +1,7 @@
 \section{Conclusiones}
 
-Finalmente, consideramos que la solución óptima para abordar la problemática de Scaloni sería que
-éste analizara los compilados en función del tiempo requerido por los asistentes para vi\-sualizar
-cada uno, organizándolos en orden descendente.
-Esta estrategia permitiría resolver el problema con una complejidad algorítmica de orden 
-$\operatorname{O}(n\log{n})$.
-Este enfoque garantiza la máxima eficiencia en la visualización de los compilados y permite que el 
-tiempo invertido por Scaloni y sus asistentes se administre de manera óptima.
+Finalmente, consideramos que la solución óptima para abordar la problemática de Scaloni aplicando la técnica de diseño
+de programación dinámica debe considerar todas las ganancias parciales hasta el día $n$. Utilizando memoization,
+la complejidad del algoritmo terminó siendo $\operatorname{O}(n²)$.
+A través de esta estrategia, se logra maximizar la ganancia total, teniendo en cuenta las limitaciones de energía y los 
+esfuerzos requeridos en cada día. 
