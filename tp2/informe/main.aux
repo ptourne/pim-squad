@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -45,5 +48,5 @@
 \newlabel{LastPage}{{}{9}{}{page.9}{}}
 \xdef\lastpage@lastpage{9}
 \xdef\lastpage@lastpageHy{9}
-\abx@aux@read@bbl@mdfivesum{nobblfile}
+\abx@aux@read@bbl@mdfivesum{D41D8CD98F00B204E9800998ECF8427E}
 \gdef \@abspage@last{9}

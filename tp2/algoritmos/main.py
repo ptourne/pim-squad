@@ -3,16 +3,18 @@ import os
 from manejo_archivos import esfuerzos_y_energias_archivo, exportar_resultado
 from algoritmo import optimizar_entrenamiento
 
+
 def main():
     parser = argparse.ArgumentParser(
         description="Determina qué entrenamientos maximizan la ganancia."
     )
+    
     parser.add_argument(
         "archivo_entrada",
         metavar="n_esfuerzos_y_energias.csv",
         type=open,
         nargs=1,
-        help='Archivo de entrada con el número de entrenamientos, los esfuerzos requeridos por cada entrenamiento y la energía disponible por cada día consecutivo de entrenamiento',
+        help="Archivo de entrada con el número de entrenamientos, los esfuerzos requeridos por cada entrenamiento y la energía disponible por cada día consecutivo de entrenamiento",
     )
 
     parser.add_argument(
@@ -29,10 +31,19 @@ def main():
     archivo_salida = args.archivo_salida.name
 
     n, esfuerzos, energias = esfuerzos_y_energias_archivo(archivo_entrada)
-    
+
     nombre_archivo_entrada = os.path.basename(archivo_entrada)
-    ganancia_maxima, plan_entrenamiento_optimo = optimizar_entrenamiento(n, esfuerzos, energias)
-    exportar_resultado(archivo_salida, nombre_archivo_entrada, ganancia_maxima, plan_entrenamiento_optimo)
+    ganancia_maxima, plan_entrenamiento_optimo = optimizar_entrenamiento(
+        n, esfuerzos, energias
+    )
+    
+    exportar_resultado(
+        archivo_salida,
+        nombre_archivo_entrada,
+        ganancia_maxima,
+        plan_entrenamiento_optimo,
+    )
+
 
 if __name__ == "__main__":
     main()
