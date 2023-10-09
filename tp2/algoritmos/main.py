@@ -11,7 +11,7 @@ def main():
     
     parser.add_argument(
         "archivo_entrada",
-        metavar="n_esfuerzos_y_energias.csv",
+        metavar="n_esfuerzos_y_energias.txt",
         type=open,
         nargs=1,
         help="Archivo de entrada con el número de entrenamientos, los esfuerzos requeridos por cada entrenamiento y la energía disponible por cada día consecutivo de entrenamiento",

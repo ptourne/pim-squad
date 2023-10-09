@@ -1,0 +1,3 @@
+energias_iguales.txt
+Ganancia maxima: 25
+Plan de entrenamiento: Entreno, Entreno, Entreno, Entreno

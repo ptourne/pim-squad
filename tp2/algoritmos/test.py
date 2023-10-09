@@ -72,6 +72,27 @@ class TestEjemplosCatedra(unittest.TestCase):
         salida_esperada, salida = resultados("ejemplos_catedra/1000.txt")
         self.assertEqual(salida_esperada, salida)
 
+    
+    def test_nuestros_ejemplos_4(self):
+        salida_esperada, salida = resultados("nuestros_ejemplos/4.txt")
+        self.assertEqual(salida_esperada, salida)
+
+    def test_nuestros_ejemplos_energias_escalera_10(self):
+        salida_esperada, salida = resultados("nuestros_ejemplos/energias_escalera_10.txt")
+        self.assertEqual(salida_esperada, salida)
+    
+    def test_nuestros_ejemplos_energias_escalera_(self):
+        salida_esperada, salida = resultados("nuestros_ejemplos/energias_escalera.txt")
+        self.assertEqual(salida_esperada, salida)
+
+    def test_nuestros_ejemplos_energias_iguales(self):
+        salida_esperada, salida = resultados("nuestros_ejemplos/energias_iguales.txt")
+        self.assertEqual(salida_esperada, salida)
+
+    def test_nuestros_ejemplos_energias_iguales(self):
+        salida_esperada, salida = resultados("nuestros_ejemplos/energias_iguales.txt")
+        self.assertEqual(salida_esperada, salida)
+
 
 if __name__ == "__main__":
     unittest.main()

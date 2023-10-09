@@ -222,16 +222,13 @@ def _exportar_grafico_puntos(
     plt.xlabel("Cantidad de compilados")
     plt.ylabel("Tiempo de ejecución (ms)")
     plt.legend()
-    plt.title("Tiempo de ejecución del algoritmo de ordenamiento")
+    plt.title("Tiempo para hallar el plan de entrenamiento óptimo")
     plt.savefig(path_salida)
 
 
 def _exportar_grafico_densidad(x, y, path_salida):
     # Graficar
     plt.figure(dpi=600)
-
-    X = np.array(x)
-    Y = np.array(y)
 
     # Evaluate a gaussian kde on a regular grid of nbins x nbins over data extents
     nbins = 1200
@@ -248,7 +245,7 @@ def _exportar_grafico_densidad(x, y, path_salida):
     plt.ylabel("Tiempo de ejecución (ms)")
     plt.legend()
     plt.title(
-        "Densidad de tiempo de ejecución del algoritmo de ordenamiento"
+        "Densidad de tiempo para hallar el plan de entrenamiento óptimo"
     )
     plt.savefig(path_salida)
 
