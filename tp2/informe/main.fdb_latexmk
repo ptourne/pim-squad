@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber main"] 1696741987 "main.bcf" "main.bbl" "main" 1696825924
-  "main.bcf" 1696825924 106594 d0a4d0e1c136c0a864bb82402f3a8ea5 "pdflatex"
+["biber main"] 1696828564 "main.bcf" "main.bbl" "main" 1696829045
+  "main.bcf" 1696829045 106594 d0a4d0e1c136c0a864bb82402f3a8ea5 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1696825922 "/home/ian/Facultad/Tda/pim-squad/tp2/informe/main.tex" "main.pdf" "main" 1696825924
+["pdflatex"] 1696829043 "/home/ian/Facultad/Tda/pim-squad/tp2/informe/main.tex" "main.pdf" "main" 1696829045
   "/etc/texmf/web2c/texmf.cnf" 1693429852 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/ian/Facultad/Tda/pim-squad/tp2/informe/main.tex" 1696700790 2473 21d87fcceddd275ec09f972c35fdfaa8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -236,20 +236,21 @@
   "img/formulas_planilla_2.png" 1696700790 118316 a26b6ac6bedc4a37c1e301300fcd4667 ""
   "img/planilla_caso_2.png" 1696700790 31102 117ca1719fd0b301248064e929cbcf7a ""
   "img/planilla_completa.png" 1696700790 151682 3be291d2d601c75c71134c9ae6cab242 ""
+  "img/tiempos_catedra.png" 1696828226 33842 d43f4bc2595abd72af86cb6fd7f57b03 ""
   "img/tiempos_densidad.png" 1696820721 404592 8e5004829168ea44dc07dea4d5cda989 ""
   "img/tiempos_puntos.png" 1696820692 490543 1099c550681d5119c26f8901fe4903ee ""
   "logo.pdf" 1696700790 23517 55dcbdbcb3a7201e9413943da9c8afa3 ""
-  "main.atfi" 1696825924 23 33e109ecf84d2ac55814cb2442ea01dc "pdflatex"
-  "main.aux" 1696825924 3438 df964820d5c0249280be2db7881af5a4 "pdflatex"
-  "main.bbl" 1696741988 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.out" 1696825924 1456 6230909706724bef5fe99dbcfb4142a9 "pdflatex"
-  "main.run.xml" 1696825924 2274 3c9efbcb7467da793e6933a55675e6bc "pdflatex"
+  "main.atfi" 1696829045 23 33e109ecf84d2ac55814cb2442ea01dc "pdflatex"
+  "main.aux" 1696829045 3734 febd3f96f4ecc20cd55192b7e5e7cff1 "pdflatex"
+  "main.bbl" 1696828564 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
+  "main.out" 1696829045 1456 6230909706724bef5fe99dbcfb4142a9 "pdflatex"
+  "main.run.xml" 1696829045 2274 3c9efbcb7467da793e6933a55675e6bc "pdflatex"
   "main.tex" 1696700790 2473 21d87fcceddd275ec09f972c35fdfaa8 ""
-  "main.toc" 1696825924 771 cbcc504b2b63c92df36751fa1934edd2 "pdflatex"
+  "main.toc" 1696829045 771 cbcc504b2b63c92df36751fa1934edd2 "pdflatex"
   "tex/conclusiones.tex" 1696825922 493 a4172f8cc16546f04e7ba6b0c61556ff ""
   "tex/cota-complejidad-temporal.tex" 1696740810 596 0e16fd0470c12bc7d40c091cc60e95e4 ""
   "tex/introduccion.tex" 1696741985 2111 1c2f004ec3e359aae9bed0339e1dac4f ""
-  "tex/mediciones.tex" 1696736905 2460 0dca554f2a58006e409db569ea724dd7 ""
+  "tex/mediciones.tex" 1696829043 3151 711d4ab41f55bd0d12b2645e0b58a4f9 ""
   "tex/soluciones-propuestas.tex" 1696736638 10134 e169b4d6e95459c3478b52c22f0ad522 ""
   (generated)
   "main.atfi"

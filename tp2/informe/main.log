@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.8)  9 OCT 2023 01:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.8)  9 OCT 2023 02:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1285,19 +1285,16 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [6]) (./tex/cota-complejidad-temporal.tex) (./tex/mediciones.tex
-Overfull \hbox (15.70935pt too wide) in paragraph at lines 9--10
-[]\OT1/cmr/m/n/10 Medimos el tiem-po de eje-cu-ci^^Son de nues-tro al-go-rit-mo pa-ra cier-tas can-ti-da-des de es-fuer-zos y energ^^S^^Pas.  
- []
-
-<img/tiempos_puntos.png, id=183, 462.528pt x 346.896pt>
-File: img/tiempos_puntos.png Graphic file (type png)
-<use img/tiempos_puntos.png>
-Package pdftex.def Info: img/tiempos_puntos.png  used on input line 22.
-(pdftex.def)             Requested size: 341.43437pt x 256.09029pt.
+<img/tiempos_catedra.png, id=183, 722.7pt x 578.16pt>
+File: img/tiempos_catedra.png Graphic file (type png)
+<use img/tiempos_catedra.png>
+Package pdftex.def Info: img/tiempos_catedra.png  used on input line 8.
+(pdftex.def)             Requested size: 341.43437pt x 273.14676pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 26.
+Package pdftex.def Info: logo.pdf  used on input line 20.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1305,11 +1302,24 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[7]
-<img/tiempos_densidad.png, id=191, 462.528pt x 346.896pt>
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.20 
+      <./img/tiempos_catedra.png>]
+Overfull \hbox (15.70935pt too wide) in paragraph at lines 21--22
+[]\OT1/cmr/m/n/10 Medimos el tiem-po de eje-cu-ci^^Son de nues-tro al-go-rit-mo pa-ra cier-tas can-ti-da-des de es-fuer-zos y energ^^S^^Pas.  
+ []
+
+<img/tiempos_puntos.png, id=192, 462.528pt x 346.896pt>
+File: img/tiempos_puntos.png Graphic file (type png)
+<use img/tiempos_puntos.png>
+Package pdftex.def Info: img/tiempos_puntos.png  used on input line 34.
+(pdftex.def)             Requested size: 341.43437pt x 256.09029pt.
+<img/tiempos_densidad.png, id=194, 462.528pt x 346.896pt>
 File: img/tiempos_densidad.png Graphic file (type png)
 <use img/tiempos_densidad.png>
-Package pdftex.def Info: img/tiempos_densidad.png  used on input line 41.
+Package pdftex.def Info: img/tiempos_densidad.png  used on input line 53.
 (pdftex.def)             Requested size: 341.43437pt x 256.09029pt.
 ) (./tex/conclusiones.tex
 File: logo.pdf Graphic file (type pdf)
@@ -1324,7 +1334,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1 \section
@@ -1341,7 +1351,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.89 \newpage
@@ -1359,18 +1369,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36796 strings out of 478287
- 689784 string characters out of 5849289
- 1524275 words of memory out of 5000000
- 54346 multiletter control sequences out of 15000+600000
+ 36805 strings out of 478287
+ 690002 string characters out of 5849289
+ 1524363 words of memory out of 5000000
+ 54353 multiletter control sequences out of 15000+600000
  475220 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,16n,105p,782b,1942s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (9 pages, 1386555 bytes).
+Output written on main.pdf (9 pages, 1411074 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 275 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 299 words of extra memory for PDF output out of 10000 (max. 10000000)
 

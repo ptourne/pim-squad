@@ -7,6 +7,7 @@ from algoritmo import optimizar_entrenamiento
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.stats import gaussian_kde
+from manejo_archivos import esfuerzos_y_energias_archivo
 
 
 def _tiempo_ejecucion(n, esfuerzos, energias):
@@ -14,6 +15,48 @@ def _tiempo_ejecucion(n, esfuerzos, energias):
     optimizar_entrenamiento(n, esfuerzos, energias)
     tiempo_final = time.process_time()
     return tiempo_final - tiempo_inicial
+
+
+def medir_tiempos_catedra():
+    # Hacemos mediciones para todos los archivos de la ejemplos_catedra
+    nombres_archivos = [
+        "3.txt",
+        "10.txt",
+        "10_bis.txt",
+        "10_todo_entreno.txt",
+        "10.txt",
+        "50_bis.txt",
+        "50.txt",
+        "100.txt",
+        "500.txt",
+        "1000.txt",
+        "5000.txt",
+    ]
+    tiempos_ejecucion = []
+
+    for nombre_archivo in nombres_archivos:
+        n, esfuerzos, energias = esfuerzos_y_energias_archivo(
+            "./test/input/ejemplos_catedra/" + nombre_archivo
+        )
+        tiempos_ejecucion.append(_tiempo_ejecucion(n, esfuerzos, energias))
+
+    # Hacemos un scatter plot de los tiempos de ejecución de cada archivo
+    plt.figure(figsize=(10, 8))
+    plt.xticks(rotation=30)
+    plt.scatter(
+        nombres_archivos,
+        tiempos_ejecucion,
+        label="Tiempo de ejecución",
+        marker="o",
+        color="red",
+        s=25,
+    )
+
+    plt.xlabel("Nombre del archivo")
+    plt.ylabel("Tiempo de ejecución (s)")
+    plt.legend()
+    plt.title("Tiempo para hallar el plan de entrenamiento óptimo")
+    plt.savefig("../informe/img/tiempos_catedra.png")
 
 
 def _generar_esfuerzos_y_energias_aleatorios(n, esfuerzo_maximo, energia_maxima):
@@ -244,9 +287,7 @@ def _exportar_grafico_densidad(x, y, path_salida):
     plt.xlabel("Cantidad de compilados")
     plt.ylabel("Tiempo de ejecución (ms)")
     plt.legend()
-    plt.title(
-        "Densidad de tiempo para hallar el plan de entrenamiento óptimo"
-    )
+    plt.title("Densidad de tiempo para hallar el plan de entrenamiento óptimo")
     plt.savefig(path_salida)
 
 

@@ -1,7 +1,19 @@
 \section{Mediciones}
 
+Para tener una primera aproximación para obtener la complejidad del algoritmo, graficamos los tiempos de ejecución
+de nuestro algoritmo para los ejemplos provistos por la cátedra. Ver figura \ref{fig:tiempos_ejemplos}.
 
-Para las mediciones, creamos escenarios de ejemplo de forma aleatoria. Cada escenario consta de
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/tiempos_catedra.png}
+    \caption{Tiempos de ejecución para los ejemplos provistos por la cátedra.}
+    \label{fig:tiempos_ejemplos}
+\end{figure}
+
+A medida que aumenta el tamaño de la entrada, se observa un significativo incremento en el tiempo de ejecución.
+Esto sugiere que la complejidad del algoritmo es considerablemente mayor que la lineal.
+
+Para tener un gráfico de mediciones más determinístico, creamos escenarios de ejemplo de forma aleatoria. Cada escenario consta de
 una lista de esfuerzos de cada día de entrenamiento y otra con las energías de cada día de
 entrenamiento consecutivo. Decidimos que el los valores de esfuerzos y energías sean valor enteros
 entre 1 y 99'999, basándonos en los datos de ejemplo provistos por la cátedra.
