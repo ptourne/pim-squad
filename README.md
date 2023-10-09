@@ -5,7 +5,7 @@
 El programa se corre desde el directorio `./tp2/algoritmos/` con un argumento que corresponde al archivo de entrada.
 
 ```bash
-python main.py <ganancias_y_esfuerzos.csv>
+python main.py <ganancias_y_esfuerzos.txt>
 ```
 Por defecto, el programa guardará el plan de entrenamiento óptimo en `./plan_entrenamiento_optimo.txt`, pero se puede especificar el destino esperado con `-o archivo_salida`.
 
