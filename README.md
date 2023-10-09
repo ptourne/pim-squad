@@ -23,7 +23,7 @@ Podemos correr los tests del programa con
 python3 test.py
 ```
 
-Además podemos ver el seguimiento de los tests creados por nosotros con la herramienta excel a partir del siguiente [link a la planilla](./algoritmos/test/pruebas.xlsx)
+Además se puede ver el seguimiento de los tests creados por nosotros con la herramienta excel la siguiente ruta a la planilla [./test./pruebas.xlsx](https://github.com/ptourne/pim-squad/blob/tp2/tp2/algoritmos/test/pruebas.xlsx)
 
 ## Medición de tiempo
 
@@ -35,4 +35,4 @@ python3 medicion_tiempo.py
 
 # Informe
 
-El informe se encuentra en [./informe/main.pdf](./informe/main.pdf).
+El informe se encuentra en [../informe/main.pdf](https://github.com/ptourne/pim-squad/blob/tp2/tp2/informe/main.pdf).
