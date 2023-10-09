@@ -1565,7 +1565,6 @@ INPUT tex/conclusiones.tex
 INPUT ./logo.pdf
 INPUT logo.pdf
 INPUT ./logo.pdf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT ./logo.pdf
 INPUT logo.pdf
 INPUT ./logo.pdf

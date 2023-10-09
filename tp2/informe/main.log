@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.8)  9 OCT 2023 00:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.8)  9 OCT 2023 01:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1328,15 +1328,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1 \section
-            {Conclusiones} <./img/tiempos_puntos.png>]
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 5.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 5.
-
-Missing character: There is no ² in font cmr10!
-)
+            {Conclusiones} <./img/tiempos_puntos.png>])
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 89.
@@ -1367,15 +1359,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36799 strings out of 478287
- 689825 string characters out of 5849289
- 1524273 words of memory out of 5000000
- 54348 multiletter control sequences out of 15000+600000
- 475555 words of font info for 52 fonts, out of 8000000 for 9000
+ 36796 strings out of 478287
+ 689784 string characters out of 5849289
+ 1524275 words of memory out of 5000000
+ 54346 multiletter control sequences out of 15000+600000
+ 475220 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,16n,105p,782b,1942s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (9 pages, 1386538 bytes).
+Output written on main.pdf (9 pages, 1386555 bytes).
 PDF statistics:
  271 PDF objects out of 1000 (max. 8388607)
  185 compressed objects within 2 object streams
