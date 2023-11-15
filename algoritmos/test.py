@@ -1,65 +1,89 @@
-from manejo_archivos import compilados_en_archivo_a_lista
-from algoritmos import Compilado, compilados_ordenados_de_forma_optima, tiempo_total
+from backtracking import bracktracking_hitting_set_problem, es_compatible
+from manejo_archivos import obtener_subconjuntos
 import unittest
 
 
-class TestPropios(unittest.TestCase):
-    def test_tiempo_optimo_2_elementos_caso_1(self):
-        compilados = [
-            Compilado(scaloni=2, ayudante=3),
-            Compilado(scaloni=3, ayudante=1),
-        ]
-        compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
-        tiempo = tiempo_total(compilados_ordenados)
-        self.assertEqual(tiempo, 6)
+class TestCatedra(unittest.TestCase):
+    def test_5_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/5.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 2)
 
-    def test_tiempo_optimo_2_elementos_caso_2(self):
-        compilados = [
-            Compilado(scaloni=2, ayudante=5),
-            Compilado(scaloni=3, ayudante=1),
-        ]
-        compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
-        tiempo = tiempo_total(compilados_ordenados)
-        self.assertEqual(tiempo, 7)
+    def test_7_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/7.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 2)
 
-    def test_tiempo_optimo_2_elementos_caso_3(self):
-        compilados = [
-            Compilado(scaloni=4, ayudante=3),
-            Compilado(scaloni=2, ayudante=1),
-        ]
-        compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
-        tiempo = tiempo_total(compilados_ordenados)
-        self.assertEqual(tiempo, 7)
+    def test_10_pocos_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/10_pocos.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 3)
+
+    def test_10_todos_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/10_todos.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 10)
+
+    def test_10_varios_txt(self):
+        subconjuntos = obtener_subconjuntos(
+            "../archivos_catedra/10_varios.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 6)
+
+    def test_15_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/15.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 4)
+
+    def test_20_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/20.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 5)
+
+    def test_50_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/50.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 6)
+
+    def test_20_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/20.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 5)
+
+    def test_50_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/50.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 6)
+
+    def test_75_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/75.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 8)
+
+    def test_100_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/100.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 9)
 
 
-class TestEjemplosCatedra(unittest.TestCase):
-    def test_tiempo_optimo_3_elementos(self):
-        compilados = compilados_en_archivo_a_lista(
-            "./datos-ejemplo/3-elem.txt")
-        compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
-        tiempo = tiempo_total(compilados_ordenados)
-        self.assertEqual(tiempo, 10)
-
-    def test_tiempo_optimo_10_elementos(self):
-        compilados = compilados_en_archivo_a_lista(
-            "./datos-ejemplo/10-elem.txt")
-        compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
-        tiempo = tiempo_total(compilados_ordenados)
-        self.assertEqual(tiempo, 29)
-
-    def test_tiempo_optimo_100_elementos(self):
-        compilados = compilados_en_archivo_a_lista(
-            "./datos-ejemplo/100-elem.txt")
-        compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
-        tiempo = tiempo_total(compilados_ordenados)
-        self.assertEqual(tiempo, 5223)
-
-    def test_tiempo_optimo_10000_elementos(self):
-        compilados = compilados_en_archivo_a_lista(
-            "./datos-ejemplo/10000-elem.txt")
-        compilados_ordenados = compilados_ordenados_de_forma_optima(compilados)
-        tiempo = tiempo_total(compilados_ordenados)
-        self.assertEqual(tiempo, 497886735)
+class TestNuestros(unittest.TestCase):
+    def test_5_muchos_txt(self):
+        subconjuntos = obtener_subconjuntos("../archivos_catedra/5_muchos.txt")
+        solucion = bracktracking_hitting_set_problem(subconjuntos)
+        self.assert_(es_compatible(subconjuntos, solucion))
+        self.assertEqual(len(solucion), 2)
 
 
 if __name__ == "__main__":

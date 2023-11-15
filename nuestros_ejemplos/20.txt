@@ -1,0 +1,5 @@
+Exequiel Palacios,Nicolas González,Franco Armani,Nicolás Otamendi,Ángel Di María,Mauro Icardi,Lautaro Martínez,Alejandro Garnacho,Matías Zaracho,Lucas Ocampos,Nicolás Tagliafico,Brian Mansilla,Alexis Mac Allister,Cristian Pavón,Paulo Dybala
+Juan Musso,Rodrigo de Paul,Juan Foyth,Nicolás Otamendi,Giovanni Simeone,Exequiel Palacios,Mauro Icardi,Lucas Martínez Quarta,Germán Pezzella,Sergio Agüero,Lionel Messi,Brian Mansilla,Enzo Fernández,Cristian Romero,Leandro Paredes,Matías Vargas,Lautaro Martínez
+Lionel Messi,Alexis Mac Allister,Lucas Martínez Quarta,Marcos Acuña,Agustín Urzi,Emiliano Martínez,Germán Pezzella,Giovani Lo Celso,Nicolas González,Rodrigo de Paul,Lautaro Martínez,Walter Benítez,Franco Armani,Leandro Paredes,Juan Musso,Paulo Dybala,Nicolás Domínguez,Enzo Fernández
+Alejandro Garnacho,Julian Alvarez,Germán Pezzella,Leandro Paredes,Mauro Icardi,Juan Musso,Ezequiel Barco,Adolfo Gaich,Thiago Almada,Lucas Martínez Quarta,Brian Mansilla,Joaquín Correa,Lucas Beltrán,Agustín Urzi,Cristian Romero,Lucas Ocampos,Gonzalo Montiel
+Ezequiel Barco,Adolfo Gaich,Enzo Fernández,Nicolás Otamendi,Giovani Lo Celso,Ángel Di María,Franco Armani,Thiago Almada,Nahuel Molina

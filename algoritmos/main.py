@@ -1,8 +1,9 @@
 import argparse
+from programacion_lineal_aprox import sol_por_prog_lineal_continua
 from manejo_archivos import obtener_subconjuntos
 from greedy import sol_por_greedy
 from backtracking import bracktracking_hitting_set_problem
-from programacion_lineal_entera import sol_por_prog_lineal
+from programacion_lineal_entera import sol_por_prog_lineal_entera
 
 
 def main():
@@ -28,7 +29,7 @@ def main():
 
     # args = parser.parse_args()
 
-    args = ["archivos_catedra/200.txt", "lineal_entera"]
+    args = ["./nuestros_ejemplos/20.txt", "lineal_entera"]
 
     # subconjuntos = obtener_subconjuntos(args.archivo_entrada[0])
     # tipo_solucion = args.greedy_backtracking_lineal[0]
@@ -40,12 +41,23 @@ def main():
         case "greedy":
             solucion = sol_por_greedy(subconjuntos)
             print(solucion + "\n")
+
         case "backtracking":
             solucion = bracktracking_hitting_set_problem(subconjuntos)
-            print(solucion + "\n")
-        case "lineal_entera":
-            solucion = sol_por_prog_lineal(subconjuntos)
             print(str(solucion) + "\n")
+
+        case "lineal_entera":
+            cant_jugadores, jugadores = sol_por_prog_lineal_entera(
+                subconjuntos)
+            print("cant_jugadores: " + str(cant_jugadores) + "\n" + "-----" +
+                  "jugadores: " + str(jugadores) + "\n")
+
+        case "lineal_continua":
+            cant_jugadores, jugadores = sol_por_prog_lineal_continua(
+                subconjuntos)
+            print("cant_jugadores: " + str(cant_jugadores) + "\n" + "-----" +
+                  "jugadores: " + str(jugadores) + "\n")
+
         case _:
             raise Exception("Algoritmo no reconocido")
 

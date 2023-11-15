@@ -1,9 +1,15 @@
 import pulp
 
 
-def sol_por_prog_lineal_entera(b_array):
+def sol_por_prog_lineal_continua(b_array):
     problem = pulp.LpProblem("Scaloni", pulp.LpMinimize)
     dic_jugadores = {}
+
+    # obtenemos b = "la cantidad de jugadores que pide el periodista más mufa"
+    b = 0
+    for periodista in b_array:
+        if len(periodista) > b:
+            b = len(periodista)
 
     for periodista in range(len(b_array)):
         dic_p = set()
@@ -12,9 +18,11 @@ def sol_por_prog_lineal_entera(b_array):
             if jugador in dic_jugadores:
                 y = dic_jugadores[jugador]
             else:
-                y = pulp.LpVariable(f"y_{jugador}", cat=pulp.LpBinary)
+                y = pulp.LpVariable(
+                    f"y_{jugador}", lowBound=0, upBound=1, cat=pulp.LpContinuous)
                 dic_jugadores[jugador] = y
             dic_p.add(y)
+            # problem += y >= 1 / b
 
         p = pulp.lpSum(dic_p)
         problem += p >= 1
@@ -24,9 +32,10 @@ def sol_por_prog_lineal_entera(b_array):
     problem += z
 
     problem.solve()
+    res = pulp.value(z)
+    print(1/b)
 
-    # Obtener jugadores seleccionados
     jugadores_seleccionados = [
-        jugador for jugador, valor in dic_jugadores.items() if pulp.value(valor) > 0]
+        jugador for jugador, variable in dic_jugadores.items() if pulp.value(variable) > 1/b]
 
-    return int(pulp.value(z.value())), jugadores_seleccionados
+    return res, jugadores_seleccionados
