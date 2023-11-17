@@ -1,7 +1,7 @@
 import argparse
 from programacion_lineal_aprox import sol_por_prog_lineal_continua
 from manejo_archivos import obtener_subconjuntos
-from greedy import sol_por_greedy
+from greedy import aproximacion_greedy
 from backtracking import bracktracking_hitting_set_problem
 from programacion_lineal_entera import sol_por_prog_lineal_entera
 
@@ -39,7 +39,7 @@ def main():
 
     match tipo_solucion:
         case "greedy":
-            solucion = sol_por_greedy(subconjuntos)
+            solucion = aproximacion_greedy(subconjuntos)
             print(solucion + "\n")
 
         case "backtracking":
