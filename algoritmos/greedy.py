@@ -42,15 +42,11 @@ def aproximacion_greedy_bis(subconjuntos):
                 jugadores.append(jugador_compañero_de_conjunto)
             apariciones[jugador_compañero_de_conjunto].add(tuple(subconjunto))
 
-    # ordenamos los subconjuntos por cantidad de apariciones de cada jugador
-    jugadores.sort(
-            key=lambda jugador: len(apariciones[jugador]))
-    
     # obtenemos la solución mediante el óptimo local
     solucion = set()
     
     while len(jugadores) != 0:  # O(len(jugadores)*len(subconjuntos)*len(subconjunto))
-        jugador = jugadores.pop()
+        jugador = max(jugadores, key=lambda jugador: len(apariciones[jugador]))
         apariciones_jugador = apariciones[jugador]
         if len(apariciones_jugador) == 0:
             break
@@ -59,9 +55,6 @@ def aproximacion_greedy_bis(subconjuntos):
         for subconjunto in set(apariciones_jugador):  # O(len(subconjuntos)*len(subconjunto))
             for jugador_compañero_de_conjunto in subconjunto:
                 apariciones[jugador_compañero_de_conjunto].remove(subconjunto)
-        
-        jugadores.sort(
-            key=lambda jugador: len(apariciones[jugador]))
 
     return solucion
 
