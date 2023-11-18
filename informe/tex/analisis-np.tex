@@ -1,0 +1,47 @@
+/section{Análisis de la complejidad del problema}
+
+El problema de Scaloni es un caso particular del Hitting-Set Problem, cuya definición formal es:
+Dado un conjunto $A$ de $n$ elementos y $m$ subconjuntos $B_{1},B_{2},\dots,B_{m}$ de $A$ 
+($B_{i}\subseteq A \forall i \in \mathbb{N}_{m}$), buscamos $C \subseteq A / \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$.
+
+Hitting-Set Problem también tiene una versión de desición:
+Dado un conjunto $A$ de $n$ elementos y $m$ subconjuntos $B_{1},B_{2},\dots,B_{m}$ de $A$ ($B_{i}\subseteq A \forall i$), y un número $k$, ¿existe un $C \subseteq A / \left| C \right|\leq k \land \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$.
+
+Hitting-Set Problem se encuentra en NP porque se puede verificar en tiempo polinomial.
+Dado un subconjunto $C$, basta con verificar que $\left| C \right|\leq k$ y verificar que para cada
+conjunto $B_{j}$, $C$ contiene algún elemento del mismo. La primera operación es de complejidad $O(n)$
+porque basta con contar los elementos de $C$.
+La segunda es de complejidad $O(n\times m)$ porque para cada conjunto $B_{j}$ ($j \in \mathbb{N}_{m}$) ($O(m)$) se debe recorrer $C$ ($O(n)$) y verificar que cada elemento pertenezca a $B_{j}$ ($O(1)$ si $B_{j}$ se implementa como set).
+
+Además, Hitting-Set Problem es un problema NP-Completo.
+Para demostrarlo basta con reducir polinomialmente un problema NP-Completo a Hitting-Set. Para esto, elegimos Dominating Set que a su vez es NP-Completo porque se puede reducir Vertex Cover al mismo, que demostramos en clase que es NP-Completo.
+
+Recordemos que el problema de Dominating Set: Dado un grafo $G$, su busca un conjunto de vértices $C$ para todo vértice $v \in G$, este está contenido en $C$ o existe un vértice en $C$ adyacente de $v$.
+
+La reducción $\text{Dominating-Set} \leq _{p} \text{Hitting-Set}$ consta en lo siguiente:
+Dado un grafo $G$ de $n$ vértices del problema Dominating Set, Para cada vértice $v_{i}$, se construye un grupo $B_{i}$ con el mismo y todos sus vértices adyacentes. Entonces, el grupo resultado del Hitting Set con los subconjuntos $B_{1},B_{2},\dots,B_{m}$ será también el grupo resultado del Dominating Set. \textit{Nota: Para cada $k$-clique dentro del grafo habrá hasta $k$ sets iguales.} La complejidad de esta reducción depende de la implementación del grafo: Si los vértices desconocen a sus adyacentes, es $O(n^{2})$ porque para cada vértice $v_{i}$ se debe recorrer todos los vértices de $G$ para verificar si son adyacentes a $v_{i}$; en cambio, si los vértices tiene referencia a sus adyacentes, la complejidad es $O(n\times o)$, siendo $o$ el promedio del grado entre vértices, que puede variar entre $0$ y $m$. En ambos casos, se trata de una complejidad polinomial.
+
+\[\text{Dominating-Set}  \leq _{p} \text{Hitting-Set}\]
+
+% Gráficos ej de reducción
+
+La reducción $\text{Vertex-Cover} \leq _{p} \text{Dominating-Set}$ consta en lo siguiente:
+Dado del grafo $G$ con $n$ vértices y $m$ aristas del problema Vertex Cover, para cada par de vértices adyacentes $v-w$, se agregan ambos al grafo $G'$ (del problema Dominating Set) junto a su arista y se agrega un tercer vértice auxiliar $vw$, adyacente a los otros dos. $A$ será el conjunto de vértices auxiliares. Luego, del conjunto $V'$ de $k$ vértices solución de Dominating Set, se debe agregar a $V$ (solución de Vertex Cover) todos los vértices de $V'$ que no estén en el conjunto de auxiliares y, para cada vértice en $V' \cap A$ se agrega a $V$ cualquiera de sus adyacentes. La primera parte de la reducción es $O(m)$ y la segunda es $O(k),k \leq n$, por lo que la complejidad total es $O(m+k)$, que es polinomial.
+
+\[\text{Vertex-Cover} \leq _{p} \text{Dominating-Set}\]
+
+% Gráficos ej de reducción
+
+Finalmente:
+
+\[
+    \begin{array}{c}
+        \begin{split}
+            \text{Vertex-Cover}  & \leq _{p} \text{Dominating-Set} \\
+            \text{Dominating-Set}  & \leq _{p} \text{Hitting-Set} \\
+        \end{split}
+        \quad \overset{ \text{por transitividad} }{ \implies  } \quad
+        \text{Vertex-Cover}  \leq _{p} \text{Hitting-Set} \\ \\
+        \implies \text{Hitting-Set} \in \text{NP-Completo}    
+    \end{array}
+\]

@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Información de la problemática}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Cota de complejidad temporal}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Mediciones}{4}{section.2}%
+\contentsline {section}{\numberline {3}Aproximación}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Algoritmo Greedy}{5}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Conclusiones}{5}{section.4}%

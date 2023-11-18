@@ -77,7 +77,7 @@
 
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
-\rhead{\footnotesize \textsc {Trabajo práctico 1\\ Teoría de Algoritmos}} % Trabajo práctico
+\rhead{\footnotesize \textsc {Trabajo práctico 3\\ Teoría de Algoritmos}} % Trabajo práctico
 \lhead{\includegraphics[width=2.5cm]{logo}}
 \cfoot{\small \textsc {Página \thepage\ de \pageref*{LastPage}}}
 
@@ -106,7 +106,7 @@
 	\textsc{\small (75.29) Curso Buchwald - Genender}\\[0.4cm]    % Subtítulo materia
 	{ \huge \bfseries Trabajo Práctico 1}\\[0.3cm]      % Título
 	\andreasline \\[0.2cm]
-	{\large Fecha de entrega: 18/09/2023  \\[0.4cm]}                          % Fecha
+	{\large Fecha de entrega: 24/11/2023  \\[0.4cm]}                          % Fecha
 
     \large
     \begin{itemize}
