@@ -33,19 +33,19 @@ def aproximacion_greedy_bis(subconjuntos: list):
     return: solución
     """
     # contamos la cantidad de apariciones de cada jugador por cada prensa
-    jugadores = {}
+    apariciones = {}
     for index, subconjunto in enumerate(subconjuntos): # O(len(subconjuntos)*len(subconjunto))
         for jugador in subconjunto:
-            if jugador not in jugadores:
-                jugadores[jugador] = set()
-            jugadores[jugador].add(index)
+            if jugador not in apariciones:
+                apariciones[jugador] = set()
+            apariciones[jugador].add(index)
 
     # obtenemos la solución mediante el óptimo local
     solucion = set()
     
-    while len(jugadores) != 0:  # O(len(jugadores)*len(subconjuntos)*len(subconjunto))
-        jugador , index_subconjuntos = max(jugadores.items(), key=lambda jugador_datos: len(jugador_datos[1]))
-        jugadores.pop(jugador)
+    while len(apariciones) != 0:  # O(len(jugadores)*len(subconjuntos)*len(subconjunto))
+        jugador , index_subconjuntos = max(apariciones.items(), key=lambda jugador_index_subconjuntos: len(jugador_index_subconjuntos[1]))
+        apariciones.pop(jugador)
         if len(index_subconjuntos) == 0:
             break
         solucion.add(jugador)
@@ -53,7 +53,7 @@ def aproximacion_greedy_bis(subconjuntos: list):
         for index_subconjunto in index_subconjuntos:  # O(len(subconjuntos)*len(subconjunto))
             for jugador_compañero_de_conjunto in subconjuntos[index_subconjunto]:
                 if jugador != jugador_compañero_de_conjunto:
-                    jugadores[jugador_compañero_de_conjunto].remove(index_subconjunto)
+                    apariciones[jugador_compañero_de_conjunto].remove(index_subconjunto)
 
     return solucion
 
