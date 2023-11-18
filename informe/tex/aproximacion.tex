@@ -8,3 +8,4 @@ Esta resulta ser una $m$-aproximación, ya que este algoritmo puede elegir $m$ j
 
 La segunda aproximación comienza de la misma manera, calculando la cantidad de apariciones de cada jugador en cada subconjunto. Luego agrega el jugador con más apariciones entre todos y quita las apriciones de los subconjuntos que ya cubre al resto de los jugadores. Realiza esta operación hasta quedarse sin jugadores o que el jugador encontrado tenga cero apariciones restantes. Ya vimos quie la complejidad de la primera operación es $O(k \times m)$. La segunda tiene complejidad $O(j \times g \times m)$, con $j$ la cantidad de jugadores de la solución, $j \leq m$, y $g$ la cantidad promedio de grupos que cubre cada jugador $g \leq k$. Entonces, la complejidad total es $O(k \times m + j \times g \times m)$. %?
 
+    
