@@ -1,9 +1,9 @@
 import argparse
-from programacion_lineal_aprox import sol_por_prog_lineal_continua
+from programacion_lineal_aprox import hitting_set_pl_continua
 from manejo_archivos import obtener_subconjuntos
 from greedy import aproximacion_greedy
 from backtracking import bracktracking_hitting_set_problem
-from programacion_lineal_entera import sol_por_prog_lineal_entera
+from programacion_lineal_entera import hitting_set_pl_entera
 
 
 def main():
@@ -47,13 +47,13 @@ def main():
             print(str(solucion) + "\n")
 
         case "lineal_entera":
-            cant_jugadores, jugadores = sol_por_prog_lineal_entera(
+            cant_jugadores, jugadores = hitting_set_pl_entera(
                 subconjuntos)
             print("cant_jugadores: " + str(cant_jugadores) + "\n" + "-----" +
                   "jugadores: " + str(jugadores) + "\n")
 
         case "lineal_continua":
-            cant_jugadores, jugadores = sol_por_prog_lineal_continua(
+            cant_jugadores, jugadores = hitting_set_pl_continua(
                 subconjuntos)
             print("cant_jugadores: " + str(cant_jugadores) + "\n" + "-----" +
                   "jugadores: " + str(jugadores) + "\n")

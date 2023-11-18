@@ -1,7 +1,7 @@
 import pulp
 
 
-def sol_por_prog_lineal_continua(b_array):
+def hitting_set_pl_continua(b_array):
     problem = pulp.LpProblem("Scaloni", pulp.LpMinimize)
     dic_jugadores = {}
 

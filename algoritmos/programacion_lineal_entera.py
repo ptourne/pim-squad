@@ -1,12 +1,12 @@
 import pulp
 
 
-def sol_por_prog_lineal_entera(b_array):
+def hitting_set_pl_entera(b_array):
     problem = pulp.LpProblem("Scaloni", pulp.LpMinimize)
     dic_jugadores = {}
 
     for periodista in range(len(b_array)):
-        dic_p = set()
+        set_p = set()
         for jugador in b_array[periodista]:
             y = None
             if jugador in dic_jugadores:
@@ -14,11 +14,11 @@ def sol_por_prog_lineal_entera(b_array):
             else:
                 y = pulp.LpVariable(f"y_{jugador}", cat=pulp.LpBinary)
                 dic_jugadores[jugador] = y
-            dic_p.add(y)
+            set_p.add(y)
 
-        p = pulp.lpSum(dic_p)
+        p = pulp.lpSum(set_p)
         problem += p >= 1
-        problem += p <= len(dic_p)
+        problem += p <= len(set_p)
 
     z = pulp.lpSum(dic_jugadores.values())
     problem += z

@@ -1,0 +1,35 @@
+\section{Programación Lineal}
+
+\subsection{Programación Lineal Entera}
+
+También se puede reducir Hitting-Set Problem a Programación Lineal de la siguiente manera:
+
+\begin{enumerate}
+
+    \item Para cada elemento $i$ del universo $U$, se crea una variable $y_{i}$ que puede tomar los valores $0$ o $1$.
+
+    \item Para cada set $S_{j}$, se crea una función $f_{j}=\sum_{e \in S_j} e$ y se acota $1 \leq f_{j} \leq |S_{j}|$.
+
+    \item Se busca minimizar la función $f=\sum_{i=0}^{n}y_{i}$.
+
+\end{enumerate}
+
+Luego, el conjunto solución $C$ será
+
+\[
+    C = \{e_i \in U \mid y_{i} = 1\}
+\]
+
+La complejidad de esta reducción es $O(n+m)$, que es polinomial, y la complejidad de Programación Lineal Entera es exponencial.
+
+\subsection{Programación Lineal Continua}
+
+También se puede aproximar la solución de Hitting-Set Problem con Programación Lineal continua. La reducción es similar, con la única diferencia de que las variables $y_{i}$ pueden tomar valores reales entre $0$ y $1$.
+
+Luego, el conjunto solución $C$ será
+
+\[
+    C = \left\{e_i \in U \mid y_{i} \geq \frac{1}{2}\right\}
+\]
+
+La complejidad de esta reducción es $O(n+m)$, que es polinomial, y la complejidad de Programación Lineal Continua es $O(n^9)$.
