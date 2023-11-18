@@ -1,0 +1,28 @@
+\section{Introducción}
+
+En el presente informe, se tiene como objetivo llevar a cabo un análisis del diseño 
+implementado para abordar la problemática planteada por Scaloni, que consiste en la 
+optimización máxima del tiempo total empleado en la realización de un análisis exhaustivo 
+de sus rivales. A lo largo de este, se expondrán los criterios empleados y se proporcionará 
+su justificación.
+
+
+\subsection{Información de la problemática}
+
+El enunciado propuesto, nos da la siguiente información:
+
+\begin{itemize}
+
+    \item Cada compilado lo debe analizar Scaloni y alguno de sus ayudantes.
+
+    \item El análisis del rival $i$ le toma $s_i$ tiempo a Scaloni y luego $a_i$ tiempo al ayudante.
+    
+    \item Al momento en que Scaloni haya terminado de analizar el $i$ ésimo compilado, comenzará
+    inmediatamente algún ayudante a analizarlo, para no desperdiciar ningún segundo.
+
+    \item Scaloni cuenta con $n$ ayudantes, siendo $n$ la cantidad de rivales a analizar. Además, cada
+    ayudante puede ver los compilados completamente en paralelo a Scaloni y a los respectivos ayudantes.
+
+    \item Sólo un ayudante verá el compilado, dado que no aporta mayor ganancia que dos ayudantes lo vean.
+
+\end{itemize}

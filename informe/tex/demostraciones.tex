@@ -1,0 +1,36 @@
+1. Demostrar que el Hitting-Set Problem se encuentra en NP.
+Hitting-Set Problem:
+Dado un conjunto $A$ de $n$ elementos y $m$ subconjuntos $B_{1},B_{2},\dots,B_{m}$ de $A$ ($B_{i}\subseteq A \forall i \in \mathbb{N}_{m}$), buscamos $C \subseteq A / \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$.
+Hitting-Set Decision Problem:
+Dado un conjunto $A$ de $n$ elementos y $m$ subconjuntos $B_{1},B_{2},\dots,B_{m}$ de $A$ ($B_{i}\subseteq A \forall i$), y un número $k$, ¿existe un $C \subseteq A / \left| C \right|\leq k \land \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$.
+
+NP: Son los problemas que pueden verificarse en tiempo polinomial.
+Dado un subconjunto $C$, basta con verificar que $\left| C \right|\leq k$ y verificar que para cada conjunto $B_{j}$, $C$ contiene algún elemento del mismo.
+La primera operación es de complejidad $O(n)$ porque basta con contar los elementos de $C$.
+La segunda es de complejidad $O(n×m)$ porque para cada conjunto $B_{j}$ ($j \in \mathbb{N}_{m}$) ($O(m)$) se debe recorrer $C$ ($O(n)$) y verificar que cada elemento pertenezca a $B_{j}$ ($O(1)$ si $B_{j}$ se implementa como set).
+
+2. Demostrar que el Hitting-Set Problem es, en efecto, un problema NP-Completo.
+
+Para demostrar que Hitting-Set Problem es NP-Completo basta con reducir polinomialmente un problema NP-Completo a Hitting-Set. Para esto, elegimos Dominating Set que a su vez es NP-Completo porque se puede reducir Vertex Cover al mismo, que demostramos en clase que es NP-Completo.
+Recordemos que el problema de Dominating Set consta de: Dado un grafo $G$, su busca un conjunto de vértices $C$ para todo vértice $v \in G$, este está contenido en $C$ o existe un vértice en $C$ adyacente de $v$.
+
+La reducción $\text{Dominating-Set} \leq _{p} \text{Hitting-Set}$ consta en lo siguiente:
+Para cada vértice $v_{i}$ del grafo $G$ del problema Dominating Set, se construye un grupo $B_{i}$ con el mismo y todos sus vértices adyacentes. Entonces, el grupo resultado del Hitting Set con los subconjuntos $B_{1},B_{2},\dots,B_{m}$ será también el grupo resultado del Dominating Set.
+
+La reducción $\text{Vertex-Cover} \leq _{p} \text{Dominating-Set}$ consta en lo siguiente:
+Para cada par de vértices adyacentes del grafo $G$ (del problema Vertex Cover), se agregan al grafo $G'$ (del problema Dominating Set) junto a su arista y se agrega un tercer vértice auxiliar, adyacente a los otros dos. $A$ será el conjunto de vértices auxiliares. Luego, del conjunto $V'$ de vértices solución de Dominating Set, se debe agregar a $V$ (solución de Vertex Cover) todos los vértices de $V'$ que no estén en el conjunto de auxiliares y, para cada vértice en $V' \cap A$ se agrega a $V$ cualquiera de sus adyacentes.
+
+Finalmente:
+$$
+\begin{array}{}
+\begin{split} \\
+\text{Vertex-Cover}  & \leq _{p} \text{Dominating-Set} \\
+\text{Dominating-Set}  & \leq _{p} \text{Hitting-Set} \\
+\end{split} \\
+\begin{array}{}
+\text{por transitividad:} \\
+\text{Vertex-Cover}  \leq _{p} \text{Hitting-Set} \\
+\implies \text{Hitting-Set} \in \text{NP-Completo}
+\end{array}
+\end{array}
+$$
