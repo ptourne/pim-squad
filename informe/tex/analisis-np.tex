@@ -1,24 +1,69 @@
 /section{Análisis de la complejidad del problema}
 
-El problema de Scaloni es un caso particular del Hitting-Set Problem, cuya definición formal es:
-Dado un conjunto $A$ de $n$ elementos y $m$ subconjuntos $B_{1},B_{2},\dots,B_{m}$ de $A$ 
-($B_{i}\subseteq A \forall i \in \mathbb{N}_{m}$), buscamos $C \subseteq A / \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$.
+El problema planteado por Scaloni se enmarca como un caso específico del problema del 
+Hitting-Set, cuya definición formal se presenta de la siguiente manera: dado un 
+conjunto $A$ compuesto por $n$ elementos y $m$ subconjuntos $B_{1}, B_{2}, \dots, B_{m}$ 
+pertenecientes a $A$ ($B_{i}\subseteq A \forall i \in \mathbb{N}_{m}$), se busca encontrar un conjunto $C \subseteq A$ tal que para cada 
+subconjunto $C$, donde $C \subseteq A / \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$. 
 
-Hitting-Set Problem también tiene una versión de desición:
-Dado un conjunto $A$ de $n$ elementos y $m$ subconjuntos $B_{1},B_{2},\dots,B_{m}$ de $A$ ($B_{i}\subseteq A \forall i$), y un número $k$, ¿existe un $C \subseteq A / \left| C \right|\leq k \land \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$.
+Además de su formulación básica, el problema del Hitting-Set también presenta una versión
+de decisión: dada la colección de un conjunto $A$ con $n$ elementos y $m$ subconjuntos
+ $B_{1}, B_{2}, \dots, B_{m}$ de $A$ ($B_{i}\subseteq A$ para cada $i$), junto con un 
+ parámetro numérico $k$, se plantea el interrogante sobre la existencia de un conjunto 
+ $C \subseteq A$ que cumpla con dos condiciones fundamentales:
+ \item En primer lugar, que la cardinalidad de $C$ sea menor o igual a $k$ ($\left| C \right|\leq k$) 
+ \item En segundo lugar, que para cada subconjunto $B_{j}$, la intersección entre $C$ y $B_{j}$ no sea 
+ vacía ($C \cap B_{j} \neq \emptyset$) para todo $j$ perteneciente al conjunto de 
+ números naturales hasta $m$.
 
-Hitting-Set Problem se encuentra en NP porque se puede verificar en tiempo polinomial.
+
+Hitting-Set Problem se encuentra en NP porque se puede verificar en tiempo polinomial, es decir, se puede vali de forma eficiente.
 Dado un subconjunto $C$, basta con verificar que $\left| C \right|\leq k$ y verificar que para cada
-conjunto $B_{j}$, $C$ contiene algún elemento del mismo. La primera operación es de complejidad $O(n)$
-porque basta con contar los elementos de $C$.
-La segunda es de complejidad $O(n\times m)$ porque para cada conjunto $B_{j}$ ($j \in \mathbb{N}_{m}$) ($O(m)$) se debe recorrer $C$ ($O(n)$) y verificar que cada elemento pertenezca a $B_{j}$ ($O(1)$ si $B_{j}$ se implementa como set).
+conjunto $B_{j}$, $C$ contiene al menos un elemento del mismo. 
+\item La primera operación es de complejidad $O(1)$ porque basta con obtener la cantidad de elementos de $C$.
+\item La segunda es de complejidad $O(n\times m)$ porque para cada conjunto $B_{j}$
+($j \in \mathbb{N}_{m}$) ($O(m)$) se debe recorrer $C$ ($O(n)$) y verificar que por lo
+menos un elemento pertenezca a $B_{j}$ ($O(1)$ si $B_{j}$ se implementa como set).
+
+
+El problema del Hitting-Set se sitúa en la clase de complejidad NP debido a su capacidad 
+de verificación en tiempo polinomial, lo que implica una verificación eficiente de su 
+solución propuesta. La verificación de la solución se reduce a confirmar dos condiciones 
+fundamentales: Primero, se debe comprobar que la cardinalidad del conjunto propuesto $C$ 
+es menor o igual a $k$, donde $k$ es un parámetro dado. Segundo, es necesario 
+verificar que para cada conjunto $B_{j}$ dentro de una colección de subconjuntos 
+$B_{1}, B_{2}, \dots, B_{m}$, $C$ contenga al menos un elemento de $B_{j}$.
+
+Para realizar esta verificación, se llevan a cabo dos operaciones clave que definen la 
+complejidad del proceso. La primera operación, relacionada con la verificación de la 
+cardinalidad de $C$ ($\left| C \right|\leq k$), tiene una complejidad constante $O(1)$, 
+ya que implica simplemente obtener el número de elementos en $C$ y verificar que $#C \leq k$.
+
+La segunda operación, que implica verificar la inclusión de al menos un elemento de $C$ 
+en cada conjunto $B_{j}$, presenta una complejidad de $O(n \times m)$. Esto se debe a 
+que para cada conjunto $B_{j}$ ($j$ perteneciente al conjunto de números naturales hasta 
+$m$) (operación $O(m)$), se debe recorrer, en el peor de los casos, todo el conjunto $C$ 
+($O(n)$) para verificar la pertenencia de al menos un elemento de este en $B_{j}$ 
+(operación con complejidad $O(1)$ si tanto $B_{j}$ como $C$ se implementan como un conjunto 'set').
+
 
 Además, Hitting-Set Problem es un problema NP-Completo.
-Para demostrarlo basta con reducir polinomialmente un problema NP-Completo a Hitting-Set. Para esto, elegimos Dominating Set que a su vez es NP-Completo porque se puede reducir Vertex Cover al mismo, que demostramos en clase que es NP-Completo.
+Para demostrarlo basta con reducir polinomialmente un problema NP-Completo a Hitting-Set Problem.
+Para esto, decidimos hacerlo de dos maneras diferentes:
+\item Reducir Vertex Cover a Dominating-Set Problem 
+\item Reducir Dominating-Set Problem a Hitting-Set Problem 
 
-Recordemos que el problema de Dominating Set: Dado un grafo $G$, su busca un conjunto de vértices $C$ para todo vértice $v \in G$, este está contenido en $C$ o existe un vértice en $C$ adyacente de $v$.
+Ya que tanto Vertex Cover como Dominating Set se demostramó en clase son NP-Completo. 
 
-La reducción $\text{Dominating-Set} \leq _{p} \text{Hitting-Set}$ consta en lo siguiente:
+Como en clase se demostró que Vertex Cover es NP-Completo por reducción por equivalencia simple a Independent Set.
+
+Para esto, elegimos Dominating Set que a su vez es NP-Completo porque se puede reducir Vertex Cover al mismo. Luego, reducimos Dominating Set a Hitting Set,
+que demostramos en clase que es NP-Completo.
+
+Recordemos el problema de Dominating Set: Dado un grafo $G$, se busca un conjunto de vértices $C$
+tal que, para todo vértice $v \in G$, este esté contenido en $C$ o existe al menos un vértice en $C$ adyacente de $v$.
+
+La reducción $\text{Dominating-Set} \leq_{p} \text{Hitting-Set}$ consta en lo siguiente:
 Dado un grafo $G$ de $n$ vértices del problema Dominating Set, Para cada vértice $v_{i}$, se construye un grupo $B_{i}$ con el mismo y todos sus vértices adyacentes. Entonces, el grupo resultado del Hitting Set con los subconjuntos $B_{1},B_{2},\dots,B_{m}$ será también el grupo resultado del Dominating Set. \textit{Nota: Para cada $k$-clique dentro del grafo habrá hasta $k$ sets iguales.} La complejidad de esta reducción depende de la implementación del grafo: Si los vértices desconocen a sus adyacentes, es $O(n^{2})$ porque para cada vértice $v_{i}$ se debe recorrer todos los vértices de $G$ para verificar si son adyacentes a $v_{i}$; en cambio, si los vértices tiene referencia a sus adyacentes, la complejidad es $O(n\times o)$, siendo $o$ el promedio del grado entre vértices, que puede variar entre $0$ y $m$. En ambos casos, se trata de una complejidad polinomial.
 
 \[\text{Dominating-Set}  \leq _{p} \text{Hitting-Set}\]

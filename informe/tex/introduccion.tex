@@ -1,7 +1,15 @@
 \section{Introducción}
 
-Este informe tiene como propósito analizar el Hitting Set Problem y explorar diversas soluciones que proponemos.
-
+"El propósito de este informe radica en llevar a cabo un análisis exhaustivo de los 
+distintos enfoques y diseños aplicados para abordar la problemática presentada por 
+Scaloni. Este desafío se centra en la determinación del conjunto mínimo de jugadores,
+denotado como $C$, requerido para satisfacer las demandas de cada medio, asegurando al 
+menos la presencia de un jugador favorito por medio. Es importante destacar que este 
+problema se enmarca como un caso específico del 'Hitting Set Problem'. En consecuencia, 
+se realizará una evaluación detallada de múltiples soluciones con el fin de resolver este
+último. A lo largo de este informe, se expondrán y analizarán los distintos criterios 
+empleados para abordar esta cuestión, proporcionando una justificación fundamentada 
+en el análisis teórico y práctico de las soluciones propuestas.
 
 \subsection{Información de la problemática}
 
@@ -10,9 +18,9 @@ El enunciado propuesto, nos da la siguiente información:
 \begin{itemize}
 
     \item Scaloni tiene a su disposición el conjunto $A$ de $n=43$ jugadores $a_1, a_2, \dots, a_{43}$.
-
-    \item Existen $m$ medios cada uno con un grupo de jugadoes favorito $B_1, B_2, \dots, B_m$.
-
-    \item Scaloni necesita conocer el grupo $C$ más pequeño de jugadores de tal forma que cada medio $B_i$ tenga al menos un jugador en el equipo.
+    \item Existen $m$ medios, cada uno con un grupo de jugadores favorito $B_1, B_2, \dots, B_m$, 
+    $(B_i \in A \forall i)$
+    \item Se quiere el subconjunto C \in A de menor tamaño tal que C tenga al menos un elemento de cada $B_i$ (es decir, $C \cap B_i$) 
+    \item Scaloni necesita obtener el grupo $C$ más pequeño de jugadores de tal forma que cada medio $B_i$ tenga al menos un jugador en el equipo.
 
 \end{itemize}
