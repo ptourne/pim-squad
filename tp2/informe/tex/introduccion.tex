@@ -1,0 +1,32 @@
+\section{Introducción}
+
+En el presente informe, se tiene como objetivo llevar a cabo un análisis del diseño 
+implementado para abordar la problemática planteada por Scaloni, que consiste en 
+definir los días en que los jugadores deban entrenarse y los días que les convenga descansar
+de tal forma de tener la mayor ganancia posible. A lo largo de este, se expondrán los criterios
+empleados y se proporcionará su justificación.
+
+
+\subsection{Información de la problemática}
+
+El enunciado propuesto, nos da la siguiente información:
+
+\begin{itemize}
+    \item Scaloni definió un cronograma de entrenamiento.
+    \item El entrenamiento del día $i$ demanda una cantidad de esfuerzo $e_i$.
+    \item El entrenamiento que corresponde al día $i$ es inamovible.
+    \item  La cantidad de energía disponible para cada día va disminuyendo a medida que pasan
+    los entrenamientos.
+    \item La distribución de energía en cada día sigue la siguiente secuencia:  $s_1 \geq s_2 \geq ... \geq s_n$. De esta manera
+    $s_i$ es la energía disponible para el $i$-ésimo día de entrenamiento consecutivo.
+    \item El entrenador tiene la opción de otorgarles un día de descanso, lo que resulta en la renovación de la 
+    energía de los jugadores (es decir, el próximo entrenamiento comenzaría nuevamente con la energía $s_1$, seguida
+    de $s_2$, y así sucesivamente). 
+    \item Si se opta por el descanso, el entrenamiento programado para ese día no se lleva a cabo, y en consecuencia, 
+    no se obtiene ninguna ganancia.
+    \item Si el nivel de esfuerzo $e_i$ excede la energía disponible $s_i$ en un día determinado,
+     la ganancia resultante del entrenamiento es igual a la energía disponible. Caso contrario, la ganancia del entrenamiento se 
+     define por el nivel de esfuerzo realizado.
+    \item Dada la secuencia de energía disponible desde el último descanso $s_1 , s_2 ,..., s_n$ y el esfuerzo/ganancia de cada día 
+     $e_i$, se pide determinar la máxima cantidad de ganancia que se puede obtener de los entrenamientos, considerando posibles descansos.
+\end{itemize}

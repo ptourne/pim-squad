@@ -1,0 +1,3 @@
+energias_escalera_10.txt
+Ganancia maxima: 44
+Plan de entrenamiento: Entreno, Entreno, Entreno, Entreno, Descanso, Entreno, Entreno, Entreno, Entreno, Entreno

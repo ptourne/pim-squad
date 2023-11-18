@@ -1,0 +1,3 @@
+4.txt
+Ganancia maxima: 22
+Plan de entrenamiento: Entreno, Descanso, Entreno, Entreno

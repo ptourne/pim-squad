@@ -1,0 +1,9 @@
+\subsection{Cota de complejidad temporal}
+
+Para obtener la solución óptima, requerimos analizar cada día de entrenamiento y, por cada uno, 
+calculamos su ganancia respecto a cada nivel de energía disponible.
+Esto implica que, para cada día $i$ se hacen como máximo $n$ operaciones $O(1)$ y una operación con complejidad $O(n)$ (por buscar
+la máxima ganancia parcial del día $i-2$). 
+
+Esto implica que por cada día se hacen operaciones de $nO(1)+O(n)$=$O(n)$ y como se 
+recorren todos los días, finalmente el algoritmo presentado tiene una complejidad temporal $\operatorname{O}(n^2)$.
