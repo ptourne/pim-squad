@@ -1,3 +1,0 @@
-10.txt
-Ganancia maxima: 380
-Plan de entrenamiento: Entreno, Descanso, Entreno, Descanso, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno

@@ -1,3 +1,0 @@
-la_7ma.txt
-Ganancia maxima: 7
-Plan de entrenamiento: Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno

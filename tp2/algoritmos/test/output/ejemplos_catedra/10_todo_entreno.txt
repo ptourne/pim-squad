@@ -1,3 +1,0 @@
-10_todo_entreno.txt
-Ganancia maxima: 900
-Plan de entrenamiento: Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno

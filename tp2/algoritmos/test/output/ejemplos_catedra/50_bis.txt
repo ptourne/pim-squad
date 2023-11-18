@@ -1,3 +1,0 @@
-50_bis.txt
-Ganancia maxima: 2136
-Plan de entrenamiento: Entreno, Descanso, Entreno, Entreno, Entreno, Descanso, Entreno, Entreno, Descanso, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Descanso, Entreno, Entreno, Entreno, Entreno, Entreno, Descanso, Entreno, Entreno, Entreno, Entreno, Entreno, Descanso, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Descanso, Entreno, Entreno, Entreno, Descanso, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno, Entreno
