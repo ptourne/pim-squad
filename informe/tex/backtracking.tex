@@ -1,0 +1,30 @@
+\section{Solución por backtracking}
+
+Para poder plantear el álgoritmo de backtracing procedimos a seguir el esquema proporcionado por la cátedra:
+\begin{enumerate}
+    \item Pruebo si la solucion parcial es solución y es mejor que la actual entontrada:
+    \begin {enumerate}
+        \item Si lo es, actualizo la solución actual y la devuelvo
+        \item Si no lo es, avanzo si puedo
+    \end{enumerate}
+    \item Pruebo si la solución parcial es válida
+    \begin {enumerate}
+        \item Si no lo es, retrocedo y vuelvo a 3)
+        \item Si lo es, llamo recursivamente y vuelvo a 1)
+    \end{enumerate}
+    \item Prosigo explorando la solución parcial llamando recursivamente
+\end{enumerate}
+
+Para la solución por backtracking consideramos relevantes las siguientes variables:
+\begin{itemize}
+    \item Los subconjuntos B_i
+    \item Solución parcial
+    \item La solución actual óptima 
+    \item El índice (i_b) del subconjunto B_i en cuestión. 
+\end{itemize}
+
+Luego en cada llamada recursiva primero se verifica si la solución parcial es o no compatible con el problema de Hitting-Set. De esta forma, de serlo y si su cardinal es menor al de la solución actual, esta solución parcial pasa a ser la nueva solución actual. 
+
+En caso contrario, si no se cumple con su compatibilidad, solamente es descartada esta solución parcial si su cardinal es más grande o igual que el de la solución actual. De serlo, se vuelve a su anterior llamado y no se sigue explorando esta solución (se aplica backtracking).
+
+Si la solució parcial no es compatible pero sigue siendo una posible solción óptima, se verifica que en el subconjunto B_i (siendo i = i_b) tenga por lo menos un jugador incluido en la solución final. Si no lo tiene, luego se va probando con cada jugador incluido en B_i para ver con cual se obtiene la solución óptima.   

@@ -3,7 +3,7 @@
 
 def backtracking_HSP(b_array: list, sol_parcial: set, sol_actual, i_b):
     if es_compatible(b_array, sol_parcial) and ((sol_actual == None) or (len(sol_parcial) < len(sol_actual))):
-        return sol_parcial.copy()
+        return sol_parcial
 
     if sol_actual != None and len(sol_parcial) > len(sol_actual) or i_b >= len(b_array):
         return sol_actual
