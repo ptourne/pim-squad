@@ -22,7 +22,17 @@ def aproximacion_greedy(subconjuntos: list):
     # obtenemos la solución mediante el óptimo local
     solucion = set()
     for subconjunto in subconjuntos:  # O(len(subconjuntos)*len(subconjunto))
-        solucion.add(max(subconjunto, key=lambda jugador: apariciones[jugador]))
+        aparicion_max = None
+        for jugador in subconjunto:
+            if jugador in solucion:
+                aparicion_max = jugador
+                break
+            
+            else:
+                if aparicion_max is None or apariciones[jugador] > apariciones[aparicion_max]:
+                    aparicion_max = jugador
+
+        solucion.add(aparicion_max)
 
     return solucion
 
