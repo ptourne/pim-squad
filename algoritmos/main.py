@@ -1,5 +1,5 @@
 import argparse
-from programacion_lineal_aprox import hitting_set_pl_continua
+from algoritmos.programacion_lineal_continua import hitting_set_pl_continua
 from manejo_archivos import obtener_subconjuntos
 from greedy import aproximacion_greedy
 from backtracking import bracktracking_hitting_set_problem
