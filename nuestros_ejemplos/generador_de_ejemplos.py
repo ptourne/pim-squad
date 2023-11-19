@@ -1,7 +1,7 @@
 import random
 
 
-def generador_de_ejemplos(cant_prensas, cant_jug_max_por_prensa, direccion_archivo):
+def generar_ejemplos(cant_prensas, cant_jug_max_por_prensa, devolver, direccion_archivo=""):
     jugadores = [
         "Emiliano Martínez",
         "Walter Benítez",
@@ -57,6 +57,9 @@ def generador_de_ejemplos(cant_prensas, cant_jug_max_por_prensa, direccion_archi
         jugadores_elegidos = random.sample(jugadores, cant_jugadores)
         prensas.append(jugadores_elegidos)
 
+    if devolver:
+        return prensas
+
     with open(direccion_archivo, "w") as archivo:
         for prensa in prensas:
             for jugador in prensa[:len(prensa) - 1]:
@@ -65,4 +68,5 @@ def generador_de_ejemplos(cant_prensas, cant_jug_max_por_prensa, direccion_archi
             archivo.write("\n")
 
 
-generador_de_ejemplos(10, 10, "10.txt")
+# cantidad de prensas, cantidad de jugadores por prensa, devolver=True o guardar en archivo=False, dirección del archivo de salida
+generar_ejemplos(10, 10, True, "10.txt")
