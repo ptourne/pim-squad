@@ -17,14 +17,14 @@ Para poder plantear el álgoritmo de backtracing procedimos a seguir el esquema 
 
 Para la solución por backtracking consideramos relevantes las siguientes variables:
 \begin{itemize}
-    \item Los subconjuntos B_i
+    \item Los subconjuntos $B_i$
     \item Solución parcial
     \item La solución actual óptima 
-    \item El índice (i_b) del subconjunto B_i en cuestión. 
+    \item El índice ($i_b$) del subconjunto $B_i$ en cuestión. 
 \end{itemize}
 
 En cada instancia recursiva del algoritmo, se inicia con la evaluación de la compatibilidad de la solución parcial con el problema de Hitting-Set. En caso de ser compatible y si su cardinalidad es inferior a la de la solución actual, esta solución parcial se considera la nueva solución óptima (actual).
 
 Por otro lado, si la solución parcial no es compatible con el problema planteado, se procede a descartarla únicamente si su cardinalidad es mayor o igual que el de la solución actual. En este escenario, se implementa la técnica de backtracking, regresando al llamado anterior y desechando la exploración de esta rama de solución.
 
-En el caso específico en el que la solución parcial no es compatible pero aún puede representar una solución óptima potencial, se lleva a cabo una verificación adicional. Se examina el subconjunto B_i (donde i=i_b) para garantizar la inclusión de al menos un jugador en la solución final. Si este requisito no se cumple, se procede a evaluar individualmente la inclusión de cada jugador presente en B_i para determinar cuál de ellos conduce a la obtención de la solución óptima.
+En el caso específico en el que la solución parcial no es compatible pero aún puede representar una solución óptima potencial, se lleva a cabo una verificación adicional. Se examina el subconjunto $B_i$ (donde $i=i_b$) para garantizar la inclusión de al menos un jugador en la solución final. Si este requisito no se cumple, se procede a evaluar individualmente la inclusión de cada jugador presente en $B_i$ para determinar cuál de ellos conduce a la obtención de la solución óptima.
