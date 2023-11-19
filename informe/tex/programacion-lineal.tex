@@ -7,10 +7,11 @@ También se puede reducir Hitting-Set Problem a Programación Lineal de la sigui
 \begin{enumerate}
 
     \item Para cada elemento $i$ del universo $U$, se crea una variable $y_{i}$ que puede tomar los valores $0$ o $1$.
+    
+    \item Se define una función \(f_{j} = \sum_{e \in S_j} e\) para cada conjunto \(S_{j}\), y se establece una restricción que acota a \(f_{j}\) en el rango \(1 \leq f_{j} \leq |S_{j}|\).
 
-    \item Para cada set $S_{j}$, se crea una función $f_{j}=\sum_{e \in S_j} e$ y se acota $1 \leq f_{j} \leq |S_{j}|$.
 
-    \item Se busca minimizar la función $f=\sum_{i=0}^{n}y_{i}$.
+    \item  El objetivo radica en minimizar la función $f=\sum_{i=0}^{n}y_{i}$.
 
 \end{enumerate}
 
@@ -20,11 +21,14 @@ Luego, el conjunto solución $C$ será
     C = \{e_i \in U \mid y_{i} = 1\}
 \]
 
-La complejidad de esta reducción es $O(n+m)$, que es polinomial, y la complejidad de Programación Lineal Entera es exponencial.
+La complejidad de esta reducción es $O(N \times U)$ ya que se debe recorrer todos los subconjuntos $B_i$ y, por cada uno, recorrer cada elemento. Este proceso es polinomial, y la complejidad de Programación Lineal Entera es exponencial.
 
 \subsection{Programación Lineal Continua}
 
-También se puede aproximar la solución de Hitting-Set Problem con Programación Lineal continua. La reducción es similar, con la única diferencia de que las variables $y_{i}$ pueden tomar valores reales entre $0$ y $1$.
+Otra estrategia para abordar la solución del Hitting-Set Problem implica el enfoque de la Programación Lineal continua. Esta aproximación se asemeja a la reducción previamente descrita, con la distinción fundamental de que las variables 
+$y_i$ pueden asumir valores reales dentro del intervalo $0$ a $1$.
+
+Cada variable $y_i$, en la solución del problema, representa una probabilidad de que el jugador correspondiente sea parte de la solución óptima. Posteriormente, se lleva a cabo una consideración respecto a estos valores, donde aquellos que excedan el umbral del $0.5$ son incluidos como componentes de la solución óptima.
 
 Luego, el conjunto solución $C$ será
 
@@ -32,4 +36,7 @@ Luego, el conjunto solución $C$ será
     C = \left\{e_i \in U \mid y_{i} \geq \frac{1}{2}\right\}
 \]
 
-La complejidad de esta reducción es $O(n+m)$, que es polinomial, y la complejidad de Programación Lineal Continua es $O(n^9)$.
+Por la mismas consideraciones aplicadas en la reducción de la Programación Lineal Entera, la complejidad asociada a la reducción de la Programación Lineal Continua al Hitting Set es de O(N×U), representativa de un tiempo de ejecución polinomial.
+Sin embargo, la complejidad de Programación Lineal Continua es $O(n^9)$ lo cual es polinomial, a diferencia de la Entera. 
+
+
