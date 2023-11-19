@@ -58,6 +58,12 @@ Es importante destacar que la pertenencia de Vertex Cover y Set Cover a NP-Compl
 
 \subsection{Reducción Vertex Cover a Dominating-Set Problem}
 
+\begin{itemize}
+    \item Vertex Cover: Dado un grafo $G=(V,E)$, donde V es un conjunto de vértices y $E$ es un conjunto de aristas, un Vertex Cover de G es un conjunto C \in V tal que para cada arista $(u,v)$ en $E$, al menos uno de los extremos de $u$ o $v$ esrá en $C$. Es decir, para cada arista en el grafo, al menos uno de sus extremos pertence al conjunto $C$. 
+    \item Dominating Set: Dado un grafo $G$, se busca un conjunto de vértices $C$
+    tal que, para todo vértice $v \in G$, este esté contenido en $C$ o existe al menos un vértice en $C$ adyacente de $v$.
+\end{itemize}
+
 La reducción $\text{Vertex-Cover} \leq _{p} \text{Dominating-Set}$ consta en lo siguiente:
 Dado del grafo $G$ con $n$ vértices y $m$ aristas del problema Vertex Cover, para cada par de 
 vértices adyacentes $v-w$, se agregan ambos al grafo $G'$ (del problema Dominating Set) junto a 
@@ -68,12 +74,24 @@ Luego, del conjunto $V'$ de $k$ vértices solución de Dominating Set, se debe a
 
 \[\text{Vertex-Cover} \leq _{p} \text{Dominating-Set}\]
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{img/tiempos_valores_altos_puntos.png}
-%     \caption{Tendencia de la complejidad algoritmica para $n$ grandes.}
-%     \label{fig:tiempos_valores_altos_puntos}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ejemplo1_VC-DS.png}
+    \caption{Ejemplo 1 de reducción de Vertex-Cover a Dominating-Set}
+    \label{fig:ejemplo1_VC-DS}
+\end{figure}
+
+En el contexto del primer ejemplo analizado, se observó que los vértices incluidos en la solución proporcionada por el algoritmo de Dominating-Set formaban parte del conjunto inicial de vértices del problema Vertex Cover. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ejemplo2_VC-DS.png}
+    \caption{Ejemplo 2 de reducción de Vertex-Cover a Dominating-Set}
+    \label{fig:ejemplo2_VC-DS}
+\end{figure}
+
+En constraste, en el segundo ejemplo analizado, se observó que no todos los vértices incluidos en la solución proporcionada por el algoritmo de Dominating-Set formaban parte del conjunto inicial de vértices del problema Vertex Cover ($eb$ es parte de la solución proporcionada por Dominating-Set).
+Por ello, se optó por seleccionar un vértice adyacente al vértice $eb$, siendo el vértice $e$ la elección específica en la ilustración proporcionada.
 
 Finalmente:
 
@@ -89,13 +107,10 @@ Finalmente:
     \end{array}
 \]
 
-\subsection{Reducción Dominating-Set Problem a Hitting-Set Problem}
-
-Recordemos el problema de Dominating Set: Dado un grafo $G$, se busca un conjunto de vértices $C$
-tal que, para todo vértice $v \in G$, este esté contenido en $C$ o existe al menos un vértice en $C$ adyacente de $v$.
+\subsection{Reducción Dominating-Set a Hitting-Set}
 
 La reducción $\text{Dominating-Set} \leq_{p} \text{Hitting-Set}$ consta en lo siguiente:
-Dado un grafo $G$ de $n$ vértices del problema Dominating Set, para cada vértice $v_{i}$, se construye un grupo $B_{i}$ con el mismo y todos sus vértices adyacentes. Entonces, el grupo resultado del Hitting Set con los subconjuntos $B_{1},B_{2},\dots,B_{m}$ será también el grupo resultado del Dominating Set. \textit{Nota: Para cada $k$-clique dentro del grafo habrá hasta $k$ sets iguales.} La complejidad de esta reducción depende de la implementación del grafo: Si los vértices desconocen a sus adyacentes, es $O(n^{2})$ porque para cada vértice $v_{i}$ se debe recorrer todos los vértices de $G$ para verificar si son adyacentes a $v_{i}$; en cambio, si los vértices tiene referencia a sus adyacentes, la complejidad es $O(n\times o)$, siendo $o$ el promedio del grado entre vértices, que puede variar entre $0$ y $m$. En ambos casos, se trata de una complejidad polinomial.
+Dado un grafo $G$ de $n$ vértices del problema Dominating Set, para cada vértice $v_{i}$, se construye un grupo $B_{i}$ con él mismo y todos sus vértices adyacentes. Entonces, el grupo resultado del Hitting Set con los subconjuntos $B_{1},B_{2},\dots,B_{m}$ será también el grupo resultado del Dominating Set. \textit{Nota: Para cada $k$-clique dentro del grafo habrá hasta $k$ sets iguales.} La complejidad de esta reducción depende de la implementación del grafo: Si los vértices desconocen a sus adyacentes, es $O(n^{2})$ porque para cada vértice $v_{i}$ se debe recorrer todos los vértices de $G$ para verificar si son adyacentes a $v_{i}$; en cambio, si los vértices tiene referencia a sus adyacentes, la complejidad es $O(n\times o)$, siendo $o$ el promedio del grado entre vértices, que puede variar entre $0$ y $m$. En ambos casos, se trata de una complejidad polinomial.
 
 \[\text{Dominating-Set}  \leq _{p} \text{Hitting-Set}\]
 

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1700326954 "/home/melina/Documents/tda/pim-squad/informe/main.tex" "main.pdf" "main" 1700326954
+["pdflatex"] 1700355204 "/home/melina/Documents/tda/pim-squad/informe/main.tex" "main.pdf" "main" 1700355204
   "/etc/texmf/web2c/texmf.cnf" 1689449596 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/melina/Documents/tda/pim-squad/informe/main.tex" 1700321503 2579 0c2194623ac594b095050dcc510c6209 ""
+  "/home/melina/Documents/tda/pim-squad/informe/main.tex" 1700351089 2564 13ce4c41df2090a5c3572876dbe7cc89 ""
   "/usr/share/texlive/texmf-dist/tex/generic/arrayjobx/arrayjobx.sty" 1273100364 7715 1fd0dba2ac1519babb4976eef783f161 ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty" 1643231327 147419 2058c0f5e6893b19c8f3ce95d177646c ""
@@ -147,8 +147,8 @@
   "dsfont.sty" 0 -1 0 ""
   "estilo.cls" 1700321503 3758 1c70665c10e6baf4b5b4b31ffa30a7ca ""
   "main.atfi" 0 -1 0 "pdflatex"
-  "main.aux" 1700326954 32 3985256e7290058c681f74d7a3565a19 ""
-  "main.tex" 1700321503 2579 0c2194623ac594b095050dcc510c6209 ""
+  "main.aux" 1700355204 32 3985256e7290058c681f74d7a3565a19 ""
+  "main.tex" 1700351089 2564 13ce4c41df2090a5c3572876dbe7cc89 ""
   (generated)
   "main.atfi"
   "main.log"
