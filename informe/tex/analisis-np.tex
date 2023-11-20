@@ -78,21 +78,11 @@ Luego, del conjunto $V'$ de $k$ vértices solución de Dominating Set, se debe a
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{img/ejemplo1_VC-DS.png}
-    \caption{Ejemplo 1 de reducción de Vertex-Cover a Dominating-Set}
+    \caption{Ejemplo de reducción de Vertex-Cover a Dominating-Set}
     \label{fig:ejemplo1_VC-DS}
 \end{figure}
 
-En el contexto del primer ejemplo analizado, se observó que los vértices incluidos en la solución proporcionada por el algoritmo de Dominating-Set formaban parte del conjunto inicial de vértices del problema Vertex Cover. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{img/ejemplo2_VC-DS.png}
-    \caption{Ejemplo 2 de reducción de Vertex-Cover a Dominating-Set}
-    \label{fig:ejemplo2_VC-DS}
-\end{figure}
-
-En constraste, en el segundo ejemplo analizado, se observó que no todos los vértices incluidos en la solución proporcionada por el algoritmo de Dominating-Set formaban parte del conjunto inicial de vértices del problema Vertex Cover ($eb$ es parte de la solución proporcionada por Dominating-Set).
-Por ello, se optó por seleccionar un vértice adyacente al vértice $eb$, siendo el vértice $e$ la elección específica en la ilustración proporcionada.
+Notar que el conjunto solución de Dominating-Set $V'=\left\{CA,D\right\}$ se incluye un vértice que pertenece al conjunto de auxiliares $CA \in A$. Por ello, se debe agregar a $V$ cualquiera de sus adyacentes, en este caso $D$.
 
 Finalmente:
 
@@ -123,28 +113,28 @@ La construcción de los $m$ conjuntos $B_{i}$ es $O(N \times E)$. Ya que para ca
 
 \subsubsection{Ejemplos:} 
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{img/ejemplo1_DS-HS.png}
-%     \caption{Ejemplo 1 de reducción de Dominating-Set a Hitting Set}
-%     \label{fig:ejemplo1_DS-HS}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ejemplo1_DS-HS.png}
+    \caption{Ejemplo 1 de reducción de Dominating-Set a Hitting Set}
+    \label{fig:ejemplo1_DS-HS}
+\end{figure}
 
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{img/ejemplo2_DS-HS.png}
-%     \caption{Ejemplo 2 de reducción de Dominating-Set a Hitting Set}
-%     \label{fig:ejemplo2_DS-HS}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ejemplo2_DS-HS.png}
+    \caption{Ejemplo 2 de reducción de Dominating-Set a Hitting Set}
+    \label{fig:ejemplo2_DS-HS}
+\end{figure}
 
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{img/ejemplo3_DS-HS.png}
-%     \caption{Ejemplo 3 de reducción de Dominating-Set a Hitting Set}
-%     \label{fig:ejemplo3_DS-HS}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ejemplo3_DS-HS.png}
+    \caption{Ejemplo 3 de reducción de Dominating-Set a Hitting Set}
+    \label{fig:ejemplo3_DS-HS}
+\end{figure}
 
 En los tres casos analizados, se evidencia que la solución derivada del problema Hitting-Set representa la solución óptima para el Dominating-Set.
 
@@ -171,19 +161,19 @@ De esta manera, realizamos operaciones polinomiales para transformar nuestro pro
 
 \subsubsection{Ejemplos:} 
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{img/ejemplo1_SC-HS.png}
-%     \caption{Ejemplo 1 de reducción de Set-Cover a Hitting Set}
-%     \label{fig:ejemplo1_DS-HS}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ejemplo1_SC-HS.png}
+    \caption{Ejemplo 1 de reducción de Set-Cover a Hitting Set}
+    \label{fig:ejemplo1_DS-HS}
+\end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{img/ejemplo2_SC-HS.png}
-%     \caption{Ejemplo 2 de reducción de Set-Cover a Hitting Set}
-%     \label{fig:ejemplo2_DS-HS}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ejemplo2_SC-HS.png}
+    \caption{Ejemplo 2 de reducción de Set-Cover a Hitting Set}
+    \label{fig:ejemplo2_DS-HS}
+\end{figure}
 
 Al igual que la reducción de Dominating-Set a Hitting-Set, en los dos casos analizados, se evidencia que la solución derivada del problema Hitting-Set representa la solución óptima para el problema de Set-Cover.
 
