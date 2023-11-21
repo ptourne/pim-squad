@@ -1,0 +1,16 @@
+Backtracking:
+Solución: {'Messi', 'Buonanotte', 'Beltran', 'Gallardo', 'Burrito Ortega', 'Armani', 'Buendia', 'Di Maria'}
+Tiempo de ejecución: 75786.095797 milisegundos
+
+Programación Lineal Entera:
+Solución: (8, ['Burrito Ortega', 'Palermo', 'Casco', 'Buendia', 'Soule', 'Gallardo', 'Messi', 'Colo Barco'])
+Tiempo de ejecución: 4.764531999995825 milisegundos
+
+Programación Lineal Continua:
+Solución: (6.018647992999998, ['Zapelli', 'Burrito Ortega', 'Simeone', 'Buonanotte', 'Palermo', 'Casco', 'Buendia', 'Ogro Fabianni', 'Soule', 'Gallardo', 'Dibu', 'Armani', 'Messi', 'Luka Romero', 'Di Maria', 'Colidio', 'Tucu Pereyra', 'Beltran', 'Colo Barco', 'Pity Martinez'])
+Tiempo de ejecución: 4.273105999999416 milisegundos
+
+Greedy:
+Solución: {'Chiquito Romero', 'Simeone', 'Gallardo', 'Colo Barco', 'Burrito Ortega', 'Palermo', 'Casco', 'Soule', 'Riquelme'}
+Tiempo de ejecución: 0.16012300000056712 milisegundos
+

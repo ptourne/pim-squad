@@ -1,0 +1,16 @@
+Backtracking:
+Solución: {'Alejandro Garnacho', 'Ezequiel Barco', 'Agustín Urzi', 'Ricardo Centurión'}
+Tiempo de ejecución: 5.966943000000224 milisegundos
+
+Programación Lineal Entera:
+Solución: (4, ['Guido Rodríguez', 'Walter Benítez', 'Maximiliano Romero', 'Brian Mansilla'])
+Tiempo de ejecución: 1.4663759999997694 milisegundos
+
+Programación Lineal Continua:
+Solución: (4.0, ['Guido Rodríguez', 'Walter Benítez', 'Maximiliano Romero', 'Brian Mansilla'])
+Tiempo de ejecución: 0.9701380000000093 milisegundos
+
+Greedy:
+Solución: {'Alejandro Garnacho', 'Ricardo Centurión', 'Ezequiel Barco', 'Walter Benítez'}
+Tiempo de ejecución: 0.04603599999963848 milisegundos
+

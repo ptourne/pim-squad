@@ -1,0 +1,5 @@
+Nicolas González,Alejandro Garnacho,Guido Rodríguez,Franco Armani
+Agustín Urzi,Rodrigo de Paul,Emiliano Martínez,Walter Benítez,Lautaro Martínez
+Ezequiel Barco,Adolfo Gaich,Giovani Lo Celso,Maximiliano Romero,Joaquín Correa
+Matías Vargas,Brian Mansilla,Lionel Messi,Sergio Agüero,Juan Musso,Ricardo Centurión,Lucas Ocampos
+Alexis Mac Allister,Walter Benítez,Lucas Beltrán,Leandro Paredes,Cristian Romero,Ezequiel Barco,Giovanni Simeone,Ángel Di María

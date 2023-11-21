@@ -1,0 +1,16 @@
+Backtracking:
+Solución: {'Facundo Medina', 'Exequiel Palacios', 'Germán Pezzella', 'Cristian Pavón', 'Nicolás Tagliafico', 'Rodrigo de Paul'}
+Tiempo de ejecución: 38.2989789999999 milisegundos
+
+Programación Lineal Entera:
+Solución: (6, ['Matías Zaracho', 'Giovani Lo Celso', 'Germán Pezzella', 'Rodrigo de Paul', 'Nicolás Tagliafico', 'Cristian Pavón'])
+Tiempo de ejecución: 1.9121589999997468 milisegundos
+
+Programación Lineal Continua:
+Solución: (5.25, ['Matías Zaracho', 'Giovani Lo Celso', 'Germán Pezzella', 'Juan Foyth', 'Alexis Mac Allister', 'Walter Benítez', 'Rodrigo de Paul', 'Nicolás Tagliafico', 'Cristian Pavón'])
+Tiempo de ejecución: 1.4207750000001518 milisegundos
+
+Greedy:
+Solución: {'Facundo Medina', 'Germán Pezzella', 'Nicolás Tagliafico', 'Alexis Mac Allister', 'Walter Benítez', 'Rodrigo de Paul'}
+Tiempo de ejecución: 0.060931000000152835 milisegundos
+

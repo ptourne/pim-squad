@@ -1,0 +1,16 @@
+Backtracking:
+Solución: {'Mauro Zarate', 'Pezzella'}
+Tiempo de ejecución: 0.11859900000033008 milisegundos
+
+Programación Lineal Entera:
+Solución: (2, ['Mauro Zarate', 'Pezzella'])
+Tiempo de ejecución: 0.968581999999607 milisegundos
+
+Programación Lineal Continua:
+Solución: (2.0, ['Mauro Zarate', 'Pezzella'])
+Tiempo de ejecución: 0.7344240000000113 milisegundos
+
+Greedy:
+Solución: {"Barcon't", 'Colidio'}
+Tiempo de ejecución: 0.024259999999998172 milisegundos
+

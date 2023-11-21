@@ -1,0 +1,200 @@
+Leandro Paredes,Juan Foyth,Joaquín Correa,Nicolás Tagliafico,Lucas Ocampos
+Giovani Lo Celso,Julian Alvarez,Lionel Messi,Ezequiel Barco,Thiago Almada,Nicolás Tagliafico
+Ángel Di María,Juan Foyth,Maximiliano Romero,Lucas Martínez Quarta,Juan Musso,Enzo Fernández
+Matías Zaracho,Germán Pezzella,Lucas Ocampos
+Walter Benítez,Facundo Medina,Agustín Urzi,Matías Vargas
+Juan Foyth,Exequiel Palacios,Guido Rodríguez,Nicolas González,Lucas Beltrán,Giovanni Simeone,Marcos Acuña,Ezequiel Barco,Nicolás Domínguez
+Nicolás Tagliafico,Facundo Medina,Nahuel Molina,Brian Mansilla,Nicolas González,Leandro Paredes,Giovani Lo Celso,Rodrigo de Paul
+Lucas Martínez Quarta,Lucas Beltrán,Guido Rodríguez,Germán Pezzella,Marcos Acuña,Ezequiel Barco,Alejandro Garnacho,Giovani Lo Celso
+Leandro Paredes,Exequiel Palacios,Thiago Almada,Giovani Lo Celso,Brian Mansilla,Alexis Mac Allister,Franco Armani
+Leandro Paredes,Matías Zaracho
+Alexis Mac Allister,Cristian Pavón
+Paulo Dybala,Enzo Fernández,Lucas Beltrán,Rodrigo de Paul,Julian Alvarez,Guido Rodríguez,Nicolas González
+Paulo Dybala,Lucas Ocampos
+Adolfo Gaich,Lucas Ocampos,Exequiel Palacios,Matías Zaracho,Matías Vargas,Cristian Pavón,Lucas Beltrán,Alejandro Garnacho,Giovanni Simeone
+Julian Alvarez,Giovanni Simeone,Lucas Martínez Quarta,Facundo Medina,Maximiliano Romero
+Sergio Agüero,Nicolás Otamendi
+Cristian Pavón,Nicolas González
+Franco Armani,Giovanni Simeone,Juan Foyth,Lucas Ocampos,Emiliano Martínez,Gonzalo Montiel
+Marcos Acuña,Joaquín Correa,Nicolas González,Sergio Agüero,Cristian Pavón,Ángel Di María,Facundo Medina
+Nicolas González,Guido Rodríguez,Franco Armani,Lucas Beltrán
+Julian Alvarez,Matías Vargas,Leandro Paredes,Lautaro Martínez,Matías Zaracho,Walter Benítez,Gonzalo Montiel,Mauro Icardi,Nicolás Tagliafico
+Cristian Romero,Joaquín Correa,Cristian Pavón,Matías Vargas,Guido Rodríguez,Agustín Urzi,Matías Zaracho
+Gonzalo Montiel,Sergio Agüero,Franco Armani,Joaquín Correa,Ezequiel Barco,Enzo Fernández,Nicolás Otamendi,Adolfo Gaich,Paulo Dybala,Juan Musso
+Nahuel Molina,Thiago Almada,Rodrigo de Paul,Paulo Dybala,Ángel Di María,Lautaro Martínez,Joaquín Correa,Lucas Beltrán
+Nicolas González
+Exequiel Palacios,Ángel Di María
+Nahuel Molina,Giovani Lo Celso,Sergio Agüero,Guido Rodríguez,Alejandro Garnacho,Gonzalo Montiel,Agustín Urzi,Germán Pezzella,Nicolás Tagliafico,Matías Zaracho
+Lautaro Martínez,Lucas Martínez Quarta,Joaquín Correa,Alejandro Garnacho
+Ángel Di María
+Lautaro Martínez,Joaquín Correa,Maximiliano Romero,Guido Rodríguez,Facundo Medina,Ricardo Centurión,Ezequiel Barco,Mauro Icardi
+Nahuel Molina,Rodrigo de Paul,Julian Alvarez
+Cristian Romero,Leandro Paredes,Matías Zaracho,Lautaro Martínez,Mauro Icardi
+Lucas Beltrán,Juan Musso,Nicolás Otamendi,Leandro Paredes,Matías Vargas,Lucas Ocampos,Lautaro Martínez,Alejandro Garnacho,Cristian Romero,Nahuel Molina
+Giovanni Simeone,Matías Zaracho,Nicolas González,Emiliano Martínez,Ezequiel Barco,Lucas Martínez Quarta,Franco Armani,Rodrigo de Paul
+Giovanni Simeone,Lucas Beltrán,Nicolás Domínguez,Walter Benítez,Paulo Dybala,Mauro Icardi,Juan Foyth
+Nicolas González,Leandro Paredes,Guido Rodríguez,Cristian Pavón,Matías Zaracho,Exequiel Palacios,Nicolás Tagliafico,Ángel Di María
+Nicolás Otamendi,Cristian Pavón,Sergio Agüero,Guido Rodríguez
+Franco Armani,Nicolás Otamendi,Lucas Beltrán,Lautaro Martínez,Ángel Di María,Lionel Messi,Giovanni Simeone,Nahuel Molina,Alejandro Garnacho,Enzo Fernández
+Ezequiel Barco,Giovanni Simeone,Facundo Medina,Juan Musso,Marcos Acuña,Thiago Almada,Matías Vargas
+Ángel Di María,Lionel Messi,Giovanni Simeone,Joaquín Correa,Facundo Medina,Gonzalo Montiel,Lucas Ocampos,Maximiliano Romero,Paulo Dybala,Lautaro Martínez
+Alexis Mac Allister,Nicolás Otamendi,Nahuel Molina
+Nicolás Otamendi
+Alexis Mac Allister,Facundo Medina,Agustín Urzi,Juan Foyth,Lionel Messi,Enzo Fernández,Nahuel Molina
+Adolfo Gaich,Marcos Acuña,Matías Zaracho,Lucas Ocampos,Sergio Agüero,Emiliano Martínez,Nicolás Domínguez,Giovani Lo Celso
+Facundo Medina,Exequiel Palacios,Julian Alvarez,Mauro Icardi,Nicolas González,Walter Benítez,Enzo Fernández
+Maximiliano Romero,Lionel Messi
+Matías Zaracho,Thiago Almada,Nicolas González,Nicolás Tagliafico
+Lautaro Martínez,Lionel Messi,Facundo Medina,Emiliano Martínez,Cristian Pavón,Nicolas González,Julian Alvarez
+Walter Benítez,Adolfo Gaich,Juan Foyth
+Nahuel Molina,Joaquín Correa
+Guido Rodríguez,Nicolás Tagliafico,Rodrigo de Paul,Agustín Urzi,Nicolás Domínguez,Juan Musso,Ezequiel Barco,Emiliano Martínez,Germán Pezzella,Gonzalo Montiel
+Walter Benítez,Nicolas González,Matías Vargas
+Enzo Fernández,Joaquín Correa,Guido Rodríguez,Julian Alvarez,Maximiliano Romero,Walter Benítez,Nicolás Domínguez,Brian Mansilla
+Matías Zaracho,Nahuel Molina
+Lucas Beltrán,Giovani Lo Celso,Walter Benítez,Cristian Pavón,Giovanni Simeone,Ángel Di María
+Thiago Almada,Joaquín Correa
+Nahuel Molina,Exequiel Palacios,Ricardo Centurión,Cristian Pavón,Alejandro Garnacho,Alexis Mac Allister
+Nahuel Molina,Julian Alvarez,Adolfo Gaich,Emiliano Martínez,Leandro Paredes,Alexis Mac Allister,Giovani Lo Celso,Juan Foyth,Maximiliano Romero
+Giovani Lo Celso,Juan Foyth,Nicolás Tagliafico,Lautaro Martínez,Leandro Paredes,Guido Rodríguez,Juan Musso,Agustín Urzi,Lucas Beltrán,Maximiliano Romero
+Juan Musso,Giovani Lo Celso,Maximiliano Romero,Matías Zaracho,Leandro Paredes,Franco Armani,Juan Foyth,Joaquín Correa,Lautaro Martínez,Brian Mansilla
+Ezequiel Barco,Lionel Messi,Germán Pezzella,Giovanni Simeone,Guido Rodríguez,Facundo Medina,Nicolás Domínguez
+Marcos Acuña,Juan Musso,Juan Foyth,Mauro Icardi,Germán Pezzella,Cristian Pavón
+Rodrigo de Paul,Giovanni Simeone,Walter Benítez,Cristian Romero,Giovani Lo Celso,Lautaro Martínez
+Cristian Pavón,Thiago Almada,Juan Musso,Alexis Mac Allister,Enzo Fernández,Adolfo Gaich,Brian Mansilla,Franco Armani,Marcos Acuña,Facundo Medina
+Ángel Di María,Walter Benítez
+Lucas Beltrán,Nicolas González,Mauro Icardi,Marcos Acuña,Thiago Almada,Adolfo Gaich,Brian Mansilla,Cristian Romero,Nicolás Domínguez
+Adolfo Gaich,Nicolas González,Giovanni Simeone,Julian Alvarez,Joaquín Correa,Juan Musso,Cristian Pavón,Guido Rodríguez
+Juan Foyth,Nicolás Otamendi,Rodrigo de Paul,Cristian Pavón,Maximiliano Romero,Ezequiel Barco,Alexis Mac Allister,Facundo Medina,Alejandro Garnacho,Walter Benítez
+Germán Pezzella,Ángel Di María,Nahuel Molina,Guido Rodríguez,Ezequiel Barco
+Germán Pezzella,Matías Zaracho,Juan Musso,Matías Vargas,Marcos Acuña,Brian Mansilla,Juan Foyth,Exequiel Palacios,Guido Rodríguez,Giovani Lo Celso
+Leandro Paredes,Giovanni Simeone,Ángel Di María,Walter Benítez,Emiliano Martínez,Germán Pezzella,Brian Mansilla,Juan Musso,Matías Zaracho,Maximiliano Romero
+Guido Rodríguez,Facundo Medina,Alejandro Garnacho
+Germán Pezzella,Joaquín Correa,Cristian Romero
+Matías Zaracho,Walter Benítez,Giovanni Simeone,Sergio Agüero,Lionel Messi
+Ezequiel Barco,Marcos Acuña,Alexis Mac Allister,Lucas Ocampos,Paulo Dybala,Julian Alvarez
+Nicolás Otamendi,Agustín Urzi,Enzo Fernández,Giovani Lo Celso,Nicolas González,Alexis Mac Allister,Lucas Ocampos
+Ángel Di María,Giovani Lo Celso,Lionel Messi,Alexis Mac Allister,Guido Rodríguez,Lucas Martínez Quarta,Alejandro Garnacho,Paulo Dybala,Matías Zaracho,Juan Foyth
+Nicolás Domínguez,Germán Pezzella
+Lucas Martínez Quarta,Ezequiel Barco,Mauro Icardi
+Matías Zaracho,Franco Armani
+Exequiel Palacios,Alejandro Garnacho,Marcos Acuña,Rodrigo de Paul,Nicolás Otamendi
+Julian Alvarez,Nicolás Domínguez,Franco Armani
+Brian Mansilla,Leandro Paredes,Nicolás Tagliafico,Enzo Fernández,Walter Benítez,Matías Vargas,Giovani Lo Celso
+Adolfo Gaich,Juan Foyth,Ricardo Centurión,Exequiel Palacios,Agustín Urzi,Matías Zaracho,Rodrigo de Paul,Nicolás Domínguez,Julian Alvarez,Lionel Messi
+Leandro Paredes,Nicolas González,Lucas Ocampos,Juan Foyth,Brian Mansilla,Mauro Icardi,Nicolás Otamendi,Juan Musso,Giovanni Simeone,Marcos Acuña
+Julian Alvarez,Giovanni Simeone,Thiago Almada,Marcos Acuña,Juan Musso,Alejandro Garnacho,Adolfo Gaich
+Brian Mansilla,Mauro Icardi,Ricardo Centurión,Franco Armani,Nicolás Tagliafico,Emiliano Martínez,Giovanni Simeone,Germán Pezzella,Maximiliano Romero,Sergio Agüero
+Mauro Icardi,Brian Mansilla,Lucas Beltrán,Giovanni Simeone,Germán Pezzella,Juan Musso
+Rodrigo de Paul,Enzo Fernández,Lucas Martínez Quarta,Cristian Romero,Juan Foyth,Facundo Medina,Ezequiel Barco,Matías Zaracho
+Giovanni Simeone,Alejandro Garnacho,Rodrigo de Paul,Ángel Di María,Maximiliano Romero
+Matías Vargas,Juan Foyth,Emiliano Martínez,Agustín Urzi,Ricardo Centurión,Leandro Paredes,Nicolas González,Mauro Icardi,Lucas Martínez Quarta
+Facundo Medina,Cristian Pavón,Agustín Urzi,Brian Mansilla,Giovanni Simeone
+Ángel Di María,Giovanni Simeone,Germán Pezzella,Cristian Pavón
+Joaquín Correa,Matías Vargas,Nicolás Domínguez,Germán Pezzella,Sergio Agüero,Marcos Acuña,Nicolás Otamendi,Emiliano Martínez
+Lucas Beltrán,Emiliano Martínez
+Paulo Dybala,Germán Pezzella,Lionel Messi,Lucas Martínez Quarta,Emiliano Martínez,Nahuel Molina,Lucas Ocampos,Alejandro Garnacho
+Ángel Di María
+Franco Armani,Giovanni Simeone,Nicolas González,Maximiliano Romero,Julian Alvarez,Gonzalo Montiel,Walter Benítez,Lucas Ocampos
+Brian Mansilla
+Matías Zaracho,Joaquín Correa,Leandro Paredes,Exequiel Palacios,Facundo Medina,Germán Pezzella,Juan Foyth,Alexis Mac Allister
+Adolfo Gaich,Lautaro Martínez,Juan Foyth,Gonzalo Montiel,Leandro Paredes
+Adolfo Gaich
+Juan Foyth,Rodrigo de Paul,Maximiliano Romero,Joaquín Correa,Nicolas González
+Sergio Agüero,Lucas Beltrán,Cristian Romero,Ángel Di María,Alexis Mac Allister,Matías Zaracho
+Nicolas González,Alexis Mac Allister,Alejandro Garnacho,Paulo Dybala,Leandro Paredes,Lionel Messi
+Marcos Acuña,Lionel Messi,Juan Foyth,Germán Pezzella,Adolfo Gaich,Rodrigo de Paul,Matías Zaracho
+Leandro Paredes,Paulo Dybala,Joaquín Correa,Lucas Ocampos,Julian Alvarez
+Walter Benítez,Emiliano Martínez,Franco Armani,Alejandro Garnacho,Guido Rodríguez,Brian Mansilla,Lucas Ocampos,Giovani Lo Celso,Germán Pezzella,Sergio Agüero
+Franco Armani,Exequiel Palacios,Matías Vargas
+Alejandro Garnacho,Guido Rodríguez,Juan Musso,Rodrigo de Paul,Lautaro Martínez,Emiliano Martínez,Giovani Lo Celso,Brian Mansilla,Paulo Dybala,Julian Alvarez
+Lucas Ocampos,Matías Zaracho,Maximiliano Romero,Ángel Di María,Matías Vargas,Guido Rodríguez,Mauro Icardi,Juan Foyth
+Adolfo Gaich,Agustín Urzi,Nicolás Tagliafico,Alejandro Garnacho,Matías Vargas,Juan Musso,Paulo Dybala
+Ezequiel Barco,Matías Zaracho,Leandro Paredes,Guido Rodríguez,Lucas Martínez Quarta,Nicolas González,Ricardo Centurión
+Mauro Icardi,Nicolás Otamendi
+Giovani Lo Celso,Giovanni Simeone,Paulo Dybala,Ricardo Centurión,Lucas Martínez Quarta,Adolfo Gaich,Agustín Urzi,Nicolas González,Gonzalo Montiel
+Lionel Messi,Lucas Martínez Quarta,Nicolás Domínguez,Marcos Acuña,Lautaro Martínez,Giovanni Simeone
+Rodrigo de Paul
+Enzo Fernández,Emiliano Martínez,Facundo Medina,Lucas Ocampos,Thiago Almada,Agustín Urzi,Guido Rodríguez
+Franco Armani,Mauro Icardi,Joaquín Correa,Lautaro Martínez,Juan Foyth,Julian Alvarez,Gonzalo Montiel,Maximiliano Romero,Paulo Dybala,Exequiel Palacios
+Adolfo Gaich,Leandro Paredes,Lucas Ocampos,Agustín Urzi,Nahuel Molina,Sergio Agüero,Lucas Martínez Quarta
+Juan Musso,Ezequiel Barco,Lucas Ocampos,Germán Pezzella,Guido Rodríguez,Nahuel Molina
+Juan Foyth,Leandro Paredes,Emiliano Martínez,Thiago Almada,Ángel Di María,Agustín Urzi,Matías Vargas,Adolfo Gaich,Lionel Messi
+Enzo Fernández,Joaquín Correa,Adolfo Gaich,Alejandro Garnacho,Matías Zaracho,Cristian Romero,Nahuel Molina,Giovani Lo Celso,Guido Rodríguez,Ricardo Centurión
+Matías Vargas,Alejandro Garnacho,Lautaro Martínez,Enzo Fernández,Mauro Icardi,Lucas Beltrán,Nicolás Otamendi
+Marcos Acuña,Emiliano Martínez,Alexis Mac Allister,Juan Musso,Guido Rodríguez,Alejandro Garnacho,Matías Vargas,Germán Pezzella
+Matías Vargas,Cristian Romero
+Nicolás Tagliafico,Lucas Ocampos,Paulo Dybala
+Lucas Beltrán,Cristian Pavón,Mauro Icardi,Maximiliano Romero,Julian Alvarez,Nicolás Tagliafico,Matías Zaracho,Franco Armani
+Lautaro Martínez,Brian Mansilla,Cristian Pavón,Rodrigo de Paul,Ángel Di María,Joaquín Correa,Sergio Agüero,Cristian Romero
+Nicolás Domínguez
+Cristian Pavón,Paulo Dybala,Maximiliano Romero,Ezequiel Barco,Lautaro Martínez,Julian Alvarez,Matías Zaracho
+Lucas Martínez Quarta,Adolfo Gaich,Enzo Fernández,Leandro Paredes
+Lucas Ocampos,Enzo Fernández
+Lautaro Martínez,Cristian Pavón,Giovanni Simeone,Ricardo Centurión,Exequiel Palacios,Lucas Ocampos,Lucas Beltrán,Marcos Acuña,Agustín Urzi
+Ezequiel Barco,Exequiel Palacios,Marcos Acuña,Adolfo Gaich,Juan Foyth,Emiliano Martínez,Nicolás Otamendi,Julian Alvarez,Alexis Mac Allister
+Leandro Paredes,Lucas Martínez Quarta,Nicolas González,Nahuel Molina
+Paulo Dybala,Julian Alvarez,Franco Armani,Matías Vargas,Cristian Romero,Gonzalo Montiel,Giovanni Simeone,Joaquín Correa,Agustín Urzi,Germán Pezzella
+Marcos Acuña,Juan Musso,Maximiliano Romero,Nahuel Molina,Alejandro Garnacho
+Facundo Medina,Mauro Icardi
+Giovani Lo Celso,Leandro Paredes,Emiliano Martínez,Lucas Martínez Quarta,Lucas Ocampos
+Cristian Pavón
+Enzo Fernández,Rodrigo de Paul,Julian Alvarez,Lionel Messi,Gonzalo Montiel,Alejandro Garnacho,Lucas Martínez Quarta
+Juan Foyth,Nicolás Otamendi,Brian Mansilla,Nicolas González,Ezequiel Barco,Juan Musso
+Thiago Almada,Ángel Di María,Juan Foyth,Marcos Acuña,Ezequiel Barco,Nicolás Tagliafico
+Exequiel Palacios,Ángel Di María,Rodrigo de Paul
+Nahuel Molina,Cristian Romero,Exequiel Palacios,Gonzalo Montiel,Giovanni Simeone
+Gonzalo Montiel,Juan Foyth,Nicolás Tagliafico,Lucas Beltrán,Brian Mansilla,Marcos Acuña,Matías Zaracho
+Ezequiel Barco,Agustín Urzi,Emiliano Martínez,Joaquín Correa
+Franco Armani,Ezequiel Barco,Walter Benítez,Alexis Mac Allister,Enzo Fernández,Sergio Agüero,Alejandro Garnacho
+Nicolás Domínguez,Sergio Agüero,Germán Pezzella,Lautaro Martínez,Facundo Medina,Lucas Martínez Quarta
+Thiago Almada
+Giovani Lo Celso,Nicolás Tagliafico,Nicolás Otamendi
+Nicolás Domínguez,Lucas Beltrán,Exequiel Palacios,Thiago Almada
+Nicolás Domínguez,Lucas Martínez Quarta,Ángel Di María,Lautaro Martínez,Alexis Mac Allister,Giovani Lo Celso,Alejandro Garnacho,Sergio Agüero,Lucas Ocampos
+Cristian Pavón,Joaquín Correa,Sergio Agüero,Lucas Ocampos,Ezequiel Barco,Facundo Medina,Lucas Beltrán,Nicolás Otamendi,Matías Zaracho,Lionel Messi
+Lucas Martínez Quarta,Alejandro Garnacho,Germán Pezzella,Adolfo Gaich,Ángel Di María,Nicolás Tagliafico,Lautaro Martínez,Lucas Beltrán,Gonzalo Montiel,Franco Armani
+Lucas Ocampos
+Alejandro Garnacho,Nahuel Molina,Matías Vargas,Exequiel Palacios,Brian Mansilla,Gonzalo Montiel,Juan Musso
+Matías Zaracho,Exequiel Palacios,Lionel Messi,Germán Pezzella,Mauro Icardi
+Sergio Agüero,Cristian Romero,Rodrigo de Paul,Cristian Pavón,Guido Rodríguez,Walter Benítez,Alejandro Garnacho,Joaquín Correa,Mauro Icardi,Matías Zaracho
+Facundo Medina,Ezequiel Barco,Emiliano Martínez
+Germán Pezzella,Nicolás Otamendi,Gonzalo Montiel,Nicolas González,Paulo Dybala
+Thiago Almada,Giovani Lo Celso,Germán Pezzella,Lautaro Martínez,Brian Mansilla,Marcos Acuña,Mauro Icardi
+Juan Foyth
+Ángel Di María,Julian Alvarez,Matías Vargas,Ricardo Centurión
+Agustín Urzi,Lautaro Martínez
+Giovani Lo Celso,Cristian Romero,Ricardo Centurión,Alejandro Garnacho,Agustín Urzi,Emiliano Martínez,Gonzalo Montiel
+Guido Rodríguez,Paulo Dybala,Julian Alvarez,Mauro Icardi,Lucas Martínez Quarta,Ezequiel Barco,Maximiliano Romero,Lionel Messi
+Matías Zaracho,Nicolás Tagliafico,Leandro Paredes,Mauro Icardi,Gonzalo Montiel,Giovani Lo Celso,Emiliano Martínez
+Nicolás Domínguez,Paulo Dybala,Giovani Lo Celso,Juan Foyth,Maximiliano Romero
+Facundo Medina,Nicolas González,Alexis Mac Allister,Rodrigo de Paul,Lucas Martínez Quarta,Franco Armani
+Adolfo Gaich,Nicolás Tagliafico
+Sergio Agüero,Giovanni Simeone
+Joaquín Correa,Alejandro Garnacho,Nicolás Tagliafico,Matías Zaracho,Lucas Ocampos
+Enzo Fernández,Giovanni Simeone,Nicolás Tagliafico,Brian Mansilla,Mauro Icardi,Adolfo Gaich,Juan Musso,Agustín Urzi,Lucas Beltrán
+Germán Pezzella,Matías Vargas,Juan Musso,Gonzalo Montiel,Paulo Dybala,Thiago Almada,Ricardo Centurión,Giovanni Simeone,Sergio Agüero,Marcos Acuña
+Nicolás Otamendi,Rodrigo de Paul,Sergio Agüero,Nicolas González,Brian Mansilla,Ángel Di María,Mauro Icardi,Lionel Messi,Cristian Pavón,Juan Musso
+Lionel Messi,Marcos Acuña,Julian Alvarez,Lucas Martínez Quarta,Thiago Almada,Nicolás Tagliafico,Giovani Lo Celso
+Ángel Di María,Matías Vargas,Facundo Medina,Alexis Mac Allister,Franco Armani,Alejandro Garnacho
+Guido Rodríguez,Paulo Dybala,Lionel Messi,Walter Benítez,Agustín Urzi
+Leandro Paredes,Giovanni Simeone
+Lucas Beltrán,Brian Mansilla,Exequiel Palacios,Cristian Romero,Gonzalo Montiel,Nicolás Domínguez,Emiliano Martínez,Matías Vargas
+Lucas Beltrán,Germán Pezzella,Exequiel Palacios,Cristian Romero,Enzo Fernández
+Lucas Martínez Quarta,Nicolás Tagliafico,Lucas Beltrán,Nahuel Molina,Julian Alvarez,Ángel Di María,Giovanni Simeone
+Emiliano Martínez,Guido Rodríguez
+Nahuel Molina,Emiliano Martínez
+Lucas Beltrán,Alexis Mac Allister,Agustín Urzi,Giovani Lo Celso,Ezequiel Barco,Nahuel Molina
+Matías Zaracho,Mauro Icardi,Juan Musso,Franco Armani,Ricardo Centurión,Walter Benítez,Matías Vargas,Lionel Messi
+Matías Vargas,Enzo Fernández,Nicolas González,Nicolás Otamendi,Lautaro Martínez,Agustín Urzi
+Nicolás Domínguez,Agustín Urzi
+Alexis Mac Allister,Lucas Ocampos,Nicolas González
+Marcos Acuña,Sergio Agüero,Paulo Dybala,Mauro Icardi,Exequiel Palacios,Joaquín Correa
+Joaquín Correa,Enzo Fernández,Julian Alvarez,Giovanni Simeone,Cristian Pavón,Facundo Medina
+Giovanni Simeone,Lionel Messi,Ricardo Centurión,Exequiel Palacios,Guido Rodríguez,Mauro Icardi,Lucas Martínez Quarta,Brian Mansilla
+Gonzalo Montiel,Facundo Medina,Cristian Romero,Julian Alvarez
+Facundo Medina,Joaquín Correa,Nahuel Molina,Marcos Acuña,Maximiliano Romero,Ezequiel Barco,Nicolás Otamendi,Rodrigo de Paul,Matías Vargas
+Juan Foyth
+Sergio Agüero,Juan Musso,Nicolás Otamendi,Lucas Beltrán,Lionel Messi,Ángel Di María,Cristian Pavón
+Nahuel Molina,Gonzalo Montiel,Nicolás Otamendi,Guido Rodríguez,Emiliano Martínez,Ricardo Centurión,Ezequiel Barco,Matías Zaracho
+Nicolás Tagliafico,Enzo Fernández,Ezequiel Barco,Lionel Messi,Franco Armani,Nahuel Molina,Agustín Urzi,Emiliano Martínez,Guido Rodríguez

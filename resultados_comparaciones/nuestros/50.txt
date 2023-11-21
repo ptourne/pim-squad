@@ -1,0 +1,16 @@
+Backtracking:
+Solución: {'Brian Mansilla', 'Agustín Urzi', 'Lionel Messi', 'Lautaro Martínez', 'Matías Vargas', 'Exequiel Palacios', 'Giovanni Simeone', 'Ángel Di María', 'Lucas Martínez Quarta', 'Paulo Dybala'}
+Tiempo de ejecución: 347589.450616 milisegundos
+
+Programación Lineal Entera:
+Solución: (10, ['Brian Mansilla', 'Paulo Dybala', 'Matías Vargas', 'Exequiel Palacios', 'Giovanni Simeone', 'Lautaro Martínez', 'Lucas Martínez Quarta', 'Lionel Messi', 'Ángel Di María', 'Agustín Urzi'])
+Tiempo de ejecución: 3.8328539999952227 milisegundos
+
+Programación Lineal Continua:
+Solución: (9.578947377999999, ['Brian Mansilla', 'Alejandro Garnacho', 'Paulo Dybala', 'Leandro Paredes', 'Matías Vargas', 'Giovani Lo Celso', 'Joaquín Correa', 'Exequiel Palacios', 'Giovanni Simeone', 'Franco Armani', 'Gonzalo Montiel', 'Sergio Agüero', 'Lautaro Martínez', 'Mauro Icardi', 'Thiago Almada', 'Lucas Martínez Quarta', 'Nicolás Tagliafico', 'Enzo Fernández', 'Lionel Messi', 'Ángel Di María', 'Agustín Urzi'])
+Tiempo de ejecución: 2.8287779999800478 milisegundos
+
+Greedy:
+Solución: {'Nahuel Molina', 'Emiliano Martínez', 'Gonzalo Montiel', 'Leandro Paredes', 'Giovanni Simeone', 'Julian Alvarez', 'Alejandro Garnacho', 'Exequiel Palacios', 'Mauro Icardi', 'Franco Armani', 'Alexis Mac Allister', 'Germán Pezzella', 'Paulo Dybala'}
+Tiempo de ejecución: 0.1083519999838245 milisegundos
+

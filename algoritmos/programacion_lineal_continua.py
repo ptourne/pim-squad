@@ -22,7 +22,6 @@ def hitting_set_pl_continua(b_array):
                     f"y_{jugador}", lowBound=0, upBound=1, cat=pulp.LpContinuous)
                 dic_jugadores[jugador] = y
             dic_p.add(y)
-            # problem += y >= 1 / b
 
         p = pulp.lpSum(dic_p)
         problem += p >= 1
@@ -33,7 +32,6 @@ def hitting_set_pl_continua(b_array):
 
     problem.solve()
     res = pulp.value(z)
-    print(1/b)
 
     jugadores_seleccionados = [
         jugador for jugador, variable in dic_jugadores.items() if pulp.value(variable) > 1/b]
