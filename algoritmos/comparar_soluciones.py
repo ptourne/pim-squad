@@ -1,6 +1,6 @@
 from algoritmos.manejo_archivos import obtener_subconjuntos
 from algoritmos.backtracking import bracktracking_hitting_set_problem
-from algoritmos.greedy import aproximacion_greedy_bis
+from algoritmos.greedy import aproximacion_greedy_maximo_global_con_recalculo
 from medicion_tiempo import tiempo_ejecucion_y_resultado
 from nuestros_ejemplos.generador_de_ejemplos import generar_ejemplos
 from algoritmos.programacion_lineal_continua import hitting_set_pl_continua
@@ -15,7 +15,7 @@ def comparar_soluciones(pedidos):
     tiempo_lineal_continua, sol_lineal_continua = tiempo_ejecucion_y_resultado(
         pedidos, hitting_set_pl_continua)
     tiempo_greedy, sol_greedy = tiempo_ejecucion_y_resultado(
-        pedidos, aproximacion_greedy_bis)
+        pedidos, aproximacion_greedy_maximo_global_con_recalculo)
 
     # Guardamos en un archivo los resultados
     with open('resultados.txt', 'w') as file:

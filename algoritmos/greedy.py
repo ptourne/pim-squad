@@ -2,11 +2,11 @@ from validacion_np import validar_solucion
 from manejo_archivos import obtener_subconjuntos
 
 
-def aproximacion_greedy(subconjuntos: list):
+def aproximacion_greedy_maximo_por_grupos(subconjuntos: list):
     """
-    Obtiene la solución por greedy.
+    Obtiene la solucion por greedy.
     param subconjuntos: subconjuntos de jugadores pedidos por cada prensa
-    return: solución
+    return: solucion
     """
     # contamos la cantidad de apariciones de cada jugador por cada prensa
     apariciones = {}
@@ -19,7 +19,7 @@ def aproximacion_greedy(subconjuntos: list):
 
     # ordenamos los subconjuntos por cantidad de apariciones de cada jugador
 
-    # obtenemos la solución mediante el óptimo local
+    # obtenemos la solucion mediante el optimo local
     solucion = set()
     for subconjunto in subconjuntos:  # O(len(subconjuntos)*len(subconjunto))
         aparicion_max = None
@@ -36,11 +36,11 @@ def aproximacion_greedy(subconjuntos: list):
 
     return solucion
 
-def aproximacion_greedy_bis(subconjuntos: list):
+def aproximacion_greedy_maximo_global_con_recalculo(subconjuntos: list):
     """
-    Obtiene la solución por greedy.
+    Obtiene la solucion por greedy.
     param subconjuntos: subconjuntos de jugadores pedidos por cada prensa
-    return: solución
+    return: solucion
     """
     # contamos la cantidad de apariciones de cada jugador por cada prensa
     apariciones = {}
@@ -50,7 +50,7 @@ def aproximacion_greedy_bis(subconjuntos: list):
                 apariciones[jugador] = set()
             apariciones[jugador].add(index)
 
-    # obtenemos la solución mediante el óptimo local
+    # obtenemos la solucion mediante el optimo local
     solucion = set()
     
     while len(apariciones) != 0:  # O(len(jugadores)*len(subconjuntos)*len(subconjunto))
@@ -61,43 +61,43 @@ def aproximacion_greedy_bis(subconjuntos: list):
         solucion.add(jugador)
         
         for index_subconjunto in index_subconjuntos:  # O(len(subconjuntos)*len(subconjunto))
-            for jugador_compañero_de_conjunto in subconjuntos[index_subconjunto]:
-                if jugador != jugador_compañero_de_conjunto:
-                    apariciones[jugador_compañero_de_conjunto].remove(index_subconjunto)
+            for jugador_companiero_de_conjunto in subconjuntos[index_subconjunto]:
+                if jugador != jugador_companiero_de_conjunto:
+                    apariciones[jugador_companiero_de_conjunto].remove(index_subconjunto)
 
     return solucion
 
 def prueba_greedy():
     args = ["catedra_ejemplos/5.txt", "backtracking"]
     subconjuntos = obtener_subconjuntos(args[0])
-    solucion_greedy = aproximacion_greedy(subconjuntos)
-    solucion_greedy_bis = aproximacion_greedy_bis(subconjuntos)
+    solucion_greedy = aproximacion_greedy_maximo_por_grupos(subconjuntos)
+    solucion_greedy_bis = aproximacion_greedy_maximo_global_con_recalculo(subconjuntos)
     print("solucion_greedy:" + str(solucion_greedy))
     print("Len:" + str(len(solucion_greedy)))
-    print("Es solución:" + str(validar_solucion(solucion_greedy, subconjuntos)))
+    print("Es solucion:" + str(validar_solucion(solucion_greedy, subconjuntos)))
     print("solucion_greedy_bis:" + str(solucion_greedy_bis))
     print("Len:" + str(len(solucion_greedy_bis)))
-    print("Es solución:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
+    print("Es solucion:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
     args = ["catedra_ejemplos/7.txt", "backtracking"]
     subconjuntos = obtener_subconjuntos(args[0])
-    solucion_greedy = aproximacion_greedy(subconjuntos)
-    solucion_greedy_bis = aproximacion_greedy_bis(subconjuntos)
+    solucion_greedy = aproximacion_greedy_maximo_por_grupos(subconjuntos)
+    solucion_greedy_bis = aproximacion_greedy_maximo_global_con_recalculo(subconjuntos)
     print("solucion_greedy:" + str(solucion_greedy))
     print("Len:" + str(len(solucion_greedy)))
-    print("Es solución:" + str(validar_solucion(solucion_greedy, subconjuntos)))
+    print("Es solucion:" + str(validar_solucion(solucion_greedy, subconjuntos)))
     print("solucion_greedy_bis:" + str(solucion_greedy_bis))
     print("Len:" + str(len(solucion_greedy_bis)))
-    print("Es solución:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
+    print("Es solucion:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
     args = ["catedra_ejemplos/100.txt", "backtracking"]
     subconjuntos = obtener_subconjuntos(args[0])
-    solucion_greedy = aproximacion_greedy(subconjuntos)
-    solucion_greedy_bis = aproximacion_greedy_bis(subconjuntos)
+    solucion_greedy = aproximacion_greedy_maximo_por_grupos(subconjuntos)
+    solucion_greedy_bis = aproximacion_greedy_maximo_global_con_recalculo(subconjuntos)
     print("solucion_greedy:" + str(solucion_greedy))
     print("Len:" + str(len(solucion_greedy)))
-    print("Es solución:" + str(validar_solucion(solucion_greedy, subconjuntos)))
+    print("Es solucion:" + str(validar_solucion(solucion_greedy, subconjuntos)))
     print("solucion_greedy_bis:" + str(solucion_greedy_bis))
     print("Len:" + str(len(solucion_greedy_bis)))
-    print("Es solución:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
+    print("Es solucion:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
 
 def main():
     prueba_greedy()

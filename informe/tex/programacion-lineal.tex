@@ -23,6 +23,10 @@ Luego, el conjunto solución $C$ será
 
 La complejidad de esta reducción es $O(N \times U)$ ya que se debe recorrer todos los subconjuntos $B_i$ y, por cada uno, recorrer cada elemento. Este proceso es polinomial, y la complejidad de Programación Lineal Entera es exponencial.
 
+El codigo de la reducción es el siguiente:
+
+\lstinputlisting[language=Python, firstline=4, lastline=32]{../algoritmos/programacion_lineal_entera.py}
+
 \subsection{Aproximación por Programación Lineal Continua}
 
 Otra estrategia para abordar la solución del Hitting-Set Problem implica el enfoque de la Programación Lineal continua. Esta aproximación se asemeja a la reducción previamente descrita, con la distinción fundamental de que las variables 
@@ -39,4 +43,6 @@ Luego, el conjunto solución $C$ será
 Por la mismas consideraciones aplicadas en la reducción de la Programación Lineal Entera, la complejidad asociada a la reducción de la Programación Lineal Continua al Hitting Set es de O(N×U), representativa de un tiempo de ejecución polinomial.
 Sin embargo, la complejidad de Programación Lineal Continua es $O(n^9)$ lo cual es polinomial, a diferencia de la Entera. 
 
+El codigo de la reducción es el siguiente:
 
+\lstinputlisting[language=Python, firstline=4, lastline=41]{../algoritmos/programacion_lineal_entera.py}

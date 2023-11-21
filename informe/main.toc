@@ -12,7 +12,9 @@
 \contentsline {section}{\numberline {4}Solución por Programación Lineal}{9}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Programación Lineal Entera}{9}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Aproximación por Programación Lineal Continua}{10}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Aproximación por Greedy}{10}{section.5}%
-\contentsline {subsubsection}{\numberline {5.0.1}Primer algorítmo Greedy}{10}{subsubsection.5.0.1}%
-\contentsline {section}{\numberline {6}Mediciones}{11}{section.6}%
-\contentsline {section}{\numberline {7}Conclusiones}{12}{section.7}%
+\contentsline {section}{\numberline {5}Aproximación por Greedy}{11}{section.5}%
+\contentsline {subsubsection}{\numberline {5.0.1}Máximo por grupo}{11}{subsubsection.5.0.1}%
+\contentsline {subsubsection}{\numberline {5.0.2}Máximo global con recálculo}{12}{subsubsection.5.0.2}%
+\contentsline {section}{\numberline {6}Ejemplos}{13}{section.6}%
+\contentsline {section}{\numberline {7}Mediciones}{16}{section.7}%
+\contentsline {section}{\numberline {8}Conclusiones}{17}{section.8}%

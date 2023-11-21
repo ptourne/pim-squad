@@ -1,7 +1,7 @@
 import argparse
 from algoritmos.programacion_lineal_continua import hitting_set_pl_continua
 from manejo_archivos import obtener_subconjuntos
-from greedy import aproximacion_greedy
+from greedy import aproximacion_greedy_maximo_por_grupos
 from backtracking import bracktracking_hitting_set_problem
 from programacion_lineal_entera import hitting_set_pl_entera
 
@@ -39,7 +39,7 @@ def main():
 
     match tipo_solucion:
         case "greedy":
-            solucion = aproximacion_greedy(subconjuntos)
+            solucion = aproximacion_greedy_maximo_por_grupos(subconjuntos)
             print(solucion + "\n")
 
         case "backtracking":
