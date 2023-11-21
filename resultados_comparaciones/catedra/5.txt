@@ -1,0 +1,16 @@
+Backtracking:
+Solución: {'El fantasma de la B', 'Di Maria', 'Casco', 'Tucu Pereyra', 'Mauro Zarate'}
+Tiempo de ejecución: 209.55657900000003 milisegundos
+
+Programación Lineal Entera:
+Solución: (5, ['El fantasma de la B', 'Riquelme', 'Pezzella', 'Mauro Zarate', 'Cuti Romero'])
+Tiempo de ejecución: 2.443242000000012 milisegundos
+
+Programación Lineal Continua:
+Solución: (4.260869573, ['El fantasma de la B', "Barcon't", 'Riquelme', 'Buonanotte', 'Tucu Pereyra', 'Pezzella', 'Mauro Zarate', 'Ogro Fabianni', 'Casco', 'Colidio', 'Armani', 'Pity Martinez'])
+Tiempo de ejecución: 1.7295900000000586 milisegundos
+
+Greedy:
+Solución: {'El fantasma de la B', 'Pezzella', 'Riquelme', 'Mauro Zarate', 'Ogro Fabianni'}
+Tiempo de ejecución: 0.06235299999968191 milisegundos
+

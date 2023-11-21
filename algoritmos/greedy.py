@@ -27,7 +27,7 @@ def aproximacion_greedy_maximo_por_grupos(subconjuntos: list):
             if jugador in solucion:
                 aparicion_max = jugador
                 break
-            
+
             else:
                 if aparicion_max is None or apariciones[jugador] > apariciones[aparicion_max]:
                     aparicion_max = jugador
@@ -44,7 +44,8 @@ def aproximacion_greedy_maximo_global_con_recalculo(subconjuntos: list):
     """
     # contamos la cantidad de apariciones de cada jugador por cada prensa
     apariciones = {}
-    for index, subconjunto in enumerate(subconjuntos): # O(len(subconjuntos)*len(subconjunto))
+    # O(len(subconjuntos)*len(subconjunto))
+    for index, subconjunto in enumerate(subconjuntos):
         for jugador in subconjunto:
             if jugador not in apariciones:
                 apariciones[jugador] = set()
@@ -52,55 +53,20 @@ def aproximacion_greedy_maximo_global_con_recalculo(subconjuntos: list):
 
     # obtenemos la solucion mediante el optimo local
     solucion = set()
-    
+
     while len(apariciones) != 0:  # O(len(jugadores)*len(subconjuntos)*len(subconjunto))
-        jugador , index_subconjuntos = max(apariciones.items(), key=lambda jugador_index_subconjuntos: len(jugador_index_subconjuntos[1]))
+        jugador, index_subconjuntos = max(apariciones.items(
+        ), key=lambda jugador_index_subconjuntos: len(jugador_index_subconjuntos[1]))
         apariciones.pop(jugador)
         if len(index_subconjuntos) == 0:
             break
         solucion.add(jugador)
-        
-        for index_subconjunto in index_subconjuntos:  # O(len(subconjuntos)*len(subconjunto))
+
+        # O(len(subconjuntos)*len(subconjunto))
+        for index_subconjunto in index_subconjuntos:
             for jugador_companiero_de_conjunto in subconjuntos[index_subconjunto]:
                 if jugador != jugador_companiero_de_conjunto:
-                    apariciones[jugador_companiero_de_conjunto].remove(index_subconjunto)
+                    apariciones[jugador_companiero_de_conjunto].remove(
+                        index_subconjunto)
 
     return solucion
-
-def prueba_greedy():
-    args = ["catedra_ejemplos/5.txt", "backtracking"]
-    subconjuntos = obtener_subconjuntos(args[0])
-    solucion_greedy = aproximacion_greedy_maximo_por_grupos(subconjuntos)
-    solucion_greedy_bis = aproximacion_greedy_maximo_global_con_recalculo(subconjuntos)
-    print("solucion_greedy:" + str(solucion_greedy))
-    print("Len:" + str(len(solucion_greedy)))
-    print("Es solucion:" + str(validar_solucion(solucion_greedy, subconjuntos)))
-    print("solucion_greedy_bis:" + str(solucion_greedy_bis))
-    print("Len:" + str(len(solucion_greedy_bis)))
-    print("Es solucion:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
-    args = ["catedra_ejemplos/7.txt", "backtracking"]
-    subconjuntos = obtener_subconjuntos(args[0])
-    solucion_greedy = aproximacion_greedy_maximo_por_grupos(subconjuntos)
-    solucion_greedy_bis = aproximacion_greedy_maximo_global_con_recalculo(subconjuntos)
-    print("solucion_greedy:" + str(solucion_greedy))
-    print("Len:" + str(len(solucion_greedy)))
-    print("Es solucion:" + str(validar_solucion(solucion_greedy, subconjuntos)))
-    print("solucion_greedy_bis:" + str(solucion_greedy_bis))
-    print("Len:" + str(len(solucion_greedy_bis)))
-    print("Es solucion:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
-    args = ["catedra_ejemplos/100.txt", "backtracking"]
-    subconjuntos = obtener_subconjuntos(args[0])
-    solucion_greedy = aproximacion_greedy_maximo_por_grupos(subconjuntos)
-    solucion_greedy_bis = aproximacion_greedy_maximo_global_con_recalculo(subconjuntos)
-    print("solucion_greedy:" + str(solucion_greedy))
-    print("Len:" + str(len(solucion_greedy)))
-    print("Es solucion:" + str(validar_solucion(solucion_greedy, subconjuntos)))
-    print("solucion_greedy_bis:" + str(solucion_greedy_bis))
-    print("Len:" + str(len(solucion_greedy_bis)))
-    print("Es solucion:" + str(validar_solucion(solucion_greedy_bis, subconjuntos)) + "\n")
-
-def main():
-    prueba_greedy()
-
-if __name__ == "__main__":
-    main()

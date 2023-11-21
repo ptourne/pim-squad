@@ -66,7 +66,9 @@ def generar_ejemplos(cant_prensas, cant_jug_max_por_prensa, devolver, direccion_
                 archivo.write(jugador + ",")
             archivo.write(prensa[len(prensa) - 1])
             archivo.write("\n")
+    print(f"{direccion_archivo} generado con éxito")
 
 
+# Posicionarse en la carpeta algoritmos y para correr el código
 # cantidad de prensas, cantidad de jugadores por prensa, devolver=True o guardar en archivo=False, dirección del archivo de salida
-generar_ejemplos(10, 10, True, "10.txt")
+generar_ejemplos(100, 7, True, "../nuestros_ejemplos/100.txt")

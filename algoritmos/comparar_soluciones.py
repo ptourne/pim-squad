@@ -1,13 +1,12 @@
-from algoritmos.manejo_archivos import obtener_subconjuntos
-from algoritmos.backtracking import bracktracking_hitting_set_problem
-from algoritmos.greedy import aproximacion_greedy_maximo_global_con_recalculo
+from manejo_archivos import obtener_subconjuntos
+from backtracking import bracktracking_hitting_set_problem
+from greedy import aproximacion_greedy_maximo_global_con_recalculo
 from medicion_tiempo import tiempo_ejecucion_y_resultado
-from nuestros_ejemplos.generador_de_ejemplos import generar_ejemplos
-from algoritmos.programacion_lineal_continua import hitting_set_pl_continua
-from algoritmos.programacion_lineal_entera import hitting_set_pl_entera
+from programacion_lineal_continua import hitting_set_pl_continua
+from programacion_lineal_entera import hitting_set_pl_entera
 
 
-def comparar_soluciones(pedidos):
+def comparar_soluciones(pedidos, archivo_salida="resultados.txt"):
     tiempo_backtracking, sol_backtracking = tiempo_ejecucion_y_resultado(
         pedidos, bracktracking_hitting_set_problem)
     tiempo_lineal_entera, sol_lineal_entera = tiempo_ejecucion_y_resultado(
@@ -18,15 +17,16 @@ def comparar_soluciones(pedidos):
         pedidos, aproximacion_greedy_maximo_global_con_recalculo)
 
     # Guardamos en un archivo los resultados
-    with open('resultados.txt', 'w') as file:
+    with open(archivo_salida, 'w') as file:
         file.write(
-            f"Backtracking:\n{sol_backtracking}\n{tiempo_backtracking}\n\n")
+            f"Backtracking:\nSolución: {sol_backtracking}\nTiempo de ejecución: {tiempo_backtracking * 1000} milisegundos\n\n")
         file.write(
-            f"Programación Lineal Entera:\n{sol_lineal_entera}\n{tiempo_lineal_entera}\n\n")
+            f"Programación Lineal Entera:\nSolución: {sol_lineal_entera}\nTiempo de ejecución: {tiempo_lineal_entera * 1000} milisegundos\n\n")
         file.write(
-            f"Programación Lineal Continua:\n{sol_lineal_continua}\n{tiempo_lineal_continua}\n\n")
-        file.write(f"Greedy:\n{sol_greedy}\n{tiempo_greedy}\n\n")
+            f"Programación Lineal Continua:\nSolución: {sol_lineal_continua}\nTiempo de ejecución: {tiempo_lineal_continua * 1000} milisegundos\n\n")
+        file.write(
+            f"Greedy:\nSolución: {sol_greedy}\nTiempo de ejecución: {tiempo_greedy * 1000} milisegundos\n\n")
 
 
-pedidos = obtener_subconjuntos("../nuestros_ejemplos/5_muchos.txt")
-comparar_soluciones(pedidos)
+pedidos = obtener_subconjuntos("../ejemplos/nuestros/2000.txt")
+comparar_soluciones(pedidos, "../resultados_comparaciones/nuestros/2000.txt")
