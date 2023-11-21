@@ -28,5 +28,5 @@ def comparar_soluciones(pedidos, archivo_salida="resultados.txt"):
             f"Greedy:\nSolución: {sol_greedy}\nTiempo de ejecución: {tiempo_greedy * 1000} milisegundos\n\n")
 
 
-pedidos = obtener_subconjuntos("../ejemplos/nuestros/2000.txt")
-comparar_soluciones(pedidos, "../resultados_comparaciones/nuestros/2000.txt")
+pedidos = obtener_subconjuntos("../ejemplos/catedra/20.txt")
+comparar_soluciones(pedidos, "../resultados_comparaciones/catedra/20.txt")

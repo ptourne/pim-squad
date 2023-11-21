@@ -1,16 +1,16 @@
 Backtracking:
-Solución: {'Dybala', 'Chiquito Romero', 'Wachoffisde Abila', 'Luka Romero'}
-Tiempo de ejecución: 15.575655999999771 milisegundos
+Solución: {'Luka Romero', 'Dybala', 'Wachoffisde Abila', 'Chiquito Romero'}
+Tiempo de ejecución: 3.4946499999999325 milisegundos
 
 Programación Lineal Entera:
 Solución: (4, ['Chiquito Romero', 'Wachoffisde Abila', 'Luka Romero', 'Dybala'])
-Tiempo de ejecución: 2.037508999999993 milisegundos
+Tiempo de ejecución: 1.8074910000001054 milisegundos
 
 Programación Lineal Continua:
-Solución: (4.0, ['Chiquito Romero', 'Di Maria', 'El fantasma de la B', 'Wachoffisde Abila', 'Colo Barco', 'Luka Romero', 'Simeone', 'Riquelme', 'Dybala', 'Armani', "Barcon't"])
-Tiempo de ejecución: 1.5909960000000112 milisegundos
+Solución: (4.0, ['Chiquito Romero', 'El fantasma de la B', 'Di Maria', 'Colo Barco', 'Wachoffisde Abila', 'Luka Romero', 'Simeone', 'Riquelme', 'Dybala', 'Armani', "Barcon't"])
+Tiempo de ejecución: 1.9441890000000406 milisegundos
 
 Greedy:
-Solución: {'Pity Martinez', 'Dybala', 'Di Maria', 'Luka Romero'}
-Tiempo de ejecución: 0.06357999999995201 milisegundos
+Solución: {'Luka Romero', 'Dybala', 'Pity Martinez', 'Di Maria'}
+Tiempo de ejecución: 0.08227800000026875 milisegundos
 

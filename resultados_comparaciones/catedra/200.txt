@@ -1,0 +1,16 @@
+Backtracking:
+Solución: {'Mauro Zarate', 'Pezzella', 'Dybala', 'Cuti Romero', 'El fantasma de la B', "Barcon't", 'Casco', 'Chiquito Romero', 'Gallardo', 'Di Maria'}
+Tiempo de ejecución: 14818.303617000001 milisegundos
+
+Programación Lineal Entera:
+Solución: (9, ['El fantasma de la B', 'Beltran', 'Armani', 'Gallardo', "Barcon't", 'Buonanotte', 'Changuito Zeballos', 'Pezzella', 'Chiquito Romero'])
+Tiempo de ejecución: 10.14019500000174 milisegundos
+
+Programación Lineal Continua:
+Solución: (6.033142508999999, ['Mauro Zarate', 'Zapelli', 'Langoni', 'El fantasma de la B', 'Tucu Pereyra', 'Beltran', 'Wachoffisde Abila', 'Cuti Romero', 'Armani', 'Luka Romero', 'Pity Martinez', 'Gallardo', 'Di Maria', "Barcon't", 'Colo Barco', 'Casco', 'Buendia', 'Buonanotte', 'Dibu', 'Changuito Zeballos', 'Palermo', 'Pezzella', 'Burrito Ortega', 'Messi', 'Dybala', 'Soule', 'Chiquito Romero'])
+Tiempo de ejecución: 9.558195000000325 milisegundos
+
+Greedy:
+Solución: {'Mauro Zarate', 'Pezzella', 'Tucu Pereyra', 'Dibu', 'Luka Romero', 'Changuito Zeballos', 'Beltran', 'Pity Martinez', 'Gallardo', 'Di Maria'}
+Tiempo de ejecución: 0.28743000000019947 milisegundos
+

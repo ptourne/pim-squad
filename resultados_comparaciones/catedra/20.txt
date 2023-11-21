@@ -1,16 +1,16 @@
 Backtracking:
-Solución: {'Di Maria', 'Wachoffisde Abila', 'Mauro Zarate', 'Colidio', 'El fantasma de la B'}
-Tiempo de ejecución: 160.47967399999985 milisegundos
+Solución: {"Barcon't", 'Mauro Zarate', 'Riquelme', 'Casco', 'El fantasma de la B'}
+Tiempo de ejecución: 2.9556389999996213 milisegundos
 
 Programación Lineal Entera:
-Solución: (5, ['El fantasma de la B', 'Riquelme', 'Pezzella', 'Mauro Zarate', 'Cuti Romero'])
-Tiempo de ejecución: 2.437805000000015 milisegundos
+Solución: (5, ['Riquelme', 'El fantasma de la B', 'Mauro Zarate', 'Pezzella', 'Cuti Romero'])
+Tiempo de ejecución: 1.7616809999996264 milisegundos
 
 Programación Lineal Continua:
-Solución: (4.260869573, ["Barcon't", 'El fantasma de la B', 'Riquelme', 'Buonanotte', 'Pezzella', 'Tucu Pereyra', 'Mauro Zarate', 'Ogro Fabianni', 'Colidio', 'Casco', 'Pity Martinez', 'Armani'])
-Tiempo de ejecución: 1.8012559999998068 milisegundos
+Solución: (4.260869573, ["Barcon't", 'Riquelme', 'El fantasma de la B', 'Buonanotte', 'Mauro Zarate', 'Pezzella', 'Tucu Pereyra', 'Ogro Fabianni', 'Colidio', 'Casco', 'Armani', 'Pity Martinez'])
+Tiempo de ejecución: 1.4964929999994325 milisegundos
 
 Greedy:
-Solución: {'Pezzella', 'Ogro Fabianni', 'El fantasma de la B', 'Riquelme', 'Mauro Zarate'}
-Tiempo de ejecución: 0.060543000000023994 milisegundos
+Solución: {'Riquelme', 'Ogro Fabianni', 'Mauro Zarate', 'Pezzella', 'El fantasma de la B'}
+Tiempo de ejecución: 0.05999900000031033 milisegundos
 

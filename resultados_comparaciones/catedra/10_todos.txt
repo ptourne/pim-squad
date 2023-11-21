@@ -1,16 +1,16 @@
 Backtracking:
-Solución: {'Medina', 'Pellegrino', 'Lo Celso', 'Enzo', 'Garnacho', 'Messi', 'Cuti', 'Montiel', 'Armani', 'Nico González'}
-Tiempo de ejecución: 185.12995900000018 milisegundos
+Solución: {'Ocampos', 'Julian', 'Pezella', 'Molina', 'Lo Celso', 'Juan Musso', 'Perrone', 'Messi', 'Mac Allister', 'Armani'}
+Tiempo de ejecución: 35.782023999999964 milisegundos
 
 Programación Lineal Entera:
 Solución: (10, ['Armani', 'Otamendi', 'Acuña', 'De Paul', 'Lo Celso', 'Julian', 'Messi', 'Garnacho', 'Juan Musso', 'Pellegrino'])
-Tiempo de ejecución: 1.628304000000469 milisegundos
+Tiempo de ejecución: 1.4527799999997093 milisegundos
 
 Programación Lineal Continua:
 Solución: (10.0, ['Rulli', 'Cuti', 'Acuña', 'De Paul', 'Lo Celso', 'Nico González', 'Messi', 'Garnacho', 'Juan Musso', 'Pellegrino'])
-Tiempo de ejecución: 1.0832939999998459 milisegundos
+Tiempo de ejecución: 1.0597310000002302 milisegundos
 
 Greedy:
-Solución: {'Medina', 'Pellegrino', 'Lo Celso', 'Enzo', 'Garnacho', 'Messi', 'Cuti', 'Montiel', 'Armani', 'Nico González'}
-Tiempo de ejecución: 0.05124999999939206 milisegundos
+Solución: {'Ocampos', 'Julian', 'Pezella', 'Molina', 'Lo Celso', 'Juan Musso', 'Perrone', 'Messi', 'Mac Allister', 'Armani'}
+Tiempo de ejecución: 0.04712799999984085 milisegundos
 

@@ -5,7 +5,7 @@ Proponemos dos aproximaciones extra.
 \subsubsection{Máximo por grupo}
 Este enfoque realiza un cálculo de la frecuencia con la que cada jugador aparece en los $m$ subconjuntos $B$. Posteriormente, procede a recorrer cada uno de estos subconjuntos y, si la solución parcial propuesta no incluye ningún jugador presente en un subconjunto dado, se incluye en esta solución al jugador que tiene la mayor frecuencia de apariciones dentro de dicho subconjunto.
 
-Este enfoque se distingue por su carácter greedy al enfocarse en optimizar la solución global mediante la búsqueda de óptimos locales en cada subconjunto. Se prioriza la inclusión del jugador con la mayor frecuencia de aparición en situaciones donde la solución parcial no incluye a ningún jugador del subconjunto evaluado. Este método busca mejorar la solución global al introducir jugadores de acuerdo con su frecuencia de aparición en los subconjuntos, minimizando así la cobertura de elementos dentro de la solución propuesta.
+Este algorítmo sigue la técnica de diseño greedy al enfocarse en optimizar la solución global mediante la búsqueda de óptimos locales en cada subconjunto. Se prioriza la inclusión del jugador con la mayor frecuencia de aparición en situaciones donde la solución parcial no incluye a ningún jugador del subconjunto evaluado. Este método busca mejorar la solución global al introducir jugadores de acuerdo con su frecuencia de aparición en los subconjuntos, minimizando así la cobertura de elementos dentro de la solución propuesta.
 
 \lstinputlisting[language=Python, firstline=5, lastline=37]{../algoritmos/greedy.py}
 
@@ -14,9 +14,11 @@ De la misma manera, la segunda operación tiene complejidad de  $O(m\times n)$ y
 
 \subsubsection{Máximo global con recálculo}
 
-La segunda aproximación comienza de la misma manera, calculando la cantidad de apariciones de cada jugador en cada subconjunto. Luego agrega el jugador con más apariciones entre todos y quita las apariciones de los subconjuntos que ya cubre al resto de los jugadores. Realiza esta operación hasta quedarse sin jugadores restantes o que el jugador encontrado en la busqueda del de mayor frecuencia tenga cero apariciones restantes.
+La ténica de diseño implementada en este algorítmo, al igual que el anterior explicado,  es greedy ya que busca el óptimo local al optimizar la solución por cada subconjunto, priorizando la inclusión del jugador con la mayor frecuencia hasta que se cumpla la cobertura de por lo menos un jugador por conjuntos.
 
-La ténica de diseño implementada en este algorítmo, al igual que el anterior explicado,  es greedy ya que busca el óptimo local al optimizar globalmente la solución por cada subconjunto, priorizando la inclusión del jugador con la mayor frecuencia hasta que se cumpla la cobertura de todos los conjuntos.
+La segunda estrategia inicia de manera similar, llevando a cabo el cálculo de la frecuencia de aparición de cada jugador en los diferentes subconjuntos. Posteriormente, se procede a añadir a la solución el jugador que presenta la mayor cantidad de apariciones entre todos, y quita las apariciones de los subconjuntos que ya cubre al resto de los jugadores. Este proceso se repite sucesivamente hasta quedarse sin jugadores restantes o hasta que el jugador con la mayor frecuencia encontrada no tenga más apariciones restantes.
+
+La técnica de diseño empleada en este algoritmo, al igual que el anterior explicado, se caracteriza por ser greedy, ya que busca optimizar la solución al priorizar la inclusión del jugador con la mayor frecuencia en cada iteración, hasta alcanzar la cobertura total de todos los subconjuntos. 
 
 \lstinputlisting[language=Python, firstline=39, lastline=68]{../algoritmos/greedy.py}
 
