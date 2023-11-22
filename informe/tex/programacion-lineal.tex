@@ -32,7 +32,7 @@ El codigo de la reducción es el siguiente:
 Otra estrategia para abordar la solución del Hitting-Set Problem implica el enfoque de la Programación Lineal continua. Esta aproximación se asemeja a la reducción previamente descrita, con la distinción fundamental de que las variables 
 $y_i$ pueden asumir valores reales dentro del intervalo $0$ a $1$.
 
-Cada variable $y_i$, en la solución del problema, representa una probabilidad de que el jugador correspondiente sea parte de la solución óptima. Posteriormente, se lleva a cabo una consideración respecto a estos valores, donde aquellos que excedan el umbral del $0.5$ son incluidos como componentes de la solución óptima.
+Posteriormente, se lleva a cabo una consideración respecto a estos valores, donde aquellos que excedan el umbral del $1/b$, siendo $b$ el cardinal máximo de todos los conjuntos $S_j$, son incluidos como componentes de la solución final.
 
 Luego, el conjunto solución $C$ será
 
@@ -40,9 +40,28 @@ Luego, el conjunto solución $C$ será
     C = \left\{e_i \in U \mid y_{i} \geq \frac{1}{2}\right\}
 \]
 
-Por la mismas consideraciones aplicadas en la reducción de la Programación Lineal Entera, la complejidad asociada a la reducción de la Programación Lineal Continua al Hitting Set es de O(N×U), representativa de un tiempo de ejecución polinomial.
+Por la mismas consideraciones aplicadas en la reducción de la Programación Lineal Entera, la complejidad asociada a la reducción de la Programación Lineal Continua al Hitting Set es de O(N×U).
 Sin embargo, la complejidad de Programación Lineal Continua es $O(n^9)$ lo cual es polinomial, a diferencia de la Entera. 
 
 El codigo de la reducción es el siguiente:
 
 \lstinputlisting[language=Python, firstline=4, lastline=41]{../algoritmos/programacion_lineal_entera.py}
+
+Con el objetivo de evaluar qué tan buena aproximación es la Programación Lineal Continua respecto a la Programación Lineal Entera, se propuso el siguiente escenario que resalta las diferencias entre las soluciones obtenidas por ambos algorítmos:
+
+Consideramos dos conjuntos que representan medios diferentes, denominados set1 y set2. Estos conjuntos se componen de la siguiente manera:
+\begin{enumerate}
+    \item set1 con tamaño b, expresado como set1={x_1, x_2, ..., x_{b-1},  x_b}
+    \item set2 con tamaño b-1, representado como set2={x_1, x_2, ..., x_{b-1}}
+\end{enumerate}
+
+En un contexto de Programación Lineal Continua (PLC), una solución posible puede ser la asignación $x_1 = x_2 = ... = x_{b-1} = 1/(b-1)$ y $x_b=0$.
+
+En esta situación, dado que $\frac{1}{b} < \frac{1}{b-1}$, las variables del set2, al ser redondeadas, resultarían en 1, siendo todas incluidas en la solución final.
+
+Por otro lado, la solución proporcionada por la Programación Lineal Entera (PLE), que representa la solución óptima, presentaría, por ejemplo, la siguiente asignación de valores:  $x_1 = 1$ y  $x_2 = ... = x_{b-1} = 0$. 
+
+No obstante, al obtenerse una aproximación mediante PLC que establece $x_1 = x_2 = ... = x_{b-1} = 1$ se deriva la siguiente relación de aproximación: $r(A)=\frac{A(I)}{z(I)}=\frac{b-1}{1}$
+
+En consecuencia, $b−1$, se establece como una cota superior de la aproximación. 
+
