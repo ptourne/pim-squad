@@ -104,7 +104,7 @@
 \\[1cm]
 	\textsc{\Large Teoría de Algoritmos}\\           % Materia
 	\textsc{\small (75.29) Curso Buchwald - Genender}\\[0.4cm]    % Subtítulo materia
-	{ \huge \bfseries Trabajo Práctico 1}\\[0.3cm]      % Título
+	{ \huge \bfseries Trabajo Práctico 3}\\[0.3cm]      % Título
 	\andreasline \\[0.2cm]
 	{\large Fecha de entrega: 24/11/2023  \\[0.4cm]}                          % Fecha
 
