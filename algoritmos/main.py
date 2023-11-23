@@ -1,65 +1,71 @@
 import argparse
-from algoritmos.programacion_lineal_continua import hitting_set_pl_continua
+from logging import raiseExceptions
+from programacion_lineal_continua import hitting_set_pl_continua
 from manejo_archivos import obtener_subconjuntos
-from greedy import aproximacion_greedy_maximo_por_grupos
+from greedy import aproximacion_greedy_maximo_global_con_recalculo
 from backtracking import bracktracking_hitting_set_problem
 from programacion_lineal_entera import hitting_set_pl_entera
 
 
 def main():
-    # parser = argparse.ArgumentParser(
-    #     description="Obtiene el menor conjunto de jugadores que cubre al menos un pedido de cada prensa"
-    # )
+    parser = argparse.ArgumentParser(
+        description="Obtiene la solución al problema de hitting set problem"
+    )
 
-    # parser.add_argument(
-    #     "archivo_entrada",
-    #     metavar="archivo con pedidos",
-    #     type=open,
-    #     nargs=1,
-    #     help="Archivo de entrada con los pedidos de cada prensa",
-    # )
+    parser.add_argument(
+        "archivo_entrada",
+        metavar="archivo con subconjuntos",
+        type=open,
+        nargs='?',
+        help="Archivo de entrada con los subconjuntos a utilizar",
+    )
 
-    # parser.add_argument(
-    #     "greedy_backtracking_lineal",
-    #     metavar="algoritmo a elección",
-    #     type=str,
-    #     nargs=1,
-    #     help="Algoritmo a utilizar para resolver el problema",
-    # )
+    parser.add_argument(
+        "greedy_backtracking_lineal",
+        metavar="algoritmo a elección\n greedy - backtracking - lineal_entera - lineal_continua",
+        type=str,
+        nargs='?',
+        help="Algoritmo a utilizar para resolver el problema\ngreedy - backtracking - lineal_entera - lineal_continua",
+    )
 
-    # args = parser.parse_args()
+    args = parser.parse_args()
 
-    args = ["./nuestros_ejemplos/20.txt", "lineal_entera"]
+    if not args.greedy_backtracking_lineal:
+        raise Exception("Falta el algoritmo a utilizar")
 
-    # subconjuntos = obtener_subconjuntos(args.archivo_entrada[0])
-    # tipo_solucion = args.greedy_backtracking_lineal[0]
+    archivo_entrada = args.archivo_entrada.name if args.archivo_entrada else raiseExceptions(
+        "Falta el archivo de entrada")
+    subconjuntos = obtener_subconjuntos(archivo_entrada)
 
-    subconjuntos = obtener_subconjuntos(args[0])
-    tipo_solucion = args[1]
+    tipo_solucion = args.greedy_backtracking_lineal
 
+    solucion = "La solución por " + tipo_solucion + " es: \n"
     match tipo_solucion:
         case "greedy":
-            solucion = aproximacion_greedy_maximo_por_grupos(subconjuntos)
-            print(solucion + "\n")
+            solucion_greedy = aproximacion_greedy_maximo_global_con_recalculo(
+                subconjuntos)
+            solucion += str(solucion_greedy) + "\n"
 
         case "backtracking":
-            solucion = bracktracking_hitting_set_problem(subconjuntos)
-            print(str(solucion) + "\n")
+            solucion_bracktracking = bracktracking_hitting_set_problem(
+                subconjuntos)
+            solucion += str(solucion_bracktracking) + "\n"
 
         case "lineal_entera":
-            cant_jugadores, jugadores = hitting_set_pl_entera(
+            solucion_pl_entera = hitting_set_pl_entera(
                 subconjuntos)
-            print("cant_jugadores: " + str(cant_jugadores) + "\n" + "-----" +
-                  "jugadores: " + str(jugadores) + "\n")
+            solucion += str(solucion_pl_entera) + "\n"
 
         case "lineal_continua":
-            cant_jugadores, jugadores = hitting_set_pl_continua(
+            solucion_pl_continua = hitting_set_pl_continua(
                 subconjuntos)
-            print("cant_jugadores: " + str(cant_jugadores) + "\n" + "-----" +
-                  "jugadores: " + str(jugadores) + "\n")
+            solucion += str(solucion_pl_continua) + "\n"
 
         case _:
             raise Exception("Algoritmo no reconocido")
+
+    print(solucion)
+    return solucion
 
 
 if __name__ == "__main__":
