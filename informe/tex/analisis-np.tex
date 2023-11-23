@@ -4,11 +4,11 @@ El problema planteado por Scaloni es un caso específico del problema del
 Hitting-Set, cuya definición formal se presenta de la siguiente manera: dado un 
 conjunto $A$ compuesto por $n$ elementos y $m$ subconjuntos $B_{1}, B_{2}, \dots, B_{m}$ 
 pertenecientes a $A$ ($B_{i}\subseteq A \forall i \in \mathbb{N}_{m}$), se busca encontrar un conjunto $C \subseteq A$ tal que para cada 
-subconjunto $C$, donde $C \subseteq A / \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$. 
+subconjunto $B_{j}$, donde $B_{j} \subseteq A / \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$. 
 
 Además de su formulación básica, el problema del Hitting-Set también presenta una versión
 de decisión: dada la colección de un conjunto $A$ con $n$ elementos y $m$ subconjuntos
-$B_{1}, B_{2}, \dots, B_{m}$ de $A$ ($B_{i}\subseteq A$ para cada $i$), junto con un 
+$B_{1}, B_{2}, \dots, B_{m}$ ($B_{i}\subseteq A$ para todo $i$), junto con un 
 parámetro numérico $k$, se plantea el interrogante sobre la existencia de un conjunto 
 $C \subseteq A$ que cumpla con dos condiciones fundamentales:
 
@@ -17,25 +17,20 @@ $C \subseteq A$ que cumpla con dos condiciones fundamentales:
     \item En segundo lugar, que para cada subconjunto $B_{j}$, la intersección entre $C$ y $B_{j}$ no sea vacía ($C \cap B_{j} \neq \emptyset$) para todo $j$ perteneciente al conjunto de  números naturales hasta $m$.
 \end{itemize}
 
-El problema del Hitting-Set se sitúa en la clase de complejidad NP debido a su capacidad 
-de verificación en tiempo polinomial, lo que implica una verificación eficiente de su 
-solución propuesta. La verificación de la solución se reduce a confirmar dos condiciones 
-fundamentales: Primero, se debe comprobar que la cardinalidad del conjunto propuesto $C$ 
-es menor o igual a $k$, donde $k$ es un parámetro dado. Segundo, es necesario 
-verificar que para cada conjunto $B_{j}$ dentro de una colección de subconjuntos 
-$B_{1}, B_{2}, \dots, B_{m}$, $C$ contenga al menos un elemento de $B_{j}$.
-
 Para realizar esta verificación, se llevan a cabo dos operaciones clave que definen la 
 complejidad del proceso. La primera operación, relacionada con la verificación de la 
 cardinalidad de $C$ ($\left| C \right|\leq k$), tiene una complejidad constante $O(1)$, 
 ya que implica simplemente obtener el número de elementos en $C$ y verificar que $\left|C\right| \leq k$.
-
 La segunda operación, que implica verificar la inclusión de al menos un elemento de $C$ 
 en cada conjunto $B_{j}$, presenta una complejidad de $O(n \times m)$. Esto se debe a 
 que para cada conjunto $B_{j}$ ($j$ perteneciente al conjunto de números naturales hasta 
 $m$) (operación $O(m)$), se debe recorrer, en el peor de los casos, todo el conjunto $C$ 
 ($O(n)$) para verificar la pertenencia de al menos un elemento de este en $B_{j}$ 
-(operación con complejidad $O(1)$ si tanto $B_{j}$ como $C$ se implementan como un conjunto 'set').
+(operación con complejidad $O(1)$ si tanto $B_{j}$ como $C$ se implementan como un 'set').
+
+De esta manera, el problema del Hitting-Set se sitúa en la clase de complejidad NP debido a su capacidad de verificación en tiempo polinomial. 
+
+\section{Hitting-Set Problem: Un Problema NP-Completo}
 
 La clasificación del problema del Hitting-Set como NP-Completo se establece mediante la demostración
 de su reducibilidad polinómica a partir de otros problemas ya catalogados como NP-Completo. 
