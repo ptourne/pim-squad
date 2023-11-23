@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  23 NOV 2023 12:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  23 NOV 2023 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1299,13 +1299,6 @@ Package csquotes Info: Redefining alias 'default' -> 'spanish'.
 (./main.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
-
-
-LaTeX Warning: Label `fig:ejemplo1_DS-HS' multiply defined.
-
-
-LaTeX Warning: Label `fig:ejemplo2_DS-HS' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -1425,31 +1418,28 @@ Package biblatex Info: Reference segment=0 on input line 75.
 
 pdfTeX warning: pdflatex (file ./logo.pdf): PDF inclusion: found PDF version <1
 .7>, but at most version <1.5> allowed
-<logo.pdf, id=87, 239.89626pt x 87.32625pt>
+<logo.pdf, id=19, 239.89626pt x 87.32625pt>
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 77.
 (pdftex.def)             Requested size: 199.16928pt x 72.50208pt.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.pdf>] (./main.toc
-LaTeX Info: Redefining \sptext on input line 1.
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.pdf>] (./main.toc)
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- [2]
-(./tex/introduccion.tex
+ [2] (./tex/introduccion.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 Overfull \hbox (1.23715pt too wide) in paragraph at lines 3--10
 []\OT1/cmr/m/n/10 El prop^^Sosito de este in-forme rad-i-ca en ll-e-var a cabo 
 un an^^Sali-sis de los dis-tin-tos en-fo-ques y dise~nos 
@@ -1479,17 +1469,20 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 37.
+
 [3]
 Overfull \hbox (2.40385pt too wide) in paragraph at lines 38--40
 \OT1/cmr/m/n/10 em-ple-an-do es-trate-gias de re-duc-ci^^Son que ilus-tran la n
 at-u-raleza NP-Completa del Hitting-Set Prob- 
  []
 
-<img/ejemplo1_VC-DS.png, id=198, 1118.1775pt x 656.4525pt>
+<img/ejemplo1_VC-DS.png, id=111, 489.83pt x 265.99374pt>
 File: img/ejemplo1_VC-DS.png Graphic file (type png)
 <use img/ejemplo1_VC-DS.png>
 Package pdftex.def Info: img/ejemplo1_VC-DS.png  used on input line 75.
-(pdftex.def)             Requested size: 341.43437pt x 200.44308pt.
+(pdftex.def)             Requested size: 341.43437pt x 185.41507pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 79.
@@ -1502,20 +1495,20 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 79.
+
 [4]
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 89.
-
-<img/ejemplo1_DS-HS.png, id=205, 966.61125pt x 553.06625pt>
-File: img/ejemplo1_DS-HS.png Graphic file (type png)
-<use img/ejemplo1_DS-HS.png>
-Package pdftex.def Info: img/ejemplo1_DS-HS.png  used on input line 113.
-(pdftex.def)             Requested size: 341.43437pt x 195.35674pt.
+<img/ejemplo2_VC-DS.png, id=121, 489.83pt x 265.99374pt>
+File: img/ejemplo2_VC-DS.png Graphic file (type png)
+<use img/ejemplo2_VC-DS.png>
+Package pdftex.def Info: img/ejemplo2_VC-DS.png  used on input line 84.
+(pdftex.def)             Requested size: 341.43437pt x 185.41507pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 117.
+Package pdftex.def Info: logo.pdf  used on input line 98.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1523,91 +1516,80 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 98.
 
 [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.117 
-       <./img/ejemplo1_VC-DS.png>]
-<img/ejemplo2_DS-HS.png, id=212, 762.85pt x 428.60126pt>
-File: img/ejemplo2_DS-HS.png Graphic file (type png)
-<use img/ejemplo2_DS-HS.png>
-Package pdftex.def Info: img/ejemplo2_DS-HS.png  used on input line 121.
-(pdftex.def)             Requested size: 341.43437pt x 191.82893pt.
-<img/ejemplo3_DS-HS.png, id=213, 1100.11pt x 588.1975pt>
-File: img/ejemplo3_DS-HS.png Graphic file (type png)
-<use img/ejemplo3_DS-HS.png>
-Package pdftex.def Info: img/ejemplo3_DS-HS.png  used on input line 129.
-(pdftex.def)             Requested size: 341.43437pt x 182.55473pt.
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 133.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[6
+l.98 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.133 
-      
+l.98 
+      <./img/ejemplo1_VC-DS.png> <./img/ejemplo2_VC-DS.png>]
+<img/ejemplo1_DS-HS.png, id=134, 489.83pt x 265.99374pt>
+File: img/ejemplo1_DS-HS.png Graphic file (type png)
+<use img/ejemplo1_DS-HS.png>
+Package pdftex.def Info: img/ejemplo1_DS-HS.png  used on input line 105.
+(pdftex.def)             Requested size: 341.43437pt x 185.41507pt.
+<img/ejemplo2_DS-HS.png, id=135, 497.86pt x 289.08pt>
+File: img/ejemplo2_DS-HS.png Graphic file (type png)
+<use img/ejemplo2_DS-HS.png>
+Package pdftex.def Info: img/ejemplo2_DS-HS.png  used on input line 113.
+(pdftex.def)             Requested size: 341.43437pt x 198.25679pt.
+<img/ejemplo3_DS-HS.png, id=136, 515.9275pt x 297.11pt>
+File: img/ejemplo3_DS-HS.png Graphic file (type png)
+<use img/ejemplo3_DS-HS.png>
+Package pdftex.def Info: img/ejemplo3_DS-HS.png  used on input line 121.
+(pdftex.def)             Requested size: 341.43437pt x 196.62816pt.
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 125.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
+
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 125.
+
+[6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.133 
-       <./img/ejemplo1_DS-HS.png> <./img/ejemplo2_DS-HS.png>]
-Overfull \hbox (0.70744pt too wide) in paragraph at lines 148--149
-[]\OT1/cmr/m/n/10 El an^^Sali-sis del cos-to tem-po-ral aso-ci-a-do al prob-le-
-ma del Set Cov-er se es-tablece en O(N\TS1/cmr/m/n/10 Ö\OT1/cmr/m/n/10 U), dond
-e 
- []
-
-<img/ejemplo1_SC-HS.png, id=222, 813.0375pt x 490.83376pt>
-File: img/ejemplo1_SC-HS.png Graphic file (type png)
-<use img/ejemplo1_SC-HS.png>
-Package pdftex.def Info: img/ejemplo1_SC-HS.png  used on input line 161.
-(pdftex.def)             Requested size: 341.43437pt x 206.1188pt.
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 165.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[7
+l.125 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.165 
-       <./img/ejemplo3_DS-HS.png>]
-<img/ejemplo2_SC-HS.png, id=231, 913.4125pt x 565.11125pt>
-File: img/ejemplo2_SC-HS.png Graphic file (type png)
-<use img/ejemplo2_SC-HS.png>
-Package pdftex.def Info: img/ejemplo2_SC-HS.png  used on input line 168.
-(pdftex.def)             Requested size: 341.43437pt x 211.23499pt.
-) (./tex/backtracking.tex
+l.125 
+       <./img/ejemplo1_DS-HS.png> <./img/ejemplo2_DS-HS.png>]
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 135.
+
+<img/ejemplo1_SC-HS.png, id=146, 402.50375pt x 223.83624pt>
+File: img/ejemplo1_SC-HS.png Graphic file (type png)
+<use img/ejemplo1_SC-HS.png>
+Package pdftex.def Info: img/ejemplo1_SC-HS.png  used on input line 163.
+(pdftex.def)             Requested size: 341.43437pt x 189.87575pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 8.
+Package pdftex.def Info: logo.pdf  used on input line 167.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1616,331 +1598,192 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[8
+
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 167.
+
+[7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.8         \item S
-                   i no lo es, avanzo si puedo
+l.167 
+       <./img/ejemplo3_DS-HS.png>]
+<img/ejemplo2_SC-HS.png, id=155, 415.5525pt x 223.83624pt>
+File: img/ejemplo2_SC-HS.png Graphic file (type png)
+<use img/ejemplo2_SC-HS.png>
+Package pdftex.def Info: img/ejemplo2_SC-HS.png  used on input line 170.
+(pdftex.def)             Requested size: 341.43437pt x 183.91919pt.
+) (./tex/backtracking.tex
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 13.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
+
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 13.
+
+[8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.8         \item S
-                   i no lo es, avanzo si puedo <./img/ejemplo1_SC-HS.png> <./im
-g/ejemplo2_SC-HS.png>]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 32.
-
-(../algoritmos/backtracking.py
-consecutive:
-)) (./tex/programacion-lineal.tex
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 12.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[9] (../algoritmos/programacion_lineal_entera.py
-consecutive:
-)
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 45.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[10] (../algoritmos/programacion_lineal_entera.py
-consecutive:
-)) (./tex/aproximacion.tex
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 5.
-
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 7.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[11] (../algoritmos/greedy.py
-consecutive:
-)
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 20.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[12] (../algoritmos/greedy.py
-consecutive:
-)
-<img/greedy_ej1.png, id=386, 509.905pt x 186.6975pt>
-File: img/greedy_ej1.png Graphic file (type png)
-<use img/greedy_ej1.png>
-Package pdftex.def Info: img/greedy_ej1.png  used on input line 35.
-(pdftex.def)             Requested size: 341.43437pt x 125.0183pt.
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 39.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[13]
-<img/greedy_ej1_mpg.png, id=425, 1745.52126pt x 408.52625pt>
-File: img/greedy_ej1_mpg.png Graphic file (type png)
-<use img/greedy_ej1_mpg.png>
-Package pdftex.def Info: img/greedy_ej1_mpg.png  used on input line 42.
-(pdftex.def)             Requested size: 341.43437pt x 79.90852pt.
-<img/greedy_ej1_mgr.png, id=426, 1370.11874pt x 408.52625pt>
-File: img/greedy_ej1_mgr.png Graphic file (type png)
-<use img/greedy_ej1_mgr.png>
-Package pdftex.def Info: img/greedy_ej1_mgr.png  used on input line 49.
-(pdftex.def)             Requested size: 341.43437pt x 101.80092pt.
-<img/greedy_ej2.png, id=430, 1464.47125pt x 651.43375pt>
-File: img/greedy_ej2.png Graphic file (type png)
-<use img/greedy_ej2.png>
-Package pdftex.def Info: img/greedy_ej2.png  used on input line 58.
-(pdftex.def)             Requested size: 341.43437pt x 151.87425pt.
-<img/greedy_ej2_mpg.png, id=431, 1855.93375pt x 828.09375pt>
-File: img/greedy_ej2_mpg.png Graphic file (type png)
-<use img/greedy_ej2_mpg.png>
-Package pdftex.def Info: img/greedy_ej2_mpg.png  used on input line 65.
-(pdftex.def)             Requested size: 341.43437pt x 152.33571pt.
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 69.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[14
+l.13         \item S
+                    i lo es, llamo recursivamente y vuelvo a 1)
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.69 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.69 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.69 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.69 
-      <./img/greedy_ej1.png> <./img/greedy_ej1_mpg.png> <./img/greedy_ej1_mgr.p
-ng> <./img/greedy_ej2.png>]
-<img/greedy_ej2_mgr.png, id=445, 1802.735pt x 421.575pt>
-File: img/greedy_ej2_mgr.png Graphic file (type png)
-<use img/greedy_ej2_mgr.png>
-Package pdftex.def Info: img/greedy_ej2_mgr.png  used on input line 72.
-(pdftex.def)             Requested size: 341.43437pt x 79.84276pt.
-<img/greedy_ej3.png, id=449, 1588.93625pt x 784.9325pt>
-File: img/greedy_ej3.png Graphic file (type png)
-<use img/greedy_ej3.png>
-Package pdftex.def Info: img/greedy_ej3.png  used on input line 81.
-(pdftex.def)             Requested size: 341.43437pt x 168.66138pt.
-<img/greedy_ej3_mpg.png, id=450, 1844.8925pt x 998.73125pt>
-File: img/greedy_ej3_mpg.png Graphic file (type png)
-<use img/greedy_ej3_mpg.png>
-Package pdftex.def Info: img/greedy_ej3_mpg.png  used on input line 88.
-(pdftex.def)             Requested size: 341.43437pt x 184.82333pt.
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 92.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[15
-pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.92 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.92 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.92 
-      <./img/greedy_ej2_mpg.png> <./img/greedy_ej2_mgr.png> <./img/greedy_ej3.p
-ng>]
-<img/greedy_ej3_mgr.png, id=461, 1799.72375pt x 492.84125pt>
-File: img/greedy_ej3_mgr.png Graphic file (type png)
-<use img/greedy_ej3_mgr.png>
-Package pdftex.def Info: img/greedy_ej3_mgr.png  used on input line 95.
-(pdftex.def)             Requested size: 341.43437pt x 93.49792pt.
-) (./tex/mediciones.tex
-
-LaTeX Warning: Reference `fig:tiempos_valores_bajos_puntos' on page 16 undefine
-d on input line 20.
-
-
-LaTeX Warning: Reference `fig:tiempos_valores_altos_puntos' on page 16 undefine
-d on input line 21.
-
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 39.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[16
-pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.39 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.39 
-      <./img/greedy_ej3_mpg.png> <./img/greedy_ej3_mgr.png>]
-
-LaTeX Warning: Reference `fig:tiempos_valores_bajos_densidad' on page 17 undefi
-ned on input line 57.
-
-
-LaTeX Warning: Reference `fig:tiempos_valores_altos_densidad' on page 17 undefi
-ned on input line 57.
-
-) (./tex/conclusiones.tex)
-File: logo.pdf Graphic file (type pdf)
-<use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 93.
-(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
-
-Package fancyhdr Warning: \headheight is too small (27.0pt): 
-(fancyhdr)                Make it at least 29.49297pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.49297pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
-
-[17] 
-AED: lastpage setting LastPage
-(./main.aux
-LaTeX Info: Redefining \sptext on input line 23.
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
+l.13         \item S
+                    i lo es, llamo recursivamente y vuelvo a 1) <./img/ejemplo1
+_SC-HS.png> <./img/ejemplo2_SC-HS.png>]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 44.
 
-LaTeX Warning: There were undefined references.
+(../algoritmos/backtracking.py
+consecutive:
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 18.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 18.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DE3E2221A7864445A31EF95798CD769D;3719.
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
+[9])) (./tex/programacion-lineal.tex
+(../algoritmos/programacion_lineal_entera.py
+consecutive:
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 32.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
- ) 
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+
+LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 32.
+
+[10]) (../algoritmos/programacion_lineal_entera.py
+consecutive:
+)
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 57.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
+
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+
+LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 57.
+
+[11]) (./tex/aproximacion.tex
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 5.
+
+(../algoritmos/greedy.py
+consecutive:
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 33.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 33.
+
+[12]) (../algoritmos/greedy.py
+consecutive:
+)
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 29.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
+
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 29.
+
+[13]
+
+LaTeX Warning: Reference `fig:greedy_ej1' on page 14 undefined on input line 29
+.
+
+<img/greedy_ej1.png, id=356, 509.905pt x 186.6975pt>
+File: img/greedy_ej1.png Graphic file (type png)
+<use img/greedy_ej1.png>
+Package pdftex.def Info: img/greedy_ej1.png  used on input line 33.
+(pdftex.def)             Requested size: 341.43437pt x 125.0183pt.
+
+LaTeX Warning: File `img/greedy_ej1_mpg.png' not found on input line 40.
+
+
+! Package pdftex.def Error: File `img/greedy_ej1_mpg.png' not found: using draf
+t setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 ...dth=0.8\textwidth]{img/greedy_ej1_mpg.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.40 ...dth=0.8\textwidth]{img/greedy_ej1_mpg.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
 Here is how much of TeX's memory you used:
- 37335 strings out of 478126
- 700458 string characters out of 5842786
- 2099793 words of memory out of 6000000
- 56531 multiletter control sequences out of 15000+600000
- 518929 words of font info for 57 fonts, out of 8000000 for 9000
+ 37272 strings out of 478126
+ 699466 string characters out of 5842786
+ 2130793 words of memory out of 6000000
+ 56482 multiletter control sequences out of 15000+600000
+ 519237 words of font info for 58 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 103i,15n,105p,791b,1939s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (17 pages, 1601982 bytes).
-PDF statistics:
- 589 PDF objects out of 1000 (max. 8388607)
- 468 compressed objects within 5 object streams
- 207 named destinations out of 1000 (max. 500000)
- 427 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 103i,16n,105p,677b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
