@@ -2,7 +2,7 @@
 
 \subsection{Programación Lineal Entera}
 
-También se puede reducir Hitting-Set Problem a Programación Lineal de la siguiente manera:
+También se puede reducir Hitting-Set Problem a Programación Lineal Entera de la siguiente manera:
 
 \begin{enumerate}
 
@@ -23,6 +23,8 @@ Luego, el conjunto solución $C$ será
 
 La complejidad de esta reducción es $O(N \times U)$ ya que se debe recorrer todos los subconjuntos $B_i$ y, por cada uno, recorrer cada elemento. Este proceso es polinomial, y la complejidad de Programación Lineal Entera es exponencial.
 
+\[\text{Hitting-Set}  \leq _{p} \text{Programación Lineal Entera}\]
+
 El codigo de la reducción es el siguiente:
 
 \lstinputlisting[language=Python, firstline=4, lastline=32]{../algoritmos/programacion_lineal_entera.py}
@@ -37,7 +39,7 @@ Posteriormente, se lleva a cabo una consideración respecto a estos valores, don
 Luego, el conjunto solución $C$ será
 
 \[
-    C = \left\{e_i \in U \mid y_{i} \geq \frac{1}{2}\right\}
+    C = \left\{e_i \in U \mid y_{i} \geq \frac{1}{b}\right\}
 \]
 
 Por la mismas consideraciones aplicadas en la reducción de la Programación Lineal Entera, la complejidad asociada a la reducción de la Programación Lineal Continua al Hitting Set es de O(N×U).
@@ -59,7 +61,7 @@ En un contexto de Programación Lineal Continua (PLC), una solución posible pue
 
 En esta situación, dado que $\frac{1}{b} < \frac{1}{b-1}$, las variables del $set_2$, al ser redondeadas, resultarían en 1, siendo todas incluidas en la solución final.
 
-Por otro lado, la solución proporcionada por la Programación Lineal Entera (PLE), que representa la solución óptima, presentaría, por ejemplo, la siguiente asignación de valores:  $x_1 = 1$ y  $x_2 = ... = x_{b-1} = 0$. 
+Por otro lado, la solución proporcionada por la Programación Lineal Entera (PLE), que representa la solución óptima, presentaría, por ejemplo, la siguiente asignación de valores:  $x_1 = 1$ y  $x_2 = ... = x_{b} = 0$. 
 
 No obstante, al obtenerse una aproximación mediante PLC que establece $x_1 = x_2 = ... = x_{b-1} = 1$ se deriva la siguiente relación de aproximación: $r(A)=\frac{A(I)}{z(I)}=\frac{b-1}{1}$
 
