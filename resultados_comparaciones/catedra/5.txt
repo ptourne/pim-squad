@@ -1,20 +1,20 @@
 Backtracking:
 Cantidad mínima: 2
-Solución: {'Colo Barco', 'Casco'}
-Tiempo de ejecución: 0.02458199999999522 milisegundos
+Solución: {"Barcon't", 'Messi'}
+Tiempo de ejecución: 0.03203200000001516 milisegundos
 
 Programación Lineal Entera:
 Cantidad mínima: 2
 Solución: ["Barcon't", 'Messi']
-Tiempo de ejecución: 0.8262760000006253 milisegundos
+Tiempo de ejecución: 0.9312960000000814 milisegundos
 
 Programación Lineal Continua:
 Cantidad mínima: 2
 Solución: ["Barcon't", 'Messi']
-Tiempo de ejecución: 0.5333560000000404 milisegundos
+Tiempo de ejecución: 0.5518590000002099 milisegundos
 
 Greedy:
 Cantidad mínima: 2
-Solución: {'Cuti Romero', 'Casco'}
-Tiempo de ejecución: 0.014578000000042834 milisegundos
+Solución: {'Casco', 'Cuti Romero'}
+Tiempo de ejecución: 0.01630799999974286 milisegundos
 

@@ -32,6 +32,7 @@ def aproximacion_greedy_maximo_por_grupos(subconjuntos: list):
 
     return solucion
 
+
 def aproximacion_greedy_maximo_global_con_recalculo(subconjuntos: list):
     """
     Obtiene la solucion por greedy.

@@ -14,32 +14,33 @@ def main():
 
     parser.add_argument(
         "archivo_entrada",
-        metavar="archivo con subconjuntos",
+        metavar="archivo",
         type=open,
-        nargs='?',
+        nargs=1,
         help="Archivo de entrada con los subconjuntos a utilizar",
     )
 
     parser.add_argument(
-        "greedy_backtracking_lineal",
-        metavar="algoritmo a elección\n greedy - backtracking - lineal_entera - lineal_continua",
+        "algoritmo",
+        metavar="algoritmo",
         type=str,
-        nargs='?',
-        help="Algoritmo a utilizar para resolver el problema\ngreedy - backtracking - lineal_entera - lineal_continua",
+        nargs=1,
+        choices=["greedy", "backtracking", "lineal_entera", "lineal_continua"],
+        help="Algoritmo a utilizar para resolver el problema: greedy, backtracking, lineal_entera, lineal_continua",
     )
 
     args = parser.parse_args()
 
-    if not args.greedy_backtracking_lineal:
-        raise Exception("Falta el algoritmo a utilizar")
+    if not args.algoritmo:
+        raise Exception("Falta el argumento: algoritmo")
 
     archivo_entrada = args.archivo_entrada.name if args.archivo_entrada else raiseExceptions(
-        "Falta el archivo de entrada")
+        "Falta el argumento: archivo_entrada")
     subconjuntos = obtener_subconjuntos(archivo_entrada)
 
-    tipo_solucion = args.greedy_backtracking_lineal
+    tipo_solucion = args.algoritmo
 
-    solucion = "La solución por " + tipo_solucion + " es: \n"
+    solucion = "La solución por " + tipo_solucion + " es:\n"
     match tipo_solucion:
         case "greedy":
             solucion_greedy = aproximacion_greedy_maximo_global_con_recalculo(

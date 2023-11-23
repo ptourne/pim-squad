@@ -1,0 +1,10 @@
+Ángel Di María,Guido Rodríguez,Brian Mansilla,Paulo Dybala,Cristian Romero,Mauro Icardi,Thiago Almada,Gonzalo Montiel
+Matías Vargas,Joaquín Correa,Facundo Medina,Gonzalo Montiel,Leandro Paredes,Nicolás Otamendi,Thiago Almada
+Nahuel Molina,Germán Pezzella,Paulo Dybala,Juan Foyth,Lucas Martínez Quarta
+Giovani Lo Celso,Julian Alvarez,Germán Pezzella,Lionel Messi,Juan Foyth,Nicolás Otamendi,Ricardo Centurión,Paulo Dybala,Lucas Beltrán,Exequiel Palacios,Alexis Mac Allister
+Nicolás Tagliafico,Franco Armani,Juan Musso,Guido Rodríguez,Maximiliano Romero,Ricardo Centurión,Giovanni Simeone,Exequiel Palacios,Rodrigo de Paul
+Gonzalo Montiel,Joaquín Correa,Lautaro Martínez,Thiago Almada
+Nicolás Domínguez,Paulo Dybala,Gonzalo Montiel,Lionel Messi,Julian Alvarez
+Thiago Almada,Leandro Paredes,Juan Foyth,Joaquín Correa,Alejandro Garnacho,Rodrigo de Paul,Brian Mansilla,Cristian Romero,Ricardo Centurión,Matías Vargas
+Thiago Almada,Nicolás Otamendi,Gonzalo Montiel,Alejandro Garnacho,Ricardo Centurión,Emiliano Martínez,Guido Rodríguez,Ricardo Centurión,Rodrigo de Paul
+Lionel Messi,Thiago Almada,Juan Musso,Guido Rodríguez,Matías Zaracho,Joaquín Correa,Cristian Romero

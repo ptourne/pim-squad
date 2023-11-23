@@ -1,12 +1,13 @@
+import argparse
 from manejo_archivos import obtener_subconjuntos
 from backtracking import bracktracking_hitting_set_problem
 from greedy import aproximacion_greedy_maximo_global_con_recalculo
-from medicion_tiempo import tiempo_ejecucion_y_resultado
 from programacion_lineal_continua import hitting_set_pl_continua
 from programacion_lineal_entera import hitting_set_pl_entera
+from medicion_tiempo import tiempo_ejecucion_y_resultado
 
 
-def comparar_soluciones(pedidos, archivo_salida="resultados.txt"):
+def comparar_soluciones(pedidos, archivo_salida):
     tiempo_backtracking, sol_backtracking = tiempo_ejecucion_y_resultado(
         pedidos, bracktracking_hitting_set_problem)
     tiempo_lineal_entera, sol_lineal_entera = tiempo_ejecucion_y_resultado(
@@ -28,5 +29,39 @@ def comparar_soluciones(pedidos, archivo_salida="resultados.txt"):
             f"Greedy:\nCantidad mínima: {len(sol_greedy)}\nSolución: {sol_greedy}\nTiempo de ejecución: {tiempo_greedy * 1000} milisegundos\n\n")
 
 
-pedidos = obtener_subconjuntos("../ejemplos/catedra/200.txt")
-comparar_soluciones(pedidos, "../resultados_comparaciones/catedra/200.txt")
+def main():
+    parser = argparse.ArgumentParser(
+        description="Obtiene la solución al problema de hitting set problem"
+    )
+
+    parser.add_argument(
+        "archivo_entrada",
+        metavar="archivo",
+        type=open,
+        nargs=1,
+        help="Archivo de entrada con los subconjuntos a utilizar",
+    )
+
+    parser.add_argument(
+        "--direccion_salida",
+        metavar="archivo",
+        type=str,
+        nargs=1,
+        help="Dirección del archivo de salida con los resultados de la comparación",
+    )
+
+    args = parser.parse_args()
+
+    if not args.direccion_salida:
+        raise ValueError("Falta el argumento: direccion_salida")
+
+    archivo_entrada = args.archivo_entrada[0].name
+    archivo_salida = args.direccion_salida[0] or "resultado_comparacion.txt"
+
+    subconjuntos = obtener_subconjuntos(archivo_entrada)
+
+    comparar_soluciones(subconjuntos, archivo_salida)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,20 @@
+Backtracking:
+Cantidad mínima: 3
+Solución: {'Leandro Paredes', 'Facundo Medina', 'Ricardo Centurión'}
+Tiempo de ejecución: 0.14922900000002848 milisegundos
+
+Programación Lineal Entera:
+Cantidad mínima: 3
+Solución: ['Ricardo Centurión', 'Leandro Paredes', 'Nicolás Otamendi']
+Tiempo de ejecución: 1.019630000000049 milisegundos
+
+Programación Lineal Continua:
+Cantidad mínima: 3
+Solución: ['Ricardo Centurión', 'Leandro Paredes', 'Nicolás Otamendi']
+Tiempo de ejecución: 0.7184089999998644 milisegundos
+
+Greedy:
+Cantidad mínima: 4
+Solución: {'Matías Vargas', 'Maximiliano Romero', 'Ricardo Centurión', 'Facundo Medina'}
+Tiempo de ejecución: 0.03633999999985704 milisegundos
+
