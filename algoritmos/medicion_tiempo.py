@@ -2,10 +2,11 @@ import time
 
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import mean_squared_error
-from scipy.optimize import curve_fit
-
 from backtracking import bracktracking_hitting_set_problem
+from greedy import aproximacion_greedy_maximo_global_con_recalculo
+from programacion_lineal_continua import hitting_set_pl_continua
+from programacion_lineal_entera import hitting_set_pl_entera
+
 from generador_de_ejemplos import generar_ejemplos
 
 
@@ -16,81 +17,101 @@ def tiempo_ejecucion_y_resultado(solicitudes, algoritmo):
     return tiempo_final - tiempo_inicial, resultado
 
 
-def graficar_simulaciones(maximo, cant_por_prensa, algoritmo, path_salida):
-    mediciones = []
+def graficar_simulaciones(maximo, cant_por_prensa, path_salida):
+    mediciones_back = []
+    mediciones_lin_ent = []
+    mediciones_lin_cont = []
+    mediciones_greedy = []
 
     # Generamos las mediciones de tiempo por cada generación de ejemplo
     for i in range(1, maximo, 10):
         solicitudes = generar_ejemplos(i, cant_por_prensa, True)
 
-        # Calculamos el tiempo de ejecución del algoritmo para el ejemplo generado
-        tiempo, _ = tiempo_ejecucion_y_resultado(solicitudes, algoritmo)
-        mediciones.append((i, tiempo))
+        # tiempo, _ = tiempo_ejecucion_y_resultado(
+        #     solicitudes, bracktracking_hitting_set_problem
+        # )
+        # mediciones_back.append((i, tiempo))
+
+        tiempo, _ = tiempo_ejecucion_y_resultado(
+            solicitudes, hitting_set_pl_entera)
+        mediciones_lin_ent.append((i, tiempo))
+
+        tiempo, _ = tiempo_ejecucion_y_resultado(
+            solicitudes, hitting_set_pl_continua)
+        mediciones_lin_cont.append((i, tiempo))
+
+        tiempo, _ = tiempo_ejecucion_y_resultado(
+            solicitudes, aproximacion_greedy_maximo_global_con_recalculo
+        )
+        mediciones_greedy.append((i, tiempo))
 
     # Separamos los valores de x e y
-    x = [medicion[0] for medicion in mediciones]
-    y = [medicion[1] for medicion in mediciones]
+    x_back = [medicion[0] for medicion in mediciones_back]
+    y_back = [medicion[1] for medicion in mediciones_back]
+
+    x_lin_ent = [medicion[0] for medicion in mediciones_lin_ent]
+    y_lin_ent = [medicion[1] for medicion in mediciones_lin_ent]
+
+    x_lin_cont = [medicion[0] for medicion in mediciones_lin_cont]
+    y_lin_cont = [medicion[1] for medicion in mediciones_lin_cont]
+
+    x_greedy = [medicion[0] for medicion in mediciones_greedy]
+    y_greedy = [medicion[1] for medicion in mediciones_greedy]
 
     # Exportamos los gráficos
-    exportar_grafico_puntos(x, y, path_salida)
+    exportar_grafico_puntos(
+        x_back,
+        y_back,
+        x_lin_ent,
+        y_lin_ent,
+        x_lin_cont,
+        y_lin_cont,
+        x_greedy,
+        y_greedy,
+        path_salida,
+    )
 
 
-def exportar_grafico_puntos(x, y, path_salida):
+def exportar_grafico_puntos(
+    x_back,
+    y_back,
+    x_lin_ent,
+    y_lin_ent,
+    x_lin_cont,
+    y_lin_cont,
+    x_greedy,
+    y_greedy,
+    path_salida,
+):
     plt.figure()
-    x_numpy = np.array(x)
-    y_numpy = np.array(y)
+    x_numpy_back = np.array(x_back)
+    y_numpy_back = np.array(y_back)
 
-    # Ajuste de la curva exponencial
-    parametros_optimos_exp, _ = curve_fit(
-        funcion_exponencial, x_numpy, y_numpy)
+    x_numpy_lin_ent = np.array(x_lin_ent)
+    y_numpy_lin_ent = np.array(y_lin_ent)
 
-    # Ajuste de la curva lineal
-    parametros_optimos_lin, _ = curve_fit(funcion_lineal, x_numpy, y_numpy)
+    x_numpy_lin_cont = np.array(x_lin_cont)
+    y_numpy_lin_cont = np.array(y_lin_cont)
 
-    x_curva = np.linspace(min(x), max(x), 100)
+    x_numpy_greedy = np.array(x_greedy)
+    y_numpy_greedy = np.array(y_greedy)
 
-    # Graficar la curva exponencial ajustada
-    y_curva_exp = funcion_exponencial(x_curva, *parametros_optimos_exp)
-    plt.plot(x_curva, y_curva_exp, label='Curva Exponencial', color='red')
+    # Ponemos los puntos no tan oscuros
+    plt.plot(x_numpy_back, y_numpy_back, "o", alpha=0.5)
+    plt.plot(x_numpy_lin_ent, y_numpy_lin_ent, "o", alpha=0.5)
+    plt.plot(x_numpy_lin_cont, y_numpy_lin_cont, "o", alpha=0.5)
+    plt.plot(x_numpy_greedy, y_numpy_greedy, "o", alpha=0.5)
 
-    # Graficar la curva lineal ajustada
-    y_curva_lin = funcion_lineal(x_curva, *parametros_optimos_lin)
-    plt.plot(x_curva, y_curva_lin, label='Curva Lineal', color='green')
-
-    # Graficar los puntos
-    plt.scatter(x, y, label='Mediciones', color='blue')
-
-    # Calculamos el error cuadrático medio
-    error_exp = mean_squared_error(y, y_curva_exp)
-    error_lin = mean_squared_error(y, y_curva_lin)
-
-    # Ponemos en el gráfico el error cuadrático medio
-    plt.text(0.1, 0.9, f"Error cuadrático medio exponencial: {error_exp}",
-             horizontalalignment='center',
-             verticalalignment='center',
-             transform=plt.gca().transAxes)
-
-    plt.text(0.1, 0.8, f"Error cuadrático medio lineal: {error_lin}",
-             horizontalalignment='center',
-             verticalalignment='center',
-             transform=plt.gca().transAxes)
-
-    # Etiquetas y leyenda
-    plt.xlabel("Cantidad de prensas")
-    plt.ylabel("Tiempo de ejecución (ms)")
+    # Configurar el gráfico
+    plt.xlabel("Cantidad de solicitudes")
+    plt.ylabel("Tiempo de ejecución (segundos)")
+    plt.title("Tiempo de ejecución de los algoritmos")
     plt.legend()
-    plt.title(
-        "Mediciones de tiempo de ejecución del algoritmo de Backtracking")
-    plt.savefig(path_salida)
+    plt.show()
 
 
-def funcion_exponencial(x, a, b):
-    return a * np.exp(b * x)
+def main():
+    graficar_simulaciones(10000, 100, "medicion_tiempo.png")
 
 
-def funcion_lineal(x, a, b):
-    return a * x + b
-
-
-# graficar_simulaciones(
-#     100, 10, bracktracking_hitting_set_problem, "medicion_tiempo.png")
+main()

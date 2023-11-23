@@ -1,16 +1,20 @@
 Backtracking:
-Solución: {'Casco', 'Chiquito Romero', 'Di Maria'}
-Tiempo de ejecución: 0.6147080000000749 milisegundos
+Cantidad mínima: 3
+Solución: {'Casco', 'Gallardo', 'Palermo'}
+Tiempo de ejecución: 0.057575000000031906 milisegundos
 
 Programación Lineal Entera:
-Solución: (3, ['Chiquito Romero', 'Di Maria', 'Casco'])
-Tiempo de ejecución: 1.6153389999997714 milisegundos
+Cantidad mínima: 3
+Solución: ['Chiquito Romero', 'Di Maria', 'Casco']
+Tiempo de ejecución: 1.2318609999999452 milisegundos
 
 Programación Lineal Continua:
-Solución: (3.0, ['Colidio', 'Chiquito Romero', 'Dibu', 'Cuti Romero', 'Messi', 'Casco'])
-Tiempo de ejecución: 0.8130940000001807 milisegundos
+Cantidad mínima: 6
+Solución: ['Colidio', 'Chiquito Romero', 'Dibu', 'Cuti Romero', 'Messi', 'Casco']
+Tiempo de ejecución: 0.8757740000002734 milisegundos
 
 Greedy:
-Solución: {'Cuti Romero', 'Casco', 'Gallardo'}
-Tiempo de ejecución: 0.029016000000048336 milisegundos
+Cantidad mínima: 3
+Solución: {'Casco', 'Gallardo', 'Cuti Romero'}
+Tiempo de ejecución: 0.035205000000093634 milisegundos
 

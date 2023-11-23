@@ -29,4 +29,4 @@ def hitting_set_pl_entera(b_array):
     jugadores_seleccionados = [
         jugador for jugador, valor in dic_jugadores.items() if pulp.value(valor) > 0]
 
-    return int(pulp.value(z.value())), jugadores_seleccionados
+    return jugadores_seleccionados

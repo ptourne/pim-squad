@@ -31,9 +31,8 @@ def hitting_set_pl_continua(b_array):
     problem += z
 
     problem.solve()
-    res = pulp.value(z)
 
     jugadores_seleccionados = [
         jugador for jugador, variable in dic_jugadores.items() if pulp.value(variable) > 1/b]
 
-    return res, jugadores_seleccionados
+    return jugadores_seleccionados

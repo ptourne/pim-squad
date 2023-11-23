@@ -1,16 +1,20 @@
 Backtracking:
-Solución: {'Dybala', 'Palermo', 'Beltran', 'Wachoffisde Abila', 'Dibu', 'Burrito Ortega'}
-Tiempo de ejecución: 6.670284000000137 milisegundos
+Cantidad mínima: 6
+Solución: {'Burrito Ortega', 'Palermo', 'Dibu', 'Dybala', 'Riquelme', 'Beltran'}
+Tiempo de ejecución: 2.269146999999805 milisegundos
 
 Programación Lineal Entera:
-Solución: (6, ['Palermo', 'Dibu', 'Beltran', 'Langoni', 'Dybala', 'Burrito Ortega'])
-Tiempo de ejecución: 1.4463430000000166 milisegundos
+Cantidad mínima: 6
+Solución: ['Palermo', 'Dibu', 'Beltran', 'Langoni', 'Dybala', 'Burrito Ortega']
+Tiempo de ejecución: 1.2942530000001895 milisegundos
 
 Programación Lineal Continua:
-Solución: (6.0, ['Palermo', 'Dibu', 'Beltran', 'Langoni', 'Dybala', 'Burrito Ortega'])
-Tiempo de ejecución: 1.132112000000074 milisegundos
+Cantidad mínima: 6
+Solución: ['Palermo', 'Dibu', 'Beltran', 'Langoni', 'Dybala', 'Burrito Ortega']
+Tiempo de ejecución: 0.9136930000002152 milisegundos
 
 Greedy:
-Solución: {'Dybala', 'Mauro Zarate', 'Wachoffisde Abila', 'Burrito Ortega', 'Palermo', 'Pity Martinez', 'Dibu'}
-Tiempo de ejecución: 0.06078799999986728 milisegundos
+Cantidad mínima: 7
+Solución: {"Barcon't", 'Cuti Romero', 'Burrito Ortega', 'Beltran', 'Dibu', 'Riquelme', 'Palermo'}
+Tiempo de ejecución: 0.03869400000056089 milisegundos
 

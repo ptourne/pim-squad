@@ -1,0 +1,20 @@
+Backtracking:
+Cantidad mínima: 12
+Solución: {'Lucas Beltrán', 'Guido Rodríguez', 'Ricardo Centurión', 'Alexis Mac Allister', 'Ezequiel Barco', 'Brian Mansilla', 'Marcos Acuña', 'Gonzalo Montiel', 'Agustín Urzi', 'Franco Armani', 'Nicolás Tagliafico', 'Leandro Paredes'}
+Tiempo de ejecución: 2606.5983649999994 milisegundos
+
+Programación Lineal Entera:
+Cantidad mínima: 12
+Solución: ['Agustín Urzi', 'Leandro Paredes', 'Guido Rodríguez', 'Gonzalo Montiel', 'Nicolás Tagliafico', 'Ricardo Centurión', 'Franco Armani', 'Lucas Beltrán', 'Ezequiel Barco', 'Lucas Ocampos', 'Alexis Mac Allister', 'Marcos Acuña']
+Tiempo de ejecución: 7.532160000000232 milisegundos
+
+Programación Lineal Continua:
+Cantidad mínima: 12
+Solución: ['Agustín Urzi', 'Leandro Paredes', 'Guido Rodríguez', 'Gonzalo Montiel', 'Nicolás Tagliafico', 'Ricardo Centurión', 'Franco Armani', 'Lucas Beltrán', 'Ezequiel Barco', 'Lucas Ocampos', 'Alexis Mac Allister', 'Marcos Acuña']
+Tiempo de ejecución: 7.129257999999972 milisegundos
+
+Greedy:
+Cantidad mínima: 15
+Solución: {'Guido Rodríguez', 'Exequiel Palacios', 'Alexis Mac Allister', 'Ezequiel Barco', 'Brian Mansilla', 'Marcos Acuña', 'Facundo Medina', 'Franco Armani', 'Agustín Urzi', 'Maximiliano Romero', 'Rodrigo de Paul', 'Gonzalo Montiel', 'Nicolás Tagliafico', 'Germán Pezzella', 'Leandro Paredes'}
+Tiempo de ejecución: 0.2625350000000637 milisegundos
+

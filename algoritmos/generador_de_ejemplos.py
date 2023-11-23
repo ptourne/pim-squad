@@ -1,60 +1,58 @@
 import random
 
+JUGADORES = [
+    "Emiliano Martínez",
+    "Juan Musso",
+    "Franco Armani",
+    "Nicolás Tagliafico",
+    "Marcos Acuña",
+    "Cristian Romero",
+    "Nicolás Otamendi",
+    "Lucas Martínez Quarta",
+    "Facundo Medina",
+    "Germán Pezzella",
+    "Nahuel Molina",
+    "Gonzalo Montiel",
+    "Juan Foyth",
+    "Alexis Mac Allister",
+    "Leandro Paredes",
+    "Guido Rodríguez",
+    "Exequiel Palacios",
+    "Rodrigo de Paul",
+    "Enzo Fernández",
+    "Giovani Lo Celso",
+    "Nicolas González",
+    "Lucas Ocampos",
+    "Alejandro Garnacho",
+    "Julian Alvarez",
+    "Lautaro Martínez",
+    "Lucas Beltrán",
+    "Lionel Messi",
+    "Paulo Dybala",
+    "Sergio Agüero",
+    "Ángel Di María",
+    "Joaquín Correa",
+    "Nicolás Domínguez",
+    "Matías Vargas",
+    "Thiago Almada",
+    "Mauro Icardi",
+    "Cristian Pavón",
+    "Agustín Urzi",
+    "Brian Mansilla",
+    "Ezequiel Barco",
+    "Matías Zaracho",
+    "Giovanni Simeone",
+    "Maximiliano Romero",
+    "Ricardo Centurión"
+]
+
 
 def generar_ejemplos(cant_prensas, cant_jug_max_por_prensa, devolver, direccion_archivo=""):
-    jugadores = [
-        "Emiliano Martínez",
-        "Walter Benítez",
-        "Juan Musso",
-        "Franco Armani",
-        "Nicolás Tagliafico",
-        "Marcos Acuña",
-        "Cristian Romero",
-        "Nicolás Otamendi",
-        "Lucas Martínez Quarta",
-        "Facundo Medina",
-        "Germán Pezzella",
-        "Nahuel Molina",
-        "Gonzalo Montiel",
-        "Juan Foyth",
-        "Alexis Mac Allister",
-        "Leandro Paredes",
-        "Guido Rodríguez",
-        "Exequiel Palacios",
-        "Rodrigo de Paul",
-        "Enzo Fernández",
-        "Giovani Lo Celso",
-        "Nicolas González",
-        "Lucas Ocampos",
-        "Alejandro Garnacho",
-        "Julian Alvarez",
-        "Lautaro Martínez",
-        "Lucas Beltrán",
-        "Lionel Messi",
-        "Paulo Dybala",
-        "Sergio Agüero",
-        "Ángel Di María",
-        "Joaquín Correa",
-        "Nicolás Domínguez",
-        "Matías Vargas",
-        "Thiago Almada",
-        "Adolfo Gaich",
-        "Mauro Icardi",
-        "Cristian Pavón",
-        "Agustín Urzi",
-        "Brian Mansilla",
-        "Ezequiel Barco",
-        "Matías Zaracho",
-        "Giovanni Simeone",
-        "Maximiliano Romero",
-        "Ricardo Centurión"
-    ]
-
     prensas = []
 
     for _ in range(cant_prensas):
         cant_jugadores = random.randint(1, cant_jug_max_por_prensa)
-        jugadores_elegidos = random.sample(jugadores, cant_jugadores)
+        jugadores_elegidos = random.sample(JUGADORES, cant_jugadores)
         prensas.append(jugadores_elegidos)
 
     if devolver:
@@ -71,4 +69,4 @@ def generar_ejemplos(cant_prensas, cant_jug_max_por_prensa, devolver, direccion_
 
 # Posicionarse en la carpeta algoritmos y para correr el código
 # cantidad de prensas, cantidad de jugadores por prensa, devolver=True o guardar en archivo=False, dirección del archivo de salida
-generar_ejemplos(100, 7, True, "../nuestros_ejemplos/100.txt")
+# generar_ejemplos(100, 5, False, "../ejemplos/nuestros/100.txt")

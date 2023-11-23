@@ -1,7 +1,3 @@
-from validacion_np import validar_solucion
-from manejo_archivos import obtener_subconjuntos
-
-
 def aproximacion_greedy_maximo_por_grupos(subconjuntos: list):
     """
     Obtiene la solucion por greedy.

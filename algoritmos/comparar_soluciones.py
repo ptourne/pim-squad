@@ -19,14 +19,14 @@ def comparar_soluciones(pedidos, archivo_salida="resultados.txt"):
     # Guardamos en un archivo los resultados
     with open(archivo_salida, 'w') as file:
         file.write(
-            f"Backtracking:\nSolución: {sol_backtracking}\nTiempo de ejecución: {tiempo_backtracking * 1000} milisegundos\n\n")
+            f"Backtracking:\nCantidad mínima: {len(sol_backtracking)}\nSolución: {sol_backtracking}\nTiempo de ejecución: {tiempo_backtracking * 1000} milisegundos\n\n")
         file.write(
-            f"Programación Lineal Entera:\nSolución: {sol_lineal_entera}\nTiempo de ejecución: {tiempo_lineal_entera * 1000} milisegundos\n\n")
+            f"Programación Lineal Entera:\nCantidad mínima: {len(sol_lineal_entera)}\nSolución: {sol_lineal_entera}\nTiempo de ejecución: {tiempo_lineal_entera * 1000} milisegundos\n\n")
         file.write(
-            f"Programación Lineal Continua:\nSolución: {sol_lineal_continua}\nTiempo de ejecución: {tiempo_lineal_continua * 1000} milisegundos\n\n")
+            f"Programación Lineal Continua:\nCantidad mínima: {len(sol_lineal_continua)}\nSolución: {sol_lineal_continua}\nTiempo de ejecución: {tiempo_lineal_continua * 1000} milisegundos\n\n")
         file.write(
-            f"Greedy:\nSolución: {sol_greedy}\nTiempo de ejecución: {tiempo_greedy * 1000} milisegundos\n\n")
+            f"Greedy:\nCantidad mínima: {len(sol_greedy)}\nSolución: {sol_greedy}\nTiempo de ejecución: {tiempo_greedy * 1000} milisegundos\n\n")
 
 
-pedidos = obtener_subconjuntos("../ejemplos/catedra/20.txt")
-comparar_soluciones(pedidos, "../resultados_comparaciones/catedra/20.txt")
+pedidos = obtener_subconjuntos("../ejemplos/catedra/200.txt")
+comparar_soluciones(pedidos, "../resultados_comparaciones/catedra/200.txt")

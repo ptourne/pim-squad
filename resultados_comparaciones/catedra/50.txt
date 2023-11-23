@@ -1,16 +1,20 @@
 Backtracking:
-Solución: {'Armani', 'Tucu Pereyra', 'Dybala', "Barcon't", 'Langoni', 'Casco'}
-Tiempo de ejecución: 8193.206106000001 milisegundos
+Cantidad mínima: 6
+Solución: {'Dybala', 'Casco', 'Armani', 'Langoni', "Barcon't", 'Tucu Pereyra'}
+Tiempo de ejecución: 18.401599000000157 milisegundos
 
 Programación Lineal Entera:
-Solución: (6, ["Barcon't", 'Casco', 'Tucu Pereyra', 'Dybala', 'Palermo', 'Pity Martinez'])
-Tiempo de ejecución: 4.53021499999906 milisegundos
+Cantidad mínima: 6
+Solución: ['Casco', "Barcon't", 'Tucu Pereyra', 'Dybala', 'Palermo', 'Pity Martinez']
+Tiempo de ejecución: 3.7037099999999157 milisegundos
 
 Programación Lineal Continua:
-Solución: (5.177777773999999, ['Chiquito Romero', "Barcon't", 'Riquelme', 'Casco', 'Tucu Pereyra', 'Colo Barco', 'Messi', 'Beltran', 'Dybala', 'Armani', 'Wachoffisde Abila', 'Palermo', 'Langoni'])
-Tiempo de ejecución: 4.8065200000007025 milisegundos
+Cantidad mínima: 13
+Solución: ['Casco', 'Riquelme', 'Chiquito Romero', "Barcon't", 'Colo Barco', 'Tucu Pereyra', 'Messi', 'Beltran', 'Dybala', 'Armani', 'Wachoffisde Abila', 'Palermo', 'Langoni']
+Tiempo de ejecución: 3.062760999999803 milisegundos
 
 Greedy:
-Solución: {'Tucu Pereyra', 'Chiquito Romero', 'Palermo', 'Dibu', "Barcon't", 'Riquelme', 'Casco'}
-Tiempo de ejecución: 0.1309349999996101 milisegundos
+Cantidad mínima: 7
+Solución: {'Casco', 'Tucu Pereyra', 'Riquelme', 'Chiquito Romero', 'Dibu', "Barcon't", 'Palermo'}
+Tiempo de ejecución: 0.10020300000013194 milisegundos
 
