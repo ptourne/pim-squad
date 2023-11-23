@@ -4,7 +4,7 @@ El problema planteado por Scaloni es un caso específico del problema del
 Hitting-Set, cuya definición formal se presenta de la siguiente manera: dado un 
 conjunto $A$ compuesto por $n$ elementos y $m$ subconjuntos $B_{1}, B_{2}, \dots, B_{m}$ 
 pertenecientes a $A$ ($B_{i}\subseteq A \forall i \in \mathbb{N}_{m}$), se busca encontrar un conjunto $C \subseteq A$ tal que para cada 
-subconjunto $B_{j}$, donde $B_{j} \subseteq A / \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$. 
+subconjunto $B_{j}$, donde $B_{j} \subseteq A \forall j \in \mathbb{N}_{m},  C \cap B_{j}\neq \emptyset$. 
 
 Además de su formulación básica, el problema del Hitting-Set también presenta una versión
 de decisión: dada la colección de un conjunto $A$ con $n$ elementos y $m$ subconjuntos
@@ -46,17 +46,17 @@ empleando estrategias de reducción que ilustran la naturaleza NP-Completa del H
 
 Es importante destacar que la pertenencia de Vertex Cover y Set Cover a NP-Completo fue demostrada en clases anteriores.
 \begin{itemize}
-    \item  Vertex Cover [link]
-    \item Set Cover [link]
+    \item  Vertex Cover [https://youtu.be/i8qhWUMC5OU?si=SjlPNHUKohR-az5p&t=5100]
+    \item Set Cover [https://youtu.be/ZvXVKWyBryg?si=BHp7N4ueTkT7QpSG&t=8707]
 \end{itemize}
 
 
 \subsection{Reducción Vertex Cover a Dominating-Set Problem}
 
 \begin{itemize}
-    \item Vertex Cover: Dado un grafo $G=(V,E)$, donde V es un conjunto de vértices y $E$ es un conjunto de aristas, un Vertex Cover de G es un conjunto $C \in V$ tal que para cada arista $(u,v)$ en $E$, al menos uno de los extremos de $u$ o $v$ esrá en $C$. Es decir, para cada arista en el grafo, al menos uno de sus extremos pertence al conjunto $C$. 
-    \item Dominating Set: Dado un grafo $G$, se busca un conjunto de vértices $C$
-    tal que, para todo vértice $v \in G$, este esté contenido en $C$ o existe al menos un vértice en $C$ adyacente de $v$.
+    \item Vertex Cover: Dado un grafo $G=(V,E)$, donde $V$ es un conjunto de vértices y $E$ es un conjunto de aristas, un Vertex Cover de $G$ es un conjunto $C \in V$ tal que para cada arista $(u,v)$ en $E$, al menos uno de los extremos, $u$ o $v$, pertence al conjunto $C$.  
+    \item Dominating Set: Dado un grafo $G$, se busca un conjunto mínimo de vértices $C$
+    tal que, para todo vértice $v \in G$, esté contenido en $C$ o existe al menos un vértice en $C$ adyacente de $v$.
 \end{itemize}
 
 La reducción $\text{Vertex-Cover} \leq _{p} \text{Dominating-Set}$ consta en lo siguiente:
@@ -77,32 +77,24 @@ Luego, del conjunto $V'$ de $k$ vértices solución de Dominating Set, se debe a
     \label{fig:ejemplo1_VC-DS}
 \end{figure}
 
-Notar que el conjunto solución de Dominating-Set $V'=\left\{CA,D\right\}$ se incluye un vértice que pertenece al conjunto de auxiliares $CA \in A$. Por ello, se debe agregar a $V$ cualquiera de sus adyacentes, en este caso $D$.
+Si ahora, queremos un Vertex-Cover de hasta 3 vértices ($k=3$), luego la soluci´on proporcionada por Dominating Set puede ser la siguiente:
 
-Finalmente:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/ejemplo2_VC-DS.png}
+    \caption{Ejemplo de reducción de Vertex-Cover a Dominating-Set}
+    \label{fig:ejemplo2_VC-DS}
+\end{figure}
 
-\[
-    \begin{array}{c}
-        \begin{split}
-            \text{Vertex-Cover}  & \leq _{p} \text{Dominating-Set} \\
-            \text{Dominating-Set}  & \leq _{p} \text{Hitting-Set} \\
-        \end{split}
-        \quad \overset{ \text{por transitividad} }{ \implies  } \quad
-        \text{Vertex-Cover}  \leq _{p} \text{Hitting-Set} \\ \\
-        \implies \text{Hitting-Set} \in \text{NP-Completo}    
-    \end{array}
-\]
+
+Notar que el conjunto solución de Dominating-Set $V'=\left\{CA,D\right\}$ se incluye un vértice que pertenece al conjunto de auxiliares $CA \in A$. Por ello, se debe agregar a $V$ cualquiera de sus adyacentes, en este caso $C$.
 
 \subsection{Reducción Dominating-Set a Hitting-Set}
 
 La reducción $\text{Dominating-Set} \leq_{p} \text{Hitting-Set}$ consta en lo siguiente:
-Dado un grafo $G$ de $n$ vértices del problema Dominating Set, para cada vértice $v_{i}$, se construye un grupo $B_{i}$ con él mismo y todos sus vértices adyacentes. Esto tiene un costo temporal de $O(N \times E)$, ya que para cada vértice $v_{i}$ se deben obtener los vértices adyacentes a $v_{i}$ y crear los conjuntos $B_{i}$ por cada uno de ellos (es decir, realizamos operaciones polinomiales para transformar nuestro problema de Dominating-Set a Hitting-Set). 
+Dado un grafo $G$ de $n$ vértices del problema Dominating Set, para cada vértice $v_{i}$, se construye un grupo $B_{i}$ con él mismo y todos sus vértices adyacentes. Esto tiene un costo temporal de $O(N \times E)$, ya que para cada vértice $v_{i}$ se deben obtener los vértices adyacentes a $v_{i}$ y crear los conjuntos $B_{i}$ por cada uno de ellos. De esta manera, realizamos operaciones polinomiales para transformar nuestro problema de Dominating-Set a Hitting-Set. 
 
 A su vez, esta reducción se caracteriza por ser de equivalencia simple ya que el resultado devuelto por el algoritmo de Hitting Set coincide directamente con los resultados esperados por el algoritmo de Dominating Set. Como consecuencia, no es necesario realizar operaciones adicionales o suplementarias para obtener el resultado deseado.
-
-
-La complejidad del mismo se formula a continuación:
-La construcción de los $m$ conjuntos $B_{i}$ es $O(N \times E)$. Ya que para cada vértice $v_{i}$ se deben obtener los vértices adyacentes a $v_{i}$ y crear los conjuntos $B_{i}$ por cada uno de ellos. 
 
 \[\text{Dominating-Set}  \leq _{p} \text{Hitting-Set}\]
 
@@ -134,22 +126,32 @@ La construcción de los $m$ conjuntos $B_{i}$ es $O(N \times E)$. Ya que para ca
 En los tres casos analizados, se evidencia que la solución derivada del problema Hitting-Set representa la solución óptima para el Dominating-Set.
 
 
+Finalmente:
+\[
+    \begin{array}{c}
+        \begin{split}
+            \text{Vertex-Cover}  & \leq _{p} \text{Dominating-Set} \\
+            \text{Dominating-Set}  & \leq _{p} \text{Hitting-Set} \\
+        \end{split}
+        \quad \overset{ \text{por transitividad} }{ \implies  } \quad
+        \text{Vertex-Cover}  \leq _{p} \text{Hitting-Set} \\ \\
+        \implies \text{Hitting-Set} \in \text{NP-Completo}    
+    \end{array}
+\]
+
+
 \subsection{Reducción Set-Cover a Hitting-Set}
 
 \begin{itemize}
-    \item Set-Cover: Dado un conjunto finito $U$ y una familia $S= {S_1, S_2, ..., S_n}$ de subconjuntos de $U$, el problema de Set Cover consiste en identificar el menor número de conjuntos cuya unión aun contiene todos los elementos del universo. 
+    \item Set-Cover: Dado un conjunto finito $U$ y una familia $S= {S_1, S_2, ..., S_n}$ de subconjuntos de $U$, el problema de Set Cover consiste en identificar el menor número de conjuntos cuya unión aún contiene todos los elementos del universo. 
 \end{itemize}
 
 La reducción $\text{Set-Cover} \leq_{p} \text{Hitting-Set}$ consta en lo siguiente:
-Dado un grafo $G$ de $n$ vértices del problema Set-Cover, para cada elemento del subconjunto $S_{i}$, se construye un grupo $E_{i}$ en el cual sus elementos van a ser cada $S_i$ en el cual está incluido. 
+Dado un grafo $G$ de $n$ vértices del problema Set-Cover, para cada elemento $e_i$ del subconjunto $S_{i}$, se construye un conjunto $E_{i}$ en el cual sus elementos van a ser cada $S_i$ en el cual está incluido. 
 
-Esto tiene un costo temporal de $O(N \times U)$ (siendo $N$ la cantidad de subconjuntos $S$ y $U$ la cantidad de elementos del universo), ya que para cada subconjunto $S_{i}$ se debe recorrer sus elementos (en el peor de los casos todos tienen la misma cantidad que el universo) y crear los conjuntos $E_{i}$ (en caso de que no esté ya creado). En cada subconjunto nuevo $E_i$ se le agrega el $S_i$ donde está incluido, siendo esta una operación constante. 
+El análisis de la complejidad del problema del Set Cover se establece en O(N×U), donde N representa la cantidad de subconjuntos en S y U la cantidad de elementos presentes en el universo. Este costo surge de la necesidad de recorrer cada subconjunto $S_i$ en la familia $S$ y sus elementos correspondientes, operación que, en el peor de los casos, implica recorrer conjuntos de igual tamaño al universo. Luego, en cada subconjunto nuevo $E_i$ proveniente del elemento $e_i$ se le agrega el $S_i$ donde está incluido, siendo esta una operación constante. 
 
-El análisis del costo temporal asociado al problema del Set Cover se establece en O(N×U), donde N representa la cantidad de subconjuntos en S y U la cantidad de elementos presentes en el universo. Este costo se deriva de la necesidad de recorrer cada subconjunto $S_i$ en la familia $S$ y sus elementos correspondientes, operación que, en el peor de los casos, implica recorrer conjuntos de igual tamaño al universo.
-
-Para cada subconjunto $S_i$, se realiza la creación de conjuntos $E_i$ si no están previamente creados. En el proceso de generación de cada conjunto $E_i$, se añade el subconjunto $S_i$ donde el elemento está incluido, siendo esta una operación de complejidad constante. 
-
-De esta manera, realizamos operaciones polinomiales para transformar nuestro problema de Set-Cover a Hitting-Set. Además, al igual que la reducción de Dominating Set a Hitting Set, esta reducción se caracteriza por ser de equivalencia simple ya que el resultado devuelto por el algoritmo de Hitting Set coincide directamente con los resultados esperados por el algoritmo de Set-Cover. Como consecuencia de esta correspondencia entre los resultados, no es necesario realizar operaciones adicionales o suplementarias para obtener el resultado deseado.
+De esta manera, realizamos operaciones polinomiales para transformar nuestro problema de Set-Cover a Hitting-Set. Además, al igual que la reducción de Dominating Set a Hitting Set, esta reducción se caracteriza por ser de equivalencia simple ya que el resultado devuelto por el algoritmo de Hitting Set coincide directamente con los resultados esperados por el algoritmo de Set-Cover.
 
 
 \[\text{Dominating-Set}  \leq _{p} \text{Hitting-Set}\]

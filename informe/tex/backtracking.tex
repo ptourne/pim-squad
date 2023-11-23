@@ -7,7 +7,7 @@ Para poder plantear el álgoritmo de backtracing procedimos a seguir el esquema 
         \item Si lo es, actualizo la solución actual y la devuelvo
         \item Si no lo es, avanzo si puedo
     \end{enumerate}
-    \item Pruebo si la solución parcial es válida
+    \item Pruebo si la solución parcial es potencial solución óptima
     \begin {enumerate}
         \item Si no lo es, retrocedo y vuelvo a 3)
         \item Si lo es, llamo recursivamente y vuelvo a 1)
@@ -23,10 +23,22 @@ Para la solución por backtracking consideramos relevantes las siguientes variab
     \item El índice ($i_b$) del subconjunto $B_i$ en cuestión. 
 \end{itemize}
 
-En cada instancia recursiva del algoritmo, se inicia con la evaluación de la compatibilidad de la solución parcial con el problema de Hitting-Set. En caso de ser compatible y si su cardinalidad es inferior a la de la solución actual, esta solución parcial se considera la nueva solución óptima (actual).
+En cada instancia recursiva del algoritmo, se inicia con la evaluación del índice $i_b$ para verificar si coincide con la cantidad total de subconjuntos $B$. 
+Se emplea esta medida para garantizar la presencia de al menos un jugador de cada conjunto incluido en la solución parcial.
+En caso de ser igual y si la cardinalidad de la solución parcial es inferior a la solución actual, esta es considerada la nueva solución óptima (actual).
 
-Por otro lado, si la solución parcial no es compatible con el problema planteado, se procede a descartarla únicamente si su cardinalidad es mayor o igual que el de la solución actual. En este escenario, se implementa la técnica de backtracking, regresando al llamado anterior y desechando la exploración de esta rama de solución.
+En caso contrario, se procede a descartar la solución parcial únicamente si su cardinalidad es mayor o igual que el de la solución actual. En este escenario, se implementa la técnica de backtracking, regresando al llamado anterior y desechando la exploración de esta rama de solución.
 
 En el caso específico en el que la solución parcial no es compatible pero aún puede representar una solución óptima potencial, se lleva a cabo una verificación adicional. Se examina el subconjunto $B_i$ (donde $i=i_b$) para garantizar la inclusión de al menos un jugador en la solución final. Si este requisito no se cumple, se procede a evaluar individualmente la inclusión de cada jugador presente en $B_i$ para determinar cuál de ellos conduce a la obtención de la solución óptima.
+
+
+Además, se implementó una poda adicional de gran alcance. En esta etapa, donde se examina cada jugador para determinar cuál contribuye a la solución óptima, solo se exploran aquellos que no han sido considerados previamente por los conjuntos $B_j$ donde $j<b_i$.
+Esta última poda se tuvo en cuenta considerando lo siguiente:
+Suponiendo que se tiene $B_i={e_1, e_2}$ en en nivel $i_b$, si ya se evaluaron las alternativas con $e_1$, no tiene sentido revisar luego las alternativas en los conjuntos $B_k, k>i_b$ con $e_2$ que incluyan $e_1$ porque:
+\begin{enumerate}
+    \item Para que eso tenga sentido, $e_1+e_2$ debe ser una alternativa superior que sólo $e_1$ y sólo $e_2$.
+    \item Si $e_2$ ya se estaba teniendo en cuenta en un nivel anterior $B_j, j<b_i$, ya se consideró $e_1+e_2$, por lo cual incluso en $B_i$ no tiene sentido que se considere $e_2$ (ni antes $e_1$, el set estaba cubierto).
+    \item La consideración de que $e_1+e_2$ es una opción superior ya fue abordada al analizar $e_1$. Esto implica que ya se habría encontrado un conjunto que incluya a $e_2$ sin además ningún otro elemento incluido en la solución parcial. Para que $e_1+e_2$ sea una mejor alternativa, al menos un conjunto $B_k, k>i_b$ debe contener a $e_2$. Esto demuestra que esta alternativa ya fue contemplada al evaluar $e_1$ en $B_i$.
+\end{enumerate}
 
 \lstinputlisting[language=Python, firstline=4, lastline=19]{../algoritmos/backtracking.py}
