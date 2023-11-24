@@ -94,7 +94,7 @@ def generar_ejemplos_jugadores(
 
 # hacemos una lista con las letras del abecedario
 abecedario = []
-for i in range(97, 123):
+for i in range(97, 103):
     abecedario.append(chr(i))
 
 
@@ -105,32 +105,34 @@ def generar_ejemplos_abc(
     cant_max_subconjuntos: int,
     devolver: bool,
     cant_max_opt: int,
+    max_opt_sol=False,
     direccion_archivo="ejemplo_gen_abc.txt",
 ):
     conjuntos = []
     divis_para_opt = cant_conjuntos // cant_max_opt
     comb_letras_selec = set()
 
-    for i in range(cant_max_opt):
-        letras = [str] * cant_letras
-        for j in range(cant_letras):
-            letras[j] = random.choice(abecedario)
-        while "".join(letras) in comb_letras_selec:
+    if max_opt_sol:
+        for i in range(cant_max_opt):
+            letras = [str] * cant_letras
             for j in range(cant_letras):
                 letras[j] = random.choice(abecedario)
-        letras = "".join(letras)
-        for _ in range(divis_para_opt):
-            letras_set = set()
-            letras_set.add(letras)
-            conjuntos.append(letras_set)
-        if i == cant_max_opt - 1:
-            while len(conjuntos) < cant_conjuntos:
+            while "".join(letras) in comb_letras_selec:
+                for j in range(cant_letras):
+                    letras[j] = random.choice(abecedario)
+            letras = "".join(letras)
+            for _ in range(divis_para_opt):
+                letras_set = set()
+                letras_set.add(letras)
                 conjuntos.append(letras_set)
+                if i == cant_max_opt - 1:
+                    while len(conjuntos) < cant_conjuntos:
+                        conjuntos.append(letras_set)
 
     for i in range(cant_conjuntos):
-        cant_por_iter = random.randint(
-            cant_max_subconjuntos, cant_max_subconjuntos)
-        for _ in range(cant_por_iter):
+        cant_por_subconjunto = random.randint(
+            cant_min_subconjuntos, cant_max_subconjuntos)
+        for _ in range(cant_por_subconjunto):
             letras = [str] * cant_letras
             for j in range(cant_letras):
                 letras[j] = random.choice(abecedario)
@@ -159,5 +161,17 @@ def generar_ejemplos_abc(
     print(f"{direccion_archivo} generado con éxito")
 
 
-# generar_ejemplos_abc(15, 5, 5, 2, False, 15,
-#                      "../ejemplos/nuestros/abc/15.txt")
+# generar_ejemplos_abc(20, 2, 3, 5, False, 15, False,
+#                      "../ejemplos/nuestros/abc/20.txt")
+
+
+# a es la cantidad de elementos que se desea que tenga el set A. b es la cantidad de subsets B que se desea que se generen. j y p son la cantidad maxima y minima de elementos que puede tener un subset, respectivamente.
+def generarValoresAleatorios(a=42, b=5, j=7, p=3):
+    subsets = []
+    A = set(range(1, a+1))
+    for i in range(0, b):
+        subset = set()
+        for q in range(0, random.randint(p, j)):
+            subset.add(str(random.randint(1, a)))
+        subsets.append(subset)
+    return subsets

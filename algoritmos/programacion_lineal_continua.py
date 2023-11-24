@@ -30,6 +30,7 @@ def hitting_set_pl_continua(b_array):
     z = pulp.lpSum(dic_jugadores.values())
     problem += z
 
+    pulp.LpSolverDefault.msg = 0
     problem.solve()
 
     jugadores_seleccionados = [

@@ -1,24 +1,34 @@
 \section{Mediciones}
 
-Para las mediciones, creamos listas de compilados de ejemplo de forma aleatoria. Decidimos que el tiempo
-de análisis de un compilado fuera un valor aleatorio entre 1 y 99'999, basándonos en los datos de ejemplo
-provistos por la cátedra.
+Para las mediciones, creamos subconjuntos de dos tipos distintos. Uno que lo llamamos \textit{jugadores} y otro que lo llamamos \textit{abecedario}.
+El primero contiene una lista con subconjuntos de jugadores de fútbol argentino, mientras que el segundo contiene una lista con subconjuntos de combinaciones de letras del abecedario. Esto debido a que queríamos obtener comportamientos menos repetitivos, ya que tenemos un máximo de 43 jugadores distintos, mientras que el abecedario tiene 26 letras, y en base a ellas, podemos hacer combinaciones de letras para generar "palabras" de distintos tamaños, los cuales se repetiran en menor medida.
+Con ello conseguimos obtener resultados más amplios (no es lo mismo un conjunto de 1 millón de elementos distintos con una solución de Hitting Set hasta de 43 elementos, a una solución con 1 millón de elementos distintos).
 
-Medimos el tiempo de ejecución de nuestro algoritmo para ciertas cantidades de compilados.
+Además, notamos que los procesos de fondo del sistema nos generaba distorciones en los tiempos de ejecución de una misma muestra. Resolvimos este problema
+realizando varias mediciones para el mismo escenario de subconjuntos y tomando el promedio de los tiempos obtenidos. Esta estrategia nos permitió abordar otro desafío significativo: el orden en el que se evalúan los jugadores en cada subconjunto adquiere una importancia crucial en el rendimiento final del algoritmo. Esto depende especialmente de la frecuencia con la que cada jugador aparece en los demás subconjuntos. 
 
-Notamos que los procesos de fondo del sistema nos generaba distorciones en los tiempos de ejecución de una misma muestra. Atacamos este problema
-realizando varias mediciones para el mismo escenario de compilados y tomando el promedio de los tiempos obtenidos.
+Asimismo, al definir arbitrariamente cada escenario, puede ocurrir que en una cantidad 
+$x$ de subconjuntos, los jugadores incluidos en cada uno sean considerablemente diferentes o poco comunes, lo que representa un caso desfavorable. En contraste, en una cantidad de conjuntos $x+1$, podría darse una situación mucho más favorable, con una mayor similitud entre los jugadores incluidos en cada conjunto. Esto puede llevar a una diferencia significativa en los tiempos de ejecución, a pesar de que la cantidad de conjuntos varíe en una sola unidad.
 
-Además, como definimos cada escenario arbitrariamente, en una cantidad de compilados $x$, este escenario puede ser poco favorable (puede estar muy desordenado),
-mientras que en una cantidad de compilados $x+1$ puede ser muy favorable. Por lo cual la diferencia de tiempos va a ser muy grande a pesar de que la cantidad
-de compilados solamente difiere en una unidad (TimSort es una combinación de inserción y mergeSort, por lo cual el desorden inicial toma gran relevancia en el 
-rendimiento final del algorítmo). Para solucionar esto, decidimos hacer varios escenarios distintos para la misma cantidad de compilados.
+Siguiendo las estrategias explicadas, realizamos mediciones variando solamente la cantidad de subconjutos y comparando el tiempo de ejecución de los diferentes algorítmos analizados a lo largo del informe: Backtracking, algorítmo Greedy Máximo por grupo, algorítmo Greedy Máximo global con recálculo, Programación Lineal Entera y Programación Lineal Continua.
 
-Con el objetivo de comparar los tiempos de ejecución de nuestro algoritmo con la complejidad teórica, optamos por 
-realizar tanto un análisis de regresión lineal como uno de regresión lineal logarítmica que se ajustara a nuestros datos.
-Para evaluar qué curva se ajusta mejor, usamos la raíz del error cuadrático medio (RMSE). Realizamos este análisis en un
-intervalo con tamaños pequeños (hasta 1'000) y en un intervalo con tamaños grandes (hasta 10'000). Ver figuras \ref{fig:tiempos_valores_bajos_puntos} y
-\ref{fig:tiempos_valores_altos_puntos}
+Al evaluar algoritmos con orden exponencial, como Backtracking y Programación Lineal Entera, notamos que su tiempo de ejecución aumenta significativamente a medida que se incrementa la cantidad de subconjuntos en comparación con los demás algoritmos.
+En los escenarios donde $b$ se mantiene constante, estos algorítmos tienen una gráfica que tiende a ser lineal. Esto es debido a que, a pesar que la cantidad de subconjuntos es aumentada, cada vez la probabilidad de que el subconjunto no contenga un jugador incluido en la solución parcial disminuye, resultando, en promedio, una gráfica lineal. 
+
+Al igual que lo esperado, si se varian tanto $m$ como $b$ se puede observar que tanto Backtracking  como Programación Lineal Entera, siguen una curva exponencial. 
+
+Por otro lado, podemos observar que la curva de Programación Lineal Continua se asemeja a una curva polinómica. De esta manera, mediante el gráfico y la validación a través del error cuadrático medio, hemos comprobado que la curva de un polinomio de grado 9?? se adapta de manera más precisa a nuestros datos, corroborando la cota teórica. De esta forma pudimos comprobar empíricamente que la complejidad tiende a $\operatorname{O}(n^{9})$. 
+
+En los siguientes gráficos, se ilustran el grado de aproximación, variando $b$ (Figura 1) y manteniendola constante (Figura 2). De esta manera, podemos corroborar que la cota máxima es efectivamente en cada escenario es $b-1$.
+
+
+Además, al examinar los algoritmos que emplean la estrategia de diseño Greedy, ambos siguen una tendencia polinomial. En el primer gráfico, se observa que el RMSE presenta un menor valor en la regresión lineal. Esto se debe a que la variable $b$ permanece constante para cada escenario, variando únicamente la cantidad de subconjuntos ($m$). En contraste, al aumentar la variable $b$ a medida que se aumenta la cantidad de subconjuntos, se puede visualizar su tendencia polinómica no lineal, evidenciando la cota teórica. 
+
+Asimismo, se destaca una marcada diferencia en los tiempos de ejecución entre el algoritmo Greedy Máximo por grupo y el algoritmo Greedy Máximo global. El primero muestra una ejecución significativamente más rápida en todos los escenarios comparado con el segundo. Sin embargo, al analizar las soluciones obtenidas, se evidencia que el algoritmo Greedy Máximo global se acerca más a la solución óptima en todos los casos estudiados.
+
+Esta divergencia plantea un desafío fundamental al momento de decidir cuál enfoque es más adecuado. Por un lado, el algoritmo por grupo se destaca por su eficiencia temporal, ofreciendo tiempos de ejecución notoriamente inferiores y, por otro lado, el enfoque global muestra una mayor aproximación a la solución óptima.
+
+!!! INSERTAR GRAFICOS !!!
 
 % \begin{figure}[H]
 %     \centering
@@ -32,42 +42,4 @@ intervalo con tamaños pequeños (hasta 1'000) y en un intervalo con tamaños gr
 %     \includegraphics[width=0.8\textwidth]{img/tiempos_valores_altos_puntos.png}
 %     \caption{Tendencia de la complejidad algoritmica para $n$ grandes.}
 %     \label{fig:tiempos_valores_altos_puntos}
-% \end{figure}
-
-Se puede observar que en valores pequeños, el tiempo de ejecución del algoritmo sigue una clara curva lineal logarítmica. Sin embargo, a medida
-que aumenta el tamaño de la muestra de compilados, su comportamiento se aproxima más a una complejidad lineal.
-
-Esto ocurre debido a la naturaleza de la función lineal logarítmica, que presenta una pendiente logarítmica. Cuando se 
-trabajan con valores grandes, esta pendiente se vuelve casi constante, lo que la asemeja a una función lineal. Esto se 
-debe a que el logaritmo es una función monótona creciente, lo que significa que su derivada es siempre positiva para valores 
-mayores que cero. Sin embargo, el crecimiento de esta función se vuelve cada vez más lento a medida que los valores aumentan, 
-indicando que su segunda derivada es siempre negativa. En consecuencia, para valores muy grandes, la función lineal logarítmica 
-se estabiliza y, aunque no es completamente constante, su comportamiento se asemeja a una función lineal.
-
-De esta manera, mediante el gráfico y la validación a través del error cuadrático medio, hemos comprobado que la curva lineal logarítmica 
-se adapta de manera más precisa a nuestros datos.
-
-De esta forma pudimos comprobar empíricamente que la complejidad tiende a $\operatorname{O}(n\log{n})$.
-
-Nótese que graficamos también dos curvas que demarcan una estimación de los cuantiles verticales $0.1$ y $0.9$. Esta estimación
-se realizó calculando los cuantiles para un grupo pequeño centrado en cada punto. Estas curvas nos ayudan a dimencionar cómo la
-varianza del tiempo de ordenamiento crece con el aumento del tamaño de la información de entrada.
-
-Adicionalmente, graficamos la densidad de los tiempos que también brinda una visualización de cómo aumenta la varianza con el aumento del tamaño
-de los datos de entrada. Ver figuras \ref{fig:tiempos_valores_bajos_densidad} y \ref{fig:tiempos_valores_altos_densidad} 
-
-% \begin{figure}[ht]
-%     \centering
-%     \begin{minipage}[b]{0.495\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{img/tiempos_valores_bajos_densidad.png}
-%         \caption{Mediciones para $n$ bajos.}
-%         \label{fig:tiempos_valores_bajos_densidad}
-%     \end{minipage}
-%     \begin{minipage}[b]{0.495\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{img/tiempos_valores_altos_densidad.png}
-%         \caption{Mediciones para $n$ altos.}
-%         \label{fig:tiempos_valores_altos_densidad}
-%     \end{minipage}
 % \end{figure}

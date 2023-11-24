@@ -23,6 +23,7 @@ def hitting_set_pl_entera(b_array):
     z = pulp.lpSum(dic_jugadores.values())
     problem += z
 
+    pulp.LpSolverDefault.msg = 0
     problem.solve()
 
     # Obtener jugadores seleccionados
