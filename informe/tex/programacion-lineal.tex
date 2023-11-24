@@ -6,10 +6,9 @@ También se puede reducir Hitting-Set Problem a Programación Lineal Entera de l
 
 \begin{enumerate}
 
-    \item Para cada elemento $i$ del universo $U$, se crea una variable $y_{i}$ que puede tomar los valores $0$ o $1$.
+    \item Para cada elemento $e_i$ del universo $U=\left\{e_1,e_2,\dots,e_{n}\right\}$, se crea una variable $y_{i}$ que puede tomar los valores $0$ o $1$.
     
-    \item Se define una función \(f_{j} = \sum_{e \in S_j} e\) para cada conjunto \(S_{j}\), y se establece una restricción que acota a \(f_{j}\) en el rango \(1 \leq f_{j} \leq |S_{j}|\).
-
+    \item Se define una función \(f_{j} = \sum_{i\mid e_i \in S_j} y_i\) para cada conjunto \(S_{j}\), y se establece una restricción que acota a \(f_{j}\) en el rango \(1 \leq f_{j} \leq |S_{j}|\).
 
     \item  El objetivo radica en minimizar la función $f=\sum_{i=0}^{n}y_{i}$.
 
@@ -21,9 +20,9 @@ Luego, el conjunto solución $C$ será
     C = \{e_i \in U \mid y_{i} = 1\}
 \]
 
-La complejidad de esta reducción es $O(N \times U)$ ya que se debe recorrer todos los subconjuntos $B_i$ y, por cada uno, recorrer cada elemento. Este proceso es polinomial, y la complejidad de Programación Lineal Entera es exponencial.
+La complejidad de esta reducción es $O(m \times b)$, con $b$ el cardinal del conjunto más grande, ya que se debe recorrer todos los subconjuntos $B_i$ y, por cada uno, recorrer cada elemento. Este proceso es polinomial, y la complejidad de Programación Lineal Entera es exponencial.
 
-\[\text{Hitting-Set}  \leq _{p} \text{Programación Lineal Entera}\]
+\[\text{Hitting-Set} \leq _{p} \text{Programación Lineal Entera}\]
 
 El codigo de la reducción es el siguiente:
 
@@ -34,7 +33,7 @@ El codigo de la reducción es el siguiente:
 Otra estrategia para abordar la solución del Hitting-Set Problem implica el enfoque de la Programación Lineal continua. Esta aproximación se asemeja a la reducción previamente descrita, con la distinción fundamental de que las variables 
 $y_i$ pueden asumir valores reales dentro del intervalo $0$ a $1$.
 
-Posteriormente, se lleva a cabo una consideración respecto a estos valores, donde aquellos que excedan el umbral del $1/b$, siendo $b$ el cardinal máximo de todos los conjuntos $S_j$, son incluidos como componentes de la solución final.
+Posteriormente, para toda variable $y_i$ que en la solución del problema de Programación Lineal tengan un valor que exceda el umbral del $1/b$, siendo $b$ el cardinal máximo de todos los conjuntos $S_j$, se incluye $e_i$ a la solución final $C$ del Hitting-Set Problem.
 
 Luego, el conjunto solución $C$ será
 
@@ -42,24 +41,24 @@ Luego, el conjunto solución $C$ será
     C = \left\{e_i \in U \mid y_{i} \geq \frac{1}{b}\right\}
 \]
 
-Por la mismas consideraciones aplicadas en la reducción de la Programación Lineal Entera, la complejidad asociada a la reducción de la Programación Lineal Continua al Hitting Set es de O(N×U).
+Por la mismas consideraciones aplicadas en la reducción de la Programación Lineal Entera, la complejidad asociada a la reducción de Hitting Set a Programación Lineal Continua es de $O(m\times b)$.
 Sin embargo, la complejidad de Programación Lineal Continua es $O(n^9)$ lo cual es polinomial, a diferencia de la Entera. 
 
 El codigo de la reducción es el siguiente:
 
-\lstinputlisting[language=Python, firstline=4, lastline=41]{../algoritmos/programacion_lineal_entera.py}
+\lstinputlisting[language=Python, firstline=3, lastline=38]{../algoritmos/programacion_lineal_continua.py}
 
 Con el objetivo de evaluar qué tan buena aproximación es la Programación Lineal Continua respecto a la Programación Lineal Entera, se propuso el siguiente escenario que resalta las diferencias entre las soluciones obtenidas por ambos algorítmos:
 
-Consideramos dos conjuntos que representan medios diferentes, denominados set1 y set2. Estos conjuntos se componen de la siguiente manera:
+Consideremos dos conjuntos que representan medios diferentes, denominados $S_1$ y $S_2$. Estos conjuntos se componen de la siguiente manera:
 \begin{enumerate}
-    \item set1 con tamaño $b$, expresado como $set_1={x_1, x_2, ..., x_{b-1},  x_b}$
-    \item set2 con tamaño $b-1$, representado como $set_2={x_1, x_2, ..., x_{b-1}}$
+    \item $S_1$ con tamaño $b$, expresado como $S_1=\left\{x_1, x_2, ..., x_{b-1},  x_b\right\}$
+    \item $S_2$ con tamaño $b-1$, representado como $S_2=\left\{x_1, x_2, ..., x_{b-1}\right\}$
 \end{enumerate}
 
-En un contexto de Programación Lineal Continua (PLC), una solución posible puede ser la asignación $x_1 = x_2 = ... = x_{b-1} = 1/(b-1)$ y $x_b=0$.
+En el contexto de Programación Lineal Continua (PLC), una solución posible puede ser la asignación $x_1 = x_2 = ... = x_{b-1} = 1/(b-1)$ y $x_b=0$.
 
-En esta situación, dado que $\frac{1}{b} < \frac{1}{b-1}$, las variables del $set_2$, al ser redondeadas, resultarían en 1, siendo todas incluidas en la solución final.
+En esta situación, dado que $\frac{1}{b} < \frac{1}{b-1}$, las variables del $S_2$, al ser redondeadas, resultarían en 1, siendo todas incluidas en la solución final.
 
 Por otro lado, la solución proporcionada por la Programación Lineal Entera (PLE), que representa la solución óptima, presentaría, por ejemplo, la siguiente asignación de valores:  $x_1 = 1$ y  $x_2 = ... = x_{b} = 0$. 
 

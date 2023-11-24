@@ -1,6 +1,5 @@
 import pulp
 
-
 def hitting_set_pl_entera(b_array):
     problem = pulp.LpProblem("Scaloni", pulp.LpMinimize)
     dic_jugadores = {}

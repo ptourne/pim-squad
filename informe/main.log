@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  24 NOV 2023 13:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  24 NOV 2023 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1455,12 +1455,6 @@ Overfull \hbox (1.23715pt too wide) in paragraph at lines 3--10
 un an^^Sali-sis de los dis-tin-tos en-fo-ques y dise~nos 
  []
 
-
-Overfull \hbox (0.23853pt too wide) in paragraph at lines 21--22
-[]\OT1/cmr/m/n/10 Scaloni nece-si-ta obten-er el grupo $\OML/cmm/m/it/10 C$ \OT
-1/cmr/m/n/10 m^^Sas peque~no de ju-gadores de tal for-ma que ca-da medio 
- []
-
 ) (./tex/analisis-np.tex
 Overfull \hbox (1.93164pt too wide) in paragraph at lines 3--8
 []\OT1/cmr/m/n/10 El prob-le-ma plantea-do por Scaloni es un ca-so es-pec^^S^^P
@@ -1469,7 +1463,7 @@ fi-co del prob-le-ma del Hitting-Set, cuya defini-
 
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 37.
+Package pdftex.def Info: logo.pdf  used on input line 38.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
@@ -1480,20 +1474,21 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [3]
-Overfull \hbox (2.40385pt too wide) in paragraph at lines 38--40
-\OT1/cmr/m/n/10 em-ple-an-do es-trate-gias de re-duc-ci^^Son que ilus-tran la n
-at-u-raleza NP-Completa del Hitting-Set Prob- 
- []
-
 <img/ejemplo1_VC-DS.png, id=200, 489.83pt x 265.99374pt>
 File: img/ejemplo1_VC-DS.png Graphic file (type png)
 <use img/ejemplo1_VC-DS.png>
-Package pdftex.def Info: img/ejemplo1_VC-DS.png  used on input line 75.
+Package pdftex.def Info: img/ejemplo1_VC-DS.png  used on input line 72.
+(pdftex.def)             Requested size: 341.43437pt x 185.41507pt.
+<img/ejemplo2_VC-DS.png, id=202, 489.83pt x 265.99374pt>
+File: img/ejemplo2_VC-DS.png Graphic file (type png)
+<use img/ejemplo2_VC-DS.png>
+Package pdftex.def Info: img/ejemplo2_VC-DS.png  used on input line 81.
 (pdftex.def)             Requested size: 341.43437pt x 185.41507pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 79.
+Package pdftex.def Info: logo.pdf  used on input line 84.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1502,15 +1497,21 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[4]
-<img/ejemplo2_VC-DS.png, id=208, 489.83pt x 265.99374pt>
-File: img/ejemplo2_VC-DS.png Graphic file (type png)
-<use img/ejemplo2_VC-DS.png>
-Package pdftex.def Info: img/ejemplo2_VC-DS.png  used on input line 84.
+[4
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.84 \end{figure}
+                  <./img/ejemplo1_VC-DS.png>]
+<img/ejemplo1_DS-HS.png, id=211, 489.83pt x 265.99374pt>
+File: img/ejemplo1_DS-HS.png Graphic file (type png)
+<use img/ejemplo1_DS-HS.png>
+Package pdftex.def Info: img/ejemplo1_DS-HS.png  used on input line 102.
 (pdftex.def)             Requested size: 341.43437pt x 185.41507pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 98.
+Package pdftex.def Info: logo.pdf  used on input line 106.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 
@@ -1522,36 +1523,25 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [5
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.98 
-     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.98 
-      <./img/ejemplo1_VC-DS.png> <./img/ejemplo2_VC-DS.png>]
-<img/ejemplo1_DS-HS.png, id=217, 489.83pt x 265.99374pt>
-File: img/ejemplo1_DS-HS.png Graphic file (type png)
-<use img/ejemplo1_DS-HS.png>
-Package pdftex.def Info: img/ejemplo1_DS-HS.png  used on input line 105.
-(pdftex.def)             Requested size: 341.43437pt x 185.41507pt.
+l.106 
+       <./img/ejemplo2_VC-DS.png>]
 <img/ejemplo2_DS-HS.png, id=218, 497.86pt x 289.08pt>
 File: img/ejemplo2_DS-HS.png Graphic file (type png)
 <use img/ejemplo2_DS-HS.png>
-Package pdftex.def Info: img/ejemplo2_DS-HS.png  used on input line 113.
+Package pdftex.def Info: img/ejemplo2_DS-HS.png  used on input line 110.
 (pdftex.def)             Requested size: 341.43437pt x 198.25679pt.
 <img/ejemplo3_DS-HS.png, id=219, 515.9275pt x 297.11pt>
 File: img/ejemplo3_DS-HS.png Graphic file (type png)
 <use img/ejemplo3_DS-HS.png>
-Package pdftex.def Info: img/ejemplo3_DS-HS.png  used on input line 121.
+Package pdftex.def Info: img/ejemplo3_DS-HS.png  used on input line 118.
 (pdftex.def)             Requested size: 341.43437pt x 196.62816pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 125.
+Package pdftex.def Info: logo.pdf  used on input line 122.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 
@@ -1567,26 +1557,26 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.125 
+l.122 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.125 
+l.122 
        <./img/ejemplo1_DS-HS.png> <./img/ejemplo2_DS-HS.png>]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 135.
+(amsmath)                trying to recover with `aligned' on input line 132.
 
 <img/ejemplo1_SC-HS.png, id=228, 402.50375pt x 223.83624pt>
 File: img/ejemplo1_SC-HS.png Graphic file (type png)
 <use img/ejemplo1_SC-HS.png>
-Package pdftex.def Info: img/ejemplo1_SC-HS.png  used on input line 163.
+Package pdftex.def Info: img/ejemplo1_SC-HS.png  used on input line 160.
 (pdftex.def)             Requested size: 341.43437pt x 189.87575pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 167.
+Package pdftex.def Info: logo.pdf  used on input line 164.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
@@ -1601,12 +1591,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.167 
+l.164 
        <./img/ejemplo3_DS-HS.png>]
-<img/ejemplo2_SC-HS.png, id=237, 415.5525pt x 223.83624pt>
+<img/ejemplo2_SC-HS.png, id=236, 415.5525pt x 223.83624pt>
 File: img/ejemplo2_SC-HS.png Graphic file (type png)
 <use img/ejemplo2_SC-HS.png>
-Package pdftex.def Info: img/ejemplo2_SC-HS.png  used on input line 170.
+Package pdftex.def Info: img/ejemplo2_SC-HS.png  used on input line 167.
 (pdftex.def)             Requested size: 341.43437pt x 183.91919pt.
 ) (./tex/backtracking.tex
 File: logo.pdf Graphic file (type pdf)
@@ -1628,25 +1618,33 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.13         \item S
-                    i lo es, llamo recursivamente y vuelvo a 1)
+                    i lo es, llamamos recursivamente y seguimos en el punto ...
+
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.13         \item S
-                    i lo es, llamo recursivamente y vuelvo a 1) <./img/ejemplo1
-_SC-HS.png> <./img/ejemplo2_SC-HS.png>]
+                    i lo es, llamamos recursivamente y seguimos en el punto ...
+ <./img/ejemplo1_SC-HS.png> <./img/ejemplo2_SC-HS.png>]
+Overfull \hbox (2.8295pt too wide) in paragraph at lines 42--43
+[]\OT1/cmr/m/n/10 Si $\OML/cmm/m/it/10 e[]$ \OT1/cmr/m/n/10 ya se es-ta-ba te-n
+ien-do en cuen-ta en un niv-el an-te-ri-or $\OML/cmm/m/it/10 B[]; j < b[]$\OT1/
+cmr/m/n/10 , ya se con-sid-er^^So $\OML/cmm/m/it/10 e[]; e[] \OMS/cmsy/m/n/10 2
+ 
+ []
+
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 44.
+nput line 49.
 
 (../algoritmos/backtracking.py
 consecutive:
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 18.
+Package pdftex.def Info: logo.pdf  used on input line 14.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
@@ -1659,12 +1657,10 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 [9])) (./tex/programacion-lineal.tex
 (../algoritmos/programacion_lineal_entera.py
 consecutive:
-)
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 30.
+Package pdftex.def Info: logo.pdf  used on input line 19.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1673,14 +1669,12 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[10] (../algoritmos/programacion_lineal_entera.py
+[10]) (../algoritmos/programacion_lineal_continua.py
 consecutive:
-)
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 57.
+Package pdftex.def Info: logo.pdf  used on input line 29.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1689,17 +1683,12 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[11]) (./tex/aproximacion.tex
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 5.
-
-(../algoritmos/greedy.py
-consecutive:
+[11])) (./tex/aproximacion.tex (../algoritmos/greedy.py
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 33.
+Package pdftex.def Info: logo.pdf  used on input line 7.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1710,12 +1699,10 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 [12]) (../algoritmos/greedy.py
 consecutive:
-)
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 29.
+Package pdftex.def Info: logo.pdf  used on input line 49.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1724,7 +1711,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[13]
+[13])
 <img/greedy_ej1.png, id=431, 509.905pt x 186.6975pt>
 File: img/greedy_ej1.png Graphic file (type png)
 <use img/greedy_ej1.png>
@@ -1735,19 +1722,9 @@ File: img/greedy_ej1_mpg.png Graphic file (type png)
 <use img/greedy_ej1_mpg.png>
 Package pdftex.def Info: img/greedy_ej1_mpg.png  used on input line 40.
 (pdftex.def)             Requested size: 341.43437pt x 79.90852pt.
-<img/greedy_ej1_mgr.png, id=433, 1370.11874pt x 408.52625pt>
-File: img/greedy_ej1_mgr.png Graphic file (type png)
-<use img/greedy_ej1_mgr.png>
-Package pdftex.def Info: img/greedy_ej1_mgr.png  used on input line 47.
-(pdftex.def)             Requested size: 341.43437pt x 101.80092pt.
-<img/greedy_ej2.png, id=437, 1464.47125pt x 651.43375pt>
-File: img/greedy_ej2.png Graphic file (type png)
-<use img/greedy_ej2.png>
-Package pdftex.def Info: img/greedy_ej2.png  used on input line 56.
-(pdftex.def)             Requested size: 341.43437pt x 151.87425pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 60.
+Package pdftex.def Info: logo.pdf  used on input line 44.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 
@@ -1763,39 +1740,26 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.60 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.60 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.60 
-      <./img/greedy_ej1.png> <./img/greedy_ej1_mpg.png> <./img/greedy_ej1_mgr.p
-ng>]
-<img/greedy_ej2_mpg.png, id=451, 1855.93375pt x 828.09375pt>
+l.44 
+      <./img/greedy_ej1.png>]
+<img/greedy_ej1_mgr.png, id=461, 1370.11874pt x 408.52625pt>
+File: img/greedy_ej1_mgr.png Graphic file (type png)
+<use img/greedy_ej1_mgr.png>
+Package pdftex.def Info: img/greedy_ej1_mgr.png  used on input line 47.
+(pdftex.def)             Requested size: 341.43437pt x 101.80092pt.
+<img/greedy_ej2.png, id=465, 1464.47125pt x 651.43375pt>
+File: img/greedy_ej2.png Graphic file (type png)
+<use img/greedy_ej2.png>
+Package pdftex.def Info: img/greedy_ej2.png  used on input line 56.
+(pdftex.def)             Requested size: 341.43437pt x 151.87425pt.
+<img/greedy_ej2_mpg.png, id=466, 1855.93375pt x 828.09375pt>
 File: img/greedy_ej2_mpg.png Graphic file (type png)
 <use img/greedy_ej2_mpg.png>
 Package pdftex.def Info: img/greedy_ej2_mpg.png  used on input line 63.
 (pdftex.def)             Requested size: 341.43437pt x 152.33571pt.
-<img/greedy_ej2_mgr.png, id=452, 1802.735pt x 421.575pt>
-File: img/greedy_ej2_mgr.png Graphic file (type png)
-<use img/greedy_ej2_mgr.png>
-Package pdftex.def Info: img/greedy_ej2_mgr.png  used on input line 70.
-(pdftex.def)             Requested size: 341.43437pt x 79.84276pt.
-<img/greedy_ej3.png, id=456, 1588.93625pt x 784.9325pt>
-File: img/greedy_ej3.png Graphic file (type png)
-<use img/greedy_ej3.png>
-Package pdftex.def Info: img/greedy_ej3.png  used on input line 79.
-(pdftex.def)             Requested size: 341.43437pt x 168.66138pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 83.
+Package pdftex.def Info: logo.pdf  used on input line 67.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 
@@ -1807,45 +1771,45 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [15
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.67 
+     
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.67 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.83 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.83 
-     
-pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.83 
-      <./img/greedy_ej2.png> <./img/greedy_ej2_mpg.png> <./img/greedy_ej2_mgr.p
+l.67 
+      <./img/greedy_ej1_mpg.png> <./img/greedy_ej1_mgr.png> <./img/greedy_ej2.p
 ng>]
-<img/greedy_ej3_mpg.png, id=467, 1844.8925pt x 998.73125pt>
+<img/greedy_ej2_mgr.png, id=479, 1802.735pt x 421.575pt>
+File: img/greedy_ej2_mgr.png Graphic file (type png)
+<use img/greedy_ej2_mgr.png>
+Package pdftex.def Info: img/greedy_ej2_mgr.png  used on input line 70.
+(pdftex.def)             Requested size: 341.43437pt x 79.84276pt.
+<img/greedy_ej3.png, id=483, 1588.93625pt x 784.9325pt>
+File: img/greedy_ej3.png Graphic file (type png)
+<use img/greedy_ej3.png>
+Package pdftex.def Info: img/greedy_ej3.png  used on input line 79.
+(pdftex.def)             Requested size: 341.43437pt x 168.66138pt.
+<img/greedy_ej3_mpg.png, id=484, 1844.8925pt x 998.73125pt>
 File: img/greedy_ej3_mpg.png Graphic file (type png)
 <use img/greedy_ej3_mpg.png>
 Package pdftex.def Info: img/greedy_ej3_mpg.png  used on input line 86.
 (pdftex.def)             Requested size: 341.43437pt x 184.82333pt.
-<img/greedy_ej3_mgr.png, id=468, 1799.72375pt x 492.84125pt>
-File: img/greedy_ej3_mgr.png Graphic file (type png)
-<use img/greedy_ej3_mgr.png>
-Package pdftex.def Info: img/greedy_ej3_mgr.png  used on input line 93.
-(pdftex.def)             Requested size: 341.43437pt x 93.49792pt.
-) (./tex/mediciones.tex
-Overfull \hbox (8.7927pt too wide) in paragraph at lines 3--6
-\OT1/cmr/m/n/10 tiene 26 le-tras, y en base a el-las, pode-mos hac-er com-bi-na
--ciones de le-tras para gener-ar "pal-abras"de 
- []
-
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 6.
+Package pdftex.def Info: logo.pdf  used on input line 90.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1855,34 +1819,36 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
 [16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.90 
+     
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.90 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.6 
-    
-pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.6 
-    
-pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.6 
-     <./img/greedy_ej3.png> <./img/greedy_ej3_mpg.png> <./img/greedy_ej3_mgr.pn
-g>]
-Overfull \hbox (9.30658pt too wide) in paragraph at lines 25--26
-[]\OT1/cmr/m/n/10 Asimismo, se desta-ca una mar-ca-da difer-en-cia en los tiem-
-pos de eje-cu-ci^^Son en-tre el al-go-rit-mo Greedy 
- []
-
+l.90 
+      <./img/greedy_ej2_mpg.png> <./img/greedy_ej2_mgr.png> <./img/greedy_ej3.p
+ng>]
+<img/greedy_ej3_mgr.png, id=495, 1799.72375pt x 492.84125pt>
+File: img/greedy_ej3_mgr.png Graphic file (type png)
+<use img/greedy_ej3_mgr.png>
+Package pdftex.def Info: img/greedy_ej3_mgr.png  used on input line 93.
+(pdftex.def)             Requested size: 341.43437pt x 93.49792pt.
+) (./tex/mediciones.tex
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 26.
+Package pdftex.def Info: logo.pdf  used on input line 13.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1891,7 +1857,41 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[17]) (./tex/conclusiones.tex)
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.13 S
+      iguiendo las estrategias explicadas, realizamos mediciones variando so...
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.13 S
+      iguiendo las estrategias explicadas, realizamos mediciones variando so...
+ <./img/greedy_ej3_mpg.png> <./img/greedy_ej3_mgr.png>]
+Overfull \hbox (9.30658pt too wide) in paragraph at lines 25--26
+[]\OT1/cmr/m/n/10 Asimismo, se desta-ca una mar-ca-da difer-en-cia en los tiem-
+pos de eje-cu-ci^^Son en-tre el al-go-rit-mo Greedy 
+ []
+
+) (./tex/conclusiones.tex
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 4.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
+
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
+
+[18])
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 93.
@@ -1905,7 +1905,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[18] 
+[19] 
 AED: lastpage setting LastPage
 (./main.aux
 LaTeX Info: Redefining \sptext on input line 23.
@@ -1916,41 +1916,39 @@ LaTeX Info: Redefining \% on input line 23.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DE3E2221A7864445A31EF95798CD769D;3719.
+(rerunfilecheck)             Checksum: 712D628BB90DCA47A32DDD5C539F64FC;4095.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37356 strings out of 478126
- 700715 string characters out of 5842786
- 2130793 words of memory out of 6000000
- 56547 multiletter control sequences out of 15000+600000
- 518929 words of font info for 57 fonts, out of 8000000 for 9000
+ 37394 strings out of 478126
+ 701491 string characters out of 5842786
+ 2184793 words of memory out of 6000000
+ 56561 multiletter control sequences out of 15000+600000
+ 518594 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 103i,16n,105p,798b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (18 pages, 1423170 bytes).
+ 103i,16n,105p,1161b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (19 pages, 1424865 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 480 compressed objects within 5 object streams
- 211 named destinations out of 1000 (max. 500000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 510 compressed objects within 6 object streams
+ 235 named destinations out of 1000 (max. 500000)
  432 words of extra memory for PDF output out of 10000 (max. 10000000)
 

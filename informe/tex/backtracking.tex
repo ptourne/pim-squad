@@ -2,24 +2,24 @@
 
 Para poder plantear el álgoritmo de backtracing procedimos a seguir el esquema proporcionado por la cátedra:
 \begin{enumerate}
-    \item Pruebo si la solucion parcial es solución y es mejor que la actual entontrada:
+    \item Probamos si la solucion parcial es solución y es mejor que la actual entontrada:
     \begin {enumerate}
-        \item Si lo es, actualizo la solución actual y la devuelvo
-        \item Si no lo es, avanzo si puedo
+        \item Si lo es, actualizamos la solución actual y la devolvemos.
+        \item Si no lo es, avanzamos si puedo.
     \end{enumerate}
-    \item Pruebo si la solución parcial es potencial solución óptima
+    \item Probamos si la solución parcial es potencial solución óptima.
     \begin {enumerate}
-        \item Si no lo es, retrocedo y vuelvo a 3)
-        \item Si lo es, llamo recursivamente y vuelvo a 1)
+        \item Si no lo es, retrocedemos y volvemos a punto 3) de la recursión anterior.
+        \item Si lo es, llamamos recursivamente y seguimos en el punto 1) de la recursión siguiente.
     \end{enumerate}
-    \item Prosigo explorando la solución parcial llamando recursivamente
+    \item Proseguimos explorando la solución parcial llamando recursivamente.
 \end{enumerate}
 
 Para la solución por backtracking consideramos relevantes las siguientes variables:
 \begin{itemize}
-    \item Los subconjuntos $B_i$
-    \item Solución parcial
-    \item La solución actual óptima 
+    \item Los subconjuntos $B_i$.
+    \item Solución parcial.
+    \item La solución actual óptima.
     \item El índice ($i_b$) del subconjunto $B_i$ en cuestión. 
 \end{itemize}
 
@@ -34,11 +34,16 @@ En el caso específico en el que la solución parcial no es compatible pero aún
 
 Además, se implementó una poda adicional de gran alcance. En esta etapa, donde se examina cada jugador para determinar cuál contribuye a la solución óptima, solo se exploran aquellos que no han sido considerados previamente por los conjuntos $B_j$ donde $j<b_i$.
 Esta última poda se tuvo en cuenta considerando lo siguiente:
-Suponiendo que se tiene $B_i={e_1, e_2}$ en en nivel $i_b$, si ya se evaluaron las alternativas con $e_1$, no tiene sentido revisar luego las alternativas en los conjuntos $B_k, k>i_b$ con $e_2$ que incluyan $e_1$ porque:
+Suponiendo que se tiene $B_i=\left\{e_1, e_2\right\}$ en nivel $i_b$, si ya se evaluaron las alternativas con $e_1$, no tiene sentido revisar luego las alternativas en los conjuntos $B_k, k>i_b$ con $e_2$ que incluyan $e_1$ porque:
+
 \begin{enumerate}
-    \item Para que eso tenga sentido, $e_1+e_2$ debe ser una alternativa superior que sólo $e_1$ y sólo $e_2$.
-    \item Si $e_2$ ya se estaba teniendo en cuenta en un nivel anterior $B_j, j<b_i$, ya se consideró $e_1+e_2$, por lo cual incluso en $B_i$ no tiene sentido que se considere $e_2$ (ni antes $e_1$, el set estaba cubierto).
-    \item La consideración de que $e_1+e_2$ es una opción superior ya fue abordada al analizar $e_1$. Esto implica que ya se habría encontrado un conjunto que incluya a $e_2$ sin además ningún otro elemento incluido en la solución parcial. Para que $e_1+e_2$ sea una mejor alternativa, al menos un conjunto $B_k, k>i_b$ debe contener a $e_2$. Esto demuestra que esta alternativa ya fue contemplada al evaluar $e_1$ en $B_i$.
+    \item Para que eso tenga sentido, $e_1,e_2 \in C$ debe ser una alternativa superior que $e_1\in C \land e_2 \notin C$ y $e_2\in C \land e_1 \notin C$.
+
+    \item Si $e_2$ ya se estaba teniendo en cuenta en un nivel anterior $B_j, j<b_i$, ya se consideró  $e_1,e_2 \in C$, por lo cual incluso en $B_i$ no tiene sentido que se considere $e_2$ (ni antes $e_1$; ya había un jugador en $B_i$ incluido en $C$).
+    
+    \item La consideración de que $e_1,e_2 \in C$ es una opción mejor ya fue abordada al analizar $e_1$. Esto implica que ya se habría encontrado un conjunto que incluya a $e_2$ sin además ningún otro elemento incluido en la solución parcial. Para que $e_1,e_2 \in C$ sea una mejor alternativa, al menos un conjunto $B_k, k>i_b$ debe contener a $e_2$. Esto demuestra que esta alternativa ya fue contemplada al evaluar $e_1$ en $B_i$.
 \end{enumerate}
 
-\lstinputlisting[language=Python, firstline=4, lastline=19]{../algoritmos/backtracking.py}
+A continuación, incluimos el código principal del algoritmo.
+
+\lstinputlisting[language=Python, firstline=4, lastline=30]{../algoritmos/backtracking.py}

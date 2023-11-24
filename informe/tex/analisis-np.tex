@@ -17,14 +17,13 @@ $C \subseteq A$ que cumpla con dos condiciones fundamentales:
     \item En segundo lugar, que para cada subconjunto $B_{j}$, la intersección entre $C$ y $B_{j}$ no sea vacía ($C \cap B_{j} \neq \emptyset$) para todo $j$ perteneciente al conjunto de  números naturales hasta $m$.
 \end{itemize}
 
-Para realizar esta verificación, se llevan a cabo dos operaciones clave que definen la 
-complejidad del proceso. La primera operación, relacionada con la verificación de la 
+Para realizar esta verificación, se llevan a cabo dos operaciones que definen la 
+complejidad del proceso. La primera, relacionada con la verificación de la 
 cardinalidad de $C$ ($\left| C \right|\leq k$), tiene una complejidad constante $O(1)$, 
 ya que implica simplemente obtener el número de elementos en $C$ y verificar que $\left|C\right| \leq k$.
 La segunda operación, que implica verificar la inclusión de al menos un elemento de $C$ 
 en cada conjunto $B_{j}$, presenta una complejidad de $O(n \times m)$. Esto se debe a 
-que para cada conjunto $B_{j}$ ($j$ perteneciente al conjunto de números naturales hasta 
-$m$) (operación $O(m)$), se debe recorrer, en el peor de los casos, todo el conjunto $C$ 
+que para cada conjunto $B_{j}$ ($j \in \mathbb{N}_{m}$) (operación $O(m)$), se debe recorrer, en el peor de los casos, todo el conjunto $C$ 
 ($O(n)$) para verificar la pertenencia de al menos un elemento de este en $B_{j}$ 
 (operación con complejidad $O(1)$ si tanto $B_{j}$ como $C$ se implementan como un 'set').
 
@@ -32,11 +31,7 @@ De esta manera, el problema del Hitting-Set se sitúa en la clase de complejidad
 
 \section{Hitting-Set Problem: Un Problema NP-Completo}
 
-La clasificación del problema del Hitting-Set como NP-Completo se establece mediante la demostración
-de su reducibilidad polinómica a partir de otros problemas ya catalogados como NP-Completo. 
-
-En nuestro análisis, nos hemos propuesto abordar esta demostración de dos maneras distintas, 
-empleando estrategias de reducción que ilustran la naturaleza NP-Completa del Hitting-Set Problem:
+La clasificación problema del Hitting-Set como NP-Completo se establece mediante la reducción polinómica de otros problemas ya catalogados como NP-Completo a este. En nuestro análisis, nos hemos propuesto abordar esta demostración de dos maneras diferentes:
 
 \begin{itemize}
     \item Reducción de Vertex Cover a Dominating-Set Problem $\rightarrow$ Reducción de Dominating-Set Problem a Hitting-Set Problem.
@@ -46,22 +41,23 @@ empleando estrategias de reducción que ilustran la naturaleza NP-Completa del H
 
 Es importante destacar que la pertenencia de Vertex Cover y Set Cover a NP-Completo fue demostrada en clases anteriores.
 \begin{itemize}
-    \item  Vertex Cover \url{https://youtu.be/i8qhWUMC5OU?si=SjlPNHUKohR-az5p&t=5100}
-    \item Set Cover \url{https://youtu.be/ZvXVKWyBryg?si=BHp7N4ueTkT7QpSG&t=8707}
+    \item  Vertex Cover \url{https://youtu.be/i8qhWUMC5OU?t=5100}
+    \item Set Cover \url{https://youtu.be/ZvXVKWyBryg?t=8707}
 \end{itemize}
 
+\subsection{Reducción Vertex Cover a Hitting-Set Problem}
 
-\subsection{Reducción Vertex Cover a Dominating-Set Problem}
+\subsubsection{Reducción Vertex Cover a Dominating-Set Problem}
 
 \begin{itemize}
-    \item Vertex Cover: Dado un grafo $G=(V,E)$, donde $V$ es un conjunto de vértices y $E$ es un conjunto de aristas, un Vertex Cover de $G$ es un conjunto $C \in V$ tal que para cada arista $(u,v)$ en $E$, al menos uno de los extremos, $u$ o $v$, pertence al conjunto $C$.  
+    \item Vertex Cover: Dado un grafo $G=(V,E)$, donde $V$ es un conjunto de vértices y $E$ es un conjunto de aristas, un Vertex Cover de $G$ es un conjunto $C \subseteq V$ tal que para cada arista $(u,v)$ en $E$, al menos uno de los extremos, $u$ o $v$, pertence al conjunto $C$.  
     \item Dominating Set: Dado un grafo $G$, se busca un conjunto mínimo de vértices $C$
     tal que, para todo vértice $v \in G$, esté contenido en $C$ o existe al menos un vértice en $C$ adyacente de $v$.
 \end{itemize}
 
 La reducción $\text{Vertex-Cover} \leq _{p} \text{Dominating-Set}$ consta en lo siguiente:
 Dado del grafo $G$ con $n$ vértices y $m$ aristas del problema Vertex Cover, para cada par de 
-vértices adyacentes $v-w$, se agregan ambos al grafo $G'$ (del problema Dominating Set) junto a 
+vértices adyacentes $(v,w)$, se agregan ambos al grafo $G'$ (del problema Dominating Set) junto a 
 su arista y se agrega un tercer vértice auxiliar $vw$, adyacente a los otros dos. $A$ será el 
 conjunto de vértices auxiliares. 
 
@@ -69,7 +65,8 @@ Luego, del conjunto $V'$ de $k$ vértices solución de Dominating Set, se debe a
 
 \[\text{Vertex-Cover} \leq _{p} \text{Dominating-Set}\]
 
-\subsubsection{Ejemplos:} 
+\textbf{Ejemplos:} 
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{img/ejemplo1_VC-DS.png}
@@ -89,7 +86,7 @@ Si ahora, queremos un Vertex-Cover de hasta 3 vértices ($k=3$), luego la soluci
 
 Notar que el conjunto solución de Dominating-Set $V'=\left\{CA,A,D\right\}$ incluye un vértice que pertenece al conjunto de auxiliares $CA \in A$. Por ello, se debe agregar a $V$ cualquiera de sus adyacentes, en este caso $C$.
 
-\subsection{Reducción Dominating-Set a Hitting-Set}
+\subsubsection{Reducción Dominating-Set a Hitting-Set}
 
 La reducción $\text{Dominating-Set} \leq_{p} \text{Hitting-Set}$ consta en lo siguiente:
 Dado un grafo $G$ de $n$ vértices del problema Dominating Set, para cada vértice $v_{i}$, se construye un grupo $B_{i}$ con él mismo y todos sus vértices adyacentes. Esto tiene un costo temporal de $O(N \times E)$, ya que para cada vértice $v_{i}$ se deben obtener los vértices adyacentes a $v_{i}$ y crear los conjuntos $B_{i}$ por cada uno de ellos. De esta manera, realizamos operaciones polinomiales para transformar nuestro problema de Dominating-Set a Hitting-Set. 
@@ -98,7 +95,7 @@ A su vez, esta reducción se caracteriza por ser de equivalencia simple ya que e
 
 \[\text{Dominating-Set}  \leq _{p} \text{Hitting-Set}\]
 
-\subsubsection{Ejemplos:} 
+\textbf{Ejemplos:} 
 
 \begin{figure}[H]
     \centering
@@ -125,7 +122,7 @@ A su vez, esta reducción se caracteriza por ser de equivalencia simple ya que e
 
 En los tres casos analizados, se evidencia que la solución derivada del problema Hitting-Set representa la solución óptima para el Dominating-Set.
 
-
+\subsubsection{Reducción Vertex Cover a Hitting-Set Problem}
 Finalmente:
 \[
     \begin{array}{c}
@@ -147,9 +144,9 @@ Finalmente:
 \end{itemize}
 
 La reducción $\text{Set-Cover} \leq_{p} \text{Hitting-Set}$ consta en lo siguiente:
-Dado un grafo $G$ de $n$ vértices del problema Set-Cover, para cada elemento $e_i$ del subconjunto $S_{i}$, se construye un conjunto $E_{i}$ en el cual sus elementos van a ser cada $S_i$ en el cual está incluido. 
+Para cada elemento $e_i$ del universo $U$ del problema Set-Cover, se crea un conjunto $E_{i}$ en el cual sus elementos van a ser cada $S_i$ en el cual está incluido.
 
-El análisis de la complejidad del problema del Set Cover se establece en O(N×U), donde N representa la cantidad de subconjuntos en S y U la cantidad de elementos presentes en el universo. Este costo surge de la necesidad de recorrer cada subconjunto $S_i$ en la familia $S$ y sus elementos correspondientes, operación que, en el peor de los casos, implica recorrer conjuntos de igual tamaño al universo. Luego, en cada subconjunto nuevo $E_i$ proveniente del elemento $e_i$ se le agrega el $S_i$ donde está incluido, siendo esta una operación constante. 
+El análisis de la complejidad del problema del Set Cover se establece en $O(n\times u)$, donde $n$ representa la cantidad de subconjuntos en $S$ y $u$ la cantidad de elementos presentes en el universo. Este costo surge de la necesidad de recorrer cada subconjunto $S_i$ en la familia $S$ y sus elementos correspondientes, operación que, en el peor de los casos, implica recorrer conjuntos de igual tamaño al universo. Luego, en cada subconjunto nuevo $E_i$ proveniente del elemento $e_i$ se le agrega el $S_i$ donde está incluido, siendo esta una operación constante. 
 
 De esta manera, realizamos operaciones polinomiales para transformar nuestro problema de Set-Cover a Hitting-Set. Además, al igual que la reducción de Dominating Set a Hitting Set, esta reducción se caracteriza por ser de equivalencia simple ya que el resultado devuelto por el algoritmo de Hitting Set coincide directamente con los resultados esperados por el algoritmo de Set-Cover.
 
