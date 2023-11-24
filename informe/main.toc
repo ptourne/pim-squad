@@ -18,4 +18,4 @@
 \contentsline {subsubsection}{\numberline {6.0.2}Máximo global con recálculo}{13}{subsubsection.6.0.2}%
 \contentsline {section}{\numberline {7}Ejemplos}{14}{section.7}%
 \contentsline {section}{\numberline {8}Mediciones}{16}{section.8}%
-\contentsline {section}{\numberline {9}Conclusiones}{17}{section.9}%
+\contentsline {section}{\numberline {9}Conclusiones}{18}{section.9}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  23 NOV 2023 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  24 NOV 2023 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1659,10 +1659,12 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 [9])) (./tex/programacion-lineal.tex
 (../algoritmos/programacion_lineal_entera.py
 consecutive:
+)
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 32.
+Package pdftex.def Info: logo.pdf  used on input line 30.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
+
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1671,7 +1673,7 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[10]) (../algoritmos/programacion_lineal_entera.py
+[10] (../algoritmos/programacion_lineal_entera.py
 consecutive:
 )
 File: logo.pdf Graphic file (type pdf)
@@ -1835,11 +1837,15 @@ File: img/greedy_ej3_mgr.png Graphic file (type png)
 Package pdftex.def Info: img/greedy_ej3_mgr.png  used on input line 93.
 (pdftex.def)             Requested size: 341.43437pt x 93.49792pt.
 ) (./tex/mediciones.tex
+Overfull \hbox (8.7927pt too wide) in paragraph at lines 3--6
+\OT1/cmr/m/n/10 tiene 26 le-tras, y en base a el-las, pode-mos hac-er com-bi-na
+-ciones de le-tras para gener-ar "pal-abras"de 
+ []
+
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 11.
+Package pdftex.def Info: logo.pdf  used on input line 6.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
-
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
 (fancyhdr)                Make it at least 29.49297pt, for example:
@@ -1853,38 +1859,39 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.11 
-     
+l.6 
+    
 pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.11 
-     
+l.6 
+    
 pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.11 
-      <./img/greedy_ej3.png> <./img/greedy_ej3_mpg.png> <./img/greedy_ej3_mgr.p
-ng>]
+l.6 
+     <./img/greedy_ej3.png> <./img/greedy_ej3_mpg.png> <./img/greedy_ej3_mgr.pn
+g>]
+Overfull \hbox (9.30658pt too wide) in paragraph at lines 25--26
+[]\OT1/cmr/m/n/10 Asimismo, se desta-ca una mar-ca-da difer-en-cia en los tiem-
+pos de eje-cu-ci^^Son en-tre el al-go-rit-mo Greedy 
+ []
 
-LaTeX Warning: Reference `fig:tiempos_valores_bajos_puntos' on page 17 undefine
-d on input line 20.
+File: logo.pdf Graphic file (type pdf)
+<use logo.pdf>
+Package pdftex.def Info: logo.pdf  used on input line 26.
+(pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
+Package fancyhdr Warning: \headheight is too small (27.0pt): 
+(fancyhdr)                Make it at least 29.49297pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.49297pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-LaTeX Warning: Reference `fig:tiempos_valores_altos_puntos' on page 17 undefine
-d on input line 21.
+(fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-
-LaTeX Warning: Reference `fig:tiempos_valores_bajos_densidad' on page 17 undefi
-ned on input line 57.
-
-
-LaTeX Warning: Reference `fig:tiempos_valores_altos_densidad' on page 17 undefi
-ned on input line 57.
-
-) (./tex/conclusiones.tex)
+[17]) (./tex/conclusiones.tex)
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 93.
@@ -1898,16 +1905,13 @@ Package fancyhdr Warning: \headheight is too small (27.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49297pt}.
 
-[17] 
+[18] 
 AED: lastpage setting LastPage
 (./main.aux
 LaTeX Info: Redefining \sptext on input line 23.
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1918,13 +1922,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37355 strings out of 478126
- 700790 string characters out of 5842786
+ 37356 strings out of 478126
+ 700715 string characters out of 5842786
  2130793 words of memory out of 6000000
  56547 multiletter control sequences out of 15000+600000
  518929 words of font info for 57 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 103i,16n,105p,791b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,16n,105p,798b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texl
@@ -1943,10 +1947,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (17 pages, 1416336 bytes).
+Output written on main.pdf (18 pages, 1423170 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 476 compressed objects within 5 object streams
- 210 named destinations out of 1000 (max. 500000)
+ 606 PDF objects out of 1000 (max. 8388607)
+ 480 compressed objects within 5 object streams
+ 211 named destinations out of 1000 (max. 500000)
  432 words of extra memory for PDF output out of 10000 (max. 10000000)
 
