@@ -20,11 +20,43 @@ Por otro lado, podemos observar que la curva de Programación Lineal Continua se
 
 En el siguiente gráfico, se ilustra el grado de aproximación, variando $b$ (fig. \label{medicion-plc-var-b}) y manteniendola constante (fig. \label{medicion-plc-cons-b}). Para poder corroborar nuestra cota máxima de aproximación, hicimos variar el parámetro $b$ en un intervalo $\left[25,30\right]$. Como en la gráfica se puede observar que la peor aproximación es $NUM_MAX$, luego se comprueba que la cota máxima es efectivamente en cada escenario es $b-1$.
 
-Por otra parte, al examinar los algoritmos que emplean la estrategia de diseño Greedy, se evidencia que ambos siguen una tendencia polinomial. En el primer gráfico (fig. \label {imagen}), se observa una tendencia lineal. Esto se debe a que la variable $b$ permanece constante para cada escenario, variando únicamente la cantidad de subconjuntos ($m$). En contraste, medida que se aumenta la cantidad de subconjuntos, se puede visualizar su tendencia polinómica no lineal, evidenciando la cota teórica. 
+Por otra parte, al examinar los algoritmos que emplean la estrategia de diseño Greedy, se evidencia que ambos siguen una tendencia polinomial. En el primer gráfico (fig. \ref{fig:medicion_t_greedy_var_m}), se observa una tendencia lineal. Esto se debe a que la variable $b$ permanece constante para cada escenario, variando únicamente la cantidad de subconjuntos ($m$). En contraste, medida que se aumenta la cantidad de subconjuntos, se puede visualizar su tendencia polinómica no lineal, evidenciando la cota teórica (fig. \ref{fig:medicion_t_greedy_var_b}).
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_t_greedy_var_m.png}
+        \caption{Greedy: Medición de tiempos variando $m$.}
+        \label{fig:medicion_t_greedy_var_m}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_t_greedy_var_b.png}
+        \caption{Greedy: Medición de tiempos variando $n$.}
+        \label{fig:medicion_t_greedy_var_b}
+    \end{minipage}
+\end{figure}
 
 Asimismo, se destaca una marcada diferencia en los tiempos de ejecución entre el algoritmo Greedy Máximo por Grupo y el algoritmo Greedy Máximo Global con Recálculo. El primero muestra una ejecución significativamente más rápida en todos los escenarios comparado con el segundo. Sin embargo, al analizar las soluciones obtenidas, se evidencia que el algoritmo Greedy Máximo Global se acerca más a la solución óptima en todos los casos estudiados.
 
-Es interesante observar como el factor de aproximación $r(A)=\frac{A(I)}{z(I)}$ varía respecto a $m$ y a $b$. Para valores $b$ pequeños constantes, que es donde los dos algorítmos Greedy tienden a performar peor, no se aprecia una tendencia clara respecto a la variación de $m$. Sin embargo, con $m$ constante, se puede observar una tendencia inversamente proporcional entre $r(A)$ y $b$. Esto se debe a que, con grupos más grandes, la probabilidad de que un elemento pertenezca a más de un grupo es mayor, llegando al punto de que exista uno o varios jugadores en la intersección de todos los conjuntos. Ambos algoritmos greedy obtienen siempre la solución óptima en este caso, por lo que $\lim\limits_{b \rightarrow \infty}r(A)=1$.
+Es interesante observar como el factor de aproximación $r(A)=\frac{A(I)}{z(I)}$ varía respecto a $m$ y a $b$. Para valores $b$ pequeños constantes, que es donde los dos algorítmos Greedy tienden a performar peor, no se aprecia una tendencia clara respecto a la variación de $m$ (fig. \ref{fig:medicion_r_greedy_var_m}). Sin embargo, con $m$ constante, se puede observar una tendencia inversamente proporcional entre $r(A)$ y $b$ (fig. \ref{fig:medicion_r_greedy_var_b}). Esto se debe a que, con grupos más grandes, la probabilidad de que un elemento pertenezca a más de un grupo es mayor, llegando al punto de que exista uno o varios jugadores en la intersección de todos los conjuntos. Ambos algoritmos greedy obtienen siempre la solución óptima en este caso, por lo que $\lim\limits_{b \rightarrow \infty}r(A)=1$.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_r_greedy_var_b.png}
+        \caption{Greedy: Relación entre $r(A)$ y $b$ para $m$ constante.}
+        \label{fig:medicion_r_greedy_var_b}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_r_greedy_var_m.png}
+        \caption{Greedy: Relación entre $r(A)$ y $m$ para $b$ constante.}
+        \label{fig:medicion_r_greedy_var_m}
+    \end{minipage}
+\end{figure}
 
 Esta divergencia plantea una dificultad al momento de decidir cuál enfoque es más adecuado. Por un lado, el algoritmo por grupo se destaca por su eficiencia temporal, ofreciendo tiempos de ejecución notoriamente inferiores y, por otro lado, el enfoque global muestra una mayor aproximación a la solución óptima.
 
