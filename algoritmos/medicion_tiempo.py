@@ -37,9 +37,8 @@ def graficar_simulaciones(
     aprox_prog_lineal_cont = []
 
     # Generamos las mediciones de tiempo por cada generación de ejemplo
-    for i in range(1, maximo + 2, step):
+    for i in range(1, maximo+2, step):
         print("Paso " + str(i) + " de " + str(maximo+1))
-        cant_minima = min(i, cant_min_por_subconjunto)
         suma_provisoria_greedy_maximo_por_grupos = 0
         suma_provisoria_greedy_global_con_recalculo = 0
         suma_provisoria_prog_lineal_cont = 0
@@ -52,56 +51,56 @@ def graficar_simulaciones(
             aprox_prog_lineal_cont_temp = int()
 
             solicitudes = generar_ejemplos_abc(
-                i, 2, cant_minima, cant_max_por_subconjunto, True, i
+                i, 2, cant_min_por_subconjunto, cant_max_por_subconjunto, True, i
             )
             for _ in range(2):
-                tiempo, solucion_optima = tiempo_ejecucion_y_resultado(
-                    solicitudes, hitting_set_pl_entera
-                )
-                suma_provisoria_prog_lineal_ent += tiempo
+                # tiempo, solucion_optima = tiempo_ejecucion_y_resultado(
+                #     solicitudes, hitting_set_pl_entera
+                # )
+                # suma_provisoria_prog_lineal_ent += tiempo
 
-                tiempo, solucion_greedy1 = tiempo_ejecucion_y_resultado(
-                    solicitudes, aproximacion_greedy_maximo_por_grupos
-                )
-                suma_provisoria_greedy_maximo_por_grupos += tiempo
+                # tiempo, solucion_greedy1 = tiempo_ejecucion_y_resultado(
+                #     solicitudes, aproximacion_greedy_maximo_por_grupos
+                # )
+                # suma_provisoria_greedy_maximo_por_grupos += tiempo
 
-                tiempo, solucion_greedy2 = tiempo_ejecucion_y_resultado(
-                    solicitudes, aproximacion_greedy_maximo_global_con_recalculo
-                )
-                suma_provisoria_greedy_global_con_recalculo += tiempo
-
-                tiempo, _ = tiempo_ejecucion_y_resultado(
-                    solicitudes, hitting_set_pl_continua
-                )
-                suma_provisoria_prog_lineal_cont += tiempo
+                # tiempo, solucion_greedy2 = tiempo_ejecucion_y_resultado(
+                #     solicitudes, aproximacion_greedy_maximo_global_con_recalculo
+                # )
+                # suma_provisoria_greedy_global_con_recalculo += tiempo
 
                 # tiempo, _ = tiempo_ejecucion_y_resultado(
-                #     solicitudes, bracktracking_hitting_set_problem
+                #     solicitudes, hitting_set_pl_continua
                 # )
-                # suma_provisoria_back += tiempo
+                # suma_provisoria_prog_lineal_cont += tiempo
 
-                aprox_greedy1_temp = len(
-                    solucion_greedy1) / len(solucion_optima)
-                aprox_greedy2_temp = len(
-                    solucion_greedy2) / len(solucion_optima)
-                aprox_prog_lineal_cont_temp = len(
-                    solucion_optima) / len(solucion_optima)
+                tiempo, _ = tiempo_ejecucion_y_resultado(
+                    solicitudes, bracktracking_hitting_set_problem
+                )
+                suma_provisoria_back += tiempo
 
-            aprox_greedy_maximo_por_grupos.append((i, aprox_greedy1_temp))
-            aprox_greedy_global_con_recalculo.append(
-                (i, aprox_greedy2_temp))
-            aprox_prog_lineal_cont.append((i, aprox_prog_lineal_cont_temp))
+                # aprox_greedy1_temp = len(
+                #     solucion_greedy1) / len(solucion_optima)
+                # aprox_greedy2_temp = len(
+                #     solucion_greedy2) / len(solucion_optima)
+                # aprox_prog_lineal_cont_temp = len(
+                #     solucion_optima) / len(solucion_optima)
 
-        mediciones_greedy_maximo_por_grupos.append(
-            (i, suma_provisoria_greedy_maximo_por_grupos / 10)
-        )
-        mediciones_greedy_global_con_recalculo.append(
-            (i, suma_provisoria_greedy_global_con_recalculo / 10)
-        )
-        mediciones_lin_cont.append(
-            (i, suma_provisoria_prog_lineal_cont / 10)
-        )
-        mediciones_lin_ent.append((i, suma_provisoria_prog_lineal_ent / 10))
+            # aprox_greedy_maximo_por_grupos.append((i, aprox_greedy1_temp))
+            # aprox_greedy_global_con_recalculo.append(
+            #     (i, aprox_greedy2_temp))
+            # aprox_prog_lineal_cont.append((i, aprox_prog_lineal_cont_temp))
+
+        # mediciones_greedy_maximo_por_grupos.append(
+        #     (i, suma_provisoria_greedy_maximo_por_grupos / 10)
+        # )
+        # mediciones_greedy_global_con_recalculo.append(
+        #     (i, suma_provisoria_greedy_global_con_recalculo / 10)
+        # )
+        # mediciones_lin_cont.append(
+        #     (i, suma_provisoria_prog_lineal_cont / 10)
+        # )
+        # mediciones_lin_ent.append((i, suma_provisoria_prog_lineal_ent / 10))
         mediciones_back.append((i, suma_provisoria_back / 10))
 
     # Separamos los valores de x e y
@@ -175,15 +174,15 @@ def exportar_grafico_puntos(
     plt.scatter(
         x_greedy_global_con_recalculo,
         y_greedy_global_con_recalculo,
-        label="Greedy por cálculos",
+        label="Greedy por recálculos",
         color="orange",
     )
 
     # Configurar el gráfico
-    plt.xlabel("Cantidad de solicitudes")
+    plt.xlabel("Cantidad de elementos en los subconjuntos")
     plt.ylabel("Tiempo de ejecución (segundos)")
     plt.title(
-        "Tiempo de ejecución de los algoritmos Greedy variando la cantidad de subconjuntos")
+        "Tiempo de ejecución de los algoritmos Greedy\nvariando la cantidad de elementos en subconjuntos")
     plt.legend()
 
     # Guardar el gráfico
@@ -201,10 +200,10 @@ def exportar_grafico_puntos(
     )
 
     # Configurar el gráfico
-    plt.xlabel("Cantidad de solicitudes")
+    plt.xlabel("Cantidad de elementos en los subconjuntos")
     plt.ylabel("Tiempo de ejecución (segundos)")
     plt.title(
-        "Tiempo de ejecución de los algoritmos de Programación Lineal variando la cantidad de subconjuntos")
+        "Tiempo de ejecución de los algoritmos de Programación Lineal\nvariando la cantidad de elementos en subconjuntos")
     plt.legend()
 
     # Guardar el gráfico
@@ -212,19 +211,21 @@ def exportar_grafico_puntos(
 
     ########################################################
 
-    # # Configuramos nuestros tiempos de backtracking
-    # plt.figure()
+    # Configuramos nuestros tiempos de backtracking
+    plt.figure()
 
-    # plt.scatter(x_back, y_back, label="Backtracking", color='red')
+    plt.scatter(x_back, y_back, label="Backtracking", color='red')
+    plt.plot(x_back, y_back, linestyle='-', color='red')
 
-    # # Configurar el gráfico
-    # plt.xlabel("Cantidad de solicitudes")
-    # plt.ylabel("Tiempo de ejecución (segundos)")
-    # plt.title("Tiempo de ejecución de los algoritmos")
-    # plt.legend()
+    # Configurar el gráfico
+    plt.xlabel("Cantidad de solicitudes")
+    plt.ylabel("Tiempo de ejecución (segundos)")
+    plt.title(
+        "Tiempo de ejecución del algoritmo de Backtracking\nvariando la cantidad de solicitudes")
+    plt.legend()
 
-    # # Guardar el gráfico
-    # plt.savefig(path_salida + "_tiempos_back")
+    # Guardar el gráfico
+    plt.savefig(path_salida + "_tiempos_back")
 
     ########################################################
 
@@ -240,10 +241,10 @@ def exportar_grafico_puntos(
                 label='Aproximación Lineal Continua')
 
     # Configurar el gráfico
-    plt.xlabel("Cantidad de solicitudes")
+    plt.xlabel("Cantidad de elementos en los subconjuntos")
     plt.ylabel("Aproximación Lineal Continua")
     plt.title(
-        "Aproximación de la Programación Lineal Continua variando la cantidad de subconjuntos")
+        "Aproximación de la Programación Lineal Continua\nvariando la cantidad de elementos en subconjuntos")
     plt.legend()
 
     # Guardar el gráfico
@@ -268,12 +269,13 @@ def exportar_grafico_puntos(
         x_greedy2.append(x)
         y_greedy2.append(y)
     plt.scatter(x_greedy2, y_greedy2, color="orange", alpha=0.5,
-                label="Aproximación Greedy por cálculos")
+                label="Aproximación Greedy por recálculos")
 
     # Configurar el gráfico
-    plt.xlabel("Cantidad de solicitudes")
+    plt.xlabel("Cantidad de elementos en los subconjuntos")
     plt.ylabel("Aproximación")
-    plt.title("Aproximación de los algoritmos Greedy variando la cantidad de subconjuntos")
+    plt.title(
+        "Aproximación de los algoritmos Greedy\nvariando la cantidad de elementos en subconjuntos")
     plt.legend()
 
     # Guardar el gráfico
