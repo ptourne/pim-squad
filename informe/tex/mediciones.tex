@@ -1,18 +1,15 @@
 \section{Mediciones}
 
-Para las mediciones, creamos subconjuntos de dos tipos distintos. Uno que lo llamamos \textit{jugadores} y otro que lo llamamos \textit{abecedario}.
-
-El primero contiene una lista con subconjuntos de jugadores de fútbol argentino, mientras que el segundo contiene una lista con subconjuntos de combinaciones de letras del abecedario. Esto debido a que queríamos obtener comportamientos menos repetitivos, ya que tenemos un máximo de 43 jugadores distintos, mientras que el abecedario tiene 26 letras, y en base a ellas, podemos hacer combinaciones de letras para generar nombres de distintos tamaños, los cuales se repetiran en menor medida.
-Con ello conseguimos obtener resultados más amplios (no es lo mismo un conjunto de 1 millón de elementos distintos con una solución de Hitting Set hasta de 43 elementos, a una solución con 1 millón de elementos distintos).
+Para tomar las mediciones, creamos grupos de subconjuntos de jugadores con nombres arbitrarios, variando la cantidad de subconjuntos, el tamaño máximo de los subconjuntos y el número total de jugadores.
 
 Además, notamos que los procesos de fondo del sistema nos generaba distorciones en los tiempos de ejecución de una misma muestra. Resolvimos este problema realizando varias mediciones para el mismo escenario de subconjuntos y tomando el promedio de los tiempos obtenidos. Esta estrategia nos permitió abordar otro problema significativo: el orden en el que se evalúan los jugadores en cada subconjunto adquiere una importancia relevante en el rendimiento final del algoritmo. Esto depende especialmente de la frecuencia con la que cada jugador aparece en los demás subconjuntos. 
 
 Asimismo, al definir arbitrariamente cada escenario, puede ocurrir que en una cantidad 
 $m$ de subconjuntos, los jugadores incluidos en cada uno sean considerablemente diferentes o poco comunes, lo que representa un caso desfavorable. En contraste, en una cantidad de conjuntos $m+1$, podría darse una situación mucho más favorable, con una mayor similitud entre los jugadores incluidos en cada conjunto. Esto puede llevar a una diferencia significativa en los tiempos de ejecución, a pesar de que la cantidad de conjuntos varíe en una sola unidad.
 
-Siguiendo las estrategias explicadas, realizamos mediciones variando solamente la cantidad de subconjutos y comparando el tiempo de ejecución de los diferentes algorítmos analizados a lo largo del informe: Backtracking, algorítmo Greedy Máximo por grupo, algorítmo Greedy Máximo global con recálculo, Programación Lineal Entera y Programación Lineal Continua.
+Tanto en mediciones temporales como en mediciones de aproximación, comparamos el efecto de modificar una variable por vez, tanto $m$ como $b$.Estas mediciones se realizaron sobre los diferentes algorítmos analizados a lo largo del informe: Backtracking, algorítmo Greedy Máximo por Grupo, algorítmo Greedy Máximo Global con Recálculo, Programación Lineal Entera y Programación Lineal Continua.
 
-Al evaluar los algoritmos con orden teórico exponencial, Backtracking y Programación Lineal Entera, podemos corroborar a través de los gráficos una clara tendencia al aumento significativo en el tiempo de ejecución conforme se incrementa la cantidad de subconjuntos, en comparación con otros algoritmos, especialmente los que emplean el método Greedy.
+Al evaluar el algoritmo de Backtracking, podemos corroborar a través de los gráficos una clara tendencia exponencial en el tiempo de ejecución conforme se incrementa la cantidad de subconjuntos (figs. \ref{fig:medicion_t_backtracking_var_b}). Sin embargo, al observar el gráfico de la figura \ref{fig:medicion_t_backtracking_var_b}, se puede apreciar que el tiempo de ejecución disminuye a medida que se incrementa el tamaño máximo de los subconjuntos. Esto se debe a que nuestra implemntación de backtracking hace grandes podas cuando se repiten muchos jugadores entre conjuntos. Un mayor tamaño de los conjuntos implica un aumento en la probabilidad de intersecciones grandes entre los mismos.
 
 \begin{figure}[h]
     \centering
@@ -30,7 +27,7 @@ Al evaluar los algoritmos con orden teórico exponencial, Backtracking y Program
     \end{minipage}
 \end{figure}
 
-La gráfica de nuestra implementación de Backtracking (figs. \ref{fig:medicion_t_backtracking_var_m} y \ref{fig:medicion_t_backtracking_var_b}) confirma su comportamiento exponencial, concordando con su cota teórica. Por otro lado, el algoritmo de Programación Lineal Entera, contrario a lo esperado, presenta una gráfica más cercana a una función lineal (figs. \ref{fig:medicion_t_pl_var_m} y \ref{fig:medicion_t_pl_var_b}), asemejandose en tiempo de ejecución con el algorítmo de Programación Lineal Continua. Esto se debe a las optimizaciones implementadas en la librería \texttt{pulp} utilizada para su ejecución, las cuales reducen significativamente su tiempo de ejecución en comparación con su complejidad teórica. Es importante mencionar que la visualización de una curva exponencial en este algoritmo solo ocurre en situaciones donde las optimizaciones no influyen de manera considerable.
+Por otro lado, el algoritmo de Programación Lineal Entera, contrario a lo esperado, presenta una gráfica más cercana a una función lineal (figs. \ref{fig:medicion_t_pl_var_m} y \ref{fig:medicion_t_pl_var_b}), asemejandose en tiempo de ejecución con el algorítmo de Programación Lineal Continua. Esto se debe a las optimizaciones implementadas en la librería \texttt{pulp} utilizada para su ejecución, las cuales reducen significativamente su tiempo de ejecución en comparación con su complejidad teórica. Es importante mencionar que la visualización de una curva exponencial en este algoritmo solo ocurre en situaciones donde las optimizaciones no influyen de manera considerable.
 
 \begin{figure}[h]
     \centering
