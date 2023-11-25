@@ -94,7 +94,7 @@ def generar_ejemplos_jugadores(
 
 # hacemos una lista con las letras del abecedario
 abecedario = []
-for i in range(97, 103):
+for i in range(97, 123):
     abecedario.append(chr(i))
 
 
@@ -122,30 +122,31 @@ def generar_ejemplos_abc(
                     letras[j] = random.choice(abecedario)
             letras = "".join(letras)
             for _ in range(divis_para_opt):
-                letras_set = set()
-                letras_set.add(letras)
-                conjuntos.append(letras_set)
-                if i == cant_max_opt - 1:
-                    while len(conjuntos) < cant_conjuntos:
-                        conjuntos.append(letras_set)
+                conjuntos.append([letras])
+            if i == cant_max_opt - 1:
+                while len(conjuntos) < cant_conjuntos:
+                    conjuntos.append([letras])
+            print("Conjunto seleccionado al azar: ", letras)
+    random.shuffle(conjuntos)
 
     for i in range(cant_conjuntos):
+        cant_max = max(cant_min_subconjuntos, cant_max_subconjuntos-1)
         cant_por_subconjunto = random.randint(
-            cant_min_subconjuntos, cant_max_subconjuntos)
+            cant_min_subconjuntos, cant_max)
         for _ in range(cant_por_subconjunto):
             letras = [str] * cant_letras
             for j in range(cant_letras):
                 letras[j] = random.choice(abecedario)
             letras = "".join(letras)
-            letras_set = set()
-            letras_set.add(letras)
-            if i >= len(conjuntos):
-                conjuntos.append(letras_set)
-                conjuntos[i] = set(conjuntos[i])
+            if i > len(conjuntos) - 1:
+                conjuntos.append([letras])
             else:
-                conjuntos[i].update(letras_set)
+                conjuntos[i].append(letras)
+        random.shuffle(conjuntos[i])
 
     if devolver:
+        for i in range(cant_conjuntos):
+            conjuntos[i] = set(conjuntos[i])
         return conjuntos
 
     with open(direccion_archivo, "w") as archivo:
@@ -161,8 +162,8 @@ def generar_ejemplos_abc(
     print(f"{direccion_archivo} generado con éxito")
 
 
-# generar_ejemplos_abc(20, 2, 3, 5, False, 15, False,
-#                      "../ejemplos/nuestros/abc/20.txt")
+# generar_ejemplos_abc(10000, 3, 10, 20, True, 25, True,
+#                      "../ejemplos/nuestros/abc/10000.txt")
 
 
 # a es la cantidad de elementos que se desea que tenga el set A. b es la cantidad de subsets B que se desea que se generen. j y p son la cantidad maxima y minima de elementos que puede tener un subset, respectivamente.
