@@ -35,13 +35,13 @@ def graficar_simulaciones(
     aprox_greedy_maximo_por_grupos = []
     aprox_greedy_global_con_recalculo = []
     aprox_prog_lineal_cont = []
-    maximo = 2602
+    maximo = 1002
 
     # para cambios de m, usamos 80 como máximo m, y b entre 5 y 10
     # para cambios de b, usamos 20 m, y b como (i-3, i) para i entre 1 y 80
 
     # Generamos las mediciones de tiempo por cada generación de ejemplo
-    for i in range(1, maximo, 200):
+    for i in range(1, maximo, 100):
         print("Paso " + str(i) + " de " + str(maximo-1))
         suma_provisoria_greedy_maximo_por_grupos = 0
         suma_provisoria_greedy_global_con_recalculo = 0
@@ -56,7 +56,7 @@ def graficar_simulaciones(
             aprox_prog_lineal_cont_temp = int()
 
             conjuntos = generar_ejemplos_abc(
-                i, 3, 5, 10, True, i
+                25, 3, min, i, True, i
             )
             print(f"    paso {j}")
             for _ in range(2):
@@ -75,7 +75,7 @@ def graficar_simulaciones(
                 # )
                 # suma_provisoria_greedy_global_con_recalculo += tiempo
 
-                tiempo, _ = tiempo_ejecucion_y_resultado(
+                tiempo, sol_prog_lineal_continua = tiempo_ejecucion_y_resultado(
                     conjuntos, hitting_set_pl_continua
                 )
                 suma_provisoria_prog_lineal_cont += tiempo
@@ -90,11 +90,11 @@ def graficar_simulaciones(
                 # aprox_greedy2_temp = len(
                 #     solucion_greedy2) / len(solucion_optima)
                 aprox_prog_lineal_cont_temp = len(
-                    solucion_optima) / len(solucion_optima)
+                    sol_prog_lineal_continua) / len(solucion_optima)
 
-            aprox_greedy_maximo_por_grupos.append((i, aprox_greedy1_temp))
-            aprox_greedy_global_con_recalculo.append(
-                (i, aprox_greedy2_temp))
+            # aprox_greedy_maximo_por_grupos.append((i, aprox_greedy1_temp))
+            # aprox_greedy_global_con_recalculo.append(
+            #     (i, aprox_greedy2_temp))
             aprox_prog_lineal_cont.append((i, aprox_prog_lineal_cont_temp))
 
         mediciones_greedy_maximo_por_grupos.append(
@@ -168,6 +168,38 @@ def exportar_grafico_puntos(
     aprox_greedy_global_con_recalculo,
     path_salida,
 ):
+    # VARIANDO M
+
+    # Configuramos nuestros tiempos de Greedy
+    plt.figure()
+
+    plt.scatter(
+        x_greedy_maximo_por_grupos,
+        y_greedy_maximo_por_grupos,
+        label="Greedy por máximos por grupos",
+        color="purple",
+    )
+    plt.plot(x_greedy_maximo_por_grupos, y_greedy_maximo_por_grupos,
+             linestyle='-', color='purple')
+    plt.scatter(
+        x_greedy_global_con_recalculo,
+        y_greedy_global_con_recalculo,
+        label="Greedy por máximo global por recálculos",
+        color="orange",
+    )
+    plt.plot(x_greedy_global_con_recalculo, y_greedy_global_con_recalculo,
+             linestyle='-', color='orange')
+
+    # Configurar el gráfico
+    plt.xlabel("Cantidad de subconjuntos en el problema")
+    plt.ylabel("Tiempo de ejecución (segundos)")
+    plt.title(
+        "Tiempo de ejecución de los algoritmos Greedy\nvariando m")
+    plt.legend()
+
+    # Guardar el gráfico
+    plt.savefig(path_salida + "_tiempos_greedy_variando_m")
+
     # VARIANDO B
 
     # # Configuramos nuestros tiempos de Greedy
@@ -179,50 +211,49 @@ def exportar_grafico_puntos(
     #     label="Greedy por máximos por grupos",
     #     color="purple",
     # )
+    # plt.plot(x_greedy_maximo_por_grupos, y_greedy_maximo_por_grupos,
+    #          linestyle='-', color='purple')
     # plt.scatter(
     #     x_greedy_global_con_recalculo,
     #     y_greedy_global_con_recalculo,
     #     label="Greedy por máximo global por recálculos",
     #     color="orange",
     # )
+    # plt.plot(x_greedy_global_con_recalculo, y_greedy_global_con_recalculo,
+    #          linestyle='-', color='orange')
 
     # # Configurar el gráfico
     # plt.xlabel("Cantidad de elementos en los subconjuntos")
     # plt.ylabel("Tiempo de ejecución (segundos)")
     # plt.title(
-    #     "Tiempo de ejecución de los algoritmos Greedy\nvariando la cantidad de elementos en los subconjuntos")
+    #     "Tiempo de ejecución de los algoritmos Greedy\nvariando b")
     # plt.legend()
 
     # # Guardar el gráfico
-    # plt.savefig(path_salida + "_tiempos_greedy_variando_n")
+    # plt.savefig(path_salida + "_tiempos_greedy_variando_b")
 
-    # VARIANDO M
+    ########################################################
 
-    # # Configuramos nuestros tiempos de Greedy
+    # # Configuramos nuestros tiempos de programación lineal
     # plt.figure()
 
+    # plt.scatter(x_lin_ent, y_lin_ent,
+    #             label="Programación Lineal Entera", color="green")
     # plt.scatter(
-    #     x_greedy_maximo_por_grupos,
-    #     y_greedy_maximo_por_grupos,
-    #     label="Greedy por máximos por grupos",
-    #     color="purple",
+    #     x_lin_cont, y_lin_cont, label="Programación Lineal Continua", color="blue"
     # )
-    # plt.scatter(
-    #     x_greedy_global_con_recalculo,
-    #     y_greedy_global_con_recalculo,
-    #     label="Greedy por máximo global por recálculos",
-    #     color="orange",
-    # )
+    # plt.plot(x_lin_ent, y_lin_ent, linestyle='-', color='green')
+    # plt.plot(x_lin_cont, y_lin_cont, linestyle='-', color='blue')
 
     # # Configurar el gráfico
     # plt.xlabel("Cantidad de elementos en los subconjuntos")
     # plt.ylabel("Tiempo de ejecución (segundos)")
     # plt.title(
-    #     "Tiempo de ejecución de los algoritmos Greedy\nvariando m")
+    #     "Tiempo de ejecución de los algoritmos de Programación Lineal\nvariando b")
     # plt.legend()
 
     # # Guardar el gráfico
-    # plt.savefig(path_salida + "_tiempos_greedy_variando_m")
+    # plt.savefig(path_salida + "_tiempos_lineal_variando_b")
 
     ########################################################
 
@@ -239,32 +270,11 @@ def exportar_grafico_puntos(
     # plt.xlabel("Cantidad de elementos en los subconjuntos")
     # plt.ylabel("Tiempo de ejecución (segundos)")
     # plt.title(
-    #     "Tiempo de ejecución de los algoritmos de Programación Lineal\nvariando la cantidad de elementos en los subconjuntos")
+    #     "Tiempo de ejecución de los algoritmos de Programación Lineal\nvariando m")
     # plt.legend()
 
     # # Guardar el gráfico
-    # plt.savefig(path_salida + "_tiempos_lineal_variando_n")
-
-    ########################################################
-
-    # Configuramos nuestros tiempos de programación lineal
-    plt.figure()
-
-    plt.scatter(x_lin_ent, y_lin_ent,
-                label="Programación Lineal Entera", color="green")
-    plt.scatter(
-        x_lin_cont, y_lin_cont, label="Programación Lineal Continua", color="blue"
-    )
-
-    # Configurar el gráfico
-    plt.xlabel("Cantidad de elementos en los subconjuntos")
-    plt.ylabel("Tiempo de ejecución (segundos)")
-    plt.title(
-        "Tiempo de ejecución de los algoritmos de Programación Lineal\nvariando m")
-    plt.legend()
-
-    # Guardar el gráfico
-    plt.savefig(path_salida + "_tiempos_lineal_variando_m")
+    # plt.savefig(path_salida + "_tiempos_lineal_variando_m")
 
     ########################################################
 
@@ -286,25 +296,6 @@ def exportar_grafico_puntos(
 
     # VARIANDO B
 
-    # # Configuramos nuestra aproximación por programación lineal continua
-    # plt.figure()
-
-    # x_lineal = []
-    # y_lineal = []
-    # for (x, y) in aprox_prog_lineal_cont:
-    #     x_lineal.append(x)
-    #     y_lineal.append(y)
-    # plt.scatter(x_lineal, y_lineal, color='blue', alpha=0.5,
-    #             label='Aproximación Lineal Continua')
-
-    # # Configurar el gráfico
-    # plt.xlabel("Cantidad de elementos en los subconjuntos")
-    # plt.ylabel("Aproximación Lineal Continua")
-    # plt.title(
-    #     "Aproximación de la Programación Lineal Continua\nvariando la cantidad de elementos en los subconjuntos")
-    # plt.legend()
-
-    # VARIANDO M
     # Configuramos nuestra aproximación por programación lineal continua
     plt.figure()
 
@@ -320,11 +311,33 @@ def exportar_grafico_puntos(
     plt.xlabel("Cantidad de elementos en los subconjuntos")
     plt.ylabel("Aproximación Lineal Continua")
     plt.title(
-        "Aproximación de la Programación Lineal Continua\nvariando m")
+        "Aproximación de la Programación Lineal Continua\nvariando b")
     plt.legend()
 
     # Guardar el gráfico
-    plt.savefig(path_salida + "_aprox_lin_variando_m")
+    plt.savefig(path_salida + "_aprox_lin_variando_b")
+
+    # VARIANDO M
+    # # Configuramos nuestra aproximación por programación lineal continua
+    # plt.figure()
+
+    # x_lineal = []
+    # y_lineal = []
+    # for (x, y) in aprox_prog_lineal_cont:
+    #     x_lineal.append(x)
+    #     y_lineal.append(y)
+    # plt.scatter(x_lineal, y_lineal, color='blue', alpha=0.5,
+    #             label='Aproximación Lineal Continua')
+
+    # # Configurar el gráfico
+    # plt.xlabel("Cantidad de subconjuntos en el problema")
+    # plt.ylabel("Aproximación Lineal Continua")
+    # plt.title(
+    #     "Aproximación de la Programación Lineal Continua\nvariando m")
+    # plt.legend()
+
+    # # Guardar el gráfico
+    # plt.savefig(path_salida + "_aprox_lin_variando_m")
 
     ########################################################
 
@@ -348,14 +361,14 @@ def exportar_grafico_puntos(
     #             label="Aproximación Greedy por máximo global por recálculos")
 
     # # Configurar el gráfico
-    # plt.xlabel("Cantidad de elementos en los subconjuntos")
+    # plt.xlabel("Cantidad de subconjuntos en el problema")
     # plt.ylabel("Aproximación")
     # plt.title(
-    #     "Aproximación de los algoritmos Greedy\nvariando la cantidad de elementos en los subconjuntos")
+    #     "Aproximación de los algoritmos Greedy\nvariando m")
     # plt.legend()
 
     # # Guardar el gráfico
-    # plt.savefig(path_salida + "_aprox_greedy_variando_n")
+    # plt.savefig(path_salida + "_aprox_greedy_variando_m")
 
     # VARIANDO M
 
@@ -382,11 +395,11 @@ def exportar_grafico_puntos(
     # plt.xlabel("Cantidad de elementos en los subconjuntos")
     # plt.ylabel("Aproximación")
     # plt.title(
-    #     "Aproximación de los algoritmos Greedy\nvariando m")
+    #     "Aproximación de los algoritmos Greedy\nvariando b")
     # plt.legend()
 
     # # Guardar el gráfico
-    # plt.savefig(path_salida + "_aprox_greedy_variando_m")
+    # plt.savefig(path_salida + "_aprox_greedy_variando_b")
 
 
 def main():

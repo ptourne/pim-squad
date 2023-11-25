@@ -162,8 +162,8 @@ def generar_ejemplos_abc(
     print(f"{direccion_archivo} generado con éxito")
 
 
-# generar_ejemplos_abc(10000, 3, 10, 20, True, 25, True,
-#                      "../ejemplos/nuestros/abc/10000.txt")
+# generar_ejemplos_abc(50000, 3, 10, 20, False, 100, True,
+#                      "../ejemplos/inmanejable/50000.txt")
 
 
 # a es la cantidad de elementos que se desea que tenga el set A. b es la cantidad de subsets B que se desea que se generen. j y p son la cantidad maxima y minima de elementos que puede tener un subset, respectivamente.
