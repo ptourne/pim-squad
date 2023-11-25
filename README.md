@@ -10,4 +10,4 @@ python3 main.py <archivo_entrada> <algoritmo_a_eleccion>
 
 # Informe
 
-El informe se encuentra en [informe-tp3-V20231125.pdf](https://github.com/ptourne/pim-squad/blob/informe-tp3-V20231125.pdf).
+El informe se encuentra en [informe-tp3-V20231125.pdf](https://github.com/ptourne/pim-squad/blob/tp3/informe-tp3-V20231125.pdf).
