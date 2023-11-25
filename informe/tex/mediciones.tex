@@ -1,11 +1,11 @@
 \section{Mediciones}
 
 Para las mediciones, creamos subconjuntos de dos tipos distintos. Uno que lo llamamos \textit{jugadores} y otro que lo llamamos \textit{abecedario}.
+
 El primero contiene una lista con subconjuntos de jugadores de fútbol argentino, mientras que el segundo contiene una lista con subconjuntos de combinaciones de letras del abecedario. Esto debido a que queríamos obtener comportamientos menos repetitivos, ya que tenemos un máximo de 43 jugadores distintos, mientras que el abecedario tiene 26 letras, y en base a ellas, podemos hacer combinaciones de letras para generar nombres de distintos tamaños, los cuales se repetiran en menor medida.
 Con ello conseguimos obtener resultados más amplios (no es lo mismo un conjunto de 1 millón de elementos distintos con una solución de Hitting Set hasta de 43 elementos, a una solución con 1 millón de elementos distintos).
 
-Además, notamos que los procesos de fondo del sistema nos generaba distorciones en los tiempos de ejecución de una misma muestra. Resolvimos este problema
-realizando varias mediciones para el mismo escenario de subconjuntos y tomando el promedio de los tiempos obtenidos. Esta estrategia nos permitió abordar otro problema significativo: el orden en el que se evalúan los jugadores en cada subconjunto adquiere una importancia relevante en el rendimiento final del algoritmo. Esto depende especialmente de la frecuencia con la que cada jugador aparece en los demás subconjuntos. 
+Además, notamos que los procesos de fondo del sistema nos generaba distorciones en los tiempos de ejecución de una misma muestra. Resolvimos este problema realizando varias mediciones para el mismo escenario de subconjuntos y tomando el promedio de los tiempos obtenidos. Esta estrategia nos permitió abordar otro problema significativo: el orden en el que se evalúan los jugadores en cada subconjunto adquiere una importancia relevante en el rendimiento final del algoritmo. Esto depende especialmente de la frecuencia con la que cada jugador aparece en los demás subconjuntos. 
 
 Asimismo, al definir arbitrariamente cada escenario, puede ocurrir que en una cantidad 
 $m$ de subconjuntos, los jugadores incluidos en cada uno sean considerablemente diferentes o poco comunes, lo que representa un caso desfavorable. En contraste, en una cantidad de conjuntos $m+1$, podría darse una situación mucho más favorable, con una mayor similitud entre los jugadores incluidos en cada conjunto. Esto puede llevar a una diferencia significativa en los tiempos de ejecución, a pesar de que la cantidad de conjuntos varíe en una sola unidad.
@@ -14,13 +14,45 @@ Siguiendo las estrategias explicadas, realizamos mediciones variando solamente l
 
 Al evaluar los algoritmos con orden teórico exponencial, Backtracking y Programación Lineal Entera, podemos corroborar a través de los gráficos una clara tendencia al aumento significativo en el tiempo de ejecución conforme se incrementa la cantidad de subconjuntos, en comparación con otros algoritmos, especialmente los que emplean el método Greedy.
 
-La gráfica de nuestra implementación de Backtracking confirma su comportamiento exponencial, concordando con su cota teórica. Por otro lado, el algoritmo de Programación Lineal Entera, contrario a lo esperado, presenta una gráfica más cercana a una función lineal, asemejandose en tiempo de ejecución con el algorítmo de Programación Lineal Continua. Esto se debe a las optimizaciones implementadas en la librería \texttt{pulp} utilizada para su ejecución, las cuales reducen significativamente su tiempo de ejecución en comparación con su complejidad teórica. Es importante mencionar que la visualización de una curva exponencial en este algoritmo solo ocurre en situaciones donde las optimizaciones no influyen de manera considerable.
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_t_backtracking_var_m.png}
+        \caption{Backtracking: Medición de tiempos variando $m$.}
+        \label{fig:medicion_t_backtracking_var_m}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_t_backtracking_var_b.png}
+        \caption{Backtracking: Medición de tiempos variando $b$.}
+        \label{fig:medicion_t_backtracking_var_b}
+    \end{minipage}
+\end{figure}
+
+La gráfica de nuestra implementación de Backtracking (figs. \ref{fig:medicion_t_backtracking_var_m} y \ref{fig:medicion_t_backtracking_var_b}) confirma su comportamiento exponencial, concordando con su cota teórica. Por otro lado, el algoritmo de Programación Lineal Entera, contrario a lo esperado, presenta una gráfica más cercana a una función lineal (figs. \ref{fig:medicion_t_pl_var_m} y \ref{fig:medicion_t_pl_var_b}), asemejandose en tiempo de ejecución con el algorítmo de Programación Lineal Continua. Esto se debe a las optimizaciones implementadas en la librería \texttt{pulp} utilizada para su ejecución, las cuales reducen significativamente su tiempo de ejecución en comparación con su complejidad teórica. Es importante mencionar que la visualización de una curva exponencial en este algoritmo solo ocurre en situaciones donde las optimizaciones no influyen de manera considerable.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_t_pl_var_m.png}
+        \caption{Programación Lineal: Medición de tiempos variando $m$.}
+        \label{fig:medicion_t_pl_var_m}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_t_pl_var_b.png}
+        \caption{Programación Lineal: Medición de tiempos variando $b$.}
+        \label{fig:medicion_t_pl_var_b}
+    \end{minipage}
+\end{figure}
 
 Por otro lado, podemos observar que la curva de Programación Lineal Continua se asemeja a una curva polinómica. De forma similar que en el caso de PLE, a pesar de que su cota teórica es un polinomio de grado $9$, en la gráfica se puede observar una tendencia lineal. Esto es debido a las diversas optimizaciones que la bilbioteca implementa y la escala de la medición.
 
 En el siguiente gráfico, se ilustra el grado de aproximación, variando $b$ (fig. \label{medicion-plc-var-b}) y manteniendola constante (fig. \label{medicion-plc-cons-b}). Para poder corroborar nuestra cota máxima de aproximación, hicimos variar el parámetro $b$ en un intervalo $\left[25,30\right]$. Como en la gráfica se puede observar que la peor aproximación es $NUM_MAX$, luego se comprueba que la cota máxima es efectivamente en cada escenario es $b-1$.
 
-Por otra parte, al examinar los algoritmos que emplean la estrategia de diseño Greedy, se evidencia que ambos siguen una tendencia polinomial. En el primer gráfico (fig. \ref{fig:medicion_t_greedy_var_m}), se observa una tendencia lineal. Esto se debe a que la variable $b$ permanece constante para cada escenario, variando únicamente la cantidad de subconjuntos ($m$). En contraste, medida que se aumenta la cantidad de subconjuntos, se puede visualizar su tendencia polinómica no lineal, evidenciando la cota teórica (fig. \ref{fig:medicion_t_greedy_var_b}).
+Por otra parte, al examinar los algoritmos que emplean la estrategia de diseño Greedy, se evidencia que ambos siguen una tendencia polinomial. En el primer gráfico (fig. \ref{fig:medicion_t_greedy_var_m}), se observa una tendencia lineal. Esto se debe a que la variable $b$ permanece constante para cada escenario, variando únicamente la cantidad de subconjuntos ($m$). En contraste, a medida que se aumenta la cantidad de subconjuntos, se puede visualizar su tendencia polinómica no lineal, evidenciando la cota teórica (fig. \ref{fig:medicion_t_greedy_var_b}).
 
 \begin{figure}[h]
     \centering
@@ -38,7 +70,23 @@ Por otra parte, al examinar los algoritmos que emplean la estrategia de diseño 
     \end{minipage}
 \end{figure}
 
-Asimismo, se destaca una marcada diferencia en los tiempos de ejecución entre el algoritmo Greedy Máximo por Grupo y el algoritmo Greedy Máximo Global con Recálculo. El primero muestra una ejecución significativamente más rápida en todos los escenarios comparado con el segundo. Sin embargo, al analizar las soluciones obtenidas, se evidencia que el algoritmo Greedy Máximo Global se acerca más a la solución óptima en todos los casos estudiados.
+Asimismo, se destaca una marcada diferencia en los tiempos de ejecución entre el algoritmo Greedy Máximo por Grupo y el algoritmo Greedy Máximo Global con Recálculo (figs. \ref{fig:medicion_r_greedy_var_m} y \ref{fig:medicion_r_greedy_var_b}). El primero muestra una ejecución significativamente más rápida en todos los escenarios comparado con el segundo. Sin embargo, al analizar las soluciones obtenidas, se evidencia que el algoritmo Greedy Máximo Global se acerca más a la solución óptima en todos los casos estudiados.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_r_greedy_var_m.png}
+        \caption{Greedy: Medición de tiempos variando $m$.}
+        \label{fig:medicion_r_greedy_var_m}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/medicion_r_greedy_var_b.png}
+        \caption{Greedy: Medición de tiempos variando $n$.}
+        \label{fig:medicion_r_greedy_var_b}
+    \end{minipage}
+\end{figure}
 
 Es interesante observar como el factor de aproximación $r(A)=\frac{A(I)}{z(I)}$ varía respecto a $m$ y a $b$. Para valores $b$ pequeños constantes, que es donde los dos algorítmos Greedy tienden a performar peor, no se aprecia una tendencia clara respecto a la variación de $m$ (fig. \ref{fig:medicion_r_greedy_var_m}). Sin embargo, con $m$ constante, se puede observar una tendencia inversamente proporcional entre $r(A)$ y $b$ (fig. \ref{fig:medicion_r_greedy_var_b}). Esto se debe a que, con grupos más grandes, la probabilidad de que un elemento pertenezca a más de un grupo es mayor, llegando al punto de que exista uno o varios jugadores en la intersección de todos los conjuntos. Ambos algoritmos greedy obtienen siempre la solución óptima en este caso, por lo que $\lim\limits_{b \rightarrow \infty}r(A)=1$.
 
