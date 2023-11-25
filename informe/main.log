@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  25 NOV 2023 01:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  25 NOV 2023 01:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1957,7 +1957,7 @@ pos de eje-cu-ci^^Son en-tre el al-go-rit-mo Greedy
 
 Overfull \hbox (8.64008pt too wide) in paragraph at lines 86--87
 \OT1/cmr/m/n/10 M^^Saxi-mo por Grupo y el al-go-rit-mo Greedy M^^Saxi-mo Glob-a
-l con Rec^^Salcu-lo (figs. []25[] y []24[]). El primero 
+l con Rec^^Salcu-lo (figs. []24[] y []25[]). El primero 
  []
 
 File: logo.pdf Graphic file (type pdf)
@@ -2071,7 +2071,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (20 pages, 1695750 bytes).
+Output written on main.pdf (20 pages, 1692428 bytes).
 PDF statistics:
  678 PDF objects out of 1000 (max. 8388607)
  533 compressed objects within 6 object streams
