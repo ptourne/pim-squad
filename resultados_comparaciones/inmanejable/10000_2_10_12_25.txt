@@ -1,0 +1,15 @@
+Programación Lineal Continua:
+Cantidad mínima: 35
+Solución: ['be', 'ce', 'fe', 'aa', 'bc', 'ac', 'cb', 'ad', 'ee', 'da', 'cf', 'fa', 'dd', 'ff', 'cc', 'ec', 'eb', 'ef', 'ab', 'de', 'bf', 'fd', 'cd', 'ae', 'bb', 'df', 'dc', 'ea', 'af', 'fc', 'fb', 'ca', 'db', 'bd', 'ba']
+Tiempo de ejecución: 1460.1356119999998 milisegundos
+
+Greedy:
+Cantidad mínima: 8
+Solución: {'be', 'ac', 'ce', 'ff', 'ea', 'aa', 'bb', 'ca'}
+Tiempo de ejecución: 50.457938999999726 milisegundos
+
+Greedy Máximo por Grupos:
+Cantidad mínima: 10
+Solución: {'ac', 'fd', 'cb', 'ad', 'ff', 'ea', 'da', 'fb', 'ca', 'bf'}
+Tiempo de ejecución: 30.84798200000005 milisegundos
+
