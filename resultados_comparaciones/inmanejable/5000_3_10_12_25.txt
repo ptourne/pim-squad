@@ -1,0 +1,15 @@
+Programación Lineal Continua:
+Cantidad mínima: 129
+Solución: ['bae', 'cdb', 'dcd', 'cde', 'eec', 'cad', 'cbb', 'aac', 'edc', 'fbc', 'ffd', 'cea', 'acf', 'bbd', 'bfc', 'bed', 'aad', 'cdc', 'adc', 'dac', 'bea', 'daa', 'ede', 'fec', 'dcb', 'eac', 'dba', 'abf', 'dff', 'aaf', 'bde', 'dce', 'abd', 'ecb', 'bef', 'ecf', 'fcf', 'dbb', 'eeb', 'ced', 'ebe', 'eda', 'dad', 'ffa', 'cbf', 'cce', 'fde', 'aed', 'eaa', 'fea', 'ccf', 'bbe', 'dde', 'ecc', 'aef', 'afe', 'fce', 'ddb', 'edb', 'ead', 'aca', 'eee', 'fae', 'eca', 'cfc', 'faf', 'aaa', 'bdb', 'cda', 'fee', 'ccd', 'dee', 'eae', 'deb', 'fcb', 'ebd', 'fcd', 'add', 'fdb', 'bee', 'ddf', 'eba', 'beb', 'bcc', 'ded', 'caf', 'ece', 'aec', 'ceb', 'bab', 'fff', 'cff', 'cdf', 'fef', 'bfd', 'acb', 'adf', 'dae', 'dbc', 'dab', 'fbe', 'cec', 'ebb', 'fab', 'dbd', 'cba', 'dca', 'cef', 'bcb', 'cfd', 'dfb', 'fba', 'fdc', 'dbe', 'bda', 'bad', 'cfe', 'abc', 'afc', 'cca', 'eef', 'bbf', 'fbb', 'fad', 'faa', 'bcf', 'acc', 'cbc', 'ddc']
+Tiempo de ejecución: 364.8920220000003 milisegundos
+
+Greedy:
+Cantidad mínima: 25
+Solución: {'ecc', 'eda', 'ccd', 'bab', 'bea', 'cde', 'aed', 'bae', 'ebd', 'dac', 'aad', 'cdb', 'abf', 'bbd', 'abc', 'bbe', 'bde', 'ddf', 'ffa', 'aaa', 'bdb', 'fcf', 'add', 'fee', 'beb'}
+Tiempo de ejecución: 13.020942000000257 milisegundos
+
+Greedy Máximo por Grupos:
+Cantidad mínima: 25
+Solución: {'ecc', 'eda', 'ccd', 'bab', 'bea', 'cde', 'aed', 'bae', 'ebd', 'dac', 'aad', 'cdb', 'abf', 'bbd', 'abc', 'bbe', 'bde', 'ddf', 'ffa', 'aaa', 'bdb', 'fcf', 'add', 'fee', 'beb'}
+Tiempo de ejecución: 6.265010000000348 milisegundos
+
