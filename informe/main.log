@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  25 NOV 2023 00:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  25 NOV 2023 01:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1876,13 +1876,13 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.13 
       <./img/greedy_ej3_mpg.png> <./img/greedy_ej3_mgr.png>]
-<img/medicion_t_backtracking_var_m.png, id=502, 462.528pt x 346.896pt>
+<img/medicion_t_backtracking_var_m.png, id=504, 462.528pt x 346.896pt>
 File: img/medicion_t_backtracking_var_m.png Graphic file (type png)
 <use img/medicion_t_backtracking_var_m.png>
 Package pdftex.def Info: img/medicion_t_backtracking_var_m.png  used on input l
 ine 18.
 (pdftex.def)             Requested size: 192.0548pt x 144.04384pt.
-<img/medicion_t_backtracking_var_b.png, id=503, 462.528pt x 346.896pt>
+<img/medicion_t_backtracking_var_b.png, id=505, 462.528pt x 346.896pt>
 File: img/medicion_t_backtracking_var_b.png Graphic file (type png)
 <use img/medicion_t_backtracking_var_b.png>
 Package pdftex.def Info: img/medicion_t_backtracking_var_b.png  used on input l
@@ -1973,19 +1973,9 @@ File: img/medicion_r_greedy_var_b.png Graphic file (type png)
 Package pdftex.def Info: img/medicion_r_greedy_var_b.png  used on input line 82
 .
 (pdftex.def)             Requested size: 192.0548pt x 144.04384pt.
-File: img/medicion_r_greedy_var_b.png Graphic file (type png)
-<use img/medicion_r_greedy_var_b.png>
-Package pdftex.def Info: img/medicion_r_greedy_var_b.png  used on input line 94
-.
-(pdftex.def)             Requested size: 192.0548pt x 144.04384pt.
-File: img/medicion_r_greedy_var_m.png Graphic file (type png)
-<use img/medicion_r_greedy_var_m.png>
-Package pdftex.def Info: img/medicion_r_greedy_var_m.png  used on input line 10
-0.
-(pdftex.def)             Requested size: 192.0548pt x 144.04384pt.
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 104.
+Package pdftex.def Info: logo.pdf  used on input line 89.
 (pdftex.def)             Requested size: 71.13188pt x 25.89293pt.
 
 Package fancyhdr Warning: \headheight is too small (27.0pt): 
@@ -2000,28 +1990,39 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.104 \end{figure}
-                  
+l.89 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.104 \end{figure}
-                  
+l.89 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.104 \end{figure}
-                  
+l.89 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.104 \end{figure}
-                   <./img/medicion_t_greedy_var_m.png> <./img/medicion_t_greedy
-_var_b.png> <./img/medicion_r_greedy_var_m.png> <./img/medicion_r_greedy_var_b.
-png>]) (./tex/conclusiones.tex)
+l.89 
+      <./img/medicion_t_greedy_var_m.png> <./img/medicion_t_greedy_var_b.png> <
+./img/medicion_r_greedy_var_m.png> <./img/medicion_r_greedy_var_b.png>]
+File: img/medicion_r_greedy_var_b.png Graphic file (type png)
+<use img/medicion_r_greedy_var_b.png>
+Package pdftex.def Info: img/medicion_r_greedy_var_b.png  used on input line 94
+.
+(pdftex.def)             Requested size: 192.0548pt x 144.04384pt.
+File: img/medicion_r_greedy_var_m.png Graphic file (type png)
+<use img/medicion_r_greedy_var_m.png>
+Package pdftex.def Info: img/medicion_r_greedy_var_m.png  used on input line 10
+0.
+(pdftex.def)             Requested size: 192.0548pt x 144.04384pt.
+)
+(./tex/conclusiones.tex)
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 93.
@@ -2087,7 +2088,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (20 pages, 1654381 bytes).
+Output written on main.pdf (20 pages, 1674013 bytes).
 PDF statistics:
  677 PDF objects out of 1000 (max. 8388607)
  534 compressed objects within 6 object streams
